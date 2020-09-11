@@ -1,0 +1,154 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_margin="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/tvAppName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:shadowColor="@color/text_shadow"
+        android:shadowDx="+2"
+        android:shadowDy="+2"
+        android:shadowRadius="2"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="@dimen/app_name_font_size"
+        android:textStyle="bold"
+        android:typeface="serif" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tvAppName"
+        android:layout_margin="@dimen/margin"
+        android:orientation="horizontal"
+        android:shrinkColumns="*"
+        android:stretchColumns="*" >
+
+        <TableRow>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/btn_drawcard"
+                    android:layout_width="@dimen/home_button_thumbnail_size"
+                    android:layout_height="@dimen/home_button_thumbnail_size"
+                    android:layout_gravity="center"
+                    android:background="@drawable/btn_drawcard" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:shadowColor="@color/text_shadow"
+                    android:shadowDx="+2"
+                    android:shadowDy="+2"
+                    android:shadowRadius="2"
+                    android:text="@string/draw_a_card"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size"
+                    android:textStyle="normal"
+                    android:typeface="serif" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/btn_spreadcard"
+                    android:layout_width="@dimen/home_button_thumbnail_size"
+                    android:layout_height="@dimen/home_button_thumbnail_size"
+                    android:layout_gravity="center"
+                    android:background="@drawable/btn_spreadcard" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:shadowColor="@color/text_shadow"
+                    android:shadowDx="+2"
+                    android:shadowDy="+2"
+                    android:shadowRadius="2"
+                    android:text="@string/cardspread"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size"
+                    android:textStyle="normal"
+                    android:typeface="serif" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/btn_encyclopedia"
+                    android:layout_width="@dimen/home_button_thumbnail_size"
+                    android:layout_height="@dimen/home_button_thumbnail_size"
+                    android:layout_gravity="center"
+                    android:background="@drawable/btn_encyclopedia" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:shadowColor="@color/text_shadow"
+                    android:shadowDx="+2"
+                    android:shadowDy="+2"
+                    android:shadowRadius="2"
+                    android:text="@string/encyclopedia"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size"
+                    android:textStyle="normal"
+                    android:typeface="serif" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/btn_profile_animation"
+                    android:layout_width="@dimen/home_button_thumbnail_size"
+                    android:layout_height="@dimen/home_button_thumbnail_size"
+                    android:layout_gravity="center"
+                    android:background="@drawable/btn_profile_animation" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:shadowColor="@color/text_shadow"
+                    android:shadowDx="+2"
+                    android:shadowDy="+2"
+                    android:shadowRadius="2"
+                    android:text="@string/galaxy_profile"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size"
+                    android:textStyle="normal"
+                    android:typeface="serif" />
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>

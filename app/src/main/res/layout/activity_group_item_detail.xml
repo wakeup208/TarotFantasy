@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/background"
+        android:scaleType="fitCenter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/group_item_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/top_bar"
+        android:layout_marginTop="@dimen/small_padding"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvGroupName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:padding="@dimen/small_padding"
+            android:text="name"
+            android:textColor="@color/white"
+            android:textSize="@dimen/commom_font_size_big"
+            android:typeface="serif" />
+
+        <ImageView
+            android:id="@+id/ivItemGroupImage"
+            android:layout_width="@dimen/image_guide_height"
+            android:layout_height="@dimen/image_guide_height"
+            android:background="@color/white"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/group_item_info"
+        android:layout_margin="@dimen/commom_padding" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/commom_padding"
+            android:layout_marginTop="@dimen/commom_padding"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvItemGroupDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/commom_font_size"
+                android:typeface="serif" />
+
+            <ImageView
+                android:id="@+id/ivSeparateBar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/thin_padding"
+                android:layout_gravity="center"
+                android:background="@drawable/black_white_gradient"
+                android:gravity="center"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tvItemGroupDetail2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="#fbfd34"
+                android:textSize="@dimen/commom_font_size"
+                android:typeface="serif"
+                android:visibility="gone" />
+            
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="8dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/color_bar" >
+
+        <ImageButton
+            android:id="@+id/btn_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/btn_home"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/tvItemGroupName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:shadowColor="@color/text_shadow"
+            android:shadowDx="+2"
+            android:shadowDy="+2"
+            android:shadowRadius="2"
+            android:text="@string/browse_cards"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_font_size"
+            android:textStyle="bold"
+            android:typeface="serif" />
+    </RelativeLayout>
+
+</RelativeLayout>

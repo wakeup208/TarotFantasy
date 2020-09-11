@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/background"
+        android:scaleType="fitCenter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/Pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center" >
+    </androidx.viewpager.widget.ViewPager>
+
+    <RelativeLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/color_bar"
+        android:visibility="invisible" >
+
+        <Button
+            android:id="@+id/btn_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_home"
+            android:gravity="center_vertical"
+            android:padding="@dimen/commom_padding" />
+
+        <TextView
+            android:id="@+id/tvCardName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_vertical|center_horizontal"
+            android:shadowColor="@color/text_shadow"
+            android:shadowDx="+2"
+            android:shadowDy="+2"
+            android:shadowRadius="2"
+            android:text="@string/browse_cards"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_font_size"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_bar"
+        android:visibility="invisible" >
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:orientation="horizontal"
+            android:padding="@dimen/thin_padding" >
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/btn_card_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/commom_padding"
+                    android:background="@drawable/btn_card_interpretation_selected" />
+
+                <Button
+                    android:id="@+id/btn_associations"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/commom_padding"
+                    android:background="@drawable/btn_associations" />
+
+                <Button
+                    android:id="@+id/btn_shop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/commom_padding"
+                    android:background="@drawable/btn_shop"
+                    android:visibility="gone" />
+            </TableRow>
+        </TableLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

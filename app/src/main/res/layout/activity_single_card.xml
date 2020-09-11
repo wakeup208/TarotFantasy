@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter" />
+
+    <ViewFlipper
+        android:id="@+id/vfCardImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin" >
+
+        <ImageView
+            android:id="@+id/ivBackCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:gravity="center"
+            android:src="@drawable/card_back" />
+
+        <ImageView
+            android:id="@+id/ivFontCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:gravity="center" />
+    </ViewFlipper>
+
+    <ScrollView
+        android:id="@+id/svCardSpread"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#BB000000"
+        android:visibility="visible" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/margin_bottom"
+            android:paddingTop="@dimen/margin_top" >
+
+            <TextView
+                android:id="@+id/tvBlueText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:padding="@dimen/commom_padding"
+                android:text="Rút một lá bài đơn có thể cung cấp cái nhìn thấu đáo cho câu hỏi hay tình huống mà bạn gặp phải."
+                android:textColor="#1166FF"
+                android:textAlignment="center"
+                android:textSize="@dimen/commom_font_size"
+                android:typeface="serif" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/thin_padding"
+                android:layout_marginBottom="@dimen/commom_padding"
+                android:layout_marginTop="@dimen/commom_padding"
+                android:background="@drawable/black_white_gradient" />
+
+            <TextView
+                android:id="@+id/tvKeyWords"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:text="@string/keywords"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/commom_font_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvKeyWordsDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:padding="5dip"
+                android:text="Nội dung keywords"
+                android:textColor="#f9e34c"
+                android:textSize="@dimen/commom_font_size"
+                android:typeface="serif" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/thin_padding"
+                android:layout_marginBottom="@dimen/commom_padding"
+                android:layout_marginTop="@dimen/commom_padding"
+                android:background="@drawable/black_white_gradient" />
+
+            <Button
+                android:id="@+id/btn_expand_reverse_keywords"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_horizontal"
+                android:background="#00000000"
+                android:drawableLeft="@drawable/expand_item"
+                android:gravity="center_vertical"
+                android:text="@string/reverse_keywords"
+                android:textColor="@color/white"
+                android:textSize="@dimen/commom_font_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvReverseKeyWordsDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/commom_padding"
+                android:text="Nội dung Reverse Keywords"
+                android:textColor="#f9e34c"
+                android:textSize="@dimen/commom_font_size"
+                android:typeface="serif"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btn_view_card_interpretation"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/margin"
+                android:layout_marginTop="@dimen/margin"
+                android:background="@drawable/button"
+                android:padding="@dimen/small_padding"
+                android:text="@string/btn_view_card_interpretation"
+                android:textColor="@color/white"
+                android:textSize="@dimen/commom_font_size" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/margin_bottom"
+                android:layout_marginLeft="@dimen/commom_padding"
+                android:layout_marginRight="@dimen/commom_padding"
+                android:background="@drawable/adportrait"
+                android:clickable="true"
+                android:onClick="onAdvertisementClick"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/svCardInterpretation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#BB000000"
+        android:visibility="invisible" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/margin_bottom"
+            android:paddingTop="@dimen/margin_top" >
+
+            <TextView
+                android:id="@+id/tvInterpretation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/commom_padding"
+                android:gravity="center"
+                android:text="@string/interpretations"
+                android:textColor="#1166FF"
+                android:textSize="@dimen/commom_font_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvInterpretationDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/commom_padding"
+                android:text="Nội dung Interpretation"
+                android:textColor="@color/white"
+                android:textSize="@dimen/commom_font_size"
+                android:typeface="serif" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/thin_padding"
+                android:layout_marginBottom="@dimen/commom_padding"
+                android:layout_marginTop="@dimen/commom_padding"
+                android:background="@drawable/black_white_gradient" />
+
+            <Button
+                android:id="@+id/btn_expand_reverse_interpretation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_horizontal"
+                android:background="#00000000"
+                android:drawableLeft="@drawable/expand_item"
+                android:gravity="center_vertical"
+                android:text="@string/reverse_keywords"
+                android:textColor="#1166FF"
+                android:textSize="@dimen/commom_font_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvReverseInterpretationDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/commom_padding"
+                android:text="Nội dung Reverse Interpretation"
+                android:textColor="@color/white"
+                android:textSize="@dimen/commom_font_size"
+                android:typeface="serif"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btn_view_card_associations"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/margin"
+                android:layout_marginTop="@dimen/margin"
+                android:background="@drawable/button"
+                android:padding="@dimen/small_padding"
+                android:text="@string/btn_view_card_associations"
+                android:textColor="@color/white"
+                android:textSize="@dimen/commom_font_size" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/margin_bottom"
+                android:layout_marginLeft="@dimen/commom_padding"
+                android:layout_marginRight="@dimen/commom_padding"
+                android:background="@drawable/adportrait"
+                android:clickable="true"
+                android:onClick="onAdvertisementClick"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/svCardAssociations"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#bb000000"
+        android:visibility="invisible" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/margin_bottom"
+            android:paddingLeft="@dimen/thin_padding"
+            android:paddingRight="@dimen/thin_padding"
+            android:paddingTop="@dimen/margin_top" >
+
+            <!-- For suit -->
+
+            <LinearLayout
+                android:id="@+id/layoutSuit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/custom_button"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/btnSuit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button"
+                    android:padding="@dimen/small_padding"
+                    android:text="suit"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size_small" />
+
+                <TableLayout
+                    android:id="@+id/suitTable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+                </TableLayout>
+            </LinearLayout>
+
+            <!-- For star -->
+
+            <LinearLayout
+                android:id="@+id/layoutStar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/custom_button"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/btnStar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button"
+                    android:padding="@dimen/small_padding"
+                    android:text="star"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size_small" />
+
+                <TableLayout
+                    android:id="@+id/starTable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+                </TableLayout>
+            </LinearLayout>
+
+            <!-- For number -->
+
+            <LinearLayout
+                android:id="@+id/layoutNumber"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/custom_button"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/btnNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button"
+                    android:padding="@dimen/small_padding"
+                    android:text="number"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size_small" />
+
+                <TableLayout
+                    android:id="@+id/numberTable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+                </TableLayout>
+            </LinearLayout>
+
+            <!-- For symbol -->
+
+            <LinearLayout
+                android:id="@+id/layoutSymbol"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/margin"
+                android:background="@drawable/custom_button"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/btnSymbol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button"
+                    android:padding="@dimen/small_padding"
+                    android:text="symbol"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size_small" />
+
+                <TableLayout
+                    android:id="@+id/symbolTable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+                </TableLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/margin_bottom"
+                android:layout_marginLeft="@dimen/commom_padding"
+                android:layout_marginRight="@dimen/commom_padding"
+                android:background="@drawable/adportrait"
+                android:clickable="true"
+                android:onClick="onAdvertisementClick"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="visible" >
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:orientation="horizontal"
+            android:padding="@dimen/thin_padding" >
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/btn_card_spread"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/commom_padding"
+                    android:background="@drawable/btn_card_spread_selected" />
+
+                <Button
+                    android:id="@+id/btn_card_interpretation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/commom_padding"
+                    android:background="@drawable/btn_card_interpretation" />
+
+                <Button
+                    android:id="@+id/btn_associations"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/commom_padding"
+                    android:background="@drawable/btn_associations" />
+            </TableRow>
+        </TableLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvCardName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#BB000000"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/small_padding"
+        android:shadowColor="@color/text_shadow"
+        android:shadowDx="+2"
+        android:shadowDy="+2"
+        android:shadowRadius="2"
+        android:text="Card Name"
+        android:textColor="@color/white"
+        android:textSize="@dimen/title_font_size"
+        android:textStyle="bold"
+        android:visibility="invisible" />
+
+</RelativeLayout>

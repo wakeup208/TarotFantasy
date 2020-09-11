@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tvListViewSection"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/small_padding"
+    android:background="@drawable/section_bg"
+    android:gravity="center"
+    android:padding="@dimen/small_padding"
+    android:text="@string/browse_cards"
+    android:textColor="#1166FF"
+    android:textSize="@dimen/commom_font_size"
+    android:typeface="serif" />

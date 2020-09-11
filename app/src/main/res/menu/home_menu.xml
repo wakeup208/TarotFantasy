@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/feedback_connect"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/feedback_connect"/>
+    <item
+        android:id="@+id/more_app"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/more_app"/>
+    <item
+        android:id="@+id/sources_and_credits"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/sources_and_credits"/>
+
+</menu>

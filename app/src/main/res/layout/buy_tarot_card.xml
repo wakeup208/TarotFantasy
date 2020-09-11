@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/small_padding" >
+
+            <TextView
+                android:id="@+id/tvWebsite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/commom_padding"
+                android:text="Tìm kiếm bộ bài Tarot cho riêng bạn\nhttp://www.DiaChiWebsite.vn"
+                android:textSize="@dimen/commom_font_size"
+                android:typeface="serif" />
+
+            <Button
+                android:id="@+id/btnCall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/thin_padding"
+                android:background="@drawable/button"
+                android:drawableLeft="@drawable/icon_call"
+                android:text="  Gọi trực tiếp  "
+                android:textColor="#FFF"
+                android:textSize="@dimen/commom_font_size_small"
+                android:textStyle="bold|italic"
+                android:typeface="serif" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">TarotCards</string>
+    <string name="action_settings">Cài đặt</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="draw_a_card">Rút một lá bài</string>
+    <string name="cardspread">Trải bài</string>
+    <string name="encyclopedia">Sổ tay</string>
+    <string name="galaxy_profile">Hỗ trợ</string>
+    <string name="encyclopedia_settings">Cài đặt Bách khoa thư</string>
+    <string name="feedback_connect">Phản hồi</string>
+    <string name="more_app">More Apps</string>
+    <string name="sources_and_credits">Sources and Credits</string>
+    <string name="browse_cards">Duyệt bài</string>
+    <string name="profile">Hỗ Trợ</string>
+    <string name="tarot_spread">Trải bài Tarot</string>
+    <string name="three_card">Three Cards</string>
+    <string name="profile_theme">Kiểu cách</string>
+    <string name="profile_settings">Cài đặt ứng dụng</string>
+    <string name="celtic_cross">Celtic Cross</string>
+    <string name="relationship_spread_1">Relationship Spread 1</string>
+    <string name="btn_shuffle_cards">Xáo bài</string>
+    <string name="btn_go_directly_to_spread">Trải bài ngay</string>
+    <string name="three_card_guide">Cách trải bài Tarot này gồm ba lá, được sử dụng để xét đoán về tình trạng của bản thân trên các mặt Cơ thể, Trí óc, Tinh thần</string>
+    <string name="celtic_cross_guide">Trải bài Celtic Cross là một trong những trải bài được sử dụng phổ biến nhất, nhưng cũng là một trong những trải bài phức tạp để giải nghĩa. Nó đưa ra cái nhìn khái quát về bản thân của người hỏi.</string>
+    <string name="relationship_spread_1_guide">Không có dữ liệu mô tả về Relationship Spread ???</string>
+    <string name="keywords">Nghĩa xuôi</string>
+    <string name="reverse_keywords">Nghĩa ngược</string>
+    <string name="interpretations">Giải thích</string>
+    <string name="reverse_interpretations">Giải thích ngược</string>
+    <string name="btn_view_card_interpretation">Giải thích lá bài</string>
+    <string name="btn_view_card_associations">Sự kết hợp</string>
+
+    <string name="section_of_Major_Arcana">Major Arcana</string>
+    <string name="section_of_Suit_of_Wands">Suit of Wands</string>
+    <string name="section_of_Suit_of_Cups">Suit of Cups</string>
+    <string name="section_of_Suit_of_Swords">Suit of Swords</string>
+    <string name="section_of_Suit_of_Pentacles">Suit of Pentacles</string>
+</resources>

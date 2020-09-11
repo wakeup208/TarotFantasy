@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/ivCardImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/margin" />
+
+    <ScrollView
+        android:id="@+id/svCardSpread"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#BB000000"
+        android:visibility="invisible" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/margin_bottom"
+            android:paddingTop="@dimen/margin_top" >
+
+            <TextView
+                android:id="@+id/tvStepInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:padding="@dimen/commom_padding"
+                android:textColor="#1166FF"
+                android:textSize="@dimen/commom_font_size"
+                android:typeface="serif" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginBottom="@dimen/commom_padding"
+                android:layout_marginTop="@dimen/commom_padding"
+                android:background="@drawable/black_white_gradient" />
+
+            <TextView
+                android:id="@+id/tvKeyWords"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:text="@string/keywords"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/commom_font_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvKeyWordsDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/thin_padding"
+                android:text="Nội dung keywords"
+                android:textColor="#f9e34c"
+                android:textSize="@dimen/commom_font_size"
+                android:typeface="serif" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginBottom="@dimen/commom_padding"
+                android:layout_marginTop="@dimen/commom_padding"
+                android:background="@drawable/black_white_gradient" />
+
+            <Button
+                android:id="@+id/btn_expand_reverse_keywords"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_horizontal"
+                android:background="#00000000"
+                android:drawableLeft="@drawable/expand_item"
+                android:gravity="center_vertical"
+                android:text="@string/reverse_keywords"
+                android:textColor="@color/white"
+                android:textSize="@dimen/commom_font_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvReverseKeyWordsDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:padding="5dip"
+                android:text="Nội dung Reverse Keywords"
+                android:textColor="#f9e34c"
+                android:textSize="@dimen/commom_font_size"
+                android:typeface="serif"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btn_view_card_interpretation"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dip"
+                android:background="@drawable/button"
+                android:padding="@dimen/small_padding"
+                android:text="@string/btn_view_card_interpretation"
+                android:textColor="@color/white"
+                android:textSize="@dimen/commom_font_size"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
+            <ImageView
+                android:id="@+id/ivAd1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/margin_bottom"
+                android:layout_marginLeft="@dimen/commom_padding"
+                android:layout_marginRight="@dimen/commom_padding"
+                android:layout_marginTop="@dimen/margin"
+                android:background="@drawable/adportrait"
+                android:clickable="true"
+                android:onClick="onAdvertisementClick"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/svCardInterpretation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#bb000000"
+        android:visibility="invisible" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/margin_bottom"
+            android:paddingTop="@dimen/margin_top" >
+
+            <TextView
+                android:id="@+id/tvInterpretations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/small_padding"
+                android:background="#00000000"
+                android:gravity="center_vertical"
+                android:text="@string/interpretations"
+                android:textColor="#ff1166ff"
+                android:textSize="@dimen/commom_font_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvKeywordForward"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/small_padding"
+                android:gravity="center_horizontal"
+                android:text="Nội dung keywords"
+                android:textColor="#fff9e34c"
+                android:textSize="@dimen/commom_font_size"
+                android:typeface="serif" />
+
+            <ImageView
+                android:id="@+id/ivDivider1"
+                android:layout_width="match_parent"
+                android:layout_height="1.0dp"
+                android:layout_marginBottom="@dimen/commom_padding"
+                android:layout_marginTop="@dimen/commom_padding"
+                android:background="@drawable/black_white_gradient" />
+
+            <TextView
+                android:id="@+id/tvForward"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/commom_padding"
+                android:layout_marginRight="@dimen/commom_padding"
+                android:padding="@dimen/thin_padding"
+                android:text="Nội dung Interpretation"
+                android:textColor="@color/white"
+                android:textSize="@dimen/commom_font_size"
+                android:typeface="serif" />
+
+            <Button
+                android:id="@+id/btn_expand_reverse_interpretations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:drawableLeft="@drawable/expand_item"
+                android:gravity="center_vertical"
+                android:text="@string/reverse_interpretations"
+                android:textColor="#ff1166ff"
+                android:textSize="@dimen/commom_font_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvKeywordReverse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/thin_padding"
+                android:text="Nội dung Reverse Keywords"
+                android:textColor="#fff9e34c"
+                android:textSize="@dimen/commom_font_size"
+                android:typeface="serif"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/ivDivider2"
+                android:layout_width="match_parent"
+                android:layout_height="1.0dp"
+                android:layout_margin="@dimen/commom_padding"
+                android:background="@drawable/black_white_gradient"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tvReverse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/commom_padding"
+                android:layout_marginRight="@dimen/commom_padding"
+                android:textColor="@color/white"
+                android:textSize="@dimen/commom_font_size"
+                android:typeface="serif"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btn_view_card_association"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/margin_top"
+                android:background="@drawable/button"
+                android:padding="@dimen/small_padding"
+                android:text="@string/btn_view_card_associations"
+                android:textColor="@color/white"
+                android:textSize="@dimen/commom_font_size"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
+            <ImageView
+                android:id="@+id/ivAd2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/margin_bottom"
+                android:layout_marginLeft="@dimen/commom_padding"
+                android:layout_marginRight="@dimen/commom_padding"
+                android:layout_marginTop="@dimen/margin"
+                android:background="@drawable/adportrait"
+                android:clickable="true"
+                android:onClick="onAdvertisementClick"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/svCardAssociations"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#bb000000"
+        android:visibility="invisible" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/margin_bottom"
+            android:paddingLeft="@dimen/thin_padding"
+            android:paddingRight="@dimen/thin_padding"
+            android:paddingTop="@dimen/margin_top" >
+
+            <!-- For suit -->
+
+            <LinearLayout
+                android:id="@+id/layoutSuit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/custom_button"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/btnSuit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button"
+                    android:padding="@dimen/small_padding"
+                    android:text="suit"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size_small" />
+
+                <TableLayout
+                    android:id="@+id/suitTable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+                </TableLayout>
+            </LinearLayout>
+
+            <!-- For star -->
+
+            <LinearLayout
+                android:id="@+id/layoutStar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/custom_button"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/btnStar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button"
+                    android:padding="@dimen/small_padding"
+                    android:text="star"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size_small" />
+
+                <TableLayout
+                    android:id="@+id/starTable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+                </TableLayout>
+            </LinearLayout>
+
+            <!-- For number -->
+
+            <LinearLayout
+                android:id="@+id/layoutNumber"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/custom_button"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/btnNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button"
+                    android:padding="@dimen/small_padding"
+                    android:text="number"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size_small" />
+
+                <TableLayout
+                    android:id="@+id/numberTable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+                </TableLayout>
+            </LinearLayout>
+
+            <!-- For symbol -->
+
+            <LinearLayout
+                android:id="@+id/layoutSymbol"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/custom_button"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/btnSymbol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button"
+                    android:padding="@dimen/small_padding"
+                    android:text="symbol"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size_small" />
+
+                <TableLayout
+                    android:id="@+id/symbolTable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+                </TableLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ivAd3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/margin_bottom"
+                android:layout_marginLeft="@dimen/commom_padding"
+                android:layout_marginRight="@dimen/commom_padding"
+                android:layout_marginTop="@dimen/margin"
+                android:background="@drawable/adportrait"
+                android:clickable="true"
+                android:onClick="onAdvertisementClick"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

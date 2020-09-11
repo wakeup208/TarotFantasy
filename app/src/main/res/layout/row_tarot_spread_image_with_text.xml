@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#22000000"
+    android:gravity="center_vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="@dimen/small_padding" >
+
+        <ImageView
+            android:id="@+id/ivListViewItemIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvListViewItemText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/small_padding"
+            android:gravity="center"
+            android:shadowColor="@color/text_shadow"
+            android:shadowDx="+2"
+            android:shadowDy="+2"
+            android:shadowRadius="2"
+            android:text="@string/browse_cards"
+            android:textColor="@color/white"
+            android:textSize="@dimen/commom_font_size"
+            android:textStyle="bold"
+            android:typeface="serif" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/background"
+        android:scaleType="fitCenter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:id="@+id/browse_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center|center_vertical"
+        android:background="@color/color_bar"
+        android:gravity="center|center_vertical"
+        android:paddingBottom="@dimen/small_padding"
+        android:shadowColor="@color/text_shadow"
+        android:layout_margin="4dp"
+        android:shadowDx="+2"
+        android:shadowDy="+2"
+        android:shadowRadius="2"
+        android:text="@string/browse_cards"
+        android:textColor="@color/white"
+        android:textSize="@dimen/title_font_size"
+        android:textStyle="bold"
+        android:typeface="serif" />
+
+    <RelativeLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="4dp"
+        android:background="@color/color_bar" >
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:orientation="horizontal"
+            android:padding="@dimen/thin_padding" >
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/btn_grid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/commom_padding"
+                    android:background="@drawable/grid_selected" />
+
+                <Button
+                    android:id="@+id/btn_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/commom_padding"
+                    android:background="@drawable/btn_list" />
+
+                <Button
+                    android:id="@+id/btn_associations"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/commom_padding"
+                    android:background="@drawable/btn_associations" />
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal"
+            android:padding="@dimen/thin_padding" >
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/btn_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/commom_padding"
+                    android:background="@drawable/btn_minus" />
+
+                <Button
+                    android:id="@+id/btn_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/commom_padding"
+                    android:background="@drawable/btn_plus" />
+            </TableRow>
+        </TableLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

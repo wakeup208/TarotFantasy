@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter" />
+
+    <AbsoluteLayout
+        android:id="@+id/spread_cards_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ScrollView
+        android:id="@+id/svListCards"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tvTitle"
+        android:background="@color/color_bar"
+        android:visibility="invisible" >
+
+        <LinearLayout
+            android:id="@+id/listCardContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/margin_bottom" >
+
+            <TextView
+                android:id="@+id/tvSpreadCardInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin"
+                android:textColor="#1166FF"
+                android:textSize="@dimen/commom_font_size"
+                android:typeface="serif" />
+
+            <!-- Many custom linear layout item explain insert by programatic right here -->
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/svRules"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tvTitle"
+        android:background="@color/color_bar"
+        android:visibility="invisible" >
+
+        <LinearLayout
+            android:id="@+id/listCardRules"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/margin_bottom"
+            android:paddingTop="@dimen/margin_top" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small_padding"
+                android:layout_marginTop="@dimen/small_padding"
+                android:text="In Your Reading"
+                android:textColor="#fff"
+                android:textSize="@dimen/commom_font_size"
+                android:typeface="serif" />
+
+            <!-- Many custom linear layout item explain insert by programatic right here -->
+
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_bar" >
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:orientation="horizontal"
+            android:padding="@dimen/thin_padding" >
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/btn_spread_selected"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/small_padding"
+                    android:background="@drawable/btn_card_spread_selected" />
+
+                <Button
+                    android:id="@+id/btn_card_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/small_padding"
+                    android:background="@drawable/btn_card_list" />
+
+                <Button
+                    android:id="@+id/btn_rules"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/small_padding"
+                    android:background="@drawable/btn_rules" />
+            </TableRow>
+        </TableLayout>
+
+        <Button
+            android:id="@+id/btn_flip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/commom_padding"
+            android:background="@drawable/btn_flip" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center"
+        android:layout_margin="4dp"
+        android:background="@color/color_bar"
+        android:gravity="center"
+        android:shadowColor="@color/text_shadow"
+        android:shadowDx="+2"
+        android:shadowDy="+2"
+        android:shadowRadius="2"
+        android:text="@string/browse_cards"
+        android:textColor="@color/white"
+        android:textSize="@dimen/title_font_size"
+        android:textStyle="bold"
+        android:visibility="invisible" />
+
+</RelativeLayout>

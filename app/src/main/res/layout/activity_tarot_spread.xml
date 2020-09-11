@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/background"
+        android:scaleType="fitCenter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/tvTarotSpreadTitle"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/color_bar"
+        android:gravity="center"
+        android:padding="@dimen/small_padding"
+        android:shadowColor="@color/text_shadow"
+        android:shadowDx="+2"
+        android:shadowDy="+2"
+        android:shadowRadius="2"
+        android:text="@string/tarot_spread"
+        android:textColor="@color/white"
+        android:textSize="@dimen/title_font_size"
+        android:textStyle="bold"
+        android:typeface="serif" />
+
+    <ListView
+        android:id="@+id/lvTarotSpread"
+        android:layout_below="@id/tvTarotSpreadTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:cacheColorHint="#00000000"
+        android:divider="#00000000"
+        android:dividerHeight="1dip" >
+    </ListView>
+
+</RelativeLayout>

@@ -1,0 +1,31 @@
+<resources>
+
+    <!--
+         Customize dimensions originally defined in res/values/dimens.xml (such as
+         screen margins) for sw600dp devices (e.g. 7" tablets) here.
+    -->
+
+    <dimen name="app_name_font_size">74sp</dimen>
+    <dimen name="title_font_size">45sp</dimen>
+    <dimen name="commom_font_size">30sp</dimen>
+    <dimen name="commom_font_size_small">25sp</dimen>
+    <dimen name="commom_font_size_big">40sp</dimen>
+    
+    <dimen name="commom_padding">15dp</dimen>
+    <dimen name="small_padding">10dp</dimen>
+    <dimen name="thin_padding">4dp</dimen>
+    <dimen name="margin">25dp</dimen>
+    <dimen name="margin_top">55dp</dimen>
+    <dimen name="margin_bottom">70dp</dimen>
+    <dimen name="custom_layout_height">55dp</dimen>
+    <dimen name="association_text_height">100dp</dimen>
+    
+    <dimen name="image_guide_height">250dp</dimen>
+    <dimen name="image_guide_width">250dp</dimen>
+    <dimen name="row_profile_image_height">110dp</dimen>
+    <dimen name="row_profile_image_width">110dp</dimen>
+    
+    <dimen name="home_button_thumbnail_size">195dp</dimen>
+    <dimen name="row_separator">30dp</dimen>
+
+</resources>

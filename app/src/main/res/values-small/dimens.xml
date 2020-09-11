@@ -1,0 +1,27 @@
+<resources>
+    
+    <dimen name="app_name_font_size">35sp</dimen>
+    <dimen name="title_font_size">30sp</dimen>
+    <dimen name="commom_font_size">20sp</dimen>
+    <dimen name="commom_font_size_small">18sp</dimen>
+    <dimen name="commom_font_size_big">22sp</dimen>
+    
+    <dimen name="commom_padding">10dp</dimen>
+    <dimen name="small_padding">5dp</dimen>
+    <dimen name="thin_padding">2dp</dimen>
+    <dimen name="margin">15dp</dimen>
+    <dimen name="margin_top">45dp</dimen>
+    <dimen name="margin_bottom">60dp</dimen>
+    <dimen name="custom_layout_height">44dp</dimen>    
+    <dimen name="association_text_height">54dp</dimen>
+    
+    <dimen name="image_guide_height">135dp</dimen>
+    <dimen name="image_guide_width">135dp</dimen>
+    <dimen name="row_profile_image_height">70dp</dimen>
+    <dimen name="row_profile_image_width">70dp</dimen>
+    
+    
+    <dimen name="home_button_thumbnail_size">90dp</dimen>
+    <dimen name="row_separator">15dp</dimen>
+
+</resources>
