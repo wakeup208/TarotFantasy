@@ -40,11 +40,11 @@ public class BrowseCardsActivity extends FragmentActivity implements
 
 	public static BrowseCardsActivity instance;
 	private TextView tvTitle;
-	private Button btn_grid;
-	private Button btn_list;
-	private Button btn_associations;
-	private Button btn_minus;
-	private Button btn_plus;
+	private ImageView btn_grid;
+	private ImageView btn_list;
+	private ImageView btn_associations;
+	private ImageView btn_minus;
+	private ImageView btn_plus;
 
 	// Fragment to show Browse mode
 	GirdCardFragment mGridCardFragment;
@@ -69,19 +69,19 @@ public class BrowseCardsActivity extends FragmentActivity implements
 		tvTitle = (TextView) findViewById(R.id.tvTitle);
 		tvTitle.setTypeface(ConfigData.UVNCatBien_R);
 
-		btn_grid = (Button) findViewById(R.id.btn_grid);
+		btn_grid = (ImageView) findViewById(R.id.btn_grid);
 		btn_grid.setOnClickListener(this);
 
-		btn_list = (Button) findViewById(R.id.btn_list);
+		btn_list = (ImageView) findViewById(R.id.btn_list);
 		btn_list.setOnClickListener(this);
 
-		btn_associations = (Button) findViewById(R.id.btn_associations);
+		btn_associations = (ImageView) findViewById(R.id.btn_associations);
 		btn_associations.setOnClickListener(this);
 
-		btn_minus = (Button) findViewById(R.id.btn_minus);
+		btn_minus = (ImageView) findViewById(R.id.btn_minus);
 		btn_minus.setOnClickListener(this);
 
-		btn_plus = (Button) findViewById(R.id.btn_plus);
+		btn_plus = (ImageView) findViewById(R.id.btn_plus);
 		btn_plus.setOnClickListener(this);
 
 		// Replace container by mGridCardFragment
@@ -128,23 +128,23 @@ public class BrowseCardsActivity extends FragmentActivity implements
 
 		switch (ConfigData.BROWSER_MODE) {
 		case 0: // Grid view mode
-			btn_grid.setBackgroundResource(R.drawable.grid_selected);
-			btn_list.setBackgroundResource(R.drawable.btn_list);
-			btn_associations.setBackgroundResource(R.drawable.btn_associations);
+			btn_grid.setImageResource(R.drawable.ic_grid_selected);
+			btn_list.setImageResource(R.drawable.ic_grid_list);
+			btn_associations.setImageResource(R.drawable.ic_grid_book);
 			btn_plus.setVisibility(View.VISIBLE);
 			btn_minus.setVisibility(View.VISIBLE);
 
 			if (ConfigData.ZOOM_LEVEL == 3) {
-				btn_plus.setBackgroundResource(R.drawable.plus_disable);
+				btn_plus.setImageResource(R.drawable.ic_grid_plus_dim);
 				btn_plus.setEnabled(false);
-				btn_minus.setBackgroundResource(R.drawable.btn_minus);
+				btn_minus.setImageResource(R.drawable.ic_grid_minus);
 				btn_minus.setEnabled(true);
 			}
 
 			if (ConfigData.ZOOM_LEVEL == 0) {
-				btn_minus.setBackgroundResource(R.drawable.minus_disable);
+				btn_minus.setImageResource(R.drawable.ic_grid_miuns_dim);
 				btn_minus.setEnabled(false);
-				btn_plus.setBackgroundResource(R.drawable.btn_plus);
+				btn_plus.setImageResource(R.drawable.ic_grid_plus);
 				btn_plus.setEnabled(true);
 			}
 
@@ -155,11 +155,15 @@ public class BrowseCardsActivity extends FragmentActivity implements
 					.replace(R.id.browse_container, mGridCardFragment).commit();
 			break;
 		case 1: // List view mode
-			btn_grid.setBackgroundResource(R.drawable.btn_grid);
-			btn_list.setBackgroundResource(R.drawable.list_selected);
-			btn_associations.setBackgroundResource(R.drawable.btn_associations);
-			btn_plus.setVisibility(View.INVISIBLE);
-			btn_minus.setVisibility(View.INVISIBLE);
+			btn_grid.setImageResource(R.drawable.ic_grid_selected);
+			btn_list.setImageResource(R.drawable.ic_grid_list);
+			btn_associations.setImageResource(R.drawable.ic_grid_book);
+			btn_plus.setImageResource(R.drawable.ic_grid_plus_dim);
+			btn_plus.setEnabled(false);
+			btn_minus.setImageResource(R.drawable.ic_grid_miuns_dim);
+			btn_minus.setEnabled(false);
+//			btn_plus.setVisibility(View.INVISIBLE);
+//			btn_minus.setVisibility(View.INVISIBLE);
 			if (mListViewCardFragment == null) {
 				mListViewCardFragment = new ListViewCardFragment();
 			}
@@ -168,12 +172,18 @@ public class BrowseCardsActivity extends FragmentActivity implements
 					.commit();
 			break;
 		case 2: // Group card mode
-			btn_grid.setBackgroundResource(R.drawable.btn_grid);
-			btn_list.setBackgroundResource(R.drawable.btn_list);
+			btn_grid.setImageResource(R.drawable.ic_grid_selected);
+			btn_list.setImageResource(R.drawable.ic_grid_list);
 			btn_associations
-					.setBackgroundResource(R.drawable.btn_associations_selected);
-			btn_plus.setVisibility(View.INVISIBLE);
-			btn_minus.setVisibility(View.INVISIBLE);
+					.setImageResource(R.drawable.ic_grid_book);
+//			btn_plus.setVisibility(View.INVISIBLE);
+//			btn_minus.setVisibility(View.INVISIBLE);
+
+			btn_plus.setImageResource(R.drawable.ic_grid_plus_dim);
+			btn_plus.setEnabled(false);
+			btn_minus.setImageResource(R.drawable.ic_grid_miuns_dim);
+			btn_minus.setEnabled(false);
+
 			if (mGoupCardFragment == null) {
 				mGoupCardFragment = new GoupCardFragment();
 			}
@@ -215,29 +225,29 @@ public class BrowseCardsActivity extends FragmentActivity implements
 
 		case R.id.btn_minus:
 			if (mGridCardFragment.zoomGridView('-') == false) {
-				btn_minus.setBackgroundResource(R.drawable.minus_disable);
+				btn_minus.setImageResource(R.drawable.ic_grid_miuns_dim);
 				btn_minus.setEnabled(false);
-				btn_plus.setBackgroundResource(R.drawable.btn_plus);
+				btn_plus.setImageResource(R.drawable.ic_grid_plus);
 				btn_plus.setEnabled(true);
 			} else {
-				btn_plus.setBackgroundResource(R.drawable.btn_plus);
+				btn_plus.setImageResource(R.drawable.ic_grid_plus);
 				btn_plus.setEnabled(true);
-				btn_minus.setBackgroundResource(R.drawable.btn_minus);
+				btn_minus.setImageResource(R.drawable.ic_grid_minus);
 				btn_minus.setEnabled(true);
 			}
 			break;
 
 		case R.id.btn_plus:
 			if (mGridCardFragment.zoomGridView('+') == false) {
-				btn_plus.setBackgroundResource(R.drawable.plus_disable);
+				btn_plus.setImageResource(R.drawable.ic_grid_plus_dim);
 				btn_plus.setEnabled(false);
-				btn_minus.setBackgroundResource(R.drawable.btn_minus);
+				btn_minus.setImageResource(R.drawable.ic_grid_minus);
 				btn_minus.setEnabled(true);
 			} else {
 
-				btn_plus.setBackgroundResource(R.drawable.btn_plus);
+				btn_plus.setImageResource(R.drawable.ic_grid_plus);
 				btn_plus.setEnabled(true);
-				btn_minus.setBackgroundResource(R.drawable.btn_minus);
+				btn_minus.setImageResource(R.drawable.ic_grid_minus);
 				btn_minus.setEnabled(true);
 			}
 			break;

@@ -97,7 +97,7 @@ public class ConfigData {
 
         if (UVNCatBien_R == null) {
             UVNCatBien_R = Typeface.createFromAsset(a.getApplicationContext()
-                    .getAssets(), "UVNCatBien_R.ttf");
+                    .getAssets(), "t4.ttf");
         }
 
         // Get data UI saved
@@ -110,7 +110,7 @@ public class ConfigData {
 
         // Load Background
         if (rbdBackground == null) {
-            rbdBackground = new RecyclingBitmapDrawable(appContext.getResources(), R.drawable.bg7, ConfigData.SCREEN_WIDTH, ConfigData.SCREEN_HEIGHT);
+            rbdBackground = new RecyclingBitmapDrawable(appContext.getResources(), R.drawable.bg8, ConfigData.SCREEN_WIDTH, ConfigData.SCREEN_HEIGHT);
         }
 
         // Load JSON
@@ -259,7 +259,7 @@ public class ConfigData {
 
         // Load Background
         rbdBackground = new RecyclingBitmapDrawable(appContext.getResources(),
-                R.drawable.bg7, ConfigData.SCREEN_WIDTH,
+                R.drawable.bg8, ConfigData.SCREEN_WIDTH,
                 ConfigData.SCREEN_HEIGHT);
     }
 }

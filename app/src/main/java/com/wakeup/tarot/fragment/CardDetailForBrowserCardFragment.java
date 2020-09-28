@@ -153,7 +153,7 @@ public class CardDetailForBrowserCardFragment extends Fragment implements
 		// btn_expand_reverse
 		final Button btn_expand_reverse = (Button) view
 				.findViewById(R.id.btn_expand_reverse);
-		btn_expand_reverse.setTypeface(ConfigData.UVNCatBien_R);
+		//btn_expand_reverse.setTypeface(ConfigData.UVNCatBien_R);
 		btn_expand_reverse.setTextSize(ConfigData.FONT_SIZE);
 		btn_expand_reverse.setTag(R.id.tvKeywordReverse, tvKeywordReverse);
 		btn_expand_reverse.setTag(R.id.ivDivider, ivDivider);
@@ -191,7 +191,7 @@ public class CardDetailForBrowserCardFragment extends Fragment implements
 		// btn_view_card_association
 		final Button btn_view_card_association = (Button) view
 				.findViewById(R.id.btn_view_card_association);
-		btn_view_card_association.setTypeface(ConfigData.UVNCatBien_R);
+		//btn_view_card_association.setTypeface(ConfigData.UVNCatBien_R);
 		btn_view_card_association.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -211,7 +211,7 @@ public class CardDetailForBrowserCardFragment extends Fragment implements
 
 		// btnSuit
 		final Button btnSuit = (Button) view.findViewById(R.id.btnSuit);
-		btnSuit.setTypeface(ConfigData.UVNCatBien_R);
+		//btnSuit.setTypeface(ConfigData.UVNCatBien_R);
 		btnSuit.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -265,7 +265,7 @@ public class CardDetailForBrowserCardFragment extends Fragment implements
 
 		// btnStar
 		final Button btnStar = (Button) view.findViewById(R.id.btnStar);
-		btnStar.setTypeface(ConfigData.UVNCatBien_R);
+		//btnStar.setTypeface(ConfigData.UVNCatBien_R);
 		btnStar.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -319,7 +319,7 @@ public class CardDetailForBrowserCardFragment extends Fragment implements
 
 		// btnNumber
 		final Button btnNumber = (Button) view.findViewById(R.id.btnNumber);
-		btnNumber.setTypeface(ConfigData.UVNCatBien_R);
+		//btnNumber.setTypeface(ConfigData.UVNCatBien_R);
 		btnNumber.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -374,7 +374,7 @@ public class CardDetailForBrowserCardFragment extends Fragment implements
 
 		// btnSymbol
 		final Button btnSymbol = (Button) view.findViewById(R.id.btnSymbol);
-		btnSymbol.setTypeface(ConfigData.UVNCatBien_R);
+		//btnSymbol.setTypeface(ConfigData.UVNCatBien_R);
 		btnSymbol.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {

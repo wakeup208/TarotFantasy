@@ -99,7 +99,7 @@ public class SpreadCardsActivity extends FragmentActivity implements
 
 		// Title
 		tvTitle = (TextView) findViewById(R.id.tvTitle);
-		tvTitle.setTypeface(ConfigData.UVNCatBien_R);
+		//tvTitle.setTypeface(ConfigData.UVNCatBien_R);
 		tvTitle.setText(SpreadCardJasonHelper.getSpreadName(spreadId));
 		tvTitle.setOnClickListener(this);
 

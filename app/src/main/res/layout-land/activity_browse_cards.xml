@@ -60,7 +60,7 @@
             <TableRow>
 
                 <Button
-                    android:id="@+id/btn_plus"
+                    android:id="@+id/btn_plus1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/small_padding"
@@ -70,7 +70,7 @@
             <TableRow>
 
                 <Button
-                    android:id="@+id/btn_minus"
+                    android:id="@+id/btn_minus1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/small_padding"
@@ -87,7 +87,7 @@
 
             <TableRow>
                 <Button
-                    android:id="@+id/btn_grid"
+                    android:id="@+id/btn_grid1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/small_padding"
@@ -97,7 +97,7 @@
             <TableRow>
 
                 <Button
-                    android:id="@+id/btn_list"
+                    android:id="@+id/btn_list1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/small_padding"
@@ -107,7 +107,7 @@
             <TableRow>
 
                 <Button
-                    android:id="@+id/btn_associations"
+                    android:id="@+id/btn_associations1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/small_padding"

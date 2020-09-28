@@ -130,7 +130,7 @@ public class CardImageSectionListViewAdapter extends BaseAdapter {
 			// return view in section
 			View rowViewSection = inflater.inflate(R.layout.row_section, parent, false);
 			TextView tvSection = (TextView) rowViewSection.findViewById(R.id.tvListViewSection);
-			tvSection.setTypeface(ConfigData.UVNCatBien_R);
+			//tvSection.setTypeface(ConfigData.UVNCatBien_R);
 
 			switch (realPosition) {
 
@@ -179,7 +179,7 @@ public class CardImageSectionListViewAdapter extends BaseAdapter {
 					R.layout.row_tarot_spread_image_with_text, parent, false);
 			TextView tvCardName = (TextView) rowView
 					.findViewById(R.id.tvListViewItemText);
-			tvCardName.setTypeface(ConfigData.UVNCatBien_R);
+			//tvCardName.setTypeface(ConfigData.UVNCatBien_R);
 
 			tvCardName.setText(CardsDetailJasonHelper
 					.getEnglishCardName(realPosition));

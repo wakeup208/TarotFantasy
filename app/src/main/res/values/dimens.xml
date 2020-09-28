@@ -1,14 +1,14 @@
 <resources>
     
-    <dimen name="app_name_font_size">42sp</dimen>
-    <dimen name="title_font_size">30sp</dimen>
-    <dimen name="commom_font_size">23sp</dimen>
+    <dimen name="app_name_font_size">42dp</dimen>
+    <dimen name="title_font_size">30dp</dimen>
+    <dimen name="commom_font_size">11dp</dimen>
     <dimen name="commom_font_size_small">19sp</dimen>
     <dimen name="commom_font_size_big">25sp</dimen>
     
     <dimen name="commom_padding">15dp</dimen>
     <dimen name="small_padding">5dp</dimen>
-    <dimen name="thin_padding">2dp</dimen>
+    <dimen name="thin_padding">10dp</dimen>
     <dimen name="margin">20dp</dimen>
     <dimen name="margin_top">45dp</dimen>
     <dimen name="margin_bottom">60dp</dimen>
@@ -23,5 +23,8 @@
     
     <dimen name="home_button_thumbnail_size">130dp</dimen>
     <dimen name="row_separator">30dp</dimen>
-    
+
+    <dimen name="card_heigh">110dp</dimen>
+    <dimen name="card_with">120dp</dimen>
+
 </resources>

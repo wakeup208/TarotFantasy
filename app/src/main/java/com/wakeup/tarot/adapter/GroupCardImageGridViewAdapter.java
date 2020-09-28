@@ -188,7 +188,7 @@ public class GroupCardImageGridViewAdapter extends BaseAdapter implements
 
 		TextView tvCellGridName = (TextView) view
 				.findViewById(R.id.tvCellGridName);
-		tvCellGridName.setTypeface(ConfigData.UVNCatBien_R);
+		//tvCellGridName.setTypeface(ConfigData.UVNCatBien_R);
 		tvCellGridName
 				.setText(MapData.arrGroupCardName[position - mNumColumns]);
 

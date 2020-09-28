@@ -54,7 +54,7 @@ public class GroupNumberImageGridViewAdapter extends BaseAdapter implements
 		}
 		TextView tvCellGridName = (TextView) view
 				.findViewById(R.id.tvCellGridName);
-		tvCellGridName.setTypeface(ConfigData.UVNCatBien_R);
+		//tvCellGridName.setTypeface(ConfigData.UVNCatBien_R);
 
 		tvCellGridName.setText(NumberJasonHelper.getTitle(position));
 

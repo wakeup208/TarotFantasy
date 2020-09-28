@@ -2,7 +2,8 @@
     xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
     <ImageView
         android:id="@+id/background"
@@ -25,7 +26,7 @@
         android:text="@string/app_name"
         android:textColor="@color/white"
         android:textSize="@dimen/app_name_font_size"
-        android:textStyle="bold"
+        android:fontFamily="@font/titlefont"
         android:typeface="serif" />
 
     <TableLayout
@@ -52,7 +53,7 @@
                     android:layout_width="@dimen/home_button_thumbnail_size"
                     android:layout_height="@dimen/home_button_thumbnail_size"
                     android:layout_gravity="center"
-                    android:background="@drawable/btn_drawcard" />
+                    android:background="@drawable/btn_drawcard_1" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -66,6 +67,7 @@
                     android:text="@string/draw_a_card"
                     android:textColor="@color/white"
                     android:textSize="@dimen/commom_font_size"
+                    android:fontFamily="@font/quicksand"
                     android:textStyle="normal"
                     android:typeface="serif" />
             </LinearLayout>
@@ -80,7 +82,7 @@
                     android:layout_width="@dimen/home_button_thumbnail_size"
                     android:layout_height="@dimen/home_button_thumbnail_size"
                     android:layout_gravity="center"
-                    android:background="@drawable/btn_spreadcard" />
+                    android:background="@drawable/btn_spreadcard_new" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -94,6 +96,7 @@
                     android:text="@string/cardspread"
                     android:textColor="@color/white"
                     android:textSize="@dimen/commom_font_size"
+                    android:fontFamily="@font/quicksand"
                     android:textStyle="normal"
                     android:typeface="serif" />
             </LinearLayout>
@@ -111,7 +114,7 @@
                     android:layout_width="@dimen/home_button_thumbnail_size"
                     android:layout_height="@dimen/home_button_thumbnail_size"
                     android:layout_gravity="center"
-                    android:background="@drawable/btn_encyclopedia" />
+                    android:background="@drawable/book_card" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -122,6 +125,7 @@
                     android:shadowDx="+2"
                     android:shadowDy="+2"
                     android:shadowRadius="2"
+                    android:fontFamily="@font/quicksand"
                     android:text="@string/encyclopedia"
                     android:textColor="@color/white"
                     android:textSize="@dimen/commom_font_size"
@@ -139,7 +143,7 @@
                     android:layout_width="@dimen/home_button_thumbnail_size"
                     android:layout_height="@dimen/home_button_thumbnail_size"
                     android:layout_gravity="center"
-                    android:background="@drawable/btn_profile_animation" />
+                    android:background="@drawable/settings" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -151,6 +155,7 @@
                     android:shadowDy="+2"
                     android:shadowRadius="2"
                     android:text="@string/galaxy_profile"
+                    android:fontFamily="@font/quicksand"
                     android:textColor="@color/white"
                     android:textSize="@dimen/commom_font_size"
                     android:textStyle="normal"

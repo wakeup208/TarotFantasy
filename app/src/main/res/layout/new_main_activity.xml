@@ -1,0 +1,224 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvAppName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/small_padding"
+            android:fontFamily="@font/titlefont"
+            android:gravity="center"
+            android:shadowColor="@color/text_shadow"
+            android:shadowDx="+2"
+            android:shadowDy="+2"
+            android:shadowRadius="2"
+            android:layout_marginBottom="16dp"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="@dimen/app_name_font_size"
+            android:typeface="serif" />
+
+        <LinearLayout
+            android:id="@+id/chonbai"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/card_heigh"
+            android:background="@drawable/linear_bg"
+            android:layout_marginLeft="4dp"
+            android:orientation="horizontal">
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:layout_width="@dimen/card_with"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/splast1"/>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:fontFamily="@font/quicksand"
+                android:textAlignment="center"
+                android:shadowColor="@color/text_shadow"
+                android:shadowDx="+2"
+                android:shadowDy="+2"
+                android:shadowRadius="2"
+                android:text="@string/draw_a_card"
+                android:textColor="@color/white"
+                android:textSize="@dimen/commom_font_size"
+                android:textStyle="normal"
+                android:typeface="serif" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/trabai"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/card_heigh"
+            android:background="@drawable/linear_bg"
+            android:orientation="horizontal"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="8dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:layout_width="@dimen/card_with"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/tra_bai"/>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:shadowColor="@color/text_shadow"
+                android:shadowDx="+2"
+                android:shadowDy="+2"
+                android:shadowRadius="2"
+                android:text="@string/cardspread"
+                android:textColor="@color/white"
+                android:textSize="@dimen/commom_font_size"
+                android:fontFamily="@font/quicksand"
+                android:textStyle="normal"
+                android:typeface="serif" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sotay"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/card_heigh"
+            android:orientation="horizontal"
+            android:layout_marginLeft="4dp"
+            android:background="@drawable/linear_bg"
+            android:layout_marginTop="8dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:layout_width="@dimen/card_with"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/so_tay"/>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:shadowColor="@color/text_shadow"
+                android:shadowDx="+2"
+                android:shadowDy="+2"
+                android:shadowRadius="2"
+                android:fontFamily="@font/quicksand"
+                android:text="@string/encyclopedia"
+                android:textColor="@color/white"
+                android:textSize="@dimen/commom_font_size"
+                android:textStyle="normal"
+                android:typeface="serif" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/hotro"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/card_heigh"
+            android:layout_marginLeft="4dp"
+            android:orientation="horizontal"
+            android:background="@drawable/linear_bg"
+            android:layout_marginTop="8dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:layout_width="@dimen/card_with"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/setting_1"/>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:shadowColor="@color/text_shadow"
+                android:shadowDx="+2"
+                android:shadowDy="+2"
+                android:shadowRadius="2"
+                android:text="@string/galaxy_profile"
+                android:fontFamily="@font/quicksand"
+                android:textColor="@color/white"
+                android:textSize="@dimen/commom_font_size"
+                android:textStyle="normal"
+                android:typeface="serif" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/ad_container"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+<!--        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            app:adSize="BANNER"
+            app:adUnitId="@string/banner_ad_unit_id" />-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:shadowColor="@color/text_shadow"
+            android:shadowDx="+2"
+            android:shadowDy="+2"
+            android:shadowRadius="2"
+            android:text="@string/galaxy_profile"
+            android:fontFamily="@font/quicksand"
+            android:textColor="@color/white"
+            android:textSize="@dimen/commom_font_size"
+            android:textStyle="normal"
+            android:typeface="serif" />
+    </RelativeLayout>
+</RelativeLayout>

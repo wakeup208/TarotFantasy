@@ -57,4 +57,8 @@
         <item name="android:drawSelectorOnTop">true</item>
     </style>
 
+    <style name="Roboto">
+        <item name="android:fontFamily">@font/quicksand</item>
+    </style>
+
 </resources>

@@ -61,7 +61,7 @@ public class CardViewFlipper extends ViewFlipper implements OnClickListener,
 			rotateDegree = 180;
 		}
 		
-		mSpreadCardsActivity.getImageLoader().loadImage(R.drawable.card_back + "_" + cardWidth + "_" + cardHeight + "_" + rotateDegree, ivBackCard);
+		mSpreadCardsActivity.getImageLoader().loadImage(R.drawable.card_back1 + "_" + cardWidth + "_" + cardHeight + "_" + rotateDegree, ivBackCard);
 		mSpreadCardsActivity.getImageLoader().loadImage(getCardId() + "_" + cardWidth + "_" + cardHeight + "_" + rotateDegree, ivFontCard);
 	}
 

@@ -86,7 +86,7 @@ public class CardDetailViewPagerForBrowserCardActivity extends
 		position = getIntent().getIntExtra("position", 0);
 
 		tvCardName = (TextView) findViewById(R.id.tvCardName);
-		tvCardName.setTypeface(ConfigData.UVNCatBien_R);
+		//tvCardName.setTypeface(ConfigData.UVNCatBien_R);
 		tvCardName.setText(CardsDetailJasonHelper.getEnglishCardName(position));
 
 		top_bar = (RelativeLayout) findViewById(R.id.top_bar);

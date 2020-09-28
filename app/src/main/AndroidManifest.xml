@@ -23,16 +23,17 @@
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".view.MainActivity">
+
+        </activity>
+
+        <activity android:name=".view.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <activity android:name=".view.SplashScreen">
         </activity>
         <activity android:name=".view.ChooseCardActivity"></activity>
         <activity android:name=".view.BrowseCardsActivity"></activity>
@@ -46,6 +47,7 @@
         <activity android:name=".view.CardDetailViewPagerForSpreadCardActivity"></activity>
         <activity android:name=".view.SingleCardActivity"></activity>
 
+        <receiver android:name=".receiver.MyNotificationPublisher"></receiver>
     </application>
 
 </manifest>

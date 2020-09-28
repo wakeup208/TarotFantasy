@@ -17,7 +17,7 @@ import javax.crypto.spec.DESKeySpec;
 public class FileEncryptor {
     private final static String key = "Olkf98KkdfkHhf83"; // needs to be at least 8 characters for DES
 
-    public static void main(String[] args) {
+//    public static void main(String[] args) {
 //        FileInputStream fis;
 //        FileOutputStream fos;
 //        try {
@@ -49,7 +49,7 @@ public class FileEncryptor {
 //        } catch (Throwable e) {
 //            e.printStackTrace();
 //        }
-    }
+//    }
 
     public static void encrypt(String key, InputStream is, OutputStream os)
             throws Throwable {

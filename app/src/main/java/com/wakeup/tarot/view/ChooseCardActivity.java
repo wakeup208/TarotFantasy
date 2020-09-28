@@ -77,11 +77,11 @@ public class ChooseCardActivity extends Activity implements OnClickListener,
 		card_height = card_width * 710 / 1232;
 		marginTop = (ConfigData.SCREEN_HEIGHT - padding - card_height) / 40;
 		cardBack = Utils.decodeSampledBitmapFromResource(getResources(),
-				R.drawable.card_back, card_width, card_height, 90);
+				R.drawable.card_back1, card_width, card_height, 90);
 
 		btnSkip = (Button) findViewById(R.id.btnSkip);
 		btnSkip.setOnClickListener(this);
-		btnSkip.setTypeface(ConfigData.UVNCatBien_R);
+		//btnSkip.setTypeface(ConfigData.UVNCatBien_R);
 
 		create78Card();
 

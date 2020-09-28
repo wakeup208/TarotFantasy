@@ -54,13 +54,13 @@ public class ItemGroupDetailActivity extends FragmentActivity implements
 		btn_home.setOnClickListener(this);
 
 		tvGroupName = (TextView) findViewById(R.id.tvGroupName);
-		tvGroupName.setTypeface(ConfigData.UVNCatBien_R);
+		//tvGroupName.setTypeface(ConfigData.UVNCatBien_R);
 		tvGroupName.setText(group_name);
 		tvGroupName.setTextSize(ConfigData.FONT_SIZE - 2);
 
 		tvItemGroupName = (TextView) findViewById(R.id.tvItemGroupName);
 		tvItemGroupName.setTextSize(ConfigData.FONT_SIZE);
-		tvItemGroupName.setTypeface(ConfigData.UVNCatBien_R);
+		//tvItemGroupName.setTypeface(ConfigData.UVNCatBien_R);
 
 		ivItemGroupImage = (ImageView) findViewById(R.id.ivItemGroupImage);
 

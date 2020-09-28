@@ -90,7 +90,7 @@ public class CardDetailViewPagerForSpreadCardActivity extends FragmentActivity
 		top_bar = (RelativeLayout) findViewById(R.id.top_bar);
 
 		tvCardName = (TextView) findViewById(R.id.tvCardName);
-		tvCardName.setTypeface(ConfigData.UVNCatBien_R);
+		//tvCardName.setTypeface(ConfigData.UVNCatBien_R);
 		tvCardName
 				.setText(CardsDetailJasonHelper
 						.getEnglishCardName(ConfigData.randomCardIdArray[cardClickedIndex]));

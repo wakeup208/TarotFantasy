@@ -31,13 +31,13 @@ public class ProfileActivity extends AppCompatActivity implements OnClickListene
 	private Button btnFeedbackAndDiscuss;
 	private Button btnAuthor;
 
-	private Button btnReverseCard;
+	private TextView btnReverseCard;
 	private CheckBox cbReverseCard;
 
-	private Button btnSoundOnOff;
+	private TextView btnSoundOnOff;
 	private CheckBox cbSoundOnOff;
 
-	private Button btnFontSize;
+	private TextView btnFontSize;
 	private TextView tvFontSize;
 
 	private Button btnDefault;
@@ -57,31 +57,31 @@ public class ProfileActivity extends AppCompatActivity implements OnClickListene
 		ConfigData.reloadScreen(this);
 
 		// Load background
-		((ImageView) findViewById(R.id.background))
-				.setBackgroundDrawable(ConfigData.rbdBackground);
+//		((ImageView) findViewById(R.id.background))
+//				.setBackgroundDrawable(ConfigData.rbdBackground);
 
 		// Look up the AdView as a resource and load a request.
 
 
-		tvProfileTitle = (TextView) findViewById(R.id.tvProfileTitle);
-		tvProfileTitle.setTypeface(ConfigData.UVNCatBien_R);
+//		tvProfileTitle = (TextView) findViewById(R.id.tvProfileTitle);
+//		tvProfileTitle.setTypeface(ConfigData.UVNCatBien_R);
 
-		btnBuyTarotCards = (Button) findViewById(R.id.btnBuyTarotCards);
-		btnBuyTarotCards.setOnClickListener(this);
+//		btnBuyTarotCards = (Button) findViewById(R.id.btnBuyTarotCards);
+//		btnBuyTarotCards.setOnClickListener(this);
+//
+//		btnFeedbackAndDiscuss = (Button) findViewById(R.id.btnFeedbackAndDiscuss);
+//		btnFeedbackAndDiscuss.setOnClickListener(this);
+//
+//		btnAuthor = (Button) findViewById(R.id.btnAuthor);
+//		btnAuthor.setOnClickListener(this);
 
-		btnFeedbackAndDiscuss = (Button) findViewById(R.id.btnFeedbackAndDiscuss);
-		btnFeedbackAndDiscuss.setOnClickListener(this);
-
-		btnAuthor = (Button) findViewById(R.id.btnAuthor);
-		btnAuthor.setOnClickListener(this);
-
-		btnReverseCard = (Button) findViewById(R.id.btnReverseCard);
+		btnReverseCard = (TextView) findViewById(R.id.btnReverseCard);
 		btnReverseCard.setOnClickListener(this);
 
-		btnSoundOnOff = (Button) findViewById(R.id.btnSoundOnOff);
+		btnSoundOnOff = (TextView) findViewById(R.id.btnSoundOnOff);
 		btnSoundOnOff.setOnClickListener(this);
 
-		btnFontSize = (Button) findViewById(R.id.btnFontSize);
+		btnFontSize = (TextView) findViewById(R.id.btnFontSize);
 		btnFontSize.setOnClickListener(this);
 
 		cbReverseCard = (CheckBox) findViewById(R.id.cbReverseCard);
@@ -300,8 +300,8 @@ public class ProfileActivity extends AppCompatActivity implements OnClickListene
 	@Override
 	protected void onResume() {
 		// Load background
-		((ImageView) findViewById(R.id.background))
-				.setBackground(ConfigData.rbdBackground);
+//		((ImageView) findViewById(R.id.background))
+//				.setBackground(ConfigData.rbdBackground);
 
 		super.onResume();
 	}

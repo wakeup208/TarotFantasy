@@ -22,7 +22,7 @@
             android:layout_gravity="center"
             android:clickable="true"
             android:gravity="center"
-            android:src="@drawable/card_back" />
+            android:src="@drawable/card_back1" />
 
         <ImageView
             android:id="@+id/ivFontCard"

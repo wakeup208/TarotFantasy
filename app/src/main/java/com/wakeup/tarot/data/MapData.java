@@ -173,8 +173,8 @@ public class MapData {
 	// Map Group card --> R.id of image in drawable folder
 	public static int[] arrGroupCardImage_R_Id = {
 		R.drawable.symbol_cup,
-		R.drawable.astrology_sagittarius,
-		R.drawable.number_05,
+		R.drawable.hoangdao_songngu,
+		R.drawable.nn_4,
 		R.drawable.symbol_sun,
 	};
 	// Map Group card --> Name of group
@@ -196,48 +196,48 @@ public class MapData {
 	
 	// Map Group card --> R.id of image in drawable folder
 	public static int[] arrGroupStarCardImage_R_Id = {
-		R.drawable.planet_uranus,
-		R.drawable.planet_mercury,
-		R.drawable.planet_moon,
-		R.drawable.planet_venus,
-		R.drawable.planet_jupiter,
-		R.drawable.planet_neptune,
-		R.drawable.planet_mars,
-		R.drawable.planet_sun,
-		R.drawable.planet_pluto,
-		R.drawable.planet_saturn,
-		R.drawable.astrology_aries,
-		R.drawable.astrology_taurus,
-		R.drawable.astrology_gemini,
-		R.drawable.astrology_cancer,
-		R.drawable.astrology_leo,
-		R.drawable.astrology_virgo,
-		R.drawable.astrology_libra,
-		R.drawable.astrology_scorpio,
-		R.drawable.astrology_sagittarius,
-		R.drawable.astrology_capricorn,
-		R.drawable.astrology_aquarius,
-		R.drawable.astrology_pisces
+		R.drawable.p_uranus,
+		R.drawable.p_mercurius,
+		R.drawable.p_luna,
+		R.drawable.p_venu,
+		R.drawable.p_jupiter,
+		R.drawable.p_neptunus,
+		R.drawable.p_mars,
+		R.drawable.p_sol,
+		R.drawable.p_pluto,
+		R.drawable.p_saturnus,
+		R.drawable.hoangdao_bachduong,
+		R.drawable.hoangdao_kimnguu,
+		R.drawable.hoangdao_songsinh,
+		R.drawable.cancer,
+		R.drawable.hoangdao_sutu,
+		R.drawable.hoangdao_xunu,
+		R.drawable.hoangdao_thienbinh,
+		R.drawable.hoangdao_bocap,
+		R.drawable.hoangdao_nhanma,
+		R.drawable.hoangdao_maket,
+		R.drawable.hoangdao_baobinh,
+		R.drawable.hoangdao_songngu
 	};
 	
 	
 	// Map Group Number card --> R.id of Number card image
 	public static int[] arrGroupNumberCardImage_R_Id = {
-		R.drawable.number_00,
-		R.drawable.number_01,
-		R.drawable.number_02,
-		R.drawable.number_03,
-		R.drawable.number_04,
-		R.drawable.number_05,
-		R.drawable.number_06,
-		R.drawable.number_07,
-		R.drawable.number_08,
-		R.drawable.number_09,
-		R.drawable.number_10,
-		R.drawable.number_page,
-		R.drawable.number_knight,
-		R.drawable.number_queen,
-		R.drawable.number_king		
+		R.drawable.nn_0,
+		R.drawable.nn_1,
+		R.drawable.nn_2,
+		R.drawable.nn_3,
+		R.drawable.nn_4,
+		R.drawable.nn_5,
+		R.drawable.nn_6,
+		R.drawable.nn_7,
+		R.drawable.nn_8,
+		R.drawable.nn_9,
+		R.drawable.nn_10,
+		R.drawable.n_page,
+		R.drawable.n_horse,
+		R.drawable.n_queen,
+		R.drawable.n_king
 	};
 	
 	
