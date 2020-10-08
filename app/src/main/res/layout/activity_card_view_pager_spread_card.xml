@@ -39,12 +39,12 @@
             android:layout_gravity="center"
             android:layout_margin="4dp"
             android:gravity="center_vertical|center_horizontal"
+            android:text="@string/browse_cards"
+            android:textColor="#b23ad0"
             android:shadowColor="@color/text_shadow"
             android:shadowDx="+2"
             android:shadowDy="+2"
             android:shadowRadius="2"
-            android:text="@string/browse_cards"
-            android:textColor="@color/white"
             android:textSize="@dimen/title_font_size"
             android:textStyle="bold" />
     </RelativeLayout>
@@ -61,7 +61,7 @@
         <TableLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:orientation="horizontal"
             android:padding="@dimen/thin_padding" >
 
@@ -71,30 +71,34 @@
                     android:id="@+id/btn_card_spread"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/commom_padding"
-                    android:background="@drawable/btn_card_spread_selected" />
+                    android:layout_marginEnd="@dimen/commom_padding"
+                    android:background="@drawable/btn_card_spread_selected"
+                    style="?android:attr/buttonBarButtonStyle" />
                 
                 <Button
                     android:id="@+id/btn_card_interpretation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/commom_padding"
-                    android:background="@drawable/btn_card_interpretation" />
+                    android:layout_marginEnd="@dimen/commom_padding"
+                    android:background="@drawable/btn_card_interpretation"
+                    style="?android:attr/buttonBarButtonStyle" />
 
                 <Button
                     android:id="@+id/btn_associations"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/commom_padding"
-                    android:background="@drawable/btn_associations" />
+                    android:layout_marginEnd="@dimen/commom_padding"
+                    android:background="@drawable/btn_associations"
+                    style="?android:attr/buttonBarButtonStyle" />
 
                 <Button
                     android:id="@+id/btn_shop"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/commom_padding"
+                    android:layout_marginEnd="@dimen/commom_padding"
                     android:background="@drawable/btn_shop"
-                    android:visibility="gone" />
+                    android:visibility="gone"
+                    style="?android:attr/buttonBarButtonStyle" />
             </TableRow>
         </TableLayout>
     </RelativeLayout>

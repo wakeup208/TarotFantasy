@@ -33,8 +33,12 @@
                 android:text="Nội dung keywords"
                 android:textColor="#fff9e34c"
                 android:textSize="@dimen/commom_font_size"
-                android:textStyle="bold"
-                android:typeface="serif" />
+                android:textStyle="normal"
+                android:typeface="serif"
+                android:shadowColor="@color/text_shadow"
+                android:shadowDx="+2"
+                android:shadowDy="+2"
+                android:shadowRadius="2" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -43,15 +47,24 @@
                 android:layout_marginTop="@dimen/commom_padding"
                 android:background="@drawable/black_white_gradient" />
 
+<!--
+            android:layout_marginRight="@dimen/commom_padding"
+-->
+
             <TextView
                 android:id="@+id/tvForward"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"                
-                android:layout_marginLeft="@dimen/commom_padding"
-                android:layout_marginRight="@dimen/commom_padding"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:text="Nội dung Interpretation"
                 android:textColor="@color/white"
                 android:textSize="@dimen/commom_font_size"
+                android:shadowColor="@color/text_shadow"
+                android:shadowDx="+2"
+                android:shadowDy="+2"
+                android:shadowRadius="2"
+                android:textStyle="normal"
                 android:typeface="serif" />
 
             <Button
@@ -60,13 +73,16 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="#00000000"
-                android:drawableLeft="@drawable/expand_item"
+                android:fontFamily="@font/quicksand"
+                android:drawableStart="@drawable/expand_item"
                 android:gravity="center_vertical"
                 android:padding="@dimen/small_padding"
                 android:text="@string/reverse_keywords"
-                android:textColor="#ff1166ff"
+                android:textAllCaps="false"
+                android:textColor="#b23ad0"
                 android:textSize="@dimen/commom_font_size"
-                android:textStyle="bold" />
+                android:textStyle="normal"
+                android:typeface="serif" />
 
             <TextView
                 android:id="@+id/tvKeywordReverse"
@@ -79,7 +95,12 @@
                 android:textColor="#fff9e34c"
                 android:textSize="@dimen/commom_font_size"
                 android:typeface="serif"
-                android:visibility="gone" />
+                android:visibility="gone"
+                android:shadowColor="@color/text_shadow"
+                android:shadowDx="+2"
+                android:shadowDy="+2"
+                android:shadowRadius="2"
+                android:textStyle="normal" />
 
             <ImageView
                 android:id="@+id/ivDivider"
@@ -100,8 +121,13 @@
                 android:text="Nội dung Reseves"
                 android:textColor="@color/white"
                 android:textSize="@dimen/commom_font_size"
-                android:typeface="serif"
-                android:visibility="gone" />
+                android:visibility="gone"
+                android:shadowColor="@color/text_shadow"
+                android:shadowDx="+2"
+                android:shadowDy="+2"
+                android:shadowRadius="2"
+                android:textStyle="normal"
+                android:typeface="serif" />
 
             <Button
                 android:id="@+id/btn_view_card_association"
@@ -109,12 +135,14 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/margin"
-                android:background="@drawable/button"
+                android:background="@drawable/btn_press"
                 android:padding="@dimen/small_padding"
                 android:text="@string/btn_view_card_associations"
+                android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="@dimen/commom_font_size"
-                android:textStyle="bold" />
+                android:textStyle="normal"
+                android:typeface="serif" />
 
             <ImageView
                 android:id="@+id/ivAd1"
@@ -128,7 +156,8 @@
                 android:background="@drawable/adportrait"
                 android:clickable="true"
                 android:onClick="onAdvertisementClick"
-                android:visibility="gone" />
+                android:visibility="gone"
+                android:focusable="true" />
         </LinearLayout>
     </ScrollView>
 
@@ -268,7 +297,8 @@
                 android:background="@drawable/adportrait"
                 android:clickable="true"
                 android:onClick="onAdvertisementClick"
-                android:visibility="gone" />
+                android:visibility="gone"
+                android:focusable="true" />
         </LinearLayout>
     </ScrollView>
 

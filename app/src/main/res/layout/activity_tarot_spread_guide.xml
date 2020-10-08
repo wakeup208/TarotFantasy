@@ -10,55 +10,6 @@
         android:layout_height="match_parent"
         android:scaleType="fitCenter" />
 
-    <!--    <RelativeLayout-->
-    <!--        android:id="@+id/bottom_bar"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_alignParentBottom="true" >-->
-
-    <!--        <TableLayout-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_centerHorizontal="true"-->
-    <!--            android:orientation="horizontal"-->
-    <!--            android:padding="@dimen/commom_padding"-->
-    <!--            android:stretchColumns="*" >-->
-
-    <!--            <TableRow android:paddingBottom="@dimen/small_padding" >-->
-
-    <!--                <Button-->
-    <!--                    android:id="@+id/btn_shuffle_cards"-->
-    <!--                    android:layout_width="wrap_content"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    android:background="@drawable/btn_press"-->
-    <!--                    android:ems="10"-->
-    <!--                    android:padding="@dimen/commom_padding"-->
-    <!--                    android:text="@string/btn_shuffle_cards"-->
-    <!--                    android:textColor="@color/white"-->
-    <!--                    android:textSize="@dimen/commom_font_size_big"-->
-    <!--                    android:textStyle="bold"-->
-    <!--                    android:typeface="serif" />-->
-    <!--            </TableRow>-->
-
-    <!--            <TableRow android:paddingTop="@dimen/small_padding" >-->
-
-    <!--                <Button-->
-    <!--                    android:id="@+id/btn_go_directly_to_spread"-->
-    <!--                    android:layout_width="wrap_content"-->
-    <!--                    android:layout_height="wrap_content"-->
-    <!--                    android:background="@drawable/btn_press"-->
-    <!--                    android:ems="10"-->
-    <!--                    android:padding="@dimen/commom_padding"-->
-    <!--                    android:text="@string/btn_go_directly_to_spread"-->
-    <!--                    android:textColor="@color/white"-->
-    <!--                    android:textSize="@dimen/commom_font_size_big"-->
-    <!--                    android:textStyle="bold"-->
-    <!--                    android:typeface="serif" />-->
-    <!--            </TableRow>-->
-    <!--        </TableLayout>-->
-    <!--    </RelativeLayout>-->
-
-
     <LinearLayout
         android:id="@+id/bottom_bar"
         android:layout_width="match_parent"
@@ -83,7 +34,8 @@
             android:shadowDy="+2"
             android:shadowRadius="2"
             android:textSize="30dp"
-            android:textStyle="bold"
+            android:textStyle="normal"
+            android:textAllCaps="false"
             android:typeface="serif" />
 
         <Button
@@ -99,9 +51,10 @@
             android:shadowDy="+2"
             android:shadowRadius="2"
             android:text="@string/btn_go_directly_to_spread"
+            android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="30dp"
-            android:textStyle="bold"
+            android:textStyle="normal"
             android:typeface="serif" />
 
     </LinearLayout>
@@ -131,15 +84,15 @@
                 android:shadowRadius="2"
                 android:text="Spread guide"
                 android:fontFamily="@font/quicksand"
-                android:textColor="@color/white"
+                android:textColor="#b23ad0"
                 android:textSize="@dimen/title_font_size"
                 android:textStyle="bold"
                 android:typeface="serif" />
 
             <ImageView
                 android:id="@+id/ivTarotSpread"
-                android:layout_width="@dimen/image_guide_width"
-                android:layout_height="161dp"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:padding="@dimen/commom_padding" />
@@ -158,6 +111,7 @@
                 android:shadowDx="+2"
                 android:shadowDy="+2"
                 android:shadowRadius="2"
+                android:textStyle="normal"
                 android:typeface="serif" />
         </LinearLayout>
     </ScrollView>

@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">TarotCards</string>
+
+    <string name="intro">Hãy thư giãn và rút lá bài</string>
+
     <string name="action_settings">Cài đặt</string>
     <string name="hello_world">Hello world!</string>
     <string name="draw_a_card">Rút một lá bài</string>
@@ -29,6 +32,10 @@
     <string name="reverse_interpretations">Giải thích ngược</string>
     <string name="btn_view_card_interpretation">Giải thích lá bài</string>
     <string name="btn_view_card_associations">Sự kết hợp</string>
+
+    <string name="dao_nguoc_bai">Đảo ngược bài</string>
+    <string name="am_thanh">Âm thanh</string>
+    <string name="font_size">Kích cỡ Font chữ</string>
 
     <string name="section_of_Major_Arcana">Major Arcana</string>
     <string name="section_of_Suit_of_Wands">Suit of Wands</string>

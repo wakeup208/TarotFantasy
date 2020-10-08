@@ -35,7 +35,7 @@ import com.wakeup.tarot.adapter.CardImageGridViewAdapter;
 public class BrowseCardsActivity extends FragmentActivity implements
 		OnClickListener {
 
-	public static Context mContext;
+	public  Context mContext;
 	private static final String BROWSE_CARD_IMAGE_CACHE_DIR = "browse_card_image_cache";
 
 	public static BrowseCardsActivity instance;
@@ -106,14 +106,14 @@ public class BrowseCardsActivity extends FragmentActivity implements
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-		
+		instance = null;
 	}
 	
 	@Override
 	protected void onResume() {
 		// Load background
 		((ImageView) findViewById(R.id.background))
-				.setBackgroundDrawable(ConfigData.rbdBackground);
+				.setBackground(ConfigData.rbdBackground);
 		super.onResume();
 	}
 
@@ -128,12 +128,13 @@ public class BrowseCardsActivity extends FragmentActivity implements
 
 		switch (ConfigData.BROWSER_MODE) {
 		case 0: // Grid view mode
-			btn_grid.setImageResource(R.drawable.ic_grid_selected);
+			btn_grid.setImageResource(R.drawable.ic_grid_press);
 			btn_list.setImageResource(R.drawable.ic_grid_list);
 			btn_associations.setImageResource(R.drawable.ic_grid_book);
-			btn_plus.setVisibility(View.VISIBLE);
-			btn_minus.setVisibility(View.VISIBLE);
-
+			btn_plus.setImageResource(R.drawable.ic_grid_plus);
+			btn_plus.setEnabled(true);
+			btn_minus.setImageResource(R.drawable.ic_grid_minus);
+			btn_minus.setEnabled(true);
 			if (ConfigData.ZOOM_LEVEL == 3) {
 				btn_plus.setImageResource(R.drawable.ic_grid_plus_dim);
 				btn_plus.setEnabled(false);
@@ -156,7 +157,7 @@ public class BrowseCardsActivity extends FragmentActivity implements
 			break;
 		case 1: // List view mode
 			btn_grid.setImageResource(R.drawable.ic_grid_selected);
-			btn_list.setImageResource(R.drawable.ic_grid_list);
+			btn_list.setImageResource(R.drawable.ic_list_press);
 			btn_associations.setImageResource(R.drawable.ic_grid_book);
 			btn_plus.setImageResource(R.drawable.ic_grid_plus_dim);
 			btn_plus.setEnabled(false);
@@ -175,7 +176,7 @@ public class BrowseCardsActivity extends FragmentActivity implements
 			btn_grid.setImageResource(R.drawable.ic_grid_selected);
 			btn_list.setImageResource(R.drawable.ic_grid_list);
 			btn_associations
-					.setImageResource(R.drawable.ic_grid_book);
+					.setImageResource(R.drawable.ic_book_press);
 //			btn_plus.setVisibility(View.INVISIBLE);
 //			btn_minus.setVisibility(View.INVISIBLE);
 
@@ -754,8 +755,7 @@ public class BrowseCardsActivity extends FragmentActivity implements
 						@Override
 						public void onGlobalLayout() {
 							// TODO Auto-generated method stub
-							int mNumColumns = mGridView.getWidth()
-									/ getCellWidth();
+							int mNumColumns = 2;
 							mGroupCardImageGridViewAdapter
 									.setNumColumns(mNumColumns);
 

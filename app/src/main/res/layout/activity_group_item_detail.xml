@@ -28,12 +28,17 @@
             android:text="name"
             android:textColor="@color/white"
             android:textSize="@dimen/commom_font_size_big"
-            android:typeface="serif" />
+            android:typeface="serif"
+            android:shadowColor="@color/text_shadow"
+            android:shadowDx="+2"
+            android:shadowDy="+2"
+            android:shadowRadius="2"
+           android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/ivItemGroupImage"
-            android:layout_width="@dimen/image_guide_height"
-            android:layout_height="@dimen/image_guide_height"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
             android:background="@color/white"
             android:layout_gravity="center" />
     </LinearLayout>
@@ -59,7 +64,12 @@
                 android:gravity="center"
                 android:textColor="@color/white"
                 android:textSize="@dimen/commom_font_size"
-                android:typeface="serif" />
+                android:typeface="serif"
+                android:shadowColor="@color/text_shadow"
+                android:shadowDx="+2"
+                android:shadowDy="+2"
+                android:shadowRadius="2"
+               android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/ivSeparateBar"
@@ -79,6 +89,11 @@
                 android:textColor="#fbfd34"
                 android:textSize="@dimen/commom_font_size"
                 android:typeface="serif"
+                android:shadowColor="@color/text_shadow"
+                android:shadowDx="+2"
+                android:shadowDy="+2"
+                android:shadowRadius="2"
+                android:textStyle="bold"
                 android:visibility="gone" />
             
             <TextView
@@ -91,8 +106,8 @@
         android:id="@+id/top_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
         android:layout_alignParentTop="true"
+        android:layout_margin="4dp"
         android:background="@color/color_bar" >
 
         <ImageButton
@@ -100,7 +115,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:background="@drawable/btn_home"
+            android:background="@drawable/btn_home_new"
             android:scaleType="centerCrop" />
 
         <TextView
@@ -109,12 +124,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
+            android:text="@string/browse_cards"
+            android:textColor="#b23ad0"
+            android:fontFamily="@font/quicksand"
             android:shadowColor="@color/text_shadow"
             android:shadowDx="+2"
             android:shadowDy="+2"
             android:shadowRadius="2"
-            android:text="@string/browse_cards"
-            android:textColor="@color/white"
             android:textSize="@dimen/title_font_size"
             android:textStyle="bold"
             android:typeface="serif" />

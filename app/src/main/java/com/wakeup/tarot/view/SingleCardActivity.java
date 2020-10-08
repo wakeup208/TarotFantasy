@@ -128,7 +128,7 @@ public class SingleCardActivity extends FragmentActivity implements OnClickListe
 		ivFontCard.setOnClickListener(this);
 		
 		tvCardName = (TextView) findViewById(R.id.tvCardName);
-		//tvCardName.setTypeface(ConfigData.UVNCatBien_R);
+		tvCardName.setTypeface(ConfigData.UVNCatBien_R);
 		tvCardName.setText(CardsDetailJasonHelper
 				.getEnglishCardName(ConfigData.randOneCardId));
 
@@ -141,7 +141,7 @@ public class SingleCardActivity extends FragmentActivity implements OnClickListe
 		svCardSpread.setOnClickListener(this);
 		tvKeyWords = (TextView) findViewById(R.id.tvKeyWords);
 		tvKeyWords.setTextSize(ConfigData.FONT_SIZE);
-		//tvKeyWords.setTypeface(ConfigData.UVNCatBien_R);
+		tvKeyWords.setTypeface(ConfigData.UVNCatBien_R);
 		tvKeyWords.setOnClickListener(this);
 
 		tvKeyWordsDetail = (TextView) findViewById(R.id.tvKeyWordsDetail);
@@ -152,7 +152,7 @@ public class SingleCardActivity extends FragmentActivity implements OnClickListe
 
 		btn_expand_reverse_keywords = (Button) findViewById(R.id.btn_expand_reverse_keywords);
 		btn_expand_reverse_keywords.setTextSize(ConfigData.FONT_SIZE);
-		//btn_expand_reverse_keywords.setTypeface(ConfigData.UVNCatBien_R);
+		btn_expand_reverse_keywords.setTypeface(ConfigData.UVNCatBien_R);
 		btn_expand_reverse_keywords.setOnClickListener(this);
 
 		tvReverseKeyWordsDetail = (TextView) findViewById(R.id.tvReverseKeyWordsDetail);
@@ -163,13 +163,13 @@ public class SingleCardActivity extends FragmentActivity implements OnClickListe
 
 		btn_view_card_interpretation = (Button) findViewById(R.id.btn_view_card_interpretation);
 		btn_view_card_interpretation.setOnClickListener(this);
-		//btn_view_card_interpretation.setTypeface(ConfigData.UVNCatBien_R);
+		btn_view_card_interpretation.setTypeface(ConfigData.UVNCatBien_R);
 
 		svCardInterpretation = (ScrollView) findViewById(R.id.svCardInterpretation);
 		svCardInterpretation.setOnClickListener(this);
 		tvInterpretation = (TextView) findViewById(R.id.tvInterpretation);
 		tvInterpretation.setTextSize(ConfigData.FONT_SIZE);
-		//tvInterpretation.setTypeface(ConfigData.UVNCatBien_R);
+		tvInterpretation.setTypeface(ConfigData.UVNCatBien_R);
 		tvInterpretation.setOnClickListener(this);
 
 		tvInterpretationDetail = (TextView) findViewById(R.id.tvInterpretationDetail);
@@ -180,7 +180,7 @@ public class SingleCardActivity extends FragmentActivity implements OnClickListe
 
 		btn_expand_reverse_interpretation = (Button) findViewById(R.id.btn_expand_reverse_interpretation);
 		btn_expand_reverse_interpretation.setTextSize(ConfigData.FONT_SIZE);
-		//btn_expand_reverse_interpretation.setTypeface(ConfigData.UVNCatBien_R);
+		btn_expand_reverse_interpretation.setTypeface(ConfigData.UVNCatBien_R);
 		btn_expand_reverse_interpretation.setOnClickListener(this);
 		btn_view_card_associations = (Button) findViewById(R.id.btn_view_card_associations);
 		btn_view_card_associations.setOnClickListener(this);
@@ -190,7 +190,7 @@ public class SingleCardActivity extends FragmentActivity implements OnClickListe
 				.getReverse(ConfigData.randOneCardId));
 		tvReverseInterpretationDetail.setOnClickListener(this);
 
-		//btn_view_card_associations.setTypeface(ConfigData.UVNCatBien_R);
+		btn_view_card_associations.setTypeface(ConfigData.UVNCatBien_R);
 
 		// Load Scroll view for card associations info
 		svCardAssociations = (ScrollView) findViewById(R.id.svCardAssociations);
@@ -202,7 +202,7 @@ public class SingleCardActivity extends FragmentActivity implements OnClickListe
 		layoutSuit.setOnClickListener(this);
 		Button btnSuit = (Button) findViewById(R.id.btnSuit);
 		btnSuit.setOnClickListener(this);
-		//btnSuit.setTypeface(ConfigData.UVNCatBien_R);
+		btnSuit.setTypeface(ConfigData.UVNCatBien_R);
 		TableLayout suitTable = (TableLayout) findViewById(R.id.suitTable);
 		suitTable.setOnClickListener(this);
 		String[] arrSuitId = CardsDetailJasonHelper.getSuitIds(ConfigData.randOneCardId);
@@ -241,7 +241,7 @@ public class SingleCardActivity extends FragmentActivity implements OnClickListe
 		layoutStar.setOnClickListener(this);
 		Button btnStar = (Button) findViewById(R.id.btnStar);
 		btnStar.setOnClickListener(this);
-		//btnStar.setTypeface(ConfigData.UVNCatBien_R);
+		btnStar.setTypeface(ConfigData.UVNCatBien_R);
 		TableLayout starTable = (TableLayout) findViewById(R.id.starTable);
 		starTable.setOnClickListener(this);
 		String[] arrStarId = CardsDetailJasonHelper.getStarIds(ConfigData.randOneCardId);
@@ -279,7 +279,7 @@ public class SingleCardActivity extends FragmentActivity implements OnClickListe
 		layoutNumber.setOnClickListener(this);
 		Button btnNumber = (Button) findViewById(R.id.btnNumber);
 		btnNumber.setOnClickListener(this);
-		//btnNumber.setTypeface(ConfigData.UVNCatBien_R);
+		btnNumber.setTypeface(ConfigData.UVNCatBien_R);
 		TableLayout numberTable = (TableLayout) findViewById(R.id.numberTable);
 		numberTable.setOnClickListener(this);
 		String[] arrNumberId = CardsDetailJasonHelper.getNumberIds(ConfigData.randOneCardId);
@@ -317,7 +317,7 @@ public class SingleCardActivity extends FragmentActivity implements OnClickListe
 		layoutSymbol.setOnClickListener(this);
 		Button btnSymbol = (Button) findViewById(R.id.btnSymbol);
 		btnSymbol.setOnClickListener(this);
-		//btnSymbol.setTypeface(ConfigData.UVNCatBien_R);
+		btnSymbol.setTypeface(ConfigData.UVNCatBien_R);
 		TableLayout symbolTable = (TableLayout) findViewById(R.id.symbolTable);
 		symbolTable.setOnClickListener(this);
 		String[] arrSymbolId = CardsDetailJasonHelper.getSymbolIds(ConfigData.randOneCardId);
@@ -569,7 +569,7 @@ public class SingleCardActivity extends FragmentActivity implements OnClickListe
 		mImageLoader.setExitTasksEarly(false);
 		// Load background
 		((ImageView) findViewById(R.id.background))
-		.setBackgroundDrawable(ConfigData.rbdBackground);
+		.setBackground(ConfigData.rbdBackground);
 	}
 
 	@Override

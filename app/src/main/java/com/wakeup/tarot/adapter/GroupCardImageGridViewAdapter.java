@@ -188,7 +188,7 @@ public class GroupCardImageGridViewAdapter extends BaseAdapter implements
 
 		TextView tvCellGridName = (TextView) view
 				.findViewById(R.id.tvCellGridName);
-		//tvCellGridName.setTypeface(ConfigData.UVNCatBien_R);
+		tvCellGridName.setTypeface(ConfigData.UVNCatBien_R);
 		tvCellGridName
 				.setText(MapData.arrGroupCardName[position - mNumColumns]);
 
@@ -214,6 +214,7 @@ public class GroupCardImageGridViewAdapter extends BaseAdapter implements
 	public boolean onTouch(View v, MotionEvent event) {
 		// TODO Auto-generated method stub
 		if (event.getAction() == MotionEvent.ACTION_DOWN) {
+			//v.performClick();
 			v.startAnimation(ConfigData.animation_button_press);
 		}
 

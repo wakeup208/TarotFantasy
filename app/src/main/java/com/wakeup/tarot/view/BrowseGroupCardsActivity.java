@@ -76,7 +76,7 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
 		int mode = this.getIntent().getExtras().getInt("mode");
 
 		tvTitle = (TextView) findViewById(R.id.tvTitle);
-		//tvTitle.setTypeface(ConfigData.UVNCatBien_R);
+		tvTitle.setTypeface(ConfigData.UVNCatBien_R);
 
 		btn_home = (ImageButton) findViewById(R.id.btn_home);
 		btn_home.setOnClickListener(this);
@@ -90,7 +90,7 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
 	protected void onResume() {
 		// Load background
 		((ImageView) findViewById(R.id.background))
-				.setBackgroundDrawable(ConfigData.rbdBackground);
+				.setBackground(ConfigData.rbdBackground);
 		super.onResume();
 	}
 	
@@ -192,7 +192,7 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
 			// The ImageFetcher takes care of loading images into our ImageView
 			// children asynchronously
 			mImageLoader = new ImageLoaderAsynch(getActivity());
-			mImageLoader.setImageSize((ConfigData.SCREEN_WIDTH - 50) / 3);
+			mImageLoader.setImageSize((ConfigData.SCREEN_WIDTH - 300) / 3);
 			mImageLoader.setLoadingImage(null);
 			mImageLoader.addImageCache(getActivity()
 					.getSupportFragmentManager(), cacheParams);
@@ -282,7 +282,7 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
 			// The ImageFetcher takes care of loading images into our ImageView
 			// children asynchronously
 			mImageLoader = new ImageLoaderAsynch(getActivity());
-			mImageLoader.setImageSize((ConfigData.SCREEN_WIDTH - 150) / 3);
+			mImageLoader.setImageSize((ConfigData.SCREEN_WIDTH - 300) / 3);
 			mImageLoader.setLoadingImage(null);
 			mImageLoader.addImageCache(getActivity()
 					.getSupportFragmentManager(), cacheParams);
@@ -375,7 +375,7 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
 			// The ImageFetcher takes care of loading images into our ImageView
 			// children asynchronously
 			mImageLoader = new ImageLoaderAsynch(getActivity());
-			mImageLoader.setImageSize((ConfigData.SCREEN_WIDTH - 50) / 3);
+			mImageLoader.setImageSize((ConfigData.SCREEN_WIDTH - 300) / 3);
 			mImageLoader.setLoadingImage(null);
 			mImageLoader.addImageCache(getActivity()
 					.getSupportFragmentManager(), cacheParams);
@@ -467,7 +467,7 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
 			// The ImageFetcher takes care of loading images into our ImageView
 			// children asynchronously
 			mImageLoader = new ImageLoaderAsynch(getActivity());
-			mImageLoader.setImageSize((ConfigData.SCREEN_WIDTH - 50) / 3);
+			mImageLoader.setImageSize((ConfigData.SCREEN_WIDTH - 300) / 3);
 			mImageLoader.setLoadingImage(null);
 			mImageLoader.addImageCache(getActivity()
 					.getSupportFragmentManager(), cacheParams);

@@ -81,7 +81,7 @@ public class ChooseCardActivity extends Activity implements OnClickListener,
 
 		btnSkip = (Button) findViewById(R.id.btnSkip);
 		btnSkip.setOnClickListener(this);
-		//btnSkip.setTypeface(ConfigData.UVNCatBien_R);
+		btnSkip.setTypeface(ConfigData.UVNCatBien_R);
 
 		create78Card();
 
@@ -93,7 +93,7 @@ public class ChooseCardActivity extends Activity implements OnClickListener,
 	protected void onResume() {
 		// Load background
 		((ImageView) findViewById(R.id.background))
-				.setBackgroundDrawable(ConfigData.rbdBackground);
+				.setBackground(ConfigData.rbdBackground);
 		super.onResume();
 	}
 
@@ -101,7 +101,7 @@ public class ChooseCardActivity extends Activity implements OnClickListener,
 
 		// Create 39 Cards right
 		int xRight = card_width + 2 * padding;
-		int i = 0;
+		int i ;
 		for (i = 0; i < 39; i++) {
 			ImageView card_top_right = new ImageView(this);
 			card_top_right.setClickable(true);
@@ -116,7 +116,7 @@ public class ChooseCardActivity extends Activity implements OnClickListener,
 
 		// Create 39 Cards left
 		int xLeft = padding;
-		int j = 0;
+		int j;
 		for (j = 0; j < 39; j++) {
 			ImageView card_top_left = new ImageView(this);
 			card_top_left.setClickable(true);
@@ -208,7 +208,6 @@ public class ChooseCardActivity extends Activity implements OnClickListener,
 			}
 
 			this.finish();
-			return;
 		}
 	}
 

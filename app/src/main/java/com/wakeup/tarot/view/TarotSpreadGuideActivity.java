@@ -41,21 +41,22 @@ public class TarotSpreadGuideActivity extends Activity implements
 		((ImageView) findViewById(R.id.background)).setBackgroundDrawable(ConfigData.rbdBackground);
 		
 		btn_shuffle_cards = (Button) findViewById(R.id.btn_shuffle_cards);
-		//btn_shuffle_cards.setTypeface(ConfigData.UVNCatBien_R);
+		btn_shuffle_cards.setTypeface(ConfigData.UVNCatBien_R);
 		btn_shuffle_cards.setOnClickListener(this);
 
 		btn_go_directly_to_spread = (Button) findViewById(R.id.btn_go_directly_to_spread);
-		//btn_go_directly_to_spread.setTypeface(ConfigData.UVNCatBien_R);
+		btn_go_directly_to_spread.setTypeface(ConfigData.UVNCatBien_R);
 		btn_go_directly_to_spread.setOnClickListener(this);
 
 		tvTarotSpreadName = (TextView) findViewById(R.id.tvTarotSpreadName);
-		//tvTarotSpreadName.setTypeface(ConfigData.UVNCatBien_R);
+		tvTarotSpreadName.setTypeface(ConfigData.UVNCatBien_R);
 
 		ivTarotSpread = (ImageView) findViewById(R.id.ivTarotSpread);
 		ivTarotSpread.setOnClickListener(this);
 
 		tvTarotSpreadGuide = (TextView) findViewById(R.id.tvTarotSpreadGuide);
 		tvTarotSpreadGuide.setTextSize(ConfigData.FONT_SIZE);
+		tvTarotSpreadGuide.setTypeface(ConfigData.UVNCatBien_R);
 
 		spreadId = getIntent().getExtras().getInt("spreadId", 0);
 
@@ -96,7 +97,7 @@ public class TarotSpreadGuideActivity extends Activity implements
 	protected void onResume() {
 		// Load background
 		((ImageView) findViewById(R.id.background))
-				.setBackgroundDrawable(ConfigData.rbdBackground);
+				.setBackground(ConfigData.rbdBackground);
 		super.onResume();
 	}
 }

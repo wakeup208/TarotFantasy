@@ -4,90 +4,7 @@ package com.wakeup.tarot.data;
 import com.wakeup.tarot.R;
 
 public class MapData {
-	
-//	// Map Posision --> R.id of small images in drawable folder
-//	public static int[] arrCardImage_R_Id_small = {
-//		R.drawable.fool_small,
-//		R.drawable.magician_small,
-//		R.drawable.high_priestess_small,
-//		R.drawable.empress_small,
-//		R.drawable.emperor_small,
-//		R.drawable.hierophant_small,
-//		R.drawable.lovers_small,
-//		R.drawable.chariot_small,
-//		R.drawable.strength_small,
-//		R.drawable.hermit_small,
-//		R.drawable.wheel_of_fortune_small,
-//		R.drawable.justice_small,
-//		R.drawable.hanged_man_small,
-//		R.drawable.death_small,
-//		R.drawable.temperance_small,
-//		R.drawable.devil_small,
-//		R.drawable.tower_small,
-//		R.drawable.star_small,
-//		R.drawable.moon_small,
-//		R.drawable.sun_small,
-//		R.drawable.judgement_small,
-//		R.drawable.world_small,
-//		R.drawable.wands01_small,
-//		R.drawable.wands02_small,
-//		R.drawable.wands03_small,
-//		R.drawable.wands04_small,
-//		R.drawable.wands05_small,
-//		R.drawable.wands06_small,
-//		R.drawable.wands07_small,
-//		R.drawable.wands08_small,
-//		R.drawable.wands09_small,
-//		R.drawable.wands10_small,
-//		R.drawable.wands11_small,
-//		R.drawable.wands12_small,
-//		R.drawable.wands13_small,
-//		R.drawable.wands14_small,
-//		R.drawable.cups01_small,
-//		R.drawable.cups02_small,
-//		R.drawable.cups03_small,
-//		R.drawable.cups04_small,
-//		R.drawable.cups05_small,
-//		R.drawable.cups06_small,
-//		R.drawable.cups07_small,
-//		R.drawable.cups08_small,
-//		R.drawable.cups09_small,
-//		R.drawable.cups10_small,
-//		R.drawable.cups11_small,
-//		R.drawable.cups12_small,
-//		R.drawable.cups13_small,
-//		R.drawable.cups14_small,
-//		R.drawable.swords01_small,
-//		R.drawable.swords02_small,
-//		R.drawable.swords03_small,
-//		R.drawable.swords04_small,
-//		R.drawable.swords05_small,
-//		R.drawable.swords06_small,
-//		R.drawable.swords07_small,
-//		R.drawable.swords08_small,
-//		R.drawable.swords09_small,
-//		R.drawable.swords10_small,
-//		R.drawable.swords11_small,
-//		R.drawable.swords12_small,
-//		R.drawable.swords13_small,
-//		R.drawable.swords14_small,
-//		R.drawable.pents01_small,
-//		R.drawable.pents02_small,
-//		R.drawable.pents03_small,
-//		R.drawable.pents04_small,
-//		R.drawable.pents05_small,
-//		R.drawable.pents06_small,
-//		R.drawable.pents07_small,
-//		R.drawable.pents08_small,
-//		R.drawable.pents09_small,
-//		R.drawable.pents10_small,
-//		R.drawable.pents11_small,
-//		R.drawable.pents12_small,
-//		R.drawable.pents13_small,
-//		R.drawable.pents14_small
-//	};
 
-	
 	public static int[] arrCardImage_R_Id = {
 		R.drawable.fool,
 		R.drawable.magician,
@@ -172,10 +89,10 @@ public class MapData {
 	
 	// Map Group card --> R.id of image in drawable folder
 	public static int[] arrGroupCardImage_R_Id = {
-		R.drawable.symbol_cup,
-		R.drawable.hoangdao_songngu,
-		R.drawable.nn_4,
-		R.drawable.symbol_sun,
+		R.drawable.suit_png,
+		R.drawable.p_luna,
+		R.drawable.nn_3,
+		R.drawable.symbol_png,
 	};
 	// Map Group card --> Name of group
 	public static String[] arrGroupCardName = {
@@ -187,11 +104,11 @@ public class MapData {
 	
 	// Map Group card --> R.id of image in drawable folder
 	public static int[] arrGroupSuitCardImage_R_Id = {
-		R.drawable.symbol_majorarcana,
-		R.drawable.symbol_wand,
-		R.drawable.symbol_cup,
-		R.drawable.symbol_sword,
-		R.drawable.symbol_pentacle
+		R.drawable.s_majorarcana,
+		R.drawable.s_wands,
+		R.drawable.s_cup,
+		R.drawable.s_sword,
+		R.drawable.s_pentacles
 	};
 	
 	// Map Group card --> R.id of image in drawable folder
@@ -243,34 +160,34 @@ public class MapData {
 	
 	// Map Group Symbol --> R,id of image symbol
 	public static int[] arrGroupSymbolCardImage_R_Id = {
-			R.drawable.symbol_angel,
-			R.drawable.symbol_armor,
-			R.drawable.symbol_banner,
-			R.drawable.symbol_bird,
-			R.drawable.symbol_blindfold,
-			R.drawable.symbol_castle,
-			R.drawable.symbol_cat,
-			R.drawable.symbol_dog,
-			R.drawable.symbol_cup,
-			R.drawable.symbol_cloud,
-			R.drawable.symbol_cross,
-			R.drawable.symbol_crown,
-			R.drawable.symbol_feather,
-			R.drawable.symbol_garden,
-			R.drawable.symbol_horse,
-			R.drawable.symbol_lion,
-			R.drawable.symbol_moon,
-			R.drawable.symbol_mountain,
-			R.drawable.symbol_path,
-			R.drawable.symbol_pillar,
-			R.drawable.symbol_pool,
-			R.drawable.symbol_rose,
-			R.drawable.symbol_staff,
-			R.drawable.symbol_star,
-			R.drawable.symbol_sun,
-			R.drawable.symbol_sword,
-			R.drawable.symbol_throne,
-			R.drawable.symbol_tower			
+			R.drawable.s_angel	,
+			R.drawable.s_armor,
+			R.drawable.s_banner,
+			R.drawable.s_bird,
+			R.drawable.s_blindfold,
+			R.drawable.s_castle,
+			R.drawable.s_cat,
+			R.drawable.s_dog,
+			R.drawable.s_cup,
+			R.drawable.s_cloud,
+			R.drawable.s_cross,
+			R.drawable.s_crown,
+			R.drawable.s_feather,
+			R.drawable.s_garden,
+			R.drawable.s__horse,
+			R.drawable.s_lion,
+			R.drawable.s_moon,
+			R.drawable.s_mountain,
+			R.drawable.s_path,
+			R.drawable.s_pillar,
+			R.drawable.s_pool,
+			R.drawable.s_rose,
+			R.drawable.s__staff,
+			R.drawable.s_star,
+			R.drawable.s_sun,
+			R.drawable.s_sword,
+			R.drawable.s_throne,
+			R.drawable.s_tower
 	};
 
 	

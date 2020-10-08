@@ -22,7 +22,7 @@ import com.wakeup.tarot.data.SymbolJasonHelper;
 public class ItemGroupDetailActivity extends FragmentActivity implements
 		OnClickListener {
 
-	public static Context mContext;
+	public  Context mContext;
 	private ImageButton btn_home;
 
 	private TextView tvItemGroupName;
@@ -54,13 +54,13 @@ public class ItemGroupDetailActivity extends FragmentActivity implements
 		btn_home.setOnClickListener(this);
 
 		tvGroupName = (TextView) findViewById(R.id.tvGroupName);
-		//tvGroupName.setTypeface(ConfigData.UVNCatBien_R);
+		tvGroupName.setTypeface(ConfigData.UVNCatBien_R);
 		tvGroupName.setText(group_name);
 		tvGroupName.setTextSize(ConfigData.FONT_SIZE - 2);
 
 		tvItemGroupName = (TextView) findViewById(R.id.tvItemGroupName);
 		tvItemGroupName.setTextSize(ConfigData.FONT_SIZE);
-		//tvItemGroupName.setTypeface(ConfigData.UVNCatBien_R);
+		tvItemGroupName.setTypeface(ConfigData.UVNCatBien_R);
 
 		ivItemGroupImage = (ImageView) findViewById(R.id.ivItemGroupImage);
 
@@ -104,7 +104,6 @@ public class ItemGroupDetailActivity extends FragmentActivity implements
 			tvItemGroupDetail2.setTextSize(ConfigData.FONT_SIZE);
 			tvItemGroupDetail2.setVisibility(View.VISIBLE);
 			tvItemGroupDetail2.setText(StarJasonHelper.getSecondInfo(position));
-			return;
 		}
 	}
 
@@ -122,7 +121,7 @@ public class ItemGroupDetailActivity extends FragmentActivity implements
 	protected void onResume() {
 		// Load background
 		((ImageView) findViewById(R.id.background))
-				.setBackgroundDrawable(ConfigData.rbdBackground);
+				.setBackground(ConfigData.rbdBackground);
 		super.onResume();
 	}
 

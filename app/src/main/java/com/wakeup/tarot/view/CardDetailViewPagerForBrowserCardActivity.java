@@ -45,8 +45,8 @@ public class CardDetailViewPagerForBrowserCardActivity extends
 	private RelativeLayout top_bar;
 	private RelativeLayout bottom_bar;
 	private Button btn_home;
-	private Button btn_card_detail;
-	private Button btn_associations;
+	private ImageView btn_card_detail;
+	private ImageView btn_associations;
 	private Button btn_shop;
 	private int position;
 
@@ -78,7 +78,7 @@ public class CardDetailViewPagerForBrowserCardActivity extends
 
 		// Load background
 		((ImageView) findViewById(R.id.background))
-				.setBackgroundDrawable(ConfigData.rbdBackground);
+				.setBackground(ConfigData.rbdBackground);
 
 		/**
 		 *  Get component for control
@@ -86,26 +86,26 @@ public class CardDetailViewPagerForBrowserCardActivity extends
 		position = getIntent().getIntExtra("position", 0);
 
 		tvCardName = (TextView) findViewById(R.id.tvCardName);
-		//tvCardName.setTypeface(ConfigData.UVNCatBien_R);
+		tvCardName.setTypeface(ConfigData.UVNCatBien_R);
 		tvCardName.setText(CardsDetailJasonHelper.getEnglishCardName(position));
 
 		top_bar = (RelativeLayout) findViewById(R.id.top_bar);
 		
-		btn_home = (Button) findViewById(R.id.btn_home);
-		btn_home.setHeight(tvCardName.getHeight());
-		btn_home.setWidth(tvCardName.getHeight());
-		btn_home.setOnClickListener(this);
+//		btn_home = (Button) findViewById(R.id.btn_home);
+//		btn_home.setHeight(tvCardName.getHeight());
+//		btn_home.setWidth(tvCardName.getHeight());
+//		btn_home.setOnClickListener(this);
 
 		bottom_bar = (RelativeLayout) findViewById(R.id.bottom_bar);
 
-		btn_card_detail = (Button) findViewById(R.id.btn_card_detail);
+		btn_card_detail = (ImageView) findViewById(R.id.btn_card_detail);
 		btn_card_detail.setOnClickListener(this);
 
-		btn_associations = (Button) findViewById(R.id.btn_associations);
+		btn_associations = (ImageView) findViewById(R.id.btn_associations);
 		btn_associations.setOnClickListener(this);
 
-		btn_shop = (Button) findViewById(R.id.btn_shop);
-		btn_shop.setOnClickListener(this);
+//		btn_shop = (Button) findViewById(R.id.btn_shop);
+//		btn_shop.setOnClickListener(this);
 
 		
 		// Set up ViewPager and backing adapter
@@ -131,7 +131,7 @@ public class CardDetailViewPagerForBrowserCardActivity extends
 		mImageLoader.setExitTasksEarly(false);
 		// Load background
 		((ImageView) findViewById(R.id.background))
-		.setBackgroundDrawable(ConfigData.rbdBackground);
+		.setBackground(ConfigData.rbdBackground);
 	}
 
 	@Override
@@ -267,7 +267,7 @@ public class CardDetailViewPagerForBrowserCardActivity extends
 				.setBackgroundResource(R.drawable.btn_card_interpretation);
 		btn_associations
 				.setBackgroundResource(R.drawable.btn_associations_selected);
-		btn_shop.setBackgroundResource(R.drawable.btn_shop);
+//		btn_shop.setBackgroundResource(R.drawable.btn_shop);
 		visibleMode = 2;
 		updateShowHideDetailForViewPager();
 	}

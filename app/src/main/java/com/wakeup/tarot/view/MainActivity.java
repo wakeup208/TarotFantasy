@@ -61,10 +61,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Load background
         ((ImageView) findViewById(R.id.background))
-                .setBackgroundDrawable(ConfigData.rbdBackground);
+                .setBackground(ConfigData.rbdBackground);
 
         tvAppName = (TextView) findViewById(R.id.tvAppName);
-        //tvAppName.setTypeface(ConfigData.UVNCatBien_R);
+        tvAppName.setTypeface(ConfigData.UVNCatBien_R);
 
         btn_drawcard = (LinearLayout) findViewById(R.id.chonbai);
         //btn_drawcard.setTypeface(ConfigData.UVNCatBien_R);
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onResume() {
         // Load background
         ((ImageView) findViewById(R.id.background))
-                .setBackgroundDrawable(ConfigData.rbdBackground);
+                .setBackground(ConfigData.rbdBackground);
 
         super.onResume();
     }

@@ -7,7 +7,8 @@
         android:id="@+id/background"
         android:scaleType="fitCenter"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:contentDescription="TODO" />
 
     <AbsoluteLayout
         android:id="@+id/cardDrawArea"
@@ -21,10 +22,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_marginBottom="@dimen/commom_padding"
-        android:layout_marginRight="@dimen/commom_padding"
-        android:background="@drawable/button"
+        android:layout_marginEnd="@dimen/commom_padding"
+        android:background="@drawable/btn_press"
         android:padding="@dimen/small_padding"
         android:text="Bỏ qua"
         android:textColor="@color/white"

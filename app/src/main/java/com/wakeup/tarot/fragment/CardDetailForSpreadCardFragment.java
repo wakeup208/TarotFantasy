@@ -162,7 +162,7 @@ public class CardDetailForSpreadCardFragment extends Fragment implements
 
 		tvKeyWords = (TextView) view.findViewById(R.id.tvKeyWords);
 		tvKeyWords.setTextSize(ConfigData.FONT_SIZE);
-		//tvKeyWords.setTypeface(ConfigData.UVNCatBien_R);
+		tvKeyWords.setTypeface(ConfigData.UVNCatBien_R);
 		tvKeyWords.setOnClickListener(this);
 
 		tvKeyWordsDetail = (TextView) view.findViewById(R.id.tvKeyWordsDetail);
@@ -181,7 +181,7 @@ public class CardDetailForSpreadCardFragment extends Fragment implements
 		btn_expand_reverse_keywords = (Button) view
 				.findViewById(R.id.btn_expand_reverse_keywords);
 		btn_expand_reverse_keywords.setTextSize(ConfigData.FONT_SIZE);
-		//btn_expand_reverse_keywords.setTypeface(ConfigData.UVNCatBien_R);
+		btn_expand_reverse_keywords.setTypeface(ConfigData.UVNCatBien_R);
 		btn_expand_reverse_keywords.setTag(R.id.tvReverseKeyWordsDetail,
 				tvReverseKeyWordsDetail);
 		btn_expand_reverse_keywords.setOnClickListener(new OnClickListener() {
@@ -201,7 +201,7 @@ public class CardDetailForSpreadCardFragment extends Fragment implements
 							.setVisibility(View.GONE);
 					((Button) v).setCompoundDrawablesWithIntrinsicBounds(
 							mActivity.getResources().getDrawable(
-									R.drawable.expand_item), null, null, null);
+									R.drawable.expand_item, mActivity.getTheme()), null, null, null);
 				}
 			}
 		});
@@ -209,7 +209,7 @@ public class CardDetailForSpreadCardFragment extends Fragment implements
 		btn_view_card_interpretation = (Button) view
 				.findViewById(R.id.btn_view_card_interpretation);
 		btn_view_card_interpretation.setOnClickListener(this);
-		//btn_view_card_interpretation.setTypeface(ConfigData.UVNCatBien_R);
+		btn_view_card_interpretation.setTypeface(ConfigData.UVNCatBien_R);
 		btn_view_card_interpretation.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -223,7 +223,7 @@ public class CardDetailForSpreadCardFragment extends Fragment implements
 		tvInterpretations = (TextView) view
 				.findViewById(R.id.tvInterpretations);
 		tvInterpretations.setTextSize(ConfigData.FONT_SIZE);
-		//tvInterpretations.setTypeface(ConfigData.UVNCatBien_R);
+		tvInterpretations.setTypeface(ConfigData.UVNCatBien_R);
 		tvInterpretations.setOnClickListener(this);
 
 		tvKeywordForward = (TextView) view.findViewById(R.id.tvKeywordForward);
@@ -255,8 +255,8 @@ public class CardDetailForSpreadCardFragment extends Fragment implements
 		btn_expand_reverse_interpretations = (Button) view
 				.findViewById(R.id.btn_expand_reverse_interpretations);
 		btn_expand_reverse_interpretations.setTextSize(ConfigData.FONT_SIZE);
-//		btn_expand_reverse_interpretations
-//				.setTypeface(ConfigData.UVNCatBien_R);
+		btn_expand_reverse_interpretations
+				.setTypeface(ConfigData.UVNCatBien_R);
 		btn_expand_reverse_interpretations.setTag(R.id.tvKeywordReverse,
 				tvKeywordReverse);
 		btn_expand_reverse_interpretations.setTag(R.id.ivDivider, ivDivider);
@@ -300,7 +300,7 @@ public class CardDetailForSpreadCardFragment extends Fragment implements
 
 		btn_view_card_association = (Button) view
 				.findViewById(R.id.btn_view_card_association);
-		//btn_view_card_association.setTypeface(ConfigData.UVNCatBien_R);
+		btn_view_card_association.setTypeface(ConfigData.UVNCatBien_R);
 		btn_view_card_association.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -320,7 +320,7 @@ public class CardDetailForSpreadCardFragment extends Fragment implements
 				.findViewById(R.id.layoutSuit);
 		layoutSuit.setOnClickListener(this);
 		Button btnSuit = (Button) view.findViewById(R.id.btnSuit);
-		//btnSuit.setTypeface(ConfigData.UVNCatBien_R);
+		btnSuit.setTypeface(ConfigData.UVNCatBien_R);
 		btnSuit.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -370,7 +370,7 @@ public class CardDetailForSpreadCardFragment extends Fragment implements
 				.findViewById(R.id.layoutStar);
 		layoutStar.setOnClickListener(this);
 		Button btnStar = (Button) view.findViewById(R.id.btnStar);
-		//btnStar.setTypeface(ConfigData.UVNCatBien_R);
+		btnStar.setTypeface(ConfigData.UVNCatBien_R);
 		btnStar.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -419,7 +419,7 @@ public class CardDetailForSpreadCardFragment extends Fragment implements
 				.findViewById(R.id.layoutNumber);
 		layoutNumber.setOnClickListener(this);
 		Button btnNumber = (Button) view.findViewById(R.id.btnNumber);
-		//btnNumber.setTypeface(ConfigData.UVNCatBien_R);
+		btnNumber.setTypeface(ConfigData.UVNCatBien_R);
 		btnNumber.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -469,7 +469,7 @@ public class CardDetailForSpreadCardFragment extends Fragment implements
 				.findViewById(R.id.layoutSymbol);
 		layoutSymbol.setOnClickListener(this);
 		Button btnSymbol = (Button) view.findViewById(R.id.btnSymbol);
-		//btnSymbol.setTypeface(ConfigData.UVNCatBien_R);
+		btnSymbol.setTypeface(ConfigData.UVNCatBien_R);
 		btnSymbol.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -480,7 +480,7 @@ public class CardDetailForSpreadCardFragment extends Fragment implements
 			}
 		});
 
-		//btnNumber.setTypeface(ConfigData.UVNCatBien_R);
+		btnNumber.setTypeface(ConfigData.UVNCatBien_R);
 		TableLayout symbolTable = (TableLayout) view
 				.findViewById(R.id.symbolTable);
 		symbolTable.setOnClickListener(this);

@@ -49,67 +49,6 @@
         <include
             android:id="@+id/bottom_navigated"
             layout="@layout/navigation_bottom"/>
-<!--        <TableLayout-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_alignParentLeft="true"-->
-<!--            android:orientation="horizontal"-->
-<!--            android:padding="@dimen/thin_padding" >-->
-
-<!--            <TableRow>-->
-
-<!--                <Button-->
-<!--                    android:id="@+id/btn_grid"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginEnd="@dimen/commom_padding"-->
-<!--                    android:background="@drawable/grid_selected"-->
-<!--                    style="?android:attr/buttonBarButtonStyle" />-->
-
-<!--                <Button-->
-<!--                    android:id="@+id/btn_list"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginEnd="@dimen/commom_padding"-->
-<!--                    android:background="@drawable/btn_list"-->
-<!--                    style="?android:attr/buttonBarButtonStyle" />-->
-
-<!--                <Button-->
-<!--                    android:id="@+id/btn_associations"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginEnd="@dimen/commom_padding"-->
-<!--                    android:background="@drawable/btn_associations"-->
-<!--                    style="?android:attr/buttonBarButtonStyle" />-->
-<!--            </TableRow>-->
-<!--        </TableLayout>-->
-
-<!--        <TableLayout-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_alignParentEnd="true"-->
-<!--            android:orientation="horizontal"-->
-<!--            android:padding="@dimen/thin_padding" >-->
-
-<!--            <TableRow>-->
-
-<!--                <Button-->
-<!--                    android:id="@+id/btn_minus"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="@dimen/commom_padding"-->
-<!--                    android:background="@drawable/btn_minus"-->
-<!--                    style="?android:attr/buttonBarButtonStyle" />-->
-
-<!--                <Button-->
-<!--                    android:id="@+id/btn_plus"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="@dimen/commom_padding"-->
-<!--                    android:background="@drawable/btn_plus"-->
-<!--                    style="?android:attr/buttonBarButtonStyle" />-->
-<!--            </TableRow>-->
-<!--        </TableLayout>-->
     </RelativeLayout>
 
 </RelativeLayout>

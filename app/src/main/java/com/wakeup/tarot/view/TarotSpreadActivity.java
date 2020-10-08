@@ -38,7 +38,7 @@ public class TarotSpreadActivity extends Activity implements
 		((ImageView) findViewById(R.id.background)).setBackgroundDrawable(ConfigData.rbdBackground);
 
 		tvTarotSpreadTitle = (TextView) findViewById(R.id.tvTarotSpreadTitle);
-		//tvTarotSpreadTitle.setTypeface(ConfigData.UVNCatBien_R);
+		tvTarotSpreadTitle.setTypeface(ConfigData.UVNCatBien_R);
 
 		SpreadCardNameListViewAdapter adapter = new SpreadCardNameListViewAdapter(
 				this.getApplicationContext());
@@ -62,7 +62,7 @@ public class TarotSpreadActivity extends Activity implements
 	protected void onResume() {
 		// Load background
 		((ImageView) findViewById(R.id.background))
-				.setBackgroundDrawable(ConfigData.rbdBackground);
+				.setBackground(ConfigData.rbdBackground);
 		super.onResume();
 	}
 

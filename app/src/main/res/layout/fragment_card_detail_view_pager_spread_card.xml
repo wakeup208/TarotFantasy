@@ -32,7 +32,12 @@
                 android:padding="@dimen/commom_padding"
                 android:textColor="#1166FF"
                 android:textSize="@dimen/commom_font_size"
-                android:typeface="serif" />
+                android:typeface="serif"
+                android:shadowColor="@color/text_shadow"
+                android:shadowDx="+2"
+                android:shadowDy="+2"
+                android:shadowRadius="2"
+                android:textStyle="normal" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -50,7 +55,12 @@
                 android:text="@string/keywords"
                 android:textColor="#FFFFFF"
                 android:textSize="@dimen/commom_font_size"
-                android:textStyle="bold" />
+                android:textStyle="normal"
+                android:shadowColor="@color/text_shadow"
+                android:shadowDx="+2"
+                android:shadowDy="+2"
+                android:shadowRadius="2"
+                android:typeface="serif" />
 
             <TextView
                 android:id="@+id/tvKeyWordsDetail"
@@ -62,7 +72,12 @@
                 android:text="Nội dung keywords"
                 android:textColor="#f9e34c"
                 android:textSize="@dimen/commom_font_size"
-                android:typeface="serif" />
+                android:typeface="serif"
+                android:shadowColor="@color/text_shadow"
+                android:shadowDx="+2"
+                android:shadowDy="+2"
+                android:shadowRadius="2"
+                android:textStyle="normal" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -82,7 +97,7 @@
                 android:text="@string/reverse_keywords"
                 android:textColor="@color/white"
                 android:textSize="@dimen/commom_font_size"
-                android:textStyle="bold" />
+                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/tvReverseKeyWordsDetail"
@@ -95,7 +110,12 @@
                 android:textColor="#f9e34c"
                 android:textSize="@dimen/commom_font_size"
                 android:typeface="serif"
-                android:visibility="gone" />
+                android:visibility="gone"
+                android:shadowColor="@color/text_shadow"
+                android:shadowDx="+2"
+                android:shadowDy="+2"
+                android:shadowRadius="2"
+                android:textStyle="normal" />
 
             <Button
                 android:id="@+id/btn_view_card_interpretation"
@@ -108,7 +128,7 @@
                 android:text="@string/btn_view_card_interpretation"
                 android:textColor="@color/white"
                 android:textSize="@dimen/commom_font_size"
-                android:textStyle="bold"
+                android:textStyle="normal"
                 android:typeface="serif" />
 
             <ImageView
@@ -132,7 +152,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#bb000000"
-        android:visibility="invisible" >
+        android:visibility="visible" >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -152,7 +172,12 @@
                 android:text="@string/interpretations"
                 android:textColor="#ff1166ff"
                 android:textSize="@dimen/commom_font_size"
-                android:textStyle="bold" />
+                android:textStyle="normal"
+                android:shadowColor="@color/text_shadow"
+                android:shadowDx="+2"
+                android:shadowDy="+2"
+                android:shadowRadius="2"
+                android:typeface="serif" />
 
             <TextView
                 android:id="@+id/tvKeywordForward"
@@ -164,7 +189,12 @@
                 android:text="Nội dung keywords"
                 android:textColor="#fff9e34c"
                 android:textSize="@dimen/commom_font_size"
-                android:typeface="serif" />
+                android:typeface="serif"
+                android:shadowColor="@color/text_shadow"
+                android:shadowDx="+2"
+                android:shadowDy="+2"
+                android:shadowRadius="2"
+                android:textStyle="normal" />
 
             <ImageView
                 android:id="@+id/ivDivider1"
@@ -184,7 +214,12 @@
                 android:text="Nội dung Interpretation"
                 android:textColor="@color/white"
                 android:textSize="@dimen/commom_font_size"
-                android:typeface="serif" />
+                android:typeface="serif"
+                android:shadowColor="@color/text_shadow"
+                android:shadowDx="+2"
+                android:shadowDy="+2"
+                android:shadowRadius="2"
+                android:textStyle="normal" />
 
             <Button
                 android:id="@+id/btn_expand_reverse_interpretations"
@@ -197,7 +232,7 @@
                 android:text="@string/reverse_interpretations"
                 android:textColor="#ff1166ff"
                 android:textSize="@dimen/commom_font_size"
-                android:textStyle="bold" />
+                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/tvKeywordReverse"
@@ -210,7 +245,12 @@
                 android:textColor="#fff9e34c"
                 android:textSize="@dimen/commom_font_size"
                 android:typeface="serif"
-                android:visibility="gone" />
+                android:visibility="gone"
+                android:shadowColor="@color/text_shadow"
+                android:shadowDx="+2"
+                android:shadowDy="+2"
+                android:shadowRadius="2"
+                android:textStyle="normal" />
 
             <ImageView
                 android:id="@+id/ivDivider2"
@@ -229,7 +269,12 @@
                 android:textColor="@color/white"
                 android:textSize="@dimen/commom_font_size"
                 android:typeface="serif"
-                android:visibility="gone" />
+                android:visibility="gone"
+                android:shadowColor="@color/text_shadow"
+                android:shadowDx="+2"
+                android:shadowDy="+2"
+                android:shadowRadius="2"
+                android:textStyle="normal" />
 
             <Button
                 android:id="@+id/btn_view_card_association"
@@ -242,7 +287,7 @@
                 android:text="@string/btn_view_card_associations"
                 android:textColor="@color/white"
                 android:textSize="@dimen/commom_font_size"
-                android:textStyle="bold"
+                android:textStyle="normal"
                 android:typeface="serif" />
 
             <ImageView

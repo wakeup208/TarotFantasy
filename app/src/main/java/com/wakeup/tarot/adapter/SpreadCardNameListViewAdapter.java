@@ -36,7 +36,7 @@ public class SpreadCardNameListViewAdapter extends BaseAdapter {
 		
 		TextView textView = (TextView) rowView.findViewById(R.id.tvListViewItemText);
 		textView.setText(SpreadCardJasonHelper.getSpreadName(position));
-		//textView.setTypeface(ConfigData.UVNCatBien_R);
+		textView.setTypeface(ConfigData.UVNCatBien_R);
 
 		return rowView;
 	}

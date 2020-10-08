@@ -126,19 +126,19 @@ public class ProfileActivity extends AppCompatActivity implements OnClickListene
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.btnBuyTarotCards:
-			(new BuyTarotCustomDialog(this)).showDialog();
-			break;
-
-		case R.id.btnFeedbackAndDiscuss:
-			Uri uriUrl = Uri.parse(ConfigData.FEED_BACK_LINK);
-			Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
-			startActivity(launchBrowser);
-			break;
-
-		case R.id.btnAuthor:
-			(new AboutCustomDialog(this)).showDialog();
-			break;
+//		case R.id.btnBuyTarotCards:
+//			(new BuyTarotCustomDialog(this)).showDialog();
+//			break;
+//
+//		case R.id.btnFeedbackAndDiscuss:
+//			Uri uriUrl = Uri.parse(ConfigData.FEED_BACK_LINK);
+//			Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
+//			startActivity(launchBrowser);
+//			break;
+//
+//		case R.id.btnAuthor:
+//			(new AboutCustomDialog(this)).showDialog();
+//			break;
 
 		case R.id.btnReverseCard:
 			cbReverseCard.setChecked(!cbReverseCard.isChecked());
