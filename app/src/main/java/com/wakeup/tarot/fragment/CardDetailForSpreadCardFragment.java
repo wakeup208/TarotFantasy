@@ -157,6 +157,8 @@ public class CardDetailForSpreadCardFragment extends Fragment implements
 
 		tvStepInfo = (TextView) view.findViewById(R.id.tvStepInfo);
 		tvStepInfo.setTextSize(ConfigData.FONT_SIZE);
+		tvStepInfo.setTypeface(ConfigData.UVNCatBien_R);
+		tvStepInfo.setTextColor(getContext().getColor(R.color.red));
 		tvStepInfo.setText(SpreadCardJasonHelper
 				.getStepArray(SpreadCardsActivity.spreadId)[mCardIndex]);
 
@@ -169,6 +171,9 @@ public class CardDetailForSpreadCardFragment extends Fragment implements
 		tvKeyWordsDetail.setTextSize(ConfigData.FONT_SIZE);
 		tvKeyWordsDetail.setText(CardsDetailJasonHelper
 				.getKeywordForward(ConfigData.randomCardIdArray[mCardIndex]));
+		tvStepInfo.setTextColor(getContext().getColor(R.color.red));
+
+		tvKeyWordsDetail.setTypeface(ConfigData.UVNCatBien_R);
 		tvKeyWordsDetail.setOnClickListener(this);
 
 		tvReverseKeyWordsDetail = (TextView) view
@@ -176,6 +181,9 @@ public class CardDetailForSpreadCardFragment extends Fragment implements
 		tvReverseKeyWordsDetail.setTextSize(ConfigData.FONT_SIZE);
 		tvReverseKeyWordsDetail.setText(CardsDetailJasonHelper
 				.getKeywordReverse(ConfigData.randomCardIdArray[mCardIndex]));
+		tvStepInfo.setTextColor(getContext().getColor(R.color.red));
+
+		tvReverseKeyWordsDetail.setTypeface(ConfigData.UVNCatBien_R);
 		tvReverseKeyWordsDetail.setOnClickListener(this);
 
 		btn_expand_reverse_keywords = (Button) view
@@ -228,28 +236,38 @@ public class CardDetailForSpreadCardFragment extends Fragment implements
 
 		tvKeywordForward = (TextView) view.findViewById(R.id.tvKeywordForward);
 		tvKeywordForward.setTextSize(ConfigData.FONT_SIZE);
+		tvKeywordForward.setTypeface(ConfigData.UVNCatBien_R);
 		tvKeywordForward.setText(CardsDetailJasonHelper
 				.getKeywordForward(ConfigData.randomCardIdArray[mCardIndex]));
+		tvStepInfo.setTextColor(getContext().getColor(R.color.red));
+
 		tvKeywordForward.setOnClickListener(this);
 
 		tvForward = (TextView) view.findViewById(R.id.tvForward);
 		tvForward.setTextSize(ConfigData.FONT_SIZE);
+		tvForward.setTypeface(ConfigData.UVNCatBien_R);
 		tvForward.setText(CardsDetailJasonHelper
 				.getForward(ConfigData.randomCardIdArray[mCardIndex]));
 		tvForward.setOnClickListener(this);
 
 		tvKeywordReverse = (TextView) view.findViewById(R.id.tvKeywordReverse);
 		tvKeywordReverse.setTextSize(ConfigData.FONT_SIZE);
+		tvKeywordReverse.setTypeface(ConfigData.UVNCatBien_R);
 		tvKeywordReverse.setText(CardsDetailJasonHelper
 				.getKeywordReverse(ConfigData.randomCardIdArray[mCardIndex]));
+		tvStepInfo.setTextColor(getContext().getColor(R.color.red));
+
 		tvKeywordReverse.setOnClickListener(this);
 
 		ivDivider = (ImageView) view.findViewById(R.id.ivDivider2);
 
 		tvReverse = (TextView) view.findViewById(R.id.tvReverse);
 		tvReverse.setTextSize(ConfigData.FONT_SIZE);
+		tvReverse.setTypeface(ConfigData.UVNCatBien_R);
 		tvReverse.setText(CardsDetailJasonHelper
 				.getReverse(ConfigData.randomCardIdArray[mCardIndex]));
+		tvStepInfo.setTextColor(getContext().getColor(R.color.red));
+
 		tvReverse.setOnClickListener(this);
 
 		btn_expand_reverse_interpretations = (Button) view

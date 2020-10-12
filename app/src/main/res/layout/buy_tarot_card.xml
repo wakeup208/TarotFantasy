@@ -19,6 +19,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autoLink="web"
+                android:fontFamily="@font/quicksand"
                 android:gravity="center_horizontal"
                 android:padding="@dimen/commom_padding"
                 android:text="Tìm kiếm bộ bài Tarot cho riêng bạn\nhttp://www.DiaChiWebsite.vn"

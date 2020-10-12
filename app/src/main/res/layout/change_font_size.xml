@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_gravity="center"
+        android:fontFamily="@font/quicksand"
         android:layout_margin="@dimen/thin_padding"
         android:text="Kích cỡ font chữ"
         android:textSize="@dimen/commom_font_size"

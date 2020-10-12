@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@drawable/bg8">
 
     <ImageView
         android:id="@+id/background"
@@ -53,6 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dip"
                 android:padding="@dimen/commom_padding"
+                android:fontFamily="@font/quicksand"
                 android:text="Rút một lá bài đơn có thể cung cấp cái nhìn thấu đáo cho câu hỏi hay tình huống mà bạn gặp phải."
                 android:textColor="#1166FF"
                 android:textAlignment="center"
@@ -72,6 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center_horizontal"
+                android:fontFamily="@font/quicksand"
                 android:text="@string/keywords"
                 android:textColor="#FFFFFF"
                 android:textSize="@dimen/commom_font_size"
@@ -84,6 +87,7 @@
                 android:layout_gravity="center_horizontal"
                 android:gravity="center_horizontal"
                 android:padding="5dip"
+                android:fontFamily="@font/quicksand"
                 android:text="Nội dung keywords"
                 android:textColor="#f9e34c"
                 android:textSize="@dimen/commom_font_size"
@@ -105,6 +109,8 @@
                 android:drawableLeft="@drawable/expand_item"
                 android:gravity="center_vertical"
                 android:text="@string/reverse_keywords"
+                android:textAllCaps="false"
+                android:fontFamily="@font/quicksand"
                 android:textColor="@color/white"
                 android:textSize="@dimen/commom_font_size"
                 android:textStyle="bold" />
@@ -116,6 +122,7 @@
                 android:layout_gravity="center_horizontal"
                 android:gravity="center_horizontal"
                 android:padding="@dimen/commom_padding"
+                android:fontFamily="@font/quicksand"
                 android:text="Nội dung Reverse Keywords"
                 android:textColor="#f9e34c"
                 android:textSize="@dimen/commom_font_size"
@@ -129,7 +136,9 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="@dimen/margin"
                 android:layout_marginTop="@dimen/margin"
-                android:background="@drawable/button"
+                android:textAllCaps="false"
+                android:fontFamily="@font/quicksand"
+                android:background="@drawable/btn_press"
                 android:padding="@dimen/small_padding"
                 android:text="@string/btn_view_card_interpretation"
                 android:textColor="@color/white"
@@ -153,7 +162,7 @@
         android:id="@+id/svCardInterpretation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#BB000000"
+        android:background="#bb000000"
         android:visibility="invisible" >
 
         <LinearLayout
@@ -169,8 +178,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/commom_padding"
                 android:gravity="center"
+                android:fontFamily="@font/quicksand"
                 android:text="@string/interpretations"
-                android:textColor="#1166FF"
+                android:textColor="@color/green"
                 android:textSize="@dimen/commom_font_size"
                 android:textStyle="bold" />
 
@@ -178,6 +188,7 @@
                 android:id="@+id/tvInterpretationDetail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/quicksand"
                 android:padding="@dimen/commom_padding"
                 android:text="Nội dung Interpretation"
                 android:textColor="@color/white"
@@ -209,6 +220,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/commom_padding"
+                android:fontFamily="@font/quicksand"
                 android:text="Nội dung Reverse Interpretation"
                 android:textColor="@color/white"
                 android:textSize="@dimen/commom_font_size"
@@ -223,8 +235,11 @@
                 android:layout_marginBottom="@dimen/margin"
                 android:layout_marginTop="@dimen/margin"
                 android:background="@drawable/button"
-                android:padding="@dimen/small_padding"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:fontFamily="@font/quicksand"
                 android:text="@string/btn_view_card_associations"
+                android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="@dimen/commom_font_size" />
 
@@ -264,7 +279,7 @@
                 android:id="@+id/layoutSuit"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/custom_button"
+                android:background="@drawable/linear_bg"
                 android:orientation="vertical" >
 
                 <Button
@@ -427,6 +442,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:background="#BB000000"
+        android:fontFamily="@font/quicksand"
         android:gravity="center_horizontal"
         android:padding="@dimen/small_padding"
         android:shadowColor="@color/text_shadow"

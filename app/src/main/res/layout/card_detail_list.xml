@@ -24,6 +24,7 @@
             android:layout_width="match_parent"
 			android:layout_height="wrap_content"
             android:textColor="#28E"
+            android:fontFamily="@font/quicksand"
             android:textSize="@dimen/commom_font_size_big"
             android:typeface="serif" />
 
@@ -32,6 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
+            android:fontFamily="@font/quicksand"
             android:textSize="@dimen/commom_font_size"
             android:typeface="serif" />
     </LinearLayout>

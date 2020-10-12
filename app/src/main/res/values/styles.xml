@@ -32,6 +32,9 @@
     <color name="white">#FFFFFF</color>
     <color name="color_bar">#99000000</color>
 
+    <color name="red">#FBF9F9</color>
+    <color name="green">#00FF00</color>
+
 
     <style name="CodeFont" parent="@android:style/TextAppearance.Medium">
         <item name="android:layout_width">match_parent</item>
@@ -49,7 +52,7 @@
         <item name="android:shadowDx">1</item>
         <item name="android:shadowDy">1</item>
         <item name="android:shadowRadius">0.6</item>
-        <item name="android:background">@drawable/custom_button</item>
+        <item name="android:background">@drawable/btn_press</item>
         <item name="android:padding">10dip</item>
     </style>
 

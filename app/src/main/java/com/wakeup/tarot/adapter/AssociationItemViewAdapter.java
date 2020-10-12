@@ -68,6 +68,7 @@ public class AssociationItemViewAdapter extends BaseAdapter implements
 
 		TextView tvAssociationName = (TextView) view.findViewById(R.id.tvAssociationName);
 		tvAssociationName.setText(association_name);
+		tvAssociationName.setTypeface(ConfigData.UVNCatBien_R);
 
 		int w = (ConfigData.SCREEN_WIDTH - 75) / 3;
 		int h = w;		

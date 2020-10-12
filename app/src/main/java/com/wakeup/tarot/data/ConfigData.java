@@ -97,7 +97,7 @@ public class ConfigData {
 
         if (UVNCatBien_R == null) {
             UVNCatBien_R = Typeface.createFromAsset(a.getApplicationContext()
-                    .getAssets(), "t4.ttf");
+                    .getAssets(), "charm.ttf");
         }
 
         // Get data UI saved

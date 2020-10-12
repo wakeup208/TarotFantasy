@@ -66,6 +66,7 @@ public class ItemGroupDetailActivity extends FragmentActivity implements
 
 		tvItemGroupDetail = (TextView) findViewById(R.id.tvItemGroupDetail);
 		tvItemGroupDetail.setTextSize(ConfigData.FONT_SIZE);
+		tvItemGroupDetail.setTypeface(ConfigData.UVNCatBien_R);
 
 		if ("Suit".equals(group_name)) {
 			tvItemGroupName.setText(SuitJasonHelper.getTitle(position));
@@ -104,6 +105,7 @@ public class ItemGroupDetailActivity extends FragmentActivity implements
 			tvItemGroupDetail2.setTextSize(ConfigData.FONT_SIZE);
 			tvItemGroupDetail2.setVisibility(View.VISIBLE);
 			tvItemGroupDetail2.setText(StarJasonHelper.getSecondInfo(position));
+			tvItemGroupDetail2.setTypeface(ConfigData.UVNCatBien_R);
 		}
 	}
 

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <font-family xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <font
-        app:fontStyle="normal"
-        app:fontWeight="600"
-        app:font="@font/t3" />
+<!--    <font-->
+<!--        app:fontStyle="normal"-->
+<!--        app:fontWeight="600"-->
+<!--        app:font="@font/red_re" />-->
     <font
         app:fontStyle="normal"
         app:fontWeight="700"
-        app:font="@font/t3" />
+        app:font="@font/charm" />
 </font-family>

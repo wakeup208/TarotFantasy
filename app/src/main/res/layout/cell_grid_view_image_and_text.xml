@@ -20,6 +20,7 @@
         android:layout_height="@dimen/association_text_height"
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal"
+        android:fontFamily="@font/quicksand"
         android:text="name"
         android:paddingTop="@dimen/thin_padding"
         android:textColor="@color/white"

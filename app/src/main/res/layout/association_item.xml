@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@drawable/custom_button"
+    android:background="#66cccccc"
     android:layout_margin="@dimen/thin_padding"
     android:orientation="vertical">
 
@@ -20,6 +20,7 @@
         android:layout_height="@dimen/association_text_height"
         android:layout_gravity="center"
         android:gravity="center"
+        android:fontFamily="@font/quicksand"
         android:text="association name"
         android:textColor="@color/white"
         android:typeface="serif"

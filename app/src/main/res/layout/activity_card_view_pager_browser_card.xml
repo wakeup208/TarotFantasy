@@ -32,6 +32,7 @@
             android:layout_gravity="center"
             android:gravity="center_vertical|center_horizontal"
             android:shadowColor="@color/text_shadow"
+            android:fontFamily="@font/quicksand"
             android:shadowDx="+2"
             android:shadowDy="+2"
             android:shadowRadius="2"
@@ -51,42 +52,9 @@
         app:layout_constraintStart_toStartOf="parent"
         android:visibility="invisible" >
 
-
         <include
             android:id="@+id/bottom_navigated"
             layout="@layout/navigation_card_view_pager_brower"/>
-<!--        <TableLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:orientation="horizontal"
-            android:padding="@dimen/thin_padding" >
-
-            <TableRow>
-
-                <Button
-                    android:id="@+id/btn_card_detail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/commom_padding"
-                    android:background="@drawable/btn_card_interpretation_selected" />
-
-                <Button
-                    android:id="@+id/btn_associations"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/commom_padding"
-                    android:background="@drawable/btn_associations" />
-
-                <Button
-                    android:id="@+id/btn_shop"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/commom_padding"
-                    android:background="@drawable/btn_shop"
-                    android:visibility="gone" />
-            </TableRow>
-        </TableLayout>-->
     </RelativeLayout>
 
 </RelativeLayout>

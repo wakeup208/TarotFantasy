@@ -26,6 +26,7 @@
             android:layout_weight="1"
             android:padding="@dimen/small_padding"
             android:text="name"
+            android:fontFamily="@font/quicksand"
             android:textColor="@color/white"
             android:textSize="@dimen/commom_font_size_big"
             android:typeface="serif"
@@ -63,6 +64,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:textColor="@color/white"
+                android:fontFamily="@font/quicksand"
                 android:textSize="@dimen/commom_font_size"
                 android:typeface="serif"
                 android:shadowColor="@color/text_shadow"
@@ -87,6 +89,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:textColor="#fbfd34"
+                android:fontFamily="@font/quicksand"
                 android:textSize="@dimen/commom_font_size"
                 android:typeface="serif"
                 android:shadowColor="@color/text_shadow"
@@ -97,6 +100,7 @@
                 android:visibility="gone" />
             
             <TextView
+                android:fontFamily="@font/quicksand"
                 android:layout_width="match_parent"
                 android:layout_height="8dp"/>
         </LinearLayout>

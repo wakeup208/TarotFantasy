@@ -26,6 +26,7 @@
             android:shadowDx="+2"
             android:shadowDy="+2"
             android:shadowRadius="2"
+            android:fontFamily="@font/quicksand"
             android:text="@string/browse_cards"
             android:textColor="@color/white"
             android:textSize="@dimen/commom_font_size"
