@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg8">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/mainback">
 
     <ImageView
         android:id="@+id/background"
@@ -398,42 +399,16 @@
 
     <RelativeLayout
         android:id="@+id/bottom_bar"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:visibility="visible" >
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <TableLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:orientation="horizontal"
-            android:padding="@dimen/thin_padding" >
-
-            <TableRow>
-
-                <Button
-                    android:id="@+id/btn_card_spread"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/commom_padding"
-                    android:background="@drawable/btn_card_spread_selected" />
-
-                <Button
-                    android:id="@+id/btn_card_interpretation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/commom_padding"
-                    android:background="@drawable/btn_card_interpretation" />
-
-                <Button
-                    android:id="@+id/btn_associations"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/commom_padding"
-                    android:background="@drawable/btn_associations" />
-            </TableRow>
-        </TableLayout>
+        <include
+            android:id="@+id/bottom_navigated"
+            layout="@layout/navigation_bottom_spread"/>
     </RelativeLayout>
 
     <TextView

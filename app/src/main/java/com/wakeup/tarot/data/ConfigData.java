@@ -46,6 +46,8 @@ public class ConfigData {
     public static int SCREEN_WIDTH;
     public static int SCREEN_HEIGHT;
     public static Typeface UVNCatBien_R = null;
+    public static Typeface UVNCatBien_Sub = null;
+
 
     // Has 4 levels (0 --> 3) default with level 1 with 5 columns
     public static int ZOOM_LEVEL;
@@ -97,7 +99,12 @@ public class ConfigData {
 
         if (UVNCatBien_R == null) {
             UVNCatBien_R = Typeface.createFromAsset(a.getApplicationContext()
-                    .getAssets(), "charm.ttf");
+                    .getAssets(), "poppins_light.ttf");
+        }
+
+        if (UVNCatBien_Sub == null) {
+            UVNCatBien_Sub = Typeface.createFromAsset(a.getApplicationContext()
+                    .getAssets(), "poppins_regular.ttf");
         }
 
         // Get data UI saved
@@ -110,7 +117,7 @@ public class ConfigData {
 
         // Load Background
         if (rbdBackground == null) {
-            rbdBackground = new RecyclingBitmapDrawable(appContext.getResources(), R.drawable.bg8, ConfigData.SCREEN_WIDTH, ConfigData.SCREEN_HEIGHT);
+            rbdBackground = new RecyclingBitmapDrawable(appContext.getResources(), R.drawable.mainback, ConfigData.SCREEN_WIDTH, ConfigData.SCREEN_HEIGHT);
         }
 
         // Load JSON
@@ -195,13 +202,6 @@ public class ConfigData {
         IS_REVERSE_CARD = true;
     }
 
-    /**
-     * Read dimension and return sp unit value
-     *
-     * @param id
-     *            : id of <dimen>
-     * @return
-     */
     private static float getDimensionWithUnitSP(int id) {
         float scaledDensity = appContext.getResources().getDisplayMetrics().scaledDensity;
         return (int) (appContext.getResources().getDimension(id) / scaledDensity);
@@ -259,7 +259,7 @@ public class ConfigData {
 
         // Load Background
         rbdBackground = new RecyclingBitmapDrawable(appContext.getResources(),
-                R.drawable.bg8, ConfigData.SCREEN_WIDTH,
+                R.drawable.mainback, ConfigData.SCREEN_WIDTH,
                 ConfigData.SCREEN_HEIGHT);
     }
 }

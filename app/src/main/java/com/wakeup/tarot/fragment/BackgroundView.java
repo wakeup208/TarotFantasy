@@ -21,7 +21,7 @@ public class BackgroundView extends AppCompatImageView {
 	@Override
 	protected void onAttachedToWindow() {
 		this.setImageBitmap(decodeSampledBitmapFromResource(getResources(),
-				R.drawable.bg8, ConfigData.SCREEN_WIDTH,
+				R.drawable.mainback, ConfigData.SCREEN_WIDTH,
 				ConfigData.SCREEN_HEIGHT));
 		super.onAttachedToWindow();
 	}

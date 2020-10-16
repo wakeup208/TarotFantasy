@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
      <ImageView
         android:id="@+id/background"
@@ -22,13 +23,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:background="@color/color_bar"
-        android:visibility="invisible" >
+        android:visibility="visible" >
 
         <Button
             android:id="@+id/btn_home_spread"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/btn_home_spread"
+            android:background="@drawable/btn_home_new"
             android:gravity="center_vertical"
             android:padding="@dimen/commom_padding" />
 
@@ -37,8 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="4dp"
-            android:gravity="center_vertical|center_horizontal"
+            android:gravity="center_horizontal"
             android:text="@string/browse_cards"
             android:fontFamily="@font/quicksand"
             android:textColor="#b23ad0"
@@ -50,58 +50,70 @@
             android:textStyle="bold" />
     </RelativeLayout>
 
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/bottom_bar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_margin="4dp"-->
+<!--        android:background="@color/color_bar"-->
+<!--        android:visibility="visible" >-->
+
+<!--        <TableLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentStart="true"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:padding="@dimen/thin_padding" >-->
+
+<!--            <TableRow>-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/btn_card_spread"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginEnd="@dimen/commom_padding"-->
+<!--                    android:background="@drawable/btn_card_spread_selected"-->
+<!--                    style="?android:attr/buttonBarButtonStyle" />-->
+<!--                -->
+<!--                <Button-->
+<!--                    android:id="@+id/btn_card_interpretation"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginEnd="@dimen/commom_padding"-->
+<!--                    android:background="@drawable/btn_card_interpretation"-->
+<!--                    style="?android:attr/buttonBarButtonStyle" />-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/btn_associations"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginEnd="@dimen/commom_padding"-->
+<!--                    android:background="@drawable/btn_associations"-->
+<!--                    style="?android:attr/buttonBarButtonStyle" />-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/btn_shop"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginEnd="@dimen/commom_padding"-->
+<!--                    android:background="@drawable/btn_shop"-->
+<!--                    android:visibility="visible"-->
+<!--                    style="?android:attr/buttonBarButtonStyle" />-->
+<!--            </TableRow>-->
+<!--        </TableLayout>-->
+<!--    </RelativeLayout>-->
     <RelativeLayout
         android:id="@+id/bottom_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_margin="4dp"
-        android:background="@color/color_bar"
-        android:visibility="invisible" >
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <TableLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:orientation="horizontal"
-            android:padding="@dimen/thin_padding" >
-
-            <TableRow>
-
-                <Button
-                    android:id="@+id/btn_card_spread"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/commom_padding"
-                    android:background="@drawable/btn_card_spread_selected"
-                    style="?android:attr/buttonBarButtonStyle" />
-                
-                <Button
-                    android:id="@+id/btn_card_interpretation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/commom_padding"
-                    android:background="@drawable/btn_card_interpretation"
-                    style="?android:attr/buttonBarButtonStyle" />
-
-                <Button
-                    android:id="@+id/btn_associations"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/commom_padding"
-                    android:background="@drawable/btn_associations"
-                    style="?android:attr/buttonBarButtonStyle" />
-
-                <Button
-                    android:id="@+id/btn_shop"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/commom_padding"
-                    android:background="@drawable/btn_shop"
-                    android:visibility="gone"
-                    style="?android:attr/buttonBarButtonStyle" />
-            </TableRow>
-        </TableLayout>
+        <include
+            android:id="@+id/bottom_navigated"
+            layout="@layout/navigation_bottom_spread"/>
     </RelativeLayout>
-
 </RelativeLayout>

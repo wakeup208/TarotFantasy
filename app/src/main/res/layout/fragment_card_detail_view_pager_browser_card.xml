@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg8">
+    android:background="@drawable/mainback">
 
     <ImageView
         android:id="@+id/ivCardImage"

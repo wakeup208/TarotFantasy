@@ -237,7 +237,7 @@ public class CardDetailViewPagerForBrowserCardActivity extends
 
 		case R.id.btn_card_detail:
 			btn_card_detail
-					.setBackgroundResource(R.drawable.btn_card_interpretation_selected);
+					.setBackgroundResource(R.drawable.ic_details_press);
 			btn_associations.setBackgroundResource(R.drawable.btn_associations);
 			visibleMode = 1;
 			updateShowHideDetailForViewPager();
@@ -249,16 +249,16 @@ public class CardDetailViewPagerForBrowserCardActivity extends
 			btn_card_detail
 					.setBackgroundResource(R.drawable.btn_card_interpretation);
 			btn_associations
-					.setBackgroundResource(R.drawable.btn_associations_selected);
+					.setBackgroundResource(R.drawable.ic_grid_press);
 			visibleMode = 2;
 			updateShowHideDetailForViewPager();
 			// other process below here
 
 			break;
 
-		case R.id.btn_shop:
-			(new BuyTarotCustomDialog(this)).showDialog();
-			break;
+//		case R.id.btn_shop:
+//			(new BuyTarotCustomDialog(this)).showDialog();
+//			break;
 		}
 	}
 
@@ -266,7 +266,7 @@ public class CardDetailViewPagerForBrowserCardActivity extends
 		btn_card_detail
 				.setBackgroundResource(R.drawable.btn_card_interpretation);
 		btn_associations
-				.setBackgroundResource(R.drawable.btn_associations_selected);
+				.setBackgroundResource(R.drawable.ic_book_press);
 //		btn_shop.setBackgroundResource(R.drawable.btn_shop);
 		visibleMode = 2;
 		updateShowHideDetailForViewPager();

@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setBackground(ConfigData.rbdBackground);
 
         tvAppName = (TextView) findViewById(R.id.tvAppName);
-        tvAppName.setTypeface(ConfigData.UVNCatBien_R);
+        tvAppName.setTypeface(ConfigData.UVNCatBien_Sub);
 
         btn_drawcard = (LinearLayout) findViewById(R.id.chonbai);
         //btn_drawcard.setTypeface(ConfigData.UVNCatBien_R);
