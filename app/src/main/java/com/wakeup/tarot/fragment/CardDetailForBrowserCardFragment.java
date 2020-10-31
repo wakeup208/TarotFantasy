@@ -237,7 +237,7 @@ public class CardDetailForBrowserCardFragment extends Fragment implements
 				tr.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,
 						LayoutParams.WRAP_CONTENT));
 				// add 3 association item to this row if has
-				for (int c = 0; c < 3; c++) {
+				for (int c = 0; c < 1; c++) {
 					// create association
 					tr.addView(suitAdapter.getView(i, null, null));
 					tr.setOnClickListener(this);
@@ -292,7 +292,7 @@ public class CardDetailForBrowserCardFragment extends Fragment implements
 				tr.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,
 						LayoutParams.WRAP_CONTENT));
 				// add 3 association item to this row if has
-				for (int c = 0; c < 3; c++) {
+				for (int c = 0; c < 1; c++) {
 					// create association
 					tr.addView(starAdapter.getView(i, null, null));
 					i++;
@@ -347,7 +347,7 @@ public class CardDetailForBrowserCardFragment extends Fragment implements
 						LayoutParams.WRAP_CONTENT));
 				tr.setOnClickListener(this);
 				// add 3 association item to this row if has
-				for (int c = 0; c < 3; c++) {
+				for (int c = 0; c < 1; c++) {
 					// create association
 					tr.addView(numberAdapter.getView(i, null, null));
 					i++;
@@ -401,7 +401,7 @@ public class CardDetailForBrowserCardFragment extends Fragment implements
 				tr.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,
 						LayoutParams.WRAP_CONTENT));
 				// add 3 association item to this row if has
-				for (int c = 0; c < 3; c++) {
+				for (int c = 0; c < 1; c++) {
 					// create association
 					tr.addView(symbolAdapter.getView(i, null, null));
 					i++;

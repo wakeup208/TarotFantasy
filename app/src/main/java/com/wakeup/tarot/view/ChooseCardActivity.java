@@ -18,12 +18,14 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import android.view.View.OnClickListener;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.wakeup.tarot.R;
 import com.wakeup.tarot.data.ConfigData;
 import com.wakeup.tarot.data.SpreadCardJasonHelper;
 import com.wakeup.tarot.util.Utils;
 
-public class ChooseCardActivity extends Activity implements OnClickListener,
+public class ChooseCardActivity extends AppCompatActivity implements OnClickListener,
 		AnimationListener {
 
 	private int padding;
@@ -48,8 +50,8 @@ public class ChooseCardActivity extends Activity implements OnClickListener,
 
 		// Reload screen size and background
 		ConfigData.reloadScreen(this);
-				
-		
+
+
 		// Load background
 		((ImageView) findViewById(R.id.background))
 				.setBackgroundDrawable(ConfigData.rbdBackground);
@@ -234,7 +236,7 @@ public class ChooseCardActivity extends Activity implements OnClickListener,
 				this.finish();
 			}
 		}
-		
+
 		try {
 			if (cardNeedRemove != null)
 				as.removeView(cardNeedRemove);

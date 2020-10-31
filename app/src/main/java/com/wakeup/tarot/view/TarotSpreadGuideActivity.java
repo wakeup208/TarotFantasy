@@ -12,12 +12,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.wakeup.tarot.R;
 import com.wakeup.tarot.data.ConfigData;
 import com.wakeup.tarot.data.MapData;
 import com.wakeup.tarot.data.SpreadCardJasonHelper;
 
-public class TarotSpreadGuideActivity extends Activity implements
+public class TarotSpreadGuideActivity extends AppCompatActivity implements
 		OnClickListener {
 
 	private int spreadId;
@@ -34,11 +36,11 @@ public class TarotSpreadGuideActivity extends Activity implements
 		setContentView(R.layout.activity_tarot_spread_guide);
 
 		// Reload screen size and background
-		ConfigData.reloadScreen(this);
+		//ConfigData.reloadScreen(this);
 				
 		
 		// Load background
-		((ImageView) findViewById(R.id.background)).setBackgroundDrawable(ConfigData.rbdBackground);
+		//((ImageView) findViewById(R.id.background)).setBackground(ConfigData.rbdBackground);
 		
 		btn_shuffle_cards = (Button) findViewById(R.id.btn_shuffle_cards);
 		btn_shuffle_cards.setTypeface(ConfigData.UVNCatBien_R);
@@ -96,8 +98,8 @@ public class TarotSpreadGuideActivity extends Activity implements
 	@Override
 	protected void onResume() {
 		// Load background
-		((ImageView) findViewById(R.id.background))
-				.setBackground(ConfigData.rbdBackground);
+//		((ImageView) findViewById(R.id.background))
+//				.setBackground(ConfigData.rbdBackground);
 		super.onResume();
 	}
 }

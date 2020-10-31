@@ -14,11 +14,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.wakeup.tarot.R;
 import com.wakeup.tarot.adapter.SpreadCardNameListViewAdapter;
 import com.wakeup.tarot.data.ConfigData;
 
-public class TarotSpreadActivity extends Activity implements
+public class TarotSpreadActivity extends AppCompatActivity implements
 		OnItemClickListener {
 
 	private TextView tvTarotSpreadTitle;

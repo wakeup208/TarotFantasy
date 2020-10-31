@@ -219,7 +219,7 @@ public class SingleCardActivity extends FragmentActivity implements OnClickListe
                 tr.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,
                         LayoutParams.WRAP_CONTENT));
                 // add 3 association item to this row if has
-                for (int c = 0; c < 3; c++) {
+                for (int c = 0; c < 1; c++) {
                     // create association
                     tr.addView(suitAdapter.getView(i, null, null));
                     i++;
@@ -257,7 +257,7 @@ public class SingleCardActivity extends FragmentActivity implements OnClickListe
                 tr.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,
                         LayoutParams.WRAP_CONTENT));
                 // add 3 association item to this row if has
-                for (int c = 0; c < 3; c++) {
+                for (int c = 0; c < 1; c++) {
                     // create association
                     tr.addView(starAdapter.getView(i, null, null));
                     i++;
@@ -295,7 +295,7 @@ public class SingleCardActivity extends FragmentActivity implements OnClickListe
                 tr.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,
                         LayoutParams.WRAP_CONTENT));
                 // add 3 association item to this row if has
-                for (int c = 0; c < 3; c++) {
+                for (int c = 0; c < 1; c++) {
                     // create association
                     tr.addView(numberAdapter.getView(i, null, null));
                     i++;
@@ -333,7 +333,7 @@ public class SingleCardActivity extends FragmentActivity implements OnClickListe
                 tr.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,
                         LayoutParams.WRAP_CONTENT));
                 // add 3 association item to this row if has
-                for (int c = 0; c < 3; c++) {
+                for (int c = 0; c < 1; c++) {
                     // create association
                     tr.addView(symbolAdapter.getView(i, null, null));
                     i++;
@@ -408,7 +408,7 @@ public class SingleCardActivity extends FragmentActivity implements OnClickListe
     private void updateVisibleMode() {
         if (tvCardName.getVisibility() == View.VISIBLE) {
             tvCardName.setVisibility(View.VISIBLE);
-            //bottom_bar.setVisibility(View.VISIBLE);
+            bottom_bar.setVisibility(View.VISIBLE);
 
             switch (visibleMode) {
                 case 1:
@@ -429,7 +429,7 @@ public class SingleCardActivity extends FragmentActivity implements OnClickListe
             }
         } else {
             tvCardName.setVisibility(View.INVISIBLE);
-            //bottom_bar.setVisibility(View.INVISIBLE);
+            bottom_bar.setVisibility(View.INVISIBLE);
             svCardSpread.setVisibility(View.INVISIBLE);
             svCardInterpretation.setVisibility(View.INVISIBLE);
             svCardAssociations.setVisibility(View.INVISIBLE);
@@ -519,13 +519,13 @@ public class SingleCardActivity extends FragmentActivity implements OnClickListe
             case R.id.svCardInterpretation:
             case R.id.svCardDetail:
                 tvCardName.setVisibility(View.INVISIBLE);
-                //bottom_bar.setVisibility(View.INVISIBLE);
+                bottom_bar.setVisibility(View.INVISIBLE);
                 updateVisibleMode();
                 break;
 
             case R.id.ivFontCard:
                 tvCardName.setVisibility(View.VISIBLE);
-                //bottom_bar.setVisibility(View.VISIBLE);
+                bottom_bar.setVisibility(View.VISIBLE);
                 updateVisibleMode();
                 break;
 
