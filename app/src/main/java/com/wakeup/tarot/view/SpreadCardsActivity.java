@@ -40,10 +40,10 @@ public class SpreadCardsActivity extends FragmentActivity implements
 	public static Context mContext;
 	public static SpreadCardsActivity instance;
 	private TextView tvTitle;
-	private Button btn_card_spread;
-	private Button btn_card_list;
-	private Button btn_rules;
-	private Button btn_flip;
+	private ImageView btn_card_spread;
+	private ImageView btn_card_list;
+	private ImageView btn_rules;
+	private ImageView btn_flip;
 
 	private int theNummberOfCard;
 	public static int spreadId; // current spread id show
@@ -157,17 +157,17 @@ public class SpreadCardsActivity extends FragmentActivity implements
 		svRules.setOnClickListener(this);
 
 		// Bottom bar
-		btn_card_spread = (Button) findViewById(R.id.btn_spread_selected);
+		btn_card_spread = (ImageView) findViewById(R.id.btn_spread_selected);
 		btn_card_spread.setOnClickListener(this);
 
-		btn_card_list = (Button) findViewById(R.id.btn_card_list);
+		btn_card_list = (ImageView) findViewById(R.id.btn_card_list);
 		btn_card_list.setOnClickListener(this);
 
-		btn_rules = (Button) findViewById(R.id.btn_rules);
+		btn_rules = (ImageView) findViewById(R.id.btn_rules);
 		btn_rules.setVisibility(View.INVISIBLE);
 		btn_rules.setOnClickListener(this);
 
-		btn_flip = (Button) findViewById(R.id.btn_flip);
+		btn_flip = (ImageView) findViewById(R.id.btn_flip);
 		btn_flip.setOnClickListener(this);
 
 		instance = this;

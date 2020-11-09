@@ -2,13 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/mainback"
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/mainback"
         android:scaleType="fitCenter" />
 
     <AbsoluteLayout
@@ -21,14 +22,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/tvTitle"
-        android:background="@color/color_bar"
         android:visibility="invisible" >
 
         <LinearLayout
             android:id="@+id/listCardContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/linear_bg"
             android:orientation="vertical"
             android:paddingBottom="@dimen/margin_bottom" >
 
@@ -52,7 +51,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/tvTitle"
-        android:background="@color/color_bar"
         android:visibility="invisible" >
 
         <LinearLayout
@@ -83,50 +81,62 @@
         android:id="@+id/bottom_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/color_bar" >
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <TableLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:orientation="horizontal"
-            android:padding="@dimen/thin_padding" >
-
-            <TableRow>
-
-                <Button
-                    android:id="@+id/btn_spread_selected"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/small_padding"
-                    android:background="@drawable/btn_card_spread_selected" />
-
-                <Button
-                    android:id="@+id/btn_card_list"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/small_padding"
-                    android:background="@drawable/btn_card_list" />
-
-                <Button
-                    android:id="@+id/btn_rules"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/small_padding"
-                    android:background="@drawable/btn_rules" />
-            </TableRow>
-        </TableLayout>
-
-        <Button
-            android:id="@+id/btn_flip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginLeft="@dimen/commom_padding"
-            android:background="@drawable/btn_flip" />
+        <include
+            android:id="@+id/navigation_trai_bai"
+            layout="@layout/navigation_trai_bai"/>
     </RelativeLayout>
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/bottom_bar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="4dp"-->
+<!--        android:layout_alignParentBottom="true">-->
+
+<!--        <TableLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentLeft="true"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:padding="@dimen/thin_padding" >-->
+
+<!--            <TableRow>-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/btn_spread_selected"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginRight="@dimen/small_padding"-->
+<!--                    android:background="@drawable/grid_selected" />-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/btn_card_list"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginRight="@dimen/small_padding"-->
+<!--                    android:background="@drawable/btn_card_list" />-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/btn_rules"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginRight="@dimen/small_padding"-->
+<!--                    android:background="@drawable/btn_rules" />-->
+<!--            </TableRow>-->
+<!--        </TableLayout>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btn_flip"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:layout_marginLeft="@dimen/commom_padding"-->
+<!--            android:background="@drawable/btn_flip" />-->
+<!--    </RelativeLayout>-->
 
     <TextView
         android:id="@+id/tvTitle"

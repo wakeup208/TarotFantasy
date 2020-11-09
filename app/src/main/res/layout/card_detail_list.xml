@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:background="@drawable/linear_bg"
+    android:background="@android:color/white"
     android:padding="10dp" >
 
     <ImageView
@@ -24,7 +24,7 @@
             android:id="@+id/tvCardName"
             android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-            android:textColor="@android:color/holo_red_light"
+            android:textColor="@android:color/holo_green_light"
             android:fontFamily="@font/quicksand"
             android:textSize="@dimen/commom_font_size_big"
             android:typeface="serif" />
@@ -33,7 +33,7 @@
             android:id="@+id/tvExplainCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            android:textColor="@android:color/holo_red_light"
             android:fontFamily="@font/quicksand"
             android:textSize="@dimen/commom_font_size"
             android:typeface="serif" />
