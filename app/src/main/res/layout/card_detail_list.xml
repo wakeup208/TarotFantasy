@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
+    android:background="@drawable/linear_bg"
     android:padding="10dp" >
 
     <ImageView
@@ -23,7 +24,7 @@
             android:id="@+id/tvCardName"
             android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-            android:textColor="#28E"
+            android:textColor="@android:color/holo_red_light"
             android:fontFamily="@font/quicksand"
             android:textSize="@dimen/commom_font_size_big"
             android:typeface="serif" />

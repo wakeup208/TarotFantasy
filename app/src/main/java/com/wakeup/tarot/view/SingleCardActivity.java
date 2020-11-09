@@ -74,7 +74,7 @@ public class SingleCardActivity extends FragmentActivity implements OnClickListe
         setContentView(R.layout.activity_single_card);
 
         // Reload screen size and background
-        ConfigData.reloadScreen(this);
+        //ConfigData.reloadScreen(this);
 
         // TODO SETTING FOR IMAGE CACHE
         ImageCache.ImageCacheParams cacheParams = new ImageCache.ImageCacheParams(getApplicationContext(), EXTRA_IMAGE_CACHE_DIR);
@@ -90,7 +90,7 @@ public class SingleCardActivity extends FragmentActivity implements OnClickListe
         mImageLoader.setImageFadeIn(false);
 
         // Load background
-        ((ImageView) findViewById(R.id.background)).setBackgroundDrawable(ConfigData.rbdBackground);
+        //((ImageView) findViewById(R.id.background)).setBackgroundDrawable(ConfigData.rbdBackground);
 
         // Init for View Fliper card component
         vfCardImage = (ViewFlipper) findViewById(R.id.vfCardImage);
@@ -571,8 +571,8 @@ public class SingleCardActivity extends FragmentActivity implements OnClickListe
         super.onResume();
         mImageLoader.setExitTasksEarly(false);
         // Load background
-        ((ImageView) findViewById(R.id.background))
-                .setBackground(ConfigData.rbdBackground);
+//        ((ImageView) findViewById(R.id.background))
+//                .setBackground(ConfigData.rbdBackground);
     }
 
     @Override

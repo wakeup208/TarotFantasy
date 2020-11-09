@@ -54,7 +54,7 @@ public class ProfileActivity extends AppCompatActivity implements OnClickListene
 		setContentView(R.layout.activity_profile);
 
 		// Reload screen size and background
-		ConfigData.reloadScreen(this);
+		//ConfigData.reloadScreen(this);
 
 		// Load background
 //		((ImageView) findViewById(R.id.background))

@@ -49,12 +49,12 @@ public class ChooseCardActivity extends AppCompatActivity implements OnClickList
 		setContentView(R.layout.activity_choose_card);
 
 		// Reload screen size and background
-		ConfigData.reloadScreen(this);
+		//ConfigData.reloadScreen(this);
 
 
 		// Load background
-		((ImageView) findViewById(R.id.background))
-				.setBackgroundDrawable(ConfigData.rbdBackground);
+//		((ImageView) findViewById(R.id.background))
+//				.setBackgroundDrawable(ConfigData.rbdBackground);
 
 		mContext = this.getApplicationContext();
 
@@ -94,8 +94,8 @@ public class ChooseCardActivity extends AppCompatActivity implements OnClickList
 	@Override
 	protected void onResume() {
 		// Load background
-		((ImageView) findViewById(R.id.background))
-				.setBackground(ConfigData.rbdBackground);
+//		((ImageView) findViewById(R.id.background))
+//				.setBackground(ConfigData.rbdBackground);
 		super.onResume();
 	}
 

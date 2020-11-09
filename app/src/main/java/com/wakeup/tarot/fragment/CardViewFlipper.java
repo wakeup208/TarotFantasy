@@ -125,6 +125,7 @@ public class CardViewFlipper extends ViewFlipper implements OnClickListener,
 			break;
 
 		case R.id.ivFontCard:
+			Log.d("abcd", "onClick:        ivFontCard ");
 			this.bringToFront();
 			ConfigData.animation_rotate_zoom_in.setAnimationListener(this);
 			startAnimation(ConfigData.animation_rotate_zoom_in);
@@ -142,6 +143,8 @@ public class CardViewFlipper extends ViewFlipper implements OnClickListener,
 		 * animation_rotate_zoom_in end.
 		 */
 		if (animation == ConfigData.animation_rotate_zoom_in) {
+			Log.d("abcd", "onClick:        animation_rotate_zoom_in ");
+
 			ConfigData.animation_rotate_zoom_in.setAnimationListener(null);
 			ConfigData.animation_rotation_180.setAnimationListener(this);
 			this.startAnimation(ConfigData.animation_rotation_180);
@@ -152,6 +155,8 @@ public class CardViewFlipper extends ViewFlipper implements OnClickListener,
 		 */
 		if (animation == ConfigData.animation_rotation_180) {
 			ConfigData.animation_rotation_180.setAnimationListener(null);
+			Log.d("abcd", "onClick:        xxx ");
+
 			// Show Activity guide of card
 			Intent intentCardViewPager_SpreadCardActivity = new Intent(
 					mSpreadCardsActivity,

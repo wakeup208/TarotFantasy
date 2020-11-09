@@ -41,11 +41,11 @@ public class ItemGroupDetailActivity extends FragmentActivity implements
 		mContext = this.getApplicationContext();
 
 		// Reload screen size and background
-		ConfigData.reloadScreen(this);
+		//ConfigData.reloadScreen(this);
 				
 		
 		// Load background
-		((ImageView) findViewById(R.id.background)).setBackgroundDrawable(ConfigData.rbdBackground);
+		//((ImageView) findViewById(R.id.background)).setBackgroundDrawable(ConfigData.rbdBackground);
 
 		position = this.getIntent().getExtras().getInt("position");
 		group_name = this.getIntent().getExtras().getString("group_name");
@@ -122,8 +122,8 @@ public class ItemGroupDetailActivity extends FragmentActivity implements
 	@Override
 	protected void onResume() {
 		// Load background
-		((ImageView) findViewById(R.id.background))
-				.setBackground(ConfigData.rbdBackground);
+//		((ImageView) findViewById(R.id.background))
+//				.setBackground(ConfigData.rbdBackground);
 		super.onResume();
 	}
 

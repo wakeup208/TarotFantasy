@@ -57,11 +57,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.new_main_activity);
 
         // Load all setting in background thread when splash show
-        ConfigData.loadSettingData(this);
+        //ConfigData.loadSettingData(this);
 
         // Load background
-        ((ImageView) findViewById(R.id.background))
-                .setBackground(ConfigData.rbdBackground);
+//        ((ImageView) findViewById(R.id.background))
+//                .setBackground(ConfigData.rbdBackground);
 
         tvAppName = (TextView) findViewById(R.id.tvAppName);
         tvAppName.setTypeface(ConfigData.UVNCatBien_Sub);
@@ -90,9 +90,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onResume() {
         // Load background
-        ((ImageView) findViewById(R.id.background))
-                .setBackground(ConfigData.rbdBackground);
-
+//        ((ImageView) findViewById(R.id.background))
+//                .setBackground(ConfigData.rbdBackground);
         super.onResume();
     }
 

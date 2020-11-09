@@ -8,6 +8,7 @@
         android:id="@+id/background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/mainback"
         android:scaleType="fitCenter" />
 
     <AbsoluteLayout
@@ -27,6 +28,7 @@
             android:id="@+id/listCardContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/linear_bg"
             android:orientation="vertical"
             android:paddingBottom="@dimen/margin_bottom" >
 
@@ -35,7 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin"
-                android:textColor="#1166FF"
+                android:textColor="@color/white"
                 android:fontFamily="@font/quicksand"
                 android:textSize="@dimen/commom_font_size"
                 android:typeface="serif" />

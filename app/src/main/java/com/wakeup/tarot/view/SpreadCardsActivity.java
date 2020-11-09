@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MotionEvent;
@@ -63,7 +64,7 @@ public class SpreadCardsActivity extends FragmentActivity implements
 		setContentView(R.layout.activity_spread_cards);
 
 		// Reload screen size and background
-		ConfigData.reloadScreen(this);
+		//ConfigData.reloadScreen(this);
 
 		// Look up the AdView as a resource and load a request.
 		
@@ -84,7 +85,7 @@ public class SpreadCardsActivity extends FragmentActivity implements
 		mImageLoader.setImageFadeIn(false);
 		
 		// Load background
-		((ImageView) findViewById(R.id.background)).setBackgroundDrawable(ConfigData.rbdBackground);
+		//((ImageView) findViewById(R.id.background)).setBackgroundDrawable(ConfigData.rbdBackground);
 
 		mContext = this.getApplicationContext();
 
@@ -740,8 +741,8 @@ public class SpreadCardsActivity extends FragmentActivity implements
 	@Override
 	protected void onResume() {
 		// Load background
-		((ImageView) findViewById(R.id.background))
-				.setBackground(ConfigData.rbdBackground);
+//		((ImageView) findViewById(R.id.background))
+//				.setBackground(ConfigData.rbdBackground);
 		super.onResume();
 	}
 }

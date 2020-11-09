@@ -3,6 +3,7 @@ package com.wakeup.tarot.view;
 import android.annotation.TargetApi;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -59,7 +60,7 @@ public class CardDetailViewPagerForSpreadCardActivity extends FragmentActivity
         setContentView(R.layout.activity_card_view_pager_spread_card);
 
         // Reload screen size and background
-        ConfigData.reloadScreen(this);
+        //ConfigData.reloadScreen(this);
         ImageCache.ImageCacheParams cacheParams = new ImageCache.ImageCacheParams(this,
                 VIEW_PAGER_IMAGE_CACHE_DIR);
         cacheParams.setMemCacheSizePercent(0.25f); // Set memory cache to
@@ -74,8 +75,8 @@ public class CardDetailViewPagerForSpreadCardActivity extends FragmentActivity
         mImageLoader.setImageFadeIn(false);
 
         // Load background
-        ((ImageView) findViewById(R.id.background))
-                .setBackground(ConfigData.rbdBackground);
+//        ((ImageView) findViewById(R.id.background))
+//                .setBackground(ConfigData.rbdBackground);
 
         // get card show now in ViewPager
         cardClickedIndex = getIntent().getIntExtra("cardClickedIndex", 0);
@@ -99,13 +100,13 @@ public class CardDetailViewPagerForSpreadCardActivity extends FragmentActivity
         // load bottom bar
         bottom_bar = (RelativeLayout) findViewById(R.id.bottom_bar);
 
-        btn_card_spread = (ImageView) findViewById(R.id.btn_card_spread);
+        btn_card_spread = (ImageView) findViewById(R.id.btn_card_spread1);
         btn_card_spread.setOnClickListener(this);
 
-        btn_card_interpretation = (ImageView) findViewById(R.id.btn_card_interpretation);
+        btn_card_interpretation = (ImageView) findViewById(R.id.btn_card_interpretation1);
         btn_card_interpretation.setOnClickListener(this);
 
-        btn_associations = (ImageView) findViewById(R.id.btn_associations);
+        btn_associations = (ImageView) findViewById(R.id.btn_associations1);
         btn_associations.setOnClickListener(this);
 
 //        btn_shop = (Button) findViewById(R.id.btn_shop);
@@ -147,6 +148,7 @@ public class CardDetailViewPagerForSpreadCardActivity extends FragmentActivity
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        Log.d("abcd","destroy");
         mImageLoader.closeCache();
     }
 

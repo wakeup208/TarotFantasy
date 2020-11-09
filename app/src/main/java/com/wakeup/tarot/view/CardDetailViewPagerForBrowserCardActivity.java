@@ -58,7 +58,7 @@ public class CardDetailViewPagerForBrowserCardActivity extends
 		setContentView(R.layout.activity_card_view_pager_browser_card);
 
 		// Reload screen size and background
-		ConfigData.reloadScreen(this);
+		//ConfigData.reloadScreen(this);
 				
 		/**
 		 * Setup for ImageLoader
@@ -77,8 +77,8 @@ public class CardDetailViewPagerForBrowserCardActivity extends
 		mImageLoader.setImageFadeIn(false);
 
 		// Load background
-		((ImageView) findViewById(R.id.background))
-				.setBackground(ConfigData.rbdBackground);
+//		((ImageView) findViewById(R.id.background))
+//				.setBackground(ConfigData.rbdBackground);
 
 		/**
 		 *  Get component for control
@@ -130,8 +130,8 @@ public class CardDetailViewPagerForBrowserCardActivity extends
 		super.onResume();
 		mImageLoader.setExitTasksEarly(false);
 		// Load background
-		((ImageView) findViewById(R.id.background))
-		.setBackground(ConfigData.rbdBackground);
+//		((ImageView) findViewById(R.id.background))
+//		.setBackground(ConfigData.rbdBackground);
 	}
 
 	@Override

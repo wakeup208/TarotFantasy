@@ -33,11 +33,11 @@ public class TarotSpreadActivity extends AppCompatActivity implements
 		setContentView(R.layout.activity_tarot_spread);
 
 		// Reload screen size and background
-		ConfigData.reloadScreen(this);
+		//ConfigData.reloadScreen(this);
 				
 		
 		// Load background
-		((ImageView) findViewById(R.id.background)).setBackgroundDrawable(ConfigData.rbdBackground);
+		//((ImageView) findViewById(R.id.background)).setBackgroundDrawable(ConfigData.rbdBackground);
 
 		tvTarotSpreadTitle = (TextView) findViewById(R.id.tvTarotSpreadTitle);
 		tvTarotSpreadTitle.setTypeface(ConfigData.UVNCatBien_R);
@@ -63,8 +63,8 @@ public class TarotSpreadActivity extends AppCompatActivity implements
 	@Override
 	protected void onResume() {
 		// Load background
-		((ImageView) findViewById(R.id.background))
-				.setBackground(ConfigData.rbdBackground);
+//		((ImageView) findViewById(R.id.background))
+//				.setBackground(ConfigData.rbdBackground);
 		super.onResume();
 	}
 

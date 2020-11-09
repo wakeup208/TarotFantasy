@@ -58,11 +58,11 @@ public class BrowseCardsActivity extends FragmentActivity implements
 		setContentView(R.layout.activity_browse_cards);
 
 		// Reload screen size and background
-		ConfigData.reloadScreen(this);
+		//ConfigData.reloadScreen(this);
 		
 		// Load background
-		((ImageView) findViewById(R.id.background))
-				.setBackgroundDrawable(ConfigData.rbdBackground);
+//		((ImageView) findViewById(R.id.background))
+//				.setBackgroundDrawable(ConfigData.rbdBackground);
 
 		mContext = this.getApplicationContext();
 
@@ -112,8 +112,8 @@ public class BrowseCardsActivity extends FragmentActivity implements
 	@Override
 	protected void onResume() {
 		// Load background
-		((ImageView) findViewById(R.id.background))
-				.setBackground(ConfigData.rbdBackground);
+//		((ImageView) findViewById(R.id.background))
+//				.setBackground(ConfigData.rbdBackground);
 		super.onResume();
 	}
 
