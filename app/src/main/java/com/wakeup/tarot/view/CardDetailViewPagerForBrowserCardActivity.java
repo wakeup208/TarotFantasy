@@ -107,6 +107,9 @@ public class CardDetailViewPagerForBrowserCardActivity extends
 		ln_associations = (LinearLayout) findViewById(R.id.ln_associations);
 		ln_associations.setOnClickListener(this);
 
+		ln_home_navigate = (LinearLayout) findViewById(R.id.ln_home_navigate);
+		ln_home_navigate.setOnClickListener(this);
+
 		btn_card_detail = (ImageView) findViewById(R.id.btn_card_detail);
 //		btn_card_detail.setOnClickListener(this);
 //
@@ -238,7 +241,7 @@ public class CardDetailViewPagerForBrowserCardActivity extends
 		switch (v.getId()) {
 		case R.id.Pager:
 			break;
-		case R.id.btn_home:
+		case R.id.ln_home_navigate:
 			this.finish();
 			ConfigData.IS_USER_DESTROY_BY_BACK_BUTTON = true;
 			this.startActivity(new Intent(this, MainActivity.class));
