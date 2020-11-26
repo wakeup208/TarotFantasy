@@ -59,7 +59,7 @@
                 android:fontFamily="@font/quicksand"
                 android:text="Rút một lá bài đơn có thể cung cấp cái nhìn thấu đáo cho câu hỏi hay tình huống mà bạn gặp phải."
                 android:textColor="#1166FF"
-                android:textAlignment="center"
+                android:textAlignment="viewStart"
                 android:textSize="@dimen/commom_font_size"
                 android:typeface="serif" />
 
@@ -141,7 +141,10 @@
                 android:textAllCaps="false"
                 android:fontFamily="@font/quicksand"
                 android:background="@drawable/btn_press"
-                android:padding="@dimen/small_padding"
+                android:paddingBottom="@dimen/padding_5dp"
+                android:paddingTop="@dimen/padding_5dp"
+                android:paddingEnd="@dimen/padding_15dp"
+                android:paddingStart="@dimen/padding_15dp"
                 android:text="@string/btn_view_card_interpretation"
                 android:textColor="@color/white"
                 android:textSize="@dimen/commom_font_size" />
@@ -172,7 +175,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingBottom="@dimen/margin_bottom"
-            android:paddingTop="@dimen/margin_top" >
+            android:paddingTop="@dimen/margin_top"
+            android:layout_marginTop="15dp">
 
             <TextView
                 android:id="@+id/tvInterpretation"
@@ -234,15 +238,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="@dimen/margin"
-                android:layout_marginTop="@dimen/margin"
-                android:background="@drawable/button"
-                android:paddingStart="15dp"
-                android:paddingEnd="15dp"
+                android:paddingEnd="@dimen/padding_15dp"
+                android:paddingStart="@dimen/padding_15dp"
+                android:background="@drawable/btn_press"
                 android:fontFamily="@font/quicksand"
                 android:text="@string/btn_view_card_associations"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
+                android:layout_marginBottom="@dimen/padding_20dp"
                 android:textSize="@dimen/commom_font_size" />
 
             <ImageView

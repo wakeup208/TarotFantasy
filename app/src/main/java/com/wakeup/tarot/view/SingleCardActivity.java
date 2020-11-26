@@ -4,6 +4,7 @@ import android.net.Uri;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.content.Intent;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -54,9 +55,13 @@ public class SingleCardActivity extends FragmentActivity implements OnClickListe
     private ScrollView svCardAssociations;
 
     private RelativeLayout bottom_bar;
-    private ImageView btn_card_spread;
-    private ImageView btn_card_interpretation;
-    private ImageView btn_associations;
+    private LinearLayout btn_card_spread;
+    private LinearLayout btn_card_interpretation;
+    private LinearLayout btn_associations;
+
+    private ImageView card_spread;
+    private ImageView card_interpretation;
+    private ImageView associations;
 
     private ImageLoaderAsynch mImageLoader;
     private static String EXTRA_IMAGE_CACHE_DIR = "extra_image_cache";
@@ -349,16 +354,20 @@ public class SingleCardActivity extends FragmentActivity implements OnClickListe
             layoutSymbol.setVisibility(View.GONE);
         }
 
+        card_spread = (ImageView) findViewById(R.id.card_spread1);
+        card_interpretation = (ImageView) findViewById(R.id.card_interpretation1);
+        associations = (ImageView) findViewById(R.id.associations1);
+
         // Init for Bottom button bar
         bottom_bar = (RelativeLayout) findViewById(R.id.bottom_bar);
 
-        btn_card_spread = (ImageView) findViewById(R.id.btn_card_spread1);
+        btn_card_spread = (LinearLayout) findViewById(R.id.btn_card_spread1);
         btn_card_spread.setOnClickListener(this);
 
-        btn_card_interpretation = (ImageView) findViewById(R.id.btn_card_interpretation1);
+        btn_card_interpretation = (LinearLayout) findViewById(R.id.btn_card_interpretation1);
         btn_card_interpretation.setOnClickListener(this);
 
-        btn_associations = (ImageView) findViewById(R.id.btn_associations1);
+        btn_associations = (LinearLayout) findViewById(R.id.btn_associations1);
         btn_associations.setOnClickListener(this);
 
         /**
@@ -444,11 +453,11 @@ public class SingleCardActivity extends FragmentActivity implements OnClickListe
         switch (v.getId()) {
 
             case R.id.btn_card_spread1:
-                btn_card_spread
+                card_spread
                         .setImageResource(R.drawable.ic_grid_press);
-                btn_card_interpretation
+                card_interpretation
                         .setImageResource(R.drawable.ic_details);
-                btn_associations.setImageResource(R.drawable.ic_grid_book);
+                associations.setImageResource(R.drawable.ic_grid_book);
 
                 // other process below here
                 visibleMode = 1;
@@ -457,10 +466,10 @@ public class SingleCardActivity extends FragmentActivity implements OnClickListe
 
             case R.id.btn_view_card_interpretation:
             case R.id.btn_card_interpretation1:
-                btn_card_spread.setImageResource(R.drawable.ic_grid_selected);
-                btn_card_interpretation
+                card_spread.setImageResource(R.drawable.ic_grid_selected);
+                card_interpretation
                         .setImageResource(R.drawable.ic_details_press);
-                btn_associations.setImageResource(R.drawable.ic_grid_book);
+                associations.setImageResource(R.drawable.ic_grid_book);
                 // other process below here
                 visibleMode = 2;
                 updateVisibleMode();
@@ -468,10 +477,10 @@ public class SingleCardActivity extends FragmentActivity implements OnClickListe
 
             case R.id.btn_view_card_associations:
             case R.id.btn_associations1:
-                btn_card_spread.setImageResource(R.drawable.ic_grid_selected);
-                btn_card_interpretation
+                card_spread.setImageResource(R.drawable.ic_grid_selected);
+                card_interpretation
                         .setImageResource(R.drawable.ic_details);
-                btn_associations
+                associations
                         .setImageResource(R.drawable.ic_book_press);
                 // other process below here
                 visibleMode = 3;

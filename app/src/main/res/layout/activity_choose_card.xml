@@ -27,8 +27,12 @@
         android:layout_marginBottom="@dimen/commom_padding"
         android:layout_marginEnd="@dimen/commom_padding"
         android:background="@drawable/btn_press"
-        android:padding="@dimen/small_padding"
+        android:paddingBottom="@dimen/padding_5dp"
+        android:paddingTop="@dimen/padding_5dp"
+        android:paddingEnd="@dimen/padding_15dp"
+        android:paddingStart="@dimen/padding_15dp"
         android:text="Bỏ qua"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="@dimen/commom_font_size" />
 

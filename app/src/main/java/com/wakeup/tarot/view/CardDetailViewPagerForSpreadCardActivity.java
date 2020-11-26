@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -42,9 +43,13 @@ public class CardDetailViewPagerForSpreadCardActivity extends FragmentActivity
     private RelativeLayout top_bar;
     private RelativeLayout bottom_bar;
     private Button btn_home_spread;
-    private ImageView btn_card_spread;
-    private ImageView btn_card_interpretation;
-    private ImageView btn_associations;
+    private LinearLayout btn_card_spread;
+    private LinearLayout btn_card_interpretation;
+    private LinearLayout btn_associations;
+
+    private ImageView card_spread;
+    private ImageView card_interpretation;
+    private ImageView associations;
     //private ImageView btn_shop;
     private int cardClickedIndex;
 
@@ -100,13 +105,17 @@ public class CardDetailViewPagerForSpreadCardActivity extends FragmentActivity
         // load bottom bar
         bottom_bar = (RelativeLayout) findViewById(R.id.bottom_bar);
 
-        btn_card_spread = (ImageView) findViewById(R.id.btn_card_spread1);
+        card_spread = (ImageView) findViewById(R.id.card_spread1);
+        card_interpretation = (ImageView) findViewById(R.id.card_interpretation1);
+        associations = (ImageView) findViewById(R.id.associations1);
+
+        btn_card_spread = (LinearLayout) findViewById(R.id.btn_card_spread1);
         btn_card_spread.setOnClickListener(this);
 
-        btn_card_interpretation = (ImageView) findViewById(R.id.btn_card_interpretation1);
+        btn_card_interpretation = (LinearLayout) findViewById(R.id.btn_card_interpretation1);
         btn_card_interpretation.setOnClickListener(this);
 
-        btn_associations = (ImageView) findViewById(R.id.btn_associations1);
+        btn_associations = (LinearLayout) findViewById(R.id.btn_associations1);
         btn_associations.setOnClickListener(this);
 
 //        btn_shop = (Button) findViewById(R.id.btn_shop);
@@ -148,7 +157,6 @@ public class CardDetailViewPagerForSpreadCardActivity extends FragmentActivity
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d("abcd","destroy");
         mImageLoader.closeCache();
     }
 
@@ -259,12 +267,12 @@ public class CardDetailViewPagerForSpreadCardActivity extends FragmentActivity
                 this.finish();
                 break;
 
-            case R.id.btn_card_spread:
-                btn_card_spread
-                        .setBackgroundResource(R.drawable.ic_grid_press);
-                btn_card_interpretation
-                        .setBackgroundResource(R.drawable.btn_card_interpretation);
-                btn_associations.setBackgroundResource(R.drawable.btn_associations);
+            case R.id.btn_card_spread1:
+                card_spread
+                        .setImageResource(R.drawable.ic_grid_press);
+                card_interpretation
+                        .setImageResource(R.drawable.btn_card_interpretation);
+                associations.setImageResource(R.drawable.btn_associations);
                 //btn_shop.setBackgroundResource(R.drawable.btn_shop);
                 visibleMode = 1;
                 updateShowHideDetailForViewPager();
@@ -272,11 +280,11 @@ public class CardDetailViewPagerForSpreadCardActivity extends FragmentActivity
 
                 break;
 
-            case R.id.btn_card_interpretation:
-                btn_card_spread.setBackgroundResource(R.drawable.btn_card_spread);
-                btn_card_interpretation
-                        .setBackgroundResource(R.drawable.ic_details_press);
-                btn_associations.setBackgroundResource(R.drawable.btn_associations);
+            case R.id.btn_card_interpretation1:
+                card_spread.setImageResource(R.drawable.btn_card_spread);
+                card_interpretation
+                        .setImageResource(R.drawable.ic_details_press);
+                associations.setImageResource(R.drawable.btn_associations);
                 //btn_shop.setBackgroundResource(R.drawable.btn_shop);
                 visibleMode = 2;
                 updateShowHideDetailForViewPager();
@@ -284,12 +292,12 @@ public class CardDetailViewPagerForSpreadCardActivity extends FragmentActivity
 
                 break;
 
-            case R.id.btn_associations:
-                btn_card_spread.setBackgroundResource(R.drawable.btn_card_spread);
-                btn_card_interpretation
-                        .setBackgroundResource(R.drawable.btn_card_interpretation);
-                btn_associations
-                        .setBackgroundResource(R.drawable.ic_book_press);
+            case R.id.btn_associations1:
+                card_spread.setImageResource(R.drawable.btn_card_spread);
+                card_interpretation
+                        .setImageResource(R.drawable.btn_card_interpretation);
+                associations
+                        .setImageResource(R.drawable.ic_book_press);
                 //btn_shop.setBackgroundResource(R.drawable.btn_shop);
                 visibleMode = 3;
                 updateShowHideDetailForViewPager();
@@ -311,21 +319,21 @@ public class CardDetailViewPagerForSpreadCardActivity extends FragmentActivity
     }
 
     public void btnCardAssociationClicked() {
-        btn_card_spread.setBackgroundResource(R.drawable.btn_card_spread);
-        btn_card_interpretation
-                .setBackgroundResource(R.drawable.btn_card_interpretation);
-        btn_associations
-                .setBackgroundResource(R.drawable.ic_book_press);
+        card_spread.setImageResource(R.drawable.btn_card_spread);
+        card_interpretation
+                .setImageResource(R.drawable.btn_card_interpretation);
+        associations
+                .setImageResource(R.drawable.ic_book_press);
         //btn_shop.setBackgroundResource(R.drawable.btn_shop);
         visibleMode = 3;
         updateShowHideDetailForViewPager();
     }
 
     public void btnCardInterpretationClicked() {
-        btn_card_spread.setBackgroundResource(R.drawable.btn_card_spread);
-        btn_card_interpretation
-                .setBackgroundResource(R.drawable.ic_details_press);
-        btn_associations.setBackgroundResource(R.drawable.btn_associations);
+        card_spread.setImageResource(R.drawable.btn_card_spread);
+        card_interpretation
+                .setImageResource(R.drawable.ic_details_press);
+        associations.setImageResource(R.drawable.btn_associations);
         //btn_shop.setBackgroundResource(R.drawable.btn_shop);
         visibleMode = 2;
         updateShowHideDetailForViewPager();

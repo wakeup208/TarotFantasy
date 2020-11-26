@@ -40,10 +40,15 @@ public class SpreadCardsActivity extends FragmentActivity implements
 	public static Context mContext;
 	public static SpreadCardsActivity instance;
 	private TextView tvTitle;
-	private ImageView btn_card_spread;
-	private ImageView btn_card_list;
+	private LinearLayout btn_card_spread;
+	private LinearLayout btn_card_list;
+	private LinearLayout ln_btn_flip;
+
 	private ImageView btn_rules;
 	private ImageView btn_flip;
+
+	private ImageView spread_selected;
+	private ImageView card_list;
 
 	private int theNummberOfCard;
 	public static int spreadId; // current spread id show
@@ -156,11 +161,15 @@ public class SpreadCardsActivity extends FragmentActivity implements
 		svRules = (ScrollView) findViewById(R.id.svRules);
 		svRules.setOnClickListener(this);
 
+		spread_selected = (ImageView) findViewById(R.id.spread_selected);
+		card_list = (ImageView) findViewById(R.id.card_list);
+		ln_btn_flip = (LinearLayout) findViewById(R.id.ln_btn_flip);
+
 		// Bottom bar
-		btn_card_spread = (ImageView) findViewById(R.id.btn_spread_selected);
+		btn_card_spread = (LinearLayout) findViewById(R.id.btn_spread_selected);
 		btn_card_spread.setOnClickListener(this);
 
-		btn_card_list = (ImageView) findViewById(R.id.btn_card_list);
+		btn_card_list = (LinearLayout) findViewById(R.id.btn_card_list);
 		btn_card_list.setOnClickListener(this);
 
 		btn_rules = (ImageView) findViewById(R.id.btn_rules);
@@ -640,32 +649,32 @@ public class SpreadCardsActivity extends FragmentActivity implements
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.btn_spread_selected:
-			btn_card_spread
-					.setBackgroundResource(R.drawable.btn_card_spread_selected);
-			btn_card_list.setBackgroundResource(R.drawable.btn_card_list);
-			btn_rules.setBackgroundResource(R.drawable.btn_rules);
+			spread_selected
+					.setImageResource(R.drawable.ic_grid_press);
+			card_list.setImageResource(R.drawable.ic_grid_list);
+			//btn_rules.setBackgroundResource(R.drawable.btn_rules);
 			// other process below here
-			btn_flip.setVisibility(View.VISIBLE);
+			ln_btn_flip.setVisibility(View.VISIBLE);
 			tvTitle.setVisibility(View.INVISIBLE);
 			svListCards.setVisibility(View.INVISIBLE);
 			svRules.setVisibility(View.INVISIBLE);
 			break;
 
 		case R.id.btn_card_list:
-			btn_card_spread.setBackgroundResource(R.drawable.btn_card_spread);
-			btn_card_list.setBackgroundResource(R.drawable.card_list_selected);
-			btn_rules.setBackgroundResource(R.drawable.btn_rules);
+			spread_selected.setImageResource(R.drawable.ic_grid_selected);
+			card_list.setImageResource(R.drawable.ic_details_press);
+			//btn_rules.setBackgroundResource(R.drawable.btn_rules);
 			// other process below here
-			btn_flip.setVisibility(View.INVISIBLE);
+			ln_btn_flip.setVisibility(View.INVISIBLE);
 			tvTitle.setVisibility(View.VISIBLE);
 			svListCards.setVisibility(View.VISIBLE);
 			svRules.setVisibility(View.INVISIBLE);
 			break;
 
 		case R.id.btn_rules:
-			btn_card_spread.setBackgroundResource(R.drawable.btn_card_spread);
-			btn_card_list.setBackgroundResource(R.drawable.btn_card_list);
-			btn_rules.setBackgroundResource(R.drawable.rules_selected);
+			spread_selected.setImageResource(R.drawable.ic_grid_selected);
+			card_list.setImageResource(R.drawable.ic_grid_list);
+			btn_rules.setImageResource(R.drawable.rules_selected);
 			// other process below here
 			btn_flip.setVisibility(View.INVISIBLE);
 			tvTitle.setVisibility(View.VISIBLE);
@@ -702,10 +711,10 @@ public class SpreadCardsActivity extends FragmentActivity implements
 			break;
 
 		default: // Press Spread button
-			btn_card_spread
-					.setBackgroundResource(R.drawable.btn_card_spread_selected);
-			btn_card_list.setBackgroundResource(R.drawable.btn_card_list);
-			btn_rules.setBackgroundResource(R.drawable.btn_rules);
+			spread_selected
+					.setImageResource(R.drawable.ic_grid_press);
+			card_list.setImageResource(R.drawable.ic_details);
+			//btn_rules.setBackgroundResource(R.drawable.btn_rules);
 			// other process below here
 			btn_flip.setVisibility(View.VISIBLE);
 			tvTitle.setVisibility(View.INVISIBLE);

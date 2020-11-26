@@ -28,6 +28,7 @@
         android:layout_marginRight="15dp"
         android:textAlignment="center"
         android:fontFamily="@font/quicksand"
+        android:maxLines="2"
         android:text="Association name"
         android:textColor="@color/white"
         android:typeface="serif"

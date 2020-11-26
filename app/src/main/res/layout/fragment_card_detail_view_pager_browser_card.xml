@@ -141,8 +141,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/margin"
                 android:background="@drawable/btn_press"
-                android:paddingStart="15dp"
-                android:paddingEnd="15dp"
+                android:paddingStart="@dimen/padding_15dp"
+                android:paddingEnd="@dimen/padding_15dp"
                 android:text="@string/btn_view_card_associations"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
@@ -178,10 +178,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:background="@drawable/mainback"
             android:paddingBottom="@dimen/margin_bottom"
             android:paddingLeft="@dimen/thin_padding"
             android:paddingRight="@dimen/thin_padding"
-            android:paddingTop="@dimen/margin_top" >
+            android:paddingTop="@dimen/margin_bottom" >
 
             <!-- For suit -->
 
@@ -189,24 +190,30 @@
                 android:id="@+id/layoutSuit"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/linear_bg"
+                android:layout_margin="20dp"
                 android:orientation="vertical" >
 
                 <Button
                     android:id="@+id/btnSuit"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/btn_press"
                     android:padding="@dimen/small_padding"
-                    android:text="suit"
+                    android:text="Suit"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/quicksand"
+                    android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="@dimen/commom_font_size_small" />
 
                 <TableLayout
                     android:id="@+id/suitTable"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal" >
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/linear_bg"
+                    android:orientation="vertical" >
                 </TableLayout>
             </LinearLayout>
 
@@ -216,24 +223,31 @@
                 android:id="@+id/layoutStar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/linear_bg"
+                android:layout_margin="20dp"
                 android:orientation="vertical" >
 
                 <Button
                     android:id="@+id/btnStar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:background="@drawable/btn_press"
                     android:padding="@dimen/small_padding"
-                    android:text="star"
+                    android:text="Star"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:fontFamily="@font/quicksand"
+                    android:textAllCaps="false"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/commom_font_size_small" />
+                    android:textSize="@dimen/commom_font_size_small"/>
 
                 <TableLayout
                     android:id="@+id/starTable"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal" >
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/linear_bg"
+                    android:orientation="vertical" >
                 </TableLayout>
             </LinearLayout>
 
@@ -243,24 +257,30 @@
                 android:id="@+id/layoutNumber"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/linear_bg"
+                android:layout_margin="20dp"
                 android:orientation="vertical" >
 
                 <Button
                     android:id="@+id/btnNumber"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:background="@drawable/btn_press"
                     android:padding="@dimen/small_padding"
-                    android:text="number"
+                    android:fontFamily="@font/quicksand"
+                    android:textAllCaps="false"
+                    android:layout_marginBottom="10dp"
+                    android:text="Number"
                     android:textColor="@color/white"
                     android:textSize="@dimen/commom_font_size_small" />
 
                 <TableLayout
                     android:id="@+id/numberTable"
+                    android:background="@drawable/linear_bg"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal" >
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
                 </TableLayout>
             </LinearLayout>
 
@@ -270,24 +290,30 @@
                 android:id="@+id/layoutSymbol"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/linear_bg"
+                android:layout_margin="20dp"
                 android:orientation="vertical" >
 
                 <Button
                     android:id="@+id/btnSymbol"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:background="@drawable/btn_press"
+                    android:fontFamily="@font/quicksand"
+                    android:textAllCaps="false"
+                    android:layout_marginBottom="10dp"
                     android:padding="@dimen/small_padding"
-                    android:text="symbol"
+                    android:text="Symbol"
                     android:textColor="@color/white"
                     android:textSize="@dimen/commom_font_size_small" />
 
                 <TableLayout
                     android:id="@+id/symbolTable"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal" >
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/linear_bg"
+                    android:orientation="vertical" >
                 </TableLayout>
             </LinearLayout>
 

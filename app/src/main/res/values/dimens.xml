@@ -29,4 +29,8 @@
     <dimen name="card_heigh">110dp</dimen>
     <dimen name="card_with">120dp</dimen>
 
+    <dimen name="padding_5dp">5dp</dimen>
+    <dimen name="padding_15dp">15dp</dimen>
+    <dimen name="padding_20dp">20dp</dimen>
+
 </resources>

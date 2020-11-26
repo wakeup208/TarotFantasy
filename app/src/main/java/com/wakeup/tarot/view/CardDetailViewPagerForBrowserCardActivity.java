@@ -9,6 +9,7 @@ import android.view.View.OnClickListener;
 import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -49,6 +50,8 @@ public class CardDetailViewPagerForBrowserCardActivity extends
 	private ImageView btn_associations;
 	private Button btn_shop;
 	private int position;
+
+	private LinearLayout ln_card_detail, ln_associations, ln_home_navigate;
 
 	@TargetApi(11)
 	@Override
@@ -98,11 +101,17 @@ public class CardDetailViewPagerForBrowserCardActivity extends
 
 		bottom_bar = (RelativeLayout) findViewById(R.id.bottom_bar);
 
-		btn_card_detail = (ImageView) findViewById(R.id.btn_card_detail);
-		btn_card_detail.setOnClickListener(this);
+		ln_card_detail = (LinearLayout) findViewById(R.id.ln_card_detail);
+		ln_card_detail.setOnClickListener(this);
 
+		ln_associations = (LinearLayout) findViewById(R.id.ln_associations);
+		ln_associations.setOnClickListener(this);
+
+		btn_card_detail = (ImageView) findViewById(R.id.btn_card_detail);
+//		btn_card_detail.setOnClickListener(this);
+//
 		btn_associations = (ImageView) findViewById(R.id.btn_associations);
-		btn_associations.setOnClickListener(this);
+//		btn_associations.setOnClickListener(this);
 
 //		btn_shop = (Button) findViewById(R.id.btn_shop);
 //		btn_shop.setOnClickListener(this);
@@ -235,21 +244,21 @@ public class CardDetailViewPagerForBrowserCardActivity extends
 			this.startActivity(new Intent(this, MainActivity.class));
 			break;
 
-		case R.id.btn_card_detail:
+		case R.id.ln_card_detail:
 			btn_card_detail
-					.setBackgroundResource(R.drawable.ic_details_press);
-			btn_associations.setBackgroundResource(R.drawable.btn_associations);
+					.setImageResource(R.drawable.ic_details_press);
+			btn_associations.setImageResource(R.drawable.btn_associations);
 			visibleMode = 1;
 			updateShowHideDetailForViewPager();
 			// other process below here
 
 			break;
 
-		case R.id.btn_associations:
+		case R.id.ln_associations:
 			btn_card_detail
-					.setBackgroundResource(R.drawable.btn_card_interpretation);
+					.setImageResource(R.drawable.btn_card_interpretation);
 			btn_associations
-					.setBackgroundResource(R.drawable.ic_grid_press);
+					.setImageResource(R.drawable.ic_grid_press);
 			visibleMode = 2;
 			updateShowHideDetailForViewPager();
 			// other process below here
@@ -264,9 +273,9 @@ public class CardDetailViewPagerForBrowserCardActivity extends
 
 	public void btnCardAssociationClicked() {
 		btn_card_detail
-				.setBackgroundResource(R.drawable.btn_card_interpretation);
+				.setImageResource(R.drawable.btn_card_interpretation);
 		btn_associations
-				.setBackgroundResource(R.drawable.ic_book_press);
+				.setImageResource(R.drawable.ic_book_press);
 //		btn_shop.setBackgroundResource(R.drawable.btn_shop);
 		visibleMode = 2;
 		updateShowHideDetailForViewPager();
