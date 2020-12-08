@@ -58,10 +58,6 @@
                 android:textColor="#FFFFFF"
                 android:textSize="@dimen/commom_font_size"
                 android:textStyle="normal"
-                android:shadowColor="@color/text_shadow"
-                android:shadowDx="+2"
-                android:shadowDy="+2"
-                android:shadowRadius="2"
                 android:typeface="serif" />
 
             <TextView
@@ -76,10 +72,6 @@
                 android:textColor="#FF9800"
                 android:textSize="@dimen/commom_font_size"
                 android:typeface="serif"
-                android:shadowColor="@color/text_shadow"
-                android:shadowDx="+2"
-                android:shadowDy="+2"
-                android:shadowRadius="2"
                 android:textStyle="normal" />
 
             <ImageView
@@ -117,10 +109,6 @@
                 android:textSize="@dimen/commom_font_size"
                 android:typeface="serif"
                 android:visibility="gone"
-                android:shadowColor="@color/text_shadow"
-                android:shadowDx="+2"
-                android:shadowDy="+2"
-                android:shadowRadius="2"
                 android:textStyle="normal" />
 
             <Button
@@ -257,10 +245,6 @@
                 android:textSize="@dimen/commom_font_size"
                 android:typeface="serif"
                 android:visibility="gone"
-                android:shadowColor="@color/text_shadow"
-                android:shadowDx="+2"
-                android:shadowDy="+2"
-                android:shadowRadius="2"
                 android:textStyle="normal" />
 
             <ImageView

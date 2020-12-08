@@ -31,10 +31,6 @@
             android:textColor="@color/white"
             android:textSize="@dimen/commom_font_size_big"
             android:typeface="serif"
-            android:shadowColor="@color/text_shadow"
-            android:shadowDx="+2"
-            android:shadowDy="+2"
-            android:shadowRadius="2"
            android:textStyle="bold" />
 
         <ImageView
@@ -68,10 +64,6 @@
                 android:fontFamily="@font/quicksand"
                 android:textSize="@dimen/commom_font_size"
                 android:typeface="serif"
-                android:shadowColor="@color/text_shadow"
-                android:shadowDx="+2"
-                android:shadowDy="+2"
-                android:shadowRadius="2"
                android:textStyle="bold" />
 
             <ImageView
@@ -93,10 +85,6 @@
                 android:fontFamily="@font/quicksand"
                 android:textSize="@dimen/commom_font_size"
                 android:typeface="serif"
-                android:shadowColor="@color/text_shadow"
-                android:shadowDx="+2"
-                android:shadowDy="+2"
-                android:shadowRadius="2"
                 android:textStyle="bold"
                 android:visibility="gone" />
             
@@ -117,11 +105,14 @@
 
         <ImageButton
             android:id="@+id/btn_home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:background="@drawable/btn_home_new"
-            android:scaleType="centerCrop" />
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_home_48"
+            android:gravity="center_vertical"
+            android:scaleType="centerCrop"
+            android:contentDescription="TODO" />
 
         <TextView
             android:id="@+id/tvItemGroupName"
@@ -132,10 +123,6 @@
             android:text="@string/browse_cards"
             android:textColor="#b23ad0"
             android:fontFamily="@font/quicksand"
-            android:shadowColor="@color/text_shadow"
-            android:shadowDx="+2"
-            android:shadowDy="+2"
-            android:shadowRadius="2"
             android:textSize="@dimen/title_font_size"
             android:textStyle="bold"
             android:typeface="serif" />

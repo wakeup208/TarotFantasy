@@ -24,6 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:layout_margin="4dp"
         android:background="@color/color_bar" >
 
         <ImageButton
@@ -43,10 +44,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:shadowColor="@color/text_shadow"
-            android:shadowDx="+2"
-            android:shadowDy="+2"
-            android:shadowRadius="2"
             android:text="@string/browse_cards"
             android:textColor="#b23ad0"
             android:fontFamily="@font/quicksand"

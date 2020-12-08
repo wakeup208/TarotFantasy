@@ -16,6 +16,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -46,6 +47,13 @@ public class BrowseCardsActivity extends FragmentActivity implements
 	private ImageView btn_minus;
 	private ImageView btn_plus;
 
+	private LinearLayout ln_btn_grid;
+	private LinearLayout ln_btn_list;
+	private LinearLayout ln_btn_associations;
+	private LinearLayout ln_btn_minus;
+	private LinearLayout ln_btn_plus;
+
+
 	// Fragment to show Browse mode
 	GirdCardFragment mGridCardFragment;
 	ListViewCardFragment mListViewCardFragment;
@@ -69,20 +77,30 @@ public class BrowseCardsActivity extends FragmentActivity implements
 		tvTitle = (TextView) findViewById(R.id.tvTitle);
 		tvTitle.setTypeface(ConfigData.UVNCatBien_R);
 
+		ln_btn_grid = (LinearLayout) findViewById(R.id.ln_btn_grid);
+		ln_btn_grid.setOnClickListener(this);
 		btn_grid = (ImageView) findViewById(R.id.btn_grid);
-		btn_grid.setOnClickListener(this);
+		//btn_grid.setOnClickListener(this);
 
+		ln_btn_list = (LinearLayout) findViewById(R.id.ln_btn_list);
+		ln_btn_list.setOnClickListener(this);
 		btn_list = (ImageView) findViewById(R.id.btn_list);
-		btn_list.setOnClickListener(this);
+		//btn_list.setOnClickListener(this);
 
+		ln_btn_associations = (LinearLayout) findViewById(R.id.ln_btn_associations);
+		ln_btn_associations.setOnClickListener(this);
 		btn_associations = (ImageView) findViewById(R.id.btn_associations);
-		btn_associations.setOnClickListener(this);
+		//btn_associations.setOnClickListener(this);
 
+		ln_btn_minus = (LinearLayout) findViewById(R.id.ln_btn_minus);
+		ln_btn_minus.setOnClickListener(this);
 		btn_minus = (ImageView) findViewById(R.id.btn_minus);
-		btn_minus.setOnClickListener(this);
+		//btn_minus.setOnClickListener(this);
 
+		ln_btn_plus = (LinearLayout) findViewById(R.id.ln_btn_plus);
+		ln_btn_plus.setOnClickListener(this);
 		btn_plus = (ImageView) findViewById(R.id.btn_plus);
-		btn_plus.setOnClickListener(this);
+		//btn_plus.setOnClickListener(this);
 
 		// Replace container by mGridCardFragment
 		selectBrowserMode(ConfigData.BROWSER_MODE);
@@ -133,13 +151,16 @@ public class BrowseCardsActivity extends FragmentActivity implements
 			btn_associations.setImageResource(R.drawable.ic_grid_book);
 			btn_plus.setImageResource(R.drawable.ic_grid_plus);
 			btn_plus.setEnabled(true);
+			ln_btn_plus.setEnabled(true);
 			btn_minus.setImageResource(R.drawable.ic_grid_minus);
 			btn_minus.setEnabled(true);
+			ln_btn_minus.setEnabled(true);
 			if (ConfigData.ZOOM_LEVEL == 3) {
 				btn_plus.setImageResource(R.drawable.ic_grid_plus_dim);
 				btn_plus.setEnabled(false);
 				btn_minus.setImageResource(R.drawable.ic_grid_minus);
 				btn_minus.setEnabled(true);
+				ln_btn_minus.setEnabled(true);
 			}
 
 			if (ConfigData.ZOOM_LEVEL == 0) {
@@ -147,6 +168,7 @@ public class BrowseCardsActivity extends FragmentActivity implements
 				btn_minus.setEnabled(false);
 				btn_plus.setImageResource(R.drawable.ic_grid_plus);
 				btn_plus.setEnabled(true);
+				ln_btn_plus.setEnabled(true);
 			}
 
 			if (mGridCardFragment == null) {
@@ -161,8 +183,10 @@ public class BrowseCardsActivity extends FragmentActivity implements
 			btn_associations.setImageResource(R.drawable.ic_grid_book);
 			btn_plus.setImageResource(R.drawable.ic_grid_plus_dim);
 			btn_plus.setEnabled(false);
+			ln_btn_plus.setEnabled(false);
 			btn_minus.setImageResource(R.drawable.ic_grid_miuns_dim);
 			btn_minus.setEnabled(false);
+			ln_btn_minus.setEnabled(false);
 //			btn_plus.setVisibility(View.INVISIBLE);
 //			btn_minus.setVisibility(View.INVISIBLE);
 			if (mListViewCardFragment == null) {
@@ -182,8 +206,11 @@ public class BrowseCardsActivity extends FragmentActivity implements
 
 			btn_plus.setImageResource(R.drawable.ic_grid_plus_dim);
 			btn_plus.setEnabled(false);
+			ln_btn_plus.setEnabled(false);
+
 			btn_minus.setImageResource(R.drawable.ic_grid_miuns_dim);
 			btn_minus.setEnabled(false);
+			ln_btn_minus.setEnabled(false);
 
 			if (mGoupCardFragment == null) {
 				mGoupCardFragment = new GoupCardFragment();
@@ -209,22 +236,22 @@ public class BrowseCardsActivity extends FragmentActivity implements
 			this.finish();
 			break;
 
-		case R.id.btn_grid:
+			case R.id.ln_btn_grid:
 			// other process below here
 			selectBrowserMode(0);
 			break;
 
-		case R.id.btn_list:
+		case R.id.ln_btn_list:
 			// other process below here
 			selectBrowserMode(1);
 			break;
 
-		case R.id.btn_associations:
+		case R.id.ln_btn_associations:
 			// other process below here
 			selectBrowserMode(2);
 			break;
 
-		case R.id.btn_minus:
+		case R.id.ln_btn_minus:
 			if (mGridCardFragment.zoomGridView('-') == false) {
 				btn_minus.setImageResource(R.drawable.ic_grid_miuns_dim);
 				btn_minus.setEnabled(false);
@@ -238,7 +265,7 @@ public class BrowseCardsActivity extends FragmentActivity implements
 			}
 			break;
 
-		case R.id.btn_plus:
+		case R.id.ln_btn_plus:
 			if (mGridCardFragment.zoomGridView('+') == false) {
 				btn_plus.setImageResource(R.drawable.ic_grid_plus_dim);
 				btn_plus.setEnabled(false);

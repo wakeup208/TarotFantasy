@@ -16,7 +16,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:padding="4dp"
+        android:paddingBottom="4dp"
+        android:paddingTop="4dp"
         android:orientation="vertical">
 
         <ImageView
@@ -24,7 +25,6 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_centerInParent="true"
-            android:padding="4dp"
             android:layout_gravity="center"
             android:src="@drawable/ic_details_press" />
 
@@ -44,7 +44,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:padding="4dp"
+        android:paddingBottom="4dp"
+        android:paddingTop="4dp"
         android:orientation="vertical">
 
         <ImageView
@@ -52,7 +53,6 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_centerInParent="true"
-            android:padding="4dp"
             android:layout_gravity="center"
             android:src="@drawable/ic_grid_book" />
 
@@ -71,7 +71,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:padding="4dp"
+        android:paddingBottom="4dp"
+        android:paddingTop="4dp"
         android:orientation="vertical">
 
         <ImageView
@@ -79,7 +80,6 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_centerInParent="true"
-            android:padding="4dp"
             android:layout_gravity="center"
             android:src="@drawable/ic_home" />
 

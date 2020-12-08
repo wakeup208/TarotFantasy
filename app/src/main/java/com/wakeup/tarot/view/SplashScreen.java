@@ -4,9 +4,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Window;
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.wakeup.tarot.R;
 import com.wakeup.tarot.data.ConfigData;
@@ -21,6 +26,14 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
+
+        Window window = getWindow();
+        window.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        window.addFlags(Integer.MIN_VALUE);
+        window.setStatusBarColor(ContextCompat.getColor(this, R.color.status_bar));
+        Animation aniRotate = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate);
+        aniRotate.setRepeatCount(2);
+        ((ImageView) findViewById(R.id.img)).startAnimation(aniRotate);
 
         new Handler().postDelayed(new Runnable() {
         	

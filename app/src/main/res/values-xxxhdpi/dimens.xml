@@ -2,7 +2,7 @@
 
     <dimen name="app_name_font_size">42sp</dimen>
     <dimen name="title_font_size">30sp</dimen>
-    <dimen name="commom_font_size">23sp</dimen>
+    <dimen name="commom_font_size">20sp</dimen>
     <dimen name="commom_font_size_small">19sp</dimen>
     <dimen name="commom_font_size_big">25sp</dimen>
 
