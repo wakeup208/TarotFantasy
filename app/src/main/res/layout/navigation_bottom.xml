@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
-            android:text="Đậu Xanh"
+            android:text="Tổng thể"
             android:layout_marginTop="2dp"
             android:textAlignment="center"
             android:layout_gravity="center" />
@@ -60,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
-            android:text="Đậu Xanh"
+            android:text="Chi tiết"
             android:layout_marginTop="2dp"
             android:textAlignment="center"
             android:layout_gravity="center" />
@@ -88,7 +88,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
-            android:text="Đậu Xanh"
+            android:text="Biểu tượng"
             android:layout_marginTop="2dp"
             android:textAlignment="center"
             android:layout_gravity="center" />
@@ -115,7 +115,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
-            android:text="Đậu Xanh"
+            android:text="Thu nhỏ"
             android:layout_marginTop="2dp"
             android:textAlignment="center"
             android:layout_gravity="center" />
@@ -143,7 +143,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
-            android:text="Đậu Xanh"
+            android:text="Phóng to"
             android:layout_marginTop="2dp"
             android:textAlignment="center"
             android:layout_gravity="center" />

@@ -173,6 +173,7 @@
         android:id="@+id/ad_container"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:visibility="gone"
         android:layout_alignParentBottom="true"
         android:background="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -186,16 +187,5 @@
             android:layout_alignParentLeft="true"
             app:adSize="BANNER"
             app:adUnitId="@string/banner_ad_unit_id" />-->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="@string/galaxy_profile"
-            android:fontFamily="@font/red_m"
-            android:textColor="@color/white"
-            android:textSize="@dimen/commom_font_size"
-            android:textStyle="normal"
-            android:typeface="serif" />
     </RelativeLayout>
 </RelativeLayout>
