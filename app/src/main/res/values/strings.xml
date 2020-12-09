@@ -42,4 +42,11 @@
     <string name="section_of_Suit_of_Cups">Suit of Cups</string>
     <string name="section_of_Suit_of_Swords">Suit of Swords</string>
     <string name="section_of_Suit_of_Pentacles">Suit of Pentacles</string>
+
+    <string name="huy_trai_bai">Bạn có chắc muốn hủy lần trải bài này không ?</string>
+    <string name="huy_cai_dat">Bạn có chắc muốn cài lại mặc định không ?</string>
+    <string name="huy_thay_doi">Bạn có chắc chắn muốn lưu lại thay đổi ?</string>
+    <string name="xac_nhan_thay_doi">Đã hủy tất cả thay đổi của bạn.</string>
+    <string name="OK">OK</string>
+
 </resources>

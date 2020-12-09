@@ -100,12 +100,12 @@ public class ConfigData {
 
         if (UVNCatBien_R == null) {
             UVNCatBien_R = Typeface.createFromAsset(a.getApplicationContext()
-                    .getAssets(), "poppins_light.ttf");
+                    .getAssets(), "red_m.ttf");
         }
 
         if (UVNCatBien_Sub == null) {
             UVNCatBien_Sub = Typeface.createFromAsset(a.getApplicationContext()
-                    .getAssets(), "poppins_regular.ttf");
+                    .getAssets(), "red_m.ttf");
         }
 
         // Get data UI saved

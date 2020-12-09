@@ -13,6 +13,8 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -44,6 +46,8 @@ public class ProfileActivity extends AppCompatActivity implements OnClickListene
 	private Button btnSave;
 	private Button btnCancel;
 
+	private AlertDialog.Builder startLevelDialog;
+
 	private boolean isSettingChange;
 
 
@@ -52,28 +56,6 @@ public class ProfileActivity extends AppCompatActivity implements OnClickListene
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_profile);
-
-		// Reload screen size and background
-		//ConfigData.reloadScreen(this);
-
-		// Load background
-//		((ImageView) findViewById(R.id.background))
-//				.setBackgroundDrawable(ConfigData.rbdBackground);
-
-		// Look up the AdView as a resource and load a request.
-
-
-//		tvProfileTitle = (TextView) findViewById(R.id.tvProfileTitle);
-//		tvProfileTitle.setTypeface(ConfigData.UVNCatBien_R);
-
-//		btnBuyTarotCards = (Button) findViewById(R.id.btnBuyTarotCards);
-//		btnBuyTarotCards.setOnClickListener(this);
-//
-//		btnFeedbackAndDiscuss = (Button) findViewById(R.id.btnFeedbackAndDiscuss);
-//		btnFeedbackAndDiscuss.setOnClickListener(this);
-//
-//		btnAuthor = (Button) findViewById(R.id.btnAuthor);
-//		btnAuthor.setOnClickListener(this);
 
 		btnReverseCard = (TextView) findViewById(R.id.btnReverseCard);
 		btnReverseCard.setOnClickListener(this);
@@ -108,6 +90,7 @@ public class ProfileActivity extends AppCompatActivity implements OnClickListene
 		cbSoundOnOff.setChecked(ConfigData.IS_SOUND_ON);
 
 		isSettingChange = false;
+		startLevelDialog = new AlertDialog.Builder(this, R.style.DialogStyle);
 	}
 
 	@Override
@@ -156,63 +139,86 @@ public class ProfileActivity extends AppCompatActivity implements OnClickListene
 			break;
 
 		case R.id.btnDefault:
-			(new AlertDialog.Builder(this))
-					.setIcon(R.drawable.icon_question)
-					.setTitle("Xác nhận")
-					.setMessage(
-							"Bạn có chắc chắn muốn cài lại mặc định hay không ?")
-					.setNegativeButton("Không", null)
-					.setPositiveButton("Có",
-							new DialogInterface.OnClickListener() {
-								@Override
-								public void onClick(DialogInterface dialog,
-										int which) {
-									ConfigData.resetDefault();
-									ConfigData.saveSettingData();
-									// Update this UI
-									tvFontSize.setText(""
-											+ ConfigData.FONT_SIZE);
-									cbReverseCard
-											.setChecked(ConfigData.IS_REVERSE_CARD);
-									cbSoundOnOff
-											.setChecked(ConfigData.IS_SOUND_ON);
 
-									isSettingChange = false;
-								}
-							}).create().show();
+			final AlertDialog alertDialog = startLevelDialog.create();
+			View view = getLayoutInflater().inflate(R.layout.custom_profile_dialog, null);
+			Button btnYes = (Button) view.findViewById(R.id.btnYes);
+			Button btnNo = (Button) view.findViewById(R.id.btnNo);
 
+			btnYes.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					ConfigData.resetDefault();
+					ConfigData.saveSettingData();
+					// Update this UI
+					tvFontSize.setText(""
+							+ ConfigData.FONT_SIZE);
+					cbReverseCard
+							.setChecked(ConfigData.IS_REVERSE_CARD);
+					cbSoundOnOff
+							.setChecked(ConfigData.IS_SOUND_ON);
+
+					isSettingChange = false;
+					alertDialog.dismiss();
+				}
+			});
+
+			btnNo.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					alertDialog.dismiss();
+				}
+			});
+
+
+			alertDialog.setCancelable(false);
+			alertDialog.setView(view);
+			alertDialog.show();
 			break;
-
 		case R.id.btnSave:
-			(new AlertDialog.Builder(this))
-					.setIcon(R.drawable.icon_question)
-					.setTitle("Xác nhận !")
-					.setMessage("Bạn có chắc chắn muốn lưu lại thay đổi.")
-					.setNegativeButton("Không", null)
-					.setPositiveButton("Có",
-							new DialogInterface.OnClickListener() {
-								@Override
-								public void onClick(DialogInterface dialog,
-										int which) {
-									ConfigData.FONT_SIZE = Float
-											.parseFloat(tvFontSize.getText()
-													.toString());
-									ConfigData.IS_SOUND_ON = cbSoundOnOff
-											.isChecked();
-									ConfigData.IS_REVERSE_CARD = cbReverseCard
-											.isChecked();
-									ConfigData.saveSettingData();
-									// Update this UI
-									tvFontSize.setText(""
-											+ ConfigData.FONT_SIZE);
-									cbReverseCard
-											.setChecked(ConfigData.IS_REVERSE_CARD);
-									cbSoundOnOff
-											.setChecked(ConfigData.IS_SOUND_ON);
 
-									isSettingChange = false;
-								}
-							}).create().show();
+			final AlertDialog alertDialog1 = startLevelDialog.create();
+			View view1 = getLayoutInflater().inflate(R.layout.custom_profile_dialog, null);
+			Button btnYes1 = (Button) view1.findViewById(R.id.btnYes);
+			Button btnNo1 = (Button) view1.findViewById(R.id.btnNo);
+			TextView txt = (TextView) view1.findViewById(R.id.txt_title_dialog);
+			txt.setText(R.string.huy_thay_doi);
+
+			btnYes1.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					ConfigData.FONT_SIZE = Float
+							.parseFloat(tvFontSize.getText()
+									.toString());
+					ConfigData.IS_SOUND_ON = cbSoundOnOff
+							.isChecked();
+					ConfigData.IS_REVERSE_CARD = cbReverseCard
+							.isChecked();
+					ConfigData.saveSettingData();
+					// Update this UI
+					tvFontSize.setText(""
+							+ ConfigData.FONT_SIZE);
+					cbReverseCard
+							.setChecked(ConfigData.IS_REVERSE_CARD);
+					cbSoundOnOff
+							.setChecked(ConfigData.IS_SOUND_ON);
+
+					isSettingChange = false;
+					alertDialog1.dismiss();
+				}
+			});
+
+			btnNo1.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					alertDialog1.dismiss();
+				}
+			});
+
+
+			alertDialog1.setCancelable(false);
+			alertDialog1.setView(view1);
+			alertDialog1.show();
 
 			break;
 
@@ -222,9 +228,31 @@ public class ProfileActivity extends AppCompatActivity implements OnClickListene
 			cbReverseCard.setChecked(ConfigData.IS_REVERSE_CARD);
 			cbSoundOnOff.setChecked(ConfigData.IS_SOUND_ON);
 
-			(new AlertDialog.Builder(this)).setTitle("Thông báo !")
-					.setMessage("Đã hủy thay đổi của bạn.")
-					.setPositiveButton("OK", null).create().show();
+			final AlertDialog alertDialog2 = startLevelDialog.create();
+			View view2 = getLayoutInflater().inflate(R.layout.custom_profile_dialog, null);
+			LinearLayout linearLayout = (LinearLayout) view2.findViewById(R.id.ln_yes_no);
+			RelativeLayout relativeLayout = (RelativeLayout) view2.findViewById(R.id.rela_ok);
+
+			TextView txt1 = (TextView) view2.findViewById(R.id.txt_title_dialog);
+			txt1.setText(R.string.xac_nhan_thay_doi);
+			ImageView img = (ImageView)view2.findViewById(R.id.icon_dialog);
+			img.setImageResource(R.drawable.ic_warning);
+
+			linearLayout.setVisibility(View.GONE);
+			relativeLayout.setVisibility(View.VISIBLE);
+
+			Button btnOk = (Button) view2.findViewById(R.id.btnOK);
+			btnOk.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					alertDialog2.dismiss();
+				}
+			});
+
+
+			alertDialog2.setCancelable(false);
+			alertDialog2.setView(view2);
+			alertDialog2.show();
 
 			isSettingChange = false;
 

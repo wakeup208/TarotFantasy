@@ -65,4 +65,11 @@
         <item name="android:fontFamily">@font/quicksand</item>
     </style>
 
+    <style name="DialogStyle" parent="Theme.MaterialComponents.Dialog">
+        <item name="android:windowMinWidthMajor">50%</item>
+        <item name="android:windowMinWidthMinor">50%</item>
+        <item name="android:windowBackground">@drawable/dialog_boder</item>
+        <item name="android:fontFamily">@font/quicksand</item>
+    </style>
+
 </resources>

@@ -737,14 +737,31 @@ public class SpreadCardsActivity extends FragmentActivity implements
 
 	@Override
 	public void onBackPressed() {
-		(new AlertDialog.Builder(this))
-				.setMessage("Bạn có chắc chắn muốn hủy lần trải bài này")
-				.setPositiveButton("Có", new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						SpreadCardsActivity.this.finish();
-					}
-				}).setNegativeButton("Không", null).create().show();
+		AlertDialog.Builder startLevelDialog = new AlertDialog.Builder(this, R.style.DialogStyle);
+		final AlertDialog alertDialog = startLevelDialog.create();
+
+		View view = getLayoutInflater().inflate(R.layout.custom_dialog, null);
+		Button btnYes = (Button) view.findViewById(R.id.btnYes);
+		Button btnNo = (Button) view.findViewById(R.id.btnNo);
+
+		btnYes.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				SpreadCardsActivity.this.finish();
+			}
+		});
+
+		btnNo.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				alertDialog.dismiss();
+			}
+		});
+
+
+		alertDialog.setCancelable(false);
+		alertDialog.setView(view);
+		alertDialog.show();
 	}
 	
 	@Override
