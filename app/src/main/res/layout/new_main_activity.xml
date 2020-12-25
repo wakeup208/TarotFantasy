@@ -57,7 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:fontFamily="@font/red_m"
+                android:fontFamily="@font/quicksand"
                 android:textAlignment="center"
                 android:text="@string/draw_a_card"
                 android:textColor="@color/white"
@@ -95,7 +95,7 @@
                 android:text="@string/cardspread"
                 android:textColor="@color/white"
                 android:textSize="@dimen/commom_font_size"
-                android:fontFamily="@font/red_m"
+                android:fontFamily="@font/quicksand"
                 android:textStyle="normal"
                 android:typeface="serif" />
         </LinearLayout>
@@ -126,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:fontFamily="@font/red_m"
+                android:fontFamily="@font/quicksand"
                 android:text="@string/encyclopedia"
                 android:textColor="@color/white"
                 android:textSize="@dimen/commom_font_size"
@@ -161,7 +161,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="@string/galaxy_profile"
-                android:fontFamily="@font/red_m"
+                android:fontFamily="@font/quicksand"
                 android:textColor="@color/white"
                 android:textSize="@dimen/commom_font_size"
                 android:textStyle="normal"
@@ -173,19 +173,25 @@
         android:id="@+id/ad_container"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:visibility="gone"
+        android:visibility="visible"
         android:layout_alignParentBottom="true"
         android:background="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="3dp"
         app:layout_constraintStart_toStartOf="parent">
 
-<!--        <com.google.android.gms.ads.AdView
-            android:id="@+id/adView"
+<!--        <com.google.android.gms.ads.AdView-->
+<!--            android:id="@+id/adView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentLeft="true"-->
+<!--            app:adSize="BANNER"-->
+<!--            app:adUnitId="@string/banner_ad_unit_id" />-->
+
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            app:adSize="BANNER"
-            app:adUnitId="@string/banner_ad_unit_id" />-->
+            android:text="Dau Xanh"/>
     </RelativeLayout>
 </RelativeLayout>

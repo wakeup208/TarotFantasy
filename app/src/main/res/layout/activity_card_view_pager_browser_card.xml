@@ -35,7 +35,8 @@
             android:shadowRadius="2"
             android:text="@string/browse_cards"
             android:textColor="#b23ad0"
-            android:textSize="@dimen/title_font_size"
+            android:textSize="@dimen/text_size_title"
+            android:fontFamily="@font/quicksand"
             android:textStyle="bold" />
     </RelativeLayout>
 

@@ -58,10 +58,10 @@
                 android:padding="@dimen/commom_padding"
                 android:fontFamily="@font/quicksand"
                 android:text="Rút một lá bài đơn có thể cung cấp cái nhìn thấu đáo cho câu hỏi hay tình huống mà bạn gặp phải."
-                android:textColor="#1166FF"
+                android:textColor="@color/white"
                 android:textAlignment="viewStart"
                 android:textSize="@dimen/commom_font_size"
-                android:typeface="serif" />
+                android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -78,7 +78,7 @@
                 android:gravity="center_horizontal"
                 android:fontFamily="@font/quicksand"
                 android:text="@string/keywords"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/white"
                 android:textSize="@dimen/commom_font_size"
                 android:textStyle="bold" />
 
@@ -93,7 +93,7 @@
                 android:text="Nội dung keywords"
                 android:textColor="#f9e34c"
                 android:textSize="@dimen/commom_font_size"
-                android:typeface="serif" />
+                android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -128,7 +128,7 @@
                 android:text="Nội dung Reverse Keywords"
                 android:textColor="#f9e34c"
                 android:textSize="@dimen/commom_font_size"
-                android:typeface="serif"
+                android:textStyle="bold"
                 android:visibility="gone" />
 
             <Button
@@ -199,7 +199,7 @@
                 android:text="Nội dung Interpretation"
                 android:textColor="@color/white"
                 android:textSize="@dimen/commom_font_size"
-                android:typeface="serif" />
+                android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -230,7 +230,7 @@
                 android:text="Nội dung Reverse Interpretation"
                 android:textColor="@color/white"
                 android:textSize="@dimen/commom_font_size"
-                android:typeface="serif"
+                android:textStyle="bold"
                 android:visibility="gone" />
 
             <Button
@@ -245,6 +245,7 @@
                 android:text="@string/btn_view_card_associations"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
+                android:textStyle="bold"
                 android:layout_marginBottom="@dimen/padding_20dp"
                 android:textSize="@dimen/commom_font_size" />
 
@@ -367,7 +368,7 @@
                     android:layout_marginBottom="10dp"
                     android:text="Number"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/commom_font_size_small" />
+                    android:textSize="@dimen/commom_font_size" />
                 <TableLayout
                     android:id="@+id/numberTable"
                     android:background="@drawable/linear_bg"
@@ -400,7 +401,7 @@
                     android:padding="@dimen/small_padding"
                     android:text="Symbol"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/commom_font_size_small" />
+                    android:textSize="@dimen/commom_font_size" />
                 <TableLayout
                     android:id="@+id/symbolTable"
                     android:layout_width="match_parent"

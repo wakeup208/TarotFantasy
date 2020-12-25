@@ -21,8 +21,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.wakeup.tarot.R;
 import com.wakeup.tarot.data.ConfigData;
-import com.wakeup.tarot.fragment.AboutCustomDialog;
-import com.wakeup.tarot.fragment.BuyTarotCustomDialog;
 import com.wakeup.tarot.fragment.ChangeFontSizeCustomDialog;
 
 public class ProfileActivity extends AppCompatActivity implements OnClickListener,

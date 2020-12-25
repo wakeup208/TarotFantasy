@@ -35,9 +35,6 @@
                 android:textColor="@color/red"
                 android:textSize="@dimen/commom_font_size"
                 android:typeface="serif"
-                android:shadowDx="+2"
-                android:shadowDy="+2"
-                android:shadowRadius="2"
                 android:textStyle="normal" />
 
             <ImageView
@@ -167,12 +164,9 @@
                 android:fontFamily="@font/quicksand"
                 android:gravity="center_vertical"
                 android:text="@string/interpretations"
-                android:textColor="@color/green"
-                android:textSize="@dimen/commom_font_size"
-                android:textStyle="normal"
-                android:shadowDx="+2"
-                android:shadowDy="+2"
-                android:shadowRadius="2"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_font_size"
+                android:textStyle="bold"
                 android:typeface="serif" />
 
             <TextView
@@ -187,9 +181,6 @@
                 android:textColor="#FF9800"
                 android:textSize="@dimen/commom_font_size"
                 android:typeface="serif"
-                android:shadowDx="+2"
-                android:shadowDy="+2"
-                android:shadowRadius="2"
                 android:textStyle="normal" />
 
             <ImageView
@@ -209,12 +200,9 @@
                 android:padding="@dimen/thin_padding"
                 android:fontFamily="@font/quicksand"
                 android:text="Nội dung Interpretation"
-                android:textColor="@color/red"
+                android:textColor="@color/white"
                 android:textSize="@dimen/commom_font_size"
                 android:typeface="serif"
-                android:shadowDx="+2"
-                android:shadowDy="+2"
-                android:shadowRadius="2"
                 android:textStyle="normal" />
 
             <Button
@@ -266,9 +254,6 @@
                 android:textSize="@dimen/commom_font_size"
                 android:typeface="serif"
                 android:visibility="gone"
-                android:shadowDx="+2"
-                android:shadowDy="+2"
-                android:shadowRadius="2"
                 android:textStyle="normal" />
 
             <Button
@@ -276,7 +261,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/margin_top"
+                android:layout_marginTop="@dimen/text_size_title"
+                android:layout_marginBottom="@dimen/commom_font_size"
                 android:background="@drawable/btn_press"
                 android:paddingStart="@dimen/padding_15dp"
                 android:paddingEnd="@dimen/padding_15dp"
@@ -319,7 +305,7 @@
             android:paddingBottom="@dimen/margin_bottom"
             android:paddingLeft="@dimen/thin_padding"
             android:paddingRight="@dimen/thin_padding"
-            android:paddingTop="@dimen/margin_bottom" >
+            android:paddingTop="@dimen/margin_top" >
 
             <!-- For suit -->
 
@@ -341,7 +327,7 @@
                     android:fontFamily="@font/quicksand"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/commom_font_size_small" />
+                    android:textSize="@dimen/commom_font_size" />
 
                 <TableLayout
                     android:id="@+id/suitTable"
@@ -375,7 +361,7 @@
                     android:fontFamily="@font/quicksand"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/commom_font_size_small"/>
+                    android:textSize="@dimen/commom_font_size"/>
 
                 <TableLayout
                     android:id="@+id/starTable"
@@ -405,10 +391,10 @@
                     android:padding="@dimen/small_padding"
                     android:fontFamily="@font/quicksand"
                     android:textAllCaps="false"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="@dimen/padding_15dp"
                     android:text="Number"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/commom_font_size_small" />
+                    android:textSize="@dimen/commom_font_size" />
 
                 <TableLayout
                     android:id="@+id/numberTable"
@@ -441,7 +427,7 @@
                     android:padding="@dimen/small_padding"
                     android:text="Symbol"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/commom_font_size_small" />
+                    android:textSize="@dimen/commom_font_size" />
 
                 <TableLayout
                     android:id="@+id/symbolTable"

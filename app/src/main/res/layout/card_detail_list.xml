@@ -10,8 +10,8 @@
         android:id="@+id/ivCardIcon"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_width="69dp"
-        android:layout_height="120dp"
+        android:layout_width="@dimen/card_details_img_with"
+        android:layout_height="@dimen/card_details_img_high"
         android:clickable="true"/>
 
     <LinearLayout

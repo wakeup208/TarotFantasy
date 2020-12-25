@@ -26,7 +26,7 @@
                 android:text=" Cài Đặt"
                 android:textAlignment="center"
                 android:textColor="#b23ad0"
-                android:textSize="30sp"
+                android:textSize="@dimen/text_size_title"
                 android:textStyle="normal"
                 android:typeface="serif" />
 
@@ -40,7 +40,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:orientation="horizontal"
                 android:paddingStart="@dimen/commom_padding"
                 android:paddingEnd="@dimen/commom_padding">
 
@@ -51,13 +50,11 @@
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
                     android:background="@drawable/list_background"
-                    android:fontFamily="@font/red_m"
+                    android:fontFamily="@font/quicksand"
                     android:gravity="left"
                     android:text="@string/dao_nguoc_bai"
                     android:textColor="@color/white"
-                    android:textSize="25dp"
-                    android:textStyle="normal"
-                    android:typeface="serif" />
+                    android:textSize="@dimen/commom_font_size_big" />
 
                 <CheckBox
                     android:id="@+id/cbReverseCard"
@@ -72,8 +69,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/thin_padding"
-                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
                 android:paddingStart="@dimen/commom_padding"
                 android:paddingEnd="@dimen/commom_padding">
 
@@ -84,12 +80,11 @@
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
                     android:background="@drawable/list_background"
-                    android:fontFamily="@font/red_m"
+                    android:fontFamily="@font/quicksand"
                     android:gravity="left"
                     android:text="@string/am_thanh"
                     android:textColor="@color/white"
-                    android:textSize="25dp"
-                    android:typeface="serif" />
+                    android:textSize="@dimen/commom_font_size_big" />
 
                 <CheckBox
                     android:id="@+id/cbSoundOnOff"
@@ -104,7 +99,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
                 android:paddingStart="@dimen/commom_padding"
                 android:paddingEnd="@dimen/commom_padding">
 
@@ -115,12 +110,11 @@
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
                     android:background="@drawable/list_background"
-                    android:fontFamily="@font/red_m"
+                    android:fontFamily="@font/quicksand"
                     android:gravity="center_vertical"
                     android:text="@string/font_size"
                     android:textColor="@color/white"
-                    android:textSize="25dp"
-                    android:typeface="serif" />
+                    android:textSize="@dimen/commom_font_size_big" />
 
                 <TextView
                     android:id="@+id/tvFontSize"
@@ -128,12 +122,10 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:background="#00000000"
-                    android:padding="15dp"
-                    android:fontFamily="@font/red_m"
-                    android:text="@dimen/commom_font_size"
+                    android:fontFamily="@font/quicksand"
+                    android:text="20sp"
                     android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:typeface="serif" />
+                    android:textSize="@dimen/commom_font_size_big" />
             </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
@@ -153,31 +145,30 @@
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/thin_padding"
             android:layout_weight="1"
             android:background="@drawable/btn_press"
-            android:fontFamily="@font/red_m"
+            android:fontFamily="@font/quicksand"
             android:text="Mặc định"
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="25dp"
-            android:typeface="serif" />
+            android:textSize="@dimen/commom_font_size_big" />
 
         <Button
             android:id="@+id/btnSave"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="2dp"
             android:layout_weight="1"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
             android:background="@drawable/btn_press"
-            android:fontFamily="@font/red_m"
+            android:fontFamily="@font/quicksand"
             android:text="Lưu lại"
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="25dp"
+            android:textSize="@dimen/commom_font_size_big"
             android:typeface="serif" />
 
         <Button
@@ -185,7 +176,6 @@
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/thin_padding"
             android:layout_weight="1"
             android:background="@drawable/btn_press"
             android:fontFamily="@font/red_m"
@@ -193,8 +183,7 @@
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="25dp"
-            android:typeface="serif" />
+            android:textSize="@dimen/commom_font_size_big" />
     </LinearLayout>
 
 </RelativeLayout>

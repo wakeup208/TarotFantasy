@@ -45,10 +45,6 @@
                 android:layout_marginTop="@dimen/commom_padding"
                 android:background="@drawable/black_white_gradient" />
 
-<!--
-            android:layout_marginRight="@dimen/commom_padding"
--->
-
             <TextView
                 android:id="@+id/tvForward"
                 android:layout_width="match_parent"
@@ -123,7 +119,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/margin"
+                android:layout_marginTop="@dimen/padding_20dp"
+                android:layout_marginBottom="@dimen/padding_20dp"
                 android:background="@drawable/btn_press"
                 android:paddingStart="@dimen/padding_15dp"
                 android:paddingEnd="@dimen/padding_15dp"
@@ -188,7 +185,7 @@
                     android:fontFamily="@font/quicksand"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/commom_font_size_small" />
+                    android:textSize="@dimen/commom_font_size" />
 
                 <TableLayout
                     android:id="@+id/suitTable"
@@ -222,7 +219,7 @@
                     android:fontFamily="@font/quicksand"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/commom_font_size_small"/>
+                    android:textSize="@dimen/commom_font_size"/>
 
                 <TableLayout
                     android:id="@+id/starTable"
@@ -255,7 +252,7 @@
                     android:layout_marginBottom="10dp"
                     android:text="Number"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/commom_font_size_small" />
+                    android:textSize="@dimen/commom_font_size" />
 
                 <TableLayout
                     android:id="@+id/numberTable"
@@ -288,7 +285,7 @@
                     android:padding="@dimen/small_padding"
                     android:text="Symbol"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/commom_font_size_small" />
+                    android:textSize="@dimen/commom_font_size" />
 
                 <TableLayout
                     android:id="@+id/symbolTable"

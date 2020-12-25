@@ -32,6 +32,6 @@
         android:text="Association name"
         android:textColor="@color/white"
         android:typeface="serif"
-        android:textSize="@dimen/commom_font_size_small" />
+        android:textSize="@dimen/commom_font_size" />
 
 </LinearLayout>

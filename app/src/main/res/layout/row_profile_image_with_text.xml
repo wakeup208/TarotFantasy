@@ -15,7 +15,7 @@
             android:id="@+id/ivListViewItemIcon"
             android:layout_width="@dimen/row_profile_image_width"
             android:layout_height="@dimen/row_profile_image_height"
-            android:background="@drawable/btn_associations_normal" />
+            android:background="@drawable/ic_book_press" />
 
         <TextView
             android:id="@+id/tvListViewItemText"

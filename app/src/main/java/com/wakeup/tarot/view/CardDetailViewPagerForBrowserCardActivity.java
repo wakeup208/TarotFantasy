@@ -24,7 +24,7 @@ import com.wakeup.tarot.R;
 import com.wakeup.tarot.data.CardsDetailJasonHelper;
 import com.wakeup.tarot.data.ConfigData;
 import com.wakeup.tarot.data.MapData;
-import com.wakeup.tarot.fragment.BuyTarotCustomDialog;
+//import com.wakeup.tarot.fragment.BuyTarotCustomDialog;
 import com.wakeup.tarot.fragment.CardDetailForBrowserCardFragment;
 import com.wakeup.tarot.util.ImageCache;
 import com.wakeup.tarot.util.ImageLoaderAsynch;

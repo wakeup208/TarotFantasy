@@ -19,12 +19,11 @@
         android:layout_gravity="center"
         android:background="@color/color_bar"
         android:gravity="center"
-        android:padding="@dimen/small_padding"
         android:text="@string/tarot_spread"
         android:textColor="#b23ad0"
         android:fontFamily="@font/quicksand"
         android:textSize="@dimen/title_font_size"
-        android:textStyle="normal"
+        android:textStyle="bold"
         android:typeface="serif" />
 
     <ListView

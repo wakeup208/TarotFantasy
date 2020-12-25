@@ -164,6 +164,7 @@ public class SpreadCardsActivity extends FragmentActivity implements
 		spread_selected = (ImageView) findViewById(R.id.spread_selected);
 		card_list = (ImageView) findViewById(R.id.card_list);
 		ln_btn_flip = (LinearLayout) findViewById(R.id.ln_btn_flip);
+		ln_btn_flip.setOnClickListener(this);
 
 		// Bottom bar
 		btn_card_spread = (LinearLayout) findViewById(R.id.btn_spread_selected);
@@ -177,7 +178,7 @@ public class SpreadCardsActivity extends FragmentActivity implements
 		btn_rules.setOnClickListener(this);
 
 		btn_flip = (ImageView) findViewById(R.id.btn_flip);
-		btn_flip.setOnClickListener(this);
+		//OnClickListener(this);
 
 		instance = this;
 	}
@@ -682,7 +683,7 @@ public class SpreadCardsActivity extends FragmentActivity implements
 			svRules.setVisibility(View.VISIBLE);
 			break;
 
-		case R.id.btn_flip: // Flips card
+		case R.id.ln_btn_flip: // Flips card
 			CardViewFlipper card;
 			// Check if has one card is back
 			boolean hasCardBack = false;

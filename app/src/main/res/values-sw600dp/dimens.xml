@@ -1,0 +1,24 @@
+<resources>
+    <dimen name="commom_font_size_big">30sp</dimen>
+    <dimen name="image_size">180dp</dimen>
+    <dimen name="commom_font_size">40sp</dimen>
+    <dimen name="text_size_title">60dp</dimen>
+    <dimen name="title_font_size">50sp</dimen>
+    <dimen name="commom_font_size_small">25sp</dimen>
+
+    <dimen name="margin_top">90dp</dimen>
+
+    <dimen name="card_details_img_with">70dp</dimen>
+    <dimen name="card_details_img_high">120dp</dimen>
+    <dimen name="navigation_text_size">30sp</dimen>
+    <dimen name="app_name_font_size">60sp</dimen>
+    <dimen name="intro_font_size">45dp</dimen>
+    <dimen name="size_splash">220dp</dimen>
+
+    <dimen name="card_heigh">170dp</dimen>
+    <dimen name="card_with">180dp</dimen>
+    <dimen name="padding_20dp">40dp</dimen>
+    <dimen name="home_size">90dp</dimen>
+    <dimen name="padding_15dp">30dp</dimen>
+
+</resources>
