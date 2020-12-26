@@ -131,6 +131,7 @@ public class CardImageSectionListViewAdapter extends BaseAdapter {
 			View rowViewSection = inflater.inflate(R.layout.row_section, parent, false);
 			TextView tvSection = (TextView) rowViewSection.findViewById(R.id.tvListViewSection);
 			tvSection.setTypeface(ConfigData.UVNCatBien_R);
+			tvSection.setTextSize(mContext.getResources().getDimension(R.dimen.text_size));
 
 			switch (realPosition) {
 

@@ -46,7 +46,7 @@
         <activity android:name=".view.CardDetailViewPagerForBrowserCardActivity"></activity>
         <activity android:name=".view.CardDetailViewPagerForSpreadCardActivity"></activity>
         <activity android:name=".view.SingleCardActivity"></activity>
-
+        <activity android:name=".view.InformationActivity"/>
         <receiver android:name=".receiver.MyNotificationPublisher"></receiver>
     </application>
 

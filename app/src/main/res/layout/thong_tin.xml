@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mainback"
+    android:orientation="vertical">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/commom_padding"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/img_size"
+                android:layout_marginBottom="@dimen/margin"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/commom_padding"
+                android:paddingEnd="@dimen/commom_padding">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/margin_bottom"
+                    android:layout_toEndOf="@+id/img_home"
+                    android:background="@drawable/list_background"
+                    android:fontFamily="@font/quicksand"
+                    android:layout_centerVertical="true"
+                    android:maxLines="1"
+                    android:text="@string/str_thong_tin"
+                    android:textColor="@color/navigation_color"
+                    android:textSize="@dimen/app_name_font_size" />
+
+                <ImageView
+                    android:id="@+id/img_home"
+                    android:layout_width="@dimen/img_size"
+                    android:layout_height="@dimen/img_size"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:checked="true"
+                    android:foregroundGravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:src="@drawable/ic_home_48" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/commom_padding"
+                android:paddingEnd="@dimen/commom_padding">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/margin_bottom"
+                    android:layout_toEndOf="@+id/img1"
+                    android:background="@drawable/list_background"
+                    android:fontFamily="@font/quicksand"
+                    android:gravity="left|center_vertical|center_horizontal|center|start"
+                    android:maxLines="1"
+                    android:text="@string/str_gioi_thieu_ve_tarot"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size_big" />
+
+                <ImageView
+                    android:id="@+id/img1"
+                    android:layout_width="@dimen/img_size"
+                    android:layout_height="@dimen/img_size"
+                    android:padding="12dp"
+                    android:layout_alignParentStart="true"
+                    android:checked="true"
+                    android:foregroundGravity="center_vertical"
+                    android:gravity="fill_vertical"
+                    android:src="@drawable/ic_menu_intro" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/commom_padding"
+                android:paddingEnd="@dimen/commom_padding">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/margin_bottom"
+                    android:layout_toEndOf="@+id/img2"
+                    android:background="@drawable/list_background"
+                    android:fontFamily="@font/quicksand"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="@string/str_y_nghia_nhung_la_bai"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size_big" />
+
+                <ImageView
+                    android:id="@+id/img2"
+                    android:layout_width="@dimen/img_size"
+                    android:layout_height="@dimen/img_size"
+                    android:padding="12dp"
+                    android:layout_alignParentStart="true"
+                    android:checked="true"
+                    android:foregroundGravity="center_vertical"
+                    android:gravity="fill_vertical"
+                    android:src="@drawable/ic_menu_mean" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/commom_padding"
+                android:paddingEnd="@dimen/commom_padding">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/margin_bottom"
+                    android:layout_toEndOf="@+id/img3"
+                    android:background="@drawable/list_background"
+                    android:fontFamily="@font/quicksand"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="@string/str_tarot_va_cung_hoang_dao"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size_big" />
+
+                <ImageView
+                    android:id="@+id/img3"
+                    android:layout_width="@dimen/img_size"
+                    android:layout_height="@dimen/img_size"
+                    android:padding="12dp"
+                    android:layout_alignParentStart="true"
+                    android:checked="true"
+                    android:foregroundGravity="center_vertical"
+                    android:gravity="fill_vertical"
+                    android:src="@drawable/ic_tarot_cung_hoan_dao" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/commom_padding"
+                android:paddingEnd="@dimen/commom_padding">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/margin_bottom"
+                    android:layout_toEndOf="@+id/img4"
+                    android:background="@drawable/list_background"
+                    android:fontFamily="@font/quicksand"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="@string/str_danh_gia"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size_big" />
+
+                <ImageView
+                    android:id="@+id/img4"
+                    android:layout_width="@dimen/img_size"
+                    android:layout_height="@dimen/img_size"
+                    android:padding="12dp"
+                    android:layout_alignParentStart="true"
+                    android:checked="true"
+                    android:foregroundGravity="center_vertical"
+                    android:gravity="fill_vertical"
+                    android:src="@drawable/ic_menu_danh_gia" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/commom_padding"
+                android:paddingEnd="@dimen/commom_padding">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/margin_bottom"
+                    android:layout_toEndOf="@+id/img5"
+                    android:background="@drawable/list_background"
+                    android:fontFamily="@font/quicksand"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="@string/str_gop_y"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size_big" />
+
+                <ImageView
+                    android:id="@+id/img5"
+                    android:layout_width="@dimen/img_size"
+                    android:layout_height="@dimen/img_size"
+                    android:padding="12dp"
+                    android:layout_alignParentStart="true"
+                    android:checked="true"
+                    android:foregroundGravity="center_vertical"
+                    android:gravity="fill_vertical"
+                    android:src="@drawable/ic_menu_gop_y" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/commom_padding"
+                android:paddingEnd="@dimen/commom_padding">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/margin_bottom"
+                    android:layout_toEndOf="@+id/img6"
+                    android:background="@drawable/list_background"
+                    android:fontFamily="@font/quicksand"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="@string/str_chia_se"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size_big" />
+
+                <ImageView
+                    android:id="@+id/img6"
+                    android:layout_width="@dimen/img_size"
+                    android:layout_height="@dimen/img_size"
+                    android:padding="12dp"
+                    android:layout_alignParentStart="true"
+                    android:checked="true"
+                    android:foregroundGravity="center_vertical"
+                    android:gravity="fill_vertical"
+                    android:src="@drawable/ic_share_new_1" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/commom_padding"
+                android:paddingEnd="@dimen/commom_padding">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/margin_bottom"
+                    android:layout_toEndOf="@+id/img7"
+                    android:background="@drawable/list_background"
+                    android:fontFamily="@font/quicksand"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="@string/str_ung_dung_khac"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size_big" />
+
+                <ImageView
+                    android:id="@+id/img7"
+                    android:layout_width="@dimen/img_size"
+                    android:layout_height="@dimen/img_size"
+                    android:padding="12dp"
+                    android:layout_alignParentStart="true"
+                    android:checked="true"
+                    android:foregroundGravity="center_vertical"
+                    android:gravity="fill_vertical"
+                    android:src="@drawable/ic_menu_ung_dung_khac" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

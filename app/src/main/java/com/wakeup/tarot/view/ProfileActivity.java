@@ -222,38 +222,38 @@ public class ProfileActivity extends AppCompatActivity implements OnClickListene
 
 		case R.id.btnCancel:
 			// Update this UI
-			tvFontSize.setText("" + ConfigData.FONT_SIZE);
-			cbReverseCard.setChecked(ConfigData.IS_REVERSE_CARD);
-			cbSoundOnOff.setChecked(ConfigData.IS_SOUND_ON);
-
-			final AlertDialog alertDialog2 = startLevelDialog.create();
-			View view2 = getLayoutInflater().inflate(R.layout.custom_profile_dialog, null);
-			LinearLayout linearLayout = (LinearLayout) view2.findViewById(R.id.ln_yes_no);
-			RelativeLayout relativeLayout = (RelativeLayout) view2.findViewById(R.id.rela_ok);
-
-			TextView txt1 = (TextView) view2.findViewById(R.id.txt_title_dialog);
-			txt1.setText(R.string.xac_nhan_thay_doi);
-			ImageView img = (ImageView)view2.findViewById(R.id.icon_dialog);
-			img.setImageResource(R.drawable.ic_warning);
-
-			linearLayout.setVisibility(View.GONE);
-			relativeLayout.setVisibility(View.VISIBLE);
-
-			Button btnOk = (Button) view2.findViewById(R.id.btnOK);
-			btnOk.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					alertDialog2.dismiss();
-				}
-			});
-
-
-			alertDialog2.setCancelable(false);
-			alertDialog2.setView(view2);
-			alertDialog2.show();
-
-			isSettingChange = false;
-
+//			tvFontSize.setText("" + ConfigData.FONT_SIZE);
+//			cbReverseCard.setChecked(ConfigData.IS_REVERSE_CARD);
+//			cbSoundOnOff.setChecked(ConfigData.IS_SOUND_ON);
+//
+//			final AlertDialog alertDialog2 = startLevelDialog.create();
+//			View view2 = getLayoutInflater().inflate(R.layout.custom_profile_dialog, null);
+//			LinearLayout linearLayout = (LinearLayout) view2.findViewById(R.id.ln_yes_no);
+//			RelativeLayout relativeLayout = (RelativeLayout) view2.findViewById(R.id.rela_ok);
+//
+//			TextView txt1 = (TextView) view2.findViewById(R.id.txt_title_dialog);
+//			txt1.setText(R.string.xac_nhan_thay_doi);
+//			ImageView img = (ImageView)view2.findViewById(R.id.icon_dialog);
+//			img.setImageResource(R.drawable.ic_warning);
+//
+//			linearLayout.setVisibility(View.GONE);
+//			relativeLayout.setVisibility(View.VISIBLE);
+//
+//			Button btnOk = (Button) view2.findViewById(R.id.btnOK);
+//			btnOk.setOnClickListener(new OnClickListener() {
+//				@Override
+//				public void onClick(View v) {
+//					alertDialog2.dismiss();
+//				}
+//			});
+//
+//
+//			alertDialog2.setCancelable(false);
+//			alertDialog2.setView(view2);
+//			alertDialog2.show();
+//
+//			isSettingChange = false;
+			finish();
 			break;
 		}
 	}

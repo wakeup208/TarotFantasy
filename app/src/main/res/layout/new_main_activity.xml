@@ -135,6 +135,40 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/thongtin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/card_heigh"
+            android:layout_marginLeft="4dp"
+            android:orientation="horizontal"
+            android:background="@drawable/linear_bg"
+            android:layout_marginTop="8dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:layout_width="@dimen/card_with"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/setting_thongtin"/>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/str_thong_tin"
+                android:fontFamily="@font/quicksand"
+                android:textColor="@color/white"
+                android:textSize="@dimen/commom_font_size"
+                android:textStyle="normal"
+                android:typeface="serif" />
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/hotro"
             android:layout_width="match_parent"
             android:layout_height="@dimen/card_heigh"

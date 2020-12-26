@@ -8,6 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -16,25 +17,47 @@
             android:layout_marginTop="@dimen/commom_padding"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvSparateSetting"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin"
-                android:background="#1Acccccc"
-                android:fontFamily="@font/quicksand"
-                android:text=" Cài Đặt"
-                android:textAlignment="center"
-                android:textColor="#b23ad0"
-                android:textSize="@dimen/text_size_title"
-                android:textStyle="normal"
-                android:typeface="serif" />
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/img_size"
+                android:layout_marginBottom="@dimen/margin"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/commom_padding"
+                android:paddingEnd="@dimen/commom_padding">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/margin_bottom"
+                    android:layout_toEndOf="@+id/img_home"
+                    android:background="@drawable/list_background"
+                    android:fontFamily="@font/quicksand"
+                    android:layout_centerVertical="true"
+                    android:maxLines="1"
+                    android:text="@string/str_cai_dat"
+                    android:textColor="@color/navigation_color"
+                    android:textSize="@dimen/app_name_font_size" />
+
+                <ImageView
+                    android:id="@+id/img_home"
+                    android:layout_width="@dimen/img_size"
+                    android:layout_height="@dimen/img_size"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:checked="true"
+                    android:foregroundGravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:src="@drawable/ic_home_48" />
+            </RelativeLayout>
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:src="@drawable/black_white_gradient"
-                android:contentDescription="TODO" />
+                android:contentDescription="TODO"
+                android:src="@drawable/black_white_gradient" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -61,9 +84,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:padding="15dp"
                     android:checked="true"
-                    android:gravity="center_vertical" />
+                    android:gravity="center_vertical"
+                    android:padding="15dp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -91,9 +114,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:padding="15dp"
                     android:checked="true"
-                    android:gravity="center_vertical" />
+                    android:gravity="center_vertical"
+                    android:padding="15dp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -128,16 +151,17 @@
                     android:textSize="@dimen/commom_font_size_big" />
             </RelativeLayout>
         </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/bottom_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="2dp"
         android:layout_marginEnd="2dp"
         android:layout_marginBottom="10dp"
-        android:layout_alignParentBottom="true"
         android:orientation="horizontal">
 
         <Button
@@ -159,9 +183,9 @@
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"
+            android:layout_weight="1"
             android:background="@drawable/btn_press"
             android:fontFamily="@font/quicksand"
             android:text="Lưu lại"
@@ -179,7 +203,7 @@
             android:layout_weight="1"
             android:background="@drawable/btn_press"
             android:fontFamily="@font/red_m"
-            android:text="Hủy"
+            android:text="@string/str_trang_chu"
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textColor="@color/white"

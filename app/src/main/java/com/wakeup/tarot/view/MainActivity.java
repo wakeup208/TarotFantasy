@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private LinearLayout btn_spreadcard;
     private LinearLayout btn_encyclopedia;
     private LinearLayout btn_profile_animation;
+    private LinearLayout btn_thongtin;
+
 
     public static final String NOTIFICATION_CHANNEL_ID = "10001" ;
     private final static String default_notification_channel_id = "default" ;
@@ -67,24 +69,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvAppName.setTypeface(ConfigData.UVNCatBien_Sub);
 
         btn_drawcard = (LinearLayout) findViewById(R.id.chonbai);
-        //btn_drawcard.setTypeface(ConfigData.UVNCatBien_R);
         btn_drawcard.setOnClickListener(this);
         btn_drawcard.setOnTouchListener(this);
 
         btn_spreadcard = (LinearLayout) findViewById(R.id.trabai);
-        //btn_spreadcard.setTypeface(ConfigData.UVNCatBien_R);
         btn_spreadcard.setOnClickListener(this);
         btn_spreadcard.setOnTouchListener(this);
 
         btn_encyclopedia = (LinearLayout) findViewById(R.id.sotay);
-        //btn_encyclopedia.setTypeface(ConfigData.UVNCatBien_R);
         btn_encyclopedia.setOnClickListener(this);
         btn_encyclopedia.setOnTouchListener(this);
 
         btn_profile_animation = (LinearLayout) findViewById(R.id.hotro);
-        //btn_profile_animation.setTypeface(ConfigData.UVNCatBien_R);
         btn_profile_animation.setOnClickListener(this);
         btn_profile_animation.setOnTouchListener(this);
+
+        btn_thongtin = (LinearLayout) findViewById(R.id.thongtin);
+        btn_thongtin.setOnClickListener(this);
+        btn_thongtin.setOnTouchListener(this);
     }
 
     @Override
@@ -237,6 +239,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         ProfileActivity.class);
                 this.startActivity(intentProfileActivity);
                 break;
+            case R.id.thongtin:
+                Intent intentThongTinActivity = new Intent(this,
+                        InformationActivity.class);
+                this.startActivity(intentThongTinActivity);
+                break;
         }
     }
 
@@ -266,6 +273,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.hotro:
                 if (MotionEvent.ACTION_DOWN == event.getAction()) {
                     btn_profile_animation
+                            .startAnimation(ConfigData.animation_button_press);
+                }
+                break;
+
+            case R.id.thongtin:
+                if (MotionEvent.ACTION_DOWN == event.getAction()) {
+                    btn_thongtin
                             .startAnimation(ConfigData.animation_button_press);
                 }
                 break;

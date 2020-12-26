@@ -49,4 +49,16 @@
     <string name="xac_nhan_thay_doi">Đã hủy tất cả thay đổi của bạn.</string>
     <string name="OK">OK</string>
 
+    <string name="str_gioi_thieu_ve_tarot">Giới thiệu về tarot</string>
+    <string name="str_danh_gia">Đánh giá</string>
+    <string name="str_chia_se">Chia sẻ</string>
+    <string name="str_ung_dung_khac">Ứng dụng khác:</string>
+    <string name="str_tarot_va_cung_hoang_dao">Tarot và Cung hoàng đạo</string>
+    <string name="str_y_nghia_nhung_la_bai">Ý nghĩa những lá bài</string>
+    <string name="str_gop_y">Góp ý</string>
+    <string name="str_thong_tin">Thông tin</string>
+    <string name="str_cai_dat">Cài đặt</string>
+
+    <string name="str_trang_chu">Trang chủ</string>
+
 </resources>

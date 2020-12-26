@@ -31,8 +31,8 @@
     <dimen name="home_button_thumbnail_size">130dp</dimen>
     <dimen name="row_separator">30dp</dimen>
 
-    <dimen name="card_heigh">90dp</dimen>
-    <dimen name="card_with">100dp</dimen>
+    <dimen name="card_heigh">70dp</dimen>
+    <dimen name="card_with">80dp</dimen>
 
     <dimen name="padding_5dp">5dp</dimen>
     <dimen name="padding_15dp">15dp</dimen>
@@ -42,5 +42,9 @@
     <dimen name="text_size_title">30dp</dimen>
     <dimen name="size_splash">180dp</dimen>
     <dimen name="home_size">48dp</dimen>
+    <dimen name="text_size">15dp</dimen>
+
+    <dimen name="img_size">50dp</dimen>
+    <dimen name="img_marginTop">30dp</dimen>
 
 </resources>
