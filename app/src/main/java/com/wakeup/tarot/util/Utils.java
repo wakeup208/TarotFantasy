@@ -17,12 +17,19 @@
 package com.wakeup.tarot.util;
 
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.os.Build;
 import android.os.StrictMode;
+import android.util.Log;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 /**
  * Class containing some static utility methods.
@@ -161,5 +168,61 @@ public class Utils {
 		}
 
 		return bitmap;
+	}
+
+
+	public static String ReadFromfile(String fileName, Context context) {
+		String contents = "";
+		StringBuilder returnString = new StringBuilder();
+		InputStream fIn = null;
+		InputStreamReader isr = null;
+		BufferedReader input = null;
+		try {
+			fIn = context.getResources().getAssets()
+					.open(fileName, Context.MODE_WORLD_READABLE);
+			isr = new InputStreamReader(fIn);
+			input = new BufferedReader(isr);
+			contents = input.readLine();
+			String line = null;
+
+			while ((line = input.readLine()) != null) {
+				contents += '\n' + line;
+ 				//returnString.append(line);
+			}
+		} catch (Exception e) {
+			e.getMessage();
+		} finally {
+			try {
+				if (isr != null)
+					isr.close();
+				if (fIn != null)
+					fIn.close();
+				if (input != null)
+					input.close();
+			} catch (Exception e2) {
+				e2.getMessage();
+			}
+		}
+		return contents;
+		//return returnString.toString();
+	}
+
+	public String LoadData(String inFile, Context context) {
+		String tContents = "";
+
+		try {
+			InputStream stream = context.getAssets().open(inFile);
+
+			int size = stream.available();
+			byte[] buffer = new byte[size];
+			stream.read(buffer);
+			stream.close();
+			tContents = new String(buffer);
+		} catch (IOException e) {
+			// Handle exceptions here
+		}
+
+		return tContents;
+
 	}
 }

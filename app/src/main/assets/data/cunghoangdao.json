@@ -1,0 +1,133 @@
+[{
+        "name": "Bạch Dương",
+        "image": "bachduong",
+        "date": "21/03–19/04",
+        "zodiac_file": "bachduong_zodiac.txt",
+        "zodiac_image": "4_The Emperor_0",
+        "zodiac_title": "The Emperor",
+        "star_file": "bachduong_star.txt",
+        "star_image": "16_TheTower_0",
+        "star_title": "The Tower"
+    },
+    {
+        "name": "Kim Ngưu",
+        "image": "kimnguu",
+        "date": "20/04–20/05",
+        "zodiac_file": "kimnguu_zodiac.txt",
+        "zodiac_image": "5_TheHierophant_0",
+        "zodiac_title": "The Hierophant",
+        "star_file": "kimnguu_star.txt",
+        "star_image": "3_TheEmpress_0",
+        "star_title": "The Empress"
+    },
+    {
+        "name": "Song Tử",
+        "image": "songtu",
+        "date": "21/05–21/06",
+        "zodiac_file": "songtu_zodiac.txt",
+        "zodiac_image": "6_TheLovers_0",
+        "zodiac_title": "The Lovers",
+        "star_file": "songtu_star.txt",
+        "star_image": "1_TheMagician_0",
+        "star_title": "The Magician"
+    },
+    {
+        "name": "Cự Giải",
+        "image": "cugiai",
+        "date": "22/06–22/07",
+        "zodiac_file": "cugiai_zodiac.txt",
+        "zodiac_image": "7_TheChariot_0",
+        "zodiac_title": "The Chariot",
+        "star_file": "cugiai_star.txt",
+        "star_image": "2_TheHighPriestess_0",
+        "star_title": "The High Priestess"
+    },
+    {
+        "name": "Sư Tử",
+        "image": "sutu",
+        "date": "23/07–22/08",
+        "zodiac_file": "sutu_zodiac.txt",
+        "zodiac_image": "8_Strength_0",
+        "zodiac_title": "The Chariot",
+        "star_file": "sutu_star.txt",
+        "star_image": "19_TheSun_0",
+        "star_title": "The Sun"
+    },
+    {
+        "name": "Xử Nữ",
+        "image": "xunu",
+        "date": "23/08–22/09",
+        "zodiac_file": "xunu_zodiac.txt",
+        "zodiac_image": "9_TheHermit_0",
+        "zodiac_title": "The Hermit",
+        "star_file": "xunu_star.txt",
+        "star_image": "1_TheMagician_0",
+        "star_title": "The Magician"
+    },
+    {
+        "name": "Thiên Bình",
+        "image": "thienbinh",
+        "date": "23/09–23/10",
+        "zodiac_file": "thienbinh_zodiac.txt",
+        "zodiac_image": "11_Justice_0",
+        "zodiac_title": "Justice",
+        "star_file": "thienbinh_star.txt",
+        "star_image": "3_TheEmpress_0",
+        "star_title": "The Empress"
+    },
+    {
+        "name": "Bọ Cạp",
+        "image": "bocap",
+        "date": "24/10–22/11",
+        "zodiac_file": "bocap_zodiac.txt",
+        "zodiac_image": "13_Death_0",
+        "zodiac_title": "Death",
+        "star_file": "bocap_star.txt",
+        "star_image": "11_Justice_0",
+        "star_title": "Justice"
+    },
+    {
+        "name": "Nhân Mã",
+        "image": "nhanma",
+        "date": "23/11–21/12",
+        "zodiac_file": "nhanma_zodiac.txt",
+        "zodiac_image": "14_Temperance_0",
+        "zodiac_title": "Temperance",
+        "star_file": "nhanma_star.txt",
+        "star_image": "10_TheWheelOfFortune_0",
+        "star_title": "The Wheel Of Fortune"
+    },
+    {
+        "name": "Ma Kết",
+        "image": "maket",
+        "date": "22/12–19/01",
+        "zodiac_file": "maket_zodiac.txt",
+        "zodiac_image": "15_TheDevil_0",
+        "zodiac_title": "The Devil",
+        "star_file": "maket_star.txt",
+        "star_image": "21_TheWorld_0",
+        "star_title": "The World"
+    },
+    {
+        "name": "Bảo Bình",
+        "image": "baobinh",
+        "date": "20/01–18/02",
+        "zodiac_file": "baobinh_zodiac.txt",
+        "zodiac_image": "17_TheStar_0",
+        "zodiac_title": "The Star",
+        "star_file": "baobinh_star.txt",
+        "star_image": "0_TheFool_0",
+        "star_title": "The Fool"
+    },
+    {
+        "name": "Song Ngư",
+        "image": "songngu",
+        "date": "19/02–20/03",
+        "zodiac_file": "songngu_zodiac.txt",
+        "zodiac_image": "18_TheMoon_0",
+        "zodiac_title": "The Moon",
+        "star_file": "songngu_star.txt",
+        "star_image": "12_TheHangedMan_0",
+        "star_title": "The Hanged Man"
+    }
+]

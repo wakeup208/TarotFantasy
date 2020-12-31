@@ -4,6 +4,13 @@
     android:layout_height="match_parent"
     android:background="@drawable/mainback"
     android:orientation="vertical">
+
+    <FrameLayout
+        android:visibility="gone"
+        android:id="@+id/nav_main_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,6 +59,7 @@
 
 
             <RelativeLayout
+                android:id="@+id/gioithieu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -86,6 +94,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/rtl_mean"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"

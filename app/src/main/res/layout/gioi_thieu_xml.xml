@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:max="http://schemas.applovin.com/android/1.0"
+    app:startDestination="@+id/gioithieuFragment">
+    <fragment
+        android:id="@+id/gioithieuFragment"
+        android:name="com.wakeup.tarot.fragment.GioiThieuFragment"
+        android:label="GioiThieuFragment" />
+</navigation>

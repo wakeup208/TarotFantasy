@@ -1,0 +1,326 @@
+{
+  "Cards": {
+    "MajorArcana": [
+      {
+        "name": "0_TheFool",
+        "title": "The Fool"
+      },
+      {
+        "name": "1_TheMagician",
+        "title": "The Magic"
+      },
+      {
+        "name": "2_TheHighPriestess",
+        "title": "The High Priestess"
+      },
+      {
+        "name": "3_TheEmpress",
+        "title": "The Empress"
+      },
+      {
+        "name": "4_The Emperor",
+        "title": "The Emperor"
+      },
+      {
+        "name": "5_TheHierophant",
+        "title": "The Hierophant"
+      },
+      {
+        "name": "6_TheLovers",
+        "title": "The Lovers"
+      },
+      {
+        "name": "7_TheChariot",
+        "title": "The Chariot"
+      },
+      {
+        "name": "8_Strength",
+        "title": "The Strength"
+      },
+      {
+        "name": "9_TheHermit",
+        "title": "The Hermit"
+      },
+      {
+        "name": "10_TheWheelOfFortune",
+        "title": "Wheel Of Fortune"
+      },
+      {
+        "name": "11_Justice",
+        "title": "Justice"
+      },
+      {
+        "name": "12_TheHangedMan",
+        "title": "The Hanged Man"
+      },
+      {
+        "name": "13_Death",
+        "title": "Death"
+      },
+      {
+        "name": "14_Temperance",
+        "title": "Temperance"
+      },
+      {
+        "name": "15_TheDevil",
+        "title": "The Devil"
+      },
+      {
+        "name": "16_TheTower",
+        "title": "The Tower"
+      },
+      {
+        "name": "17_TheStar",
+        "title": "The Star"
+      },
+      {
+        "name": "18_TheMoon",
+        "title": "The Moon"
+      },
+      {
+        "name": "19_TheSun",
+        "title": "The Sun"
+      },
+      {
+        "name": "20_Judgement",
+        "title": "Judgement"
+      },
+      {
+        "name": "21_TheWorld",
+        "title": "The World"
+      }
+    ],
+    "Cups": [
+      {
+        "name": "2OfCups",
+        "title": "2 Of Cups"
+      },
+      {
+        "name": "3OfCups",
+        "title": "3 Of Cups"
+      },
+      {
+        "name": "4OfCups",
+        "title": "4 Of Cups"
+      },
+      {
+        "name": "5OfCups",
+        "title": "5 Of Cups"
+      },
+      {
+        "name": "6OfCups",
+        "title": "6 Of Cups"
+      },
+      {
+        "name": "7OfCups",
+        "title": "7 Of Cups"
+      },
+      {
+        "name": "8OfCups",
+        "title": "8 Of Cups"
+      },
+      {
+        "name": "9OfCups",
+        "title": "9 Of Cups"
+      },
+      {
+        "name": "10OfCups",
+        "title": "10 Of Cups"
+      },
+      {
+        "name": "AceOfCups",
+        "title": "Ace Of Cups"
+      },
+      {
+        "name": "KingOfCups",
+        "title": "King Of Cups"
+      },
+      {
+        "name": "KnightOfCups",
+        "title": "Knight Of Cups"
+      },
+      {
+        "name": "PageOfCups",
+        "title": "Page Of Cups"
+      },
+      {
+        "name": "QueenOfCups",
+        "title": "Queen Of Cups"
+      }
+    ],
+    "Pentacles": [
+      {
+        "name": "2OfPentacles",
+        "title": "2 Of Pentacles"
+      },
+      {
+        "name": "3OfPentacles",
+        "title": "3 Of Pentacles"
+      },
+      {
+        "name": "4OfPentacles",
+        "title": "4 Of Pentacles"
+      },
+      {
+        "name": "5OfPentacles",
+        "title": "5 Of Pentacles"
+      },
+      {
+        "name": "6OfPentacles",
+        "title": "6 Of Pentacles"
+      },
+      {
+        "name": "7OfPentacles",
+        "title": "7 Of Pentacles"
+      },
+      {
+        "name": "8OfPentacles",
+        "title": "8 Of Pentacles"
+      },
+      {
+        "name": "9OfPentacles",
+        "title": "9 Of Pentacles"
+      },
+      {
+        "name": "10OfPentacles",
+        "title": "10 Of Pentacles"
+      },
+      {
+        "name": "AceOfPentacles",
+        "title": "Ace Of Pentacles"
+      },
+      {
+        "name": "KingOfPentacles",
+        "title": "King Of Pentacles"
+      },
+      {
+        "name": "KnightOfPentacles",
+        "title": "Knight Of Pentacles"
+      },
+      {
+        "name": "PageOfPentacles",
+        "title": "Page Of Pentacles"
+      },
+      {
+        "name": "QueenOfPentacles",
+        "title": "Queen Of Pentacles"
+      }
+    ],
+    "Swords": [
+      {
+        "name": "2OfSwords",
+        "title": "2 Of Swords"
+      },
+      {
+        "name": "3OfSwords",
+        "title": "3 Of Swords"
+      },
+      {
+        "name": "4OfSwords",
+        "title": "4 Of Swords"
+      },
+      {
+        "name": "5OfSwords",
+        "title": "5 Of Swords"
+      },
+      {
+        "name": "6OfSwords",
+        "title": "6 Of Swords"
+      },
+      {
+        "name": "7OfSwords",
+        "title": "7 Of Swords"
+      },
+      {
+        "name": "8OfSwords",
+        "title": "8 Of Swords"
+      },
+      {
+        "name": "9OfSwords",
+        "title": "9 Of Swords"
+      },
+      {
+        "name": "10OfSwords",
+        "title": "10 Of Swords"
+      },
+      {
+        "name": "AceOfSwords",
+        "title": "Ace Of Swords"
+      },
+      {
+        "name": "KingOfSwords",
+        "title": "King Of Swords"
+      },
+      {
+        "name": "KnightOfSwords",
+        "title": "Knight Of Swords"
+      },
+      {
+        "name": "PageOfSwords",
+        "title": "Page Of Swords"
+      },
+      {
+        "name": "QueenOfSwords",
+        "title": "Queen Of Swords"
+      }
+    ],
+    "Wands": [
+      {
+        "name": "2OfWands",
+        "title": "2 Of Wands"
+      },
+      {
+        "name": "3OfWands",
+        "title": "3 Of Wands"
+      },
+      {
+        "name": "4OfWands",
+        "title": "4 Of Wands"
+      },
+      {
+        "name": "5OfWands",
+        "title": "5 Of Wands"
+      },
+      {
+        "name": "6OfWands",
+        "title": "6 Of Wands"
+      },
+      {
+        "name": "7OfWands",
+        "title": "7 Of Wands"
+      },
+      {
+        "name": "8OfWands",
+        "title": "8 Of Wands"
+      },
+      {
+        "name": "9OfWands",
+        "title": "9 Of Wands"
+      },
+      {
+        "name": "10OfWands",
+        "title": "10 Of Wands"
+      },
+      {
+        "name": "AceOfWands",
+        "title": "Ace Of Wands"
+      },
+      {
+        "name": "KingOfWands",
+        "title": "King Of Wands"
+      },
+      {
+        "name": "KnightOfWands",
+        "title": "Knight Of Wands"
+      },
+      {
+        "name": "PageOfWands",
+        "title": "Page Of Wands"
+      },
+      {
+        "name": "QueenOfWands",
+        "title": "Queen Of Wands"
+      }
+    ]
+  }
+}

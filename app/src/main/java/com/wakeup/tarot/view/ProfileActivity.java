@@ -26,11 +26,6 @@ import com.wakeup.tarot.fragment.ChangeFontSizeCustomDialog;
 public class ProfileActivity extends AppCompatActivity implements OnClickListener,
 		OnCheckedChangeListener {
 
-	private TextView tvProfileTitle;
-	private Button btnBuyTarotCards;
-	private Button btnFeedbackAndDiscuss;
-	private Button btnAuthor;
-
 	private TextView btnReverseCard;
 	private CheckBox cbReverseCard;
 
@@ -168,7 +163,6 @@ public class ProfileActivity extends AppCompatActivity implements OnClickListene
 				}
 			});
 
-
 			alertDialog.setCancelable(false);
 			alertDialog.setView(view);
 			alertDialog.show();
@@ -269,9 +263,9 @@ public class ProfileActivity extends AppCompatActivity implements OnClickListene
 		if (isSettingChange) {
 			(new AlertDialog.Builder(this))
 					.setIcon(R.drawable.icon_question)
-					.setTitle("Chưa lưu thay đổi !")
-					.setMessage("Bạn có muốn lưu lại thay đổi cài đặt không ?")
-					.setPositiveButton("Có",
+					.setTitle(getResources().getString(R.string.not_save))
+					.setMessage(getResources().getString(R.string.you_mean))
+					.setPositiveButton(android.R.string.yes,
 							new DialogInterface.OnClickListener() {
 								@Override
 								public void onClick(DialogInterface dialog,
@@ -295,7 +289,7 @@ public class ProfileActivity extends AppCompatActivity implements OnClickListene
 
 								}
 							})
-					.setNegativeButton("Không",
+					.setNegativeButton(android.R.string.no,
 							new DialogInterface.OnClickListener() {
 								@Override
 								public void onClick(DialogInterface dialog,

@@ -47,6 +47,9 @@
     <string name="huy_cai_dat">Bạn có chắc muốn cài lại mặc định không ?</string>
     <string name="huy_thay_doi">Bạn có chắc chắn muốn lưu lại thay đổi ?</string>
     <string name="xac_nhan_thay_doi">Đã hủy tất cả thay đổi của bạn.</string>
+    <string name="not_save">Chưa lưu thay đổi !</string>
+    <string name="you_mean">Bạn có muốn lưu lại thay đổi cài đặt không ?</string>
+
     <string name="OK">OK</string>
 
     <string name="str_gioi_thieu_ve_tarot">Giới thiệu về tarot</string>
@@ -60,5 +63,10 @@
     <string name="str_cai_dat">Cài đặt</string>
 
     <string name="str_trang_chu">Trang chủ</string>
+    <string name="str_mean">Bạn muốn khám phá ý nghĩa những lá bài ?
+        Còn chần chừ gì nữa.</string>
+    <string name="str_click">Hãy nhấp vào đây !!!</string>
+
+
 
 </resources>
