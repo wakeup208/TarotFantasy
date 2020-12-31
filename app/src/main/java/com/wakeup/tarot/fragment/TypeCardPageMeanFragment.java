@@ -12,15 +12,18 @@ import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.wakeup.tarot.R;
 import com.wakeup.tarot.view.BrowseCardsActivity;
+import com.wakeup.tarot.view.BrowseGroupCardsActivity;
 import com.wakeup.tarot.view.InformationActivity;
 
 public class TypeCardPageMeanFragment extends Fragment {
 
     Button btnClick;
     ImageView ivBackTb;
+    BrowseGroupCardsActivity.GroupStarCardFragment mGroupStarCardFragment;
 
     @Nullable
     @Override
@@ -38,11 +41,18 @@ public class TypeCardPageMeanFragment extends Fragment {
         Animation animation;
         animation = AnimationUtils.loadAnimation(getContext(),
                 R.anim.blink);
+
+
         btnClick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), BrowseCardsActivity.class);
                 startActivity(intent);
+                getActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+//                Intent intentStar = new Intent(getActivity(),
+//                        BrowseGroupCardsActivity.class);
+//                intentStar.putExtra("mode", 1);
+//                getActivity().startActivity(intentStar);
             }
         });
         btnClick.startAnimation(animation);

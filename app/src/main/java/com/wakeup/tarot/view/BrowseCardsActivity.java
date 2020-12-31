@@ -2,6 +2,7 @@ package com.wakeup.tarot.view;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -64,6 +65,8 @@ public class BrowseCardsActivity extends FragmentActivity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_browse_cards);
+		Log.d("abcd","createe");
+		instance = this;
 
 		// Reload screen size and background
 		//ConfigData.reloadScreen(this);
@@ -74,10 +77,10 @@ public class BrowseCardsActivity extends FragmentActivity implements
 
 		mContext = this.getApplicationContext();
 
-		tvTitle = (TextView) findViewById(R.id.tvTitle);
-		tvTitle.setTypeface(ConfigData.UVNCatBien_R);
+		this.tvTitle = (TextView) findViewById(R.id.tvTitle);
+		this.tvTitle.setTypeface(ConfigData.UVNCatBien_R);
 
-		ln_btn_grid = (LinearLayout) findViewById(R.id.ln_btn_grid);
+		this.ln_btn_grid = (LinearLayout) findViewById(R.id.ln_btn_grid);
 		ln_btn_grid.setOnClickListener(this);
 		btn_grid = (ImageView) findViewById(R.id.btn_grid);
 		//btn_grid.setOnClickListener(this);
@@ -104,15 +107,26 @@ public class BrowseCardsActivity extends FragmentActivity implements
 
 		// Replace container by mGridCardFragment
 		selectBrowserMode(ConfigData.BROWSER_MODE);
-
-		instance = this;
 	}
 
 	@Override
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
-		ConfigData.IS_USER_DESTROY_BY_BACK_BUTTON = true;
 		super.onBackPressed();
+		ConfigData.IS_USER_DESTROY_BY_BACK_BUTTON = true;
+		//startActivity(new Intent(this, InformationActivity.class));
+
+		Intent intentStar = new Intent(this,
+				InformationActivity.class);
+		//intentStar.putExtra("mode_tools", 0);
+		this.startActivity(intentStar);
+		//moveTaskToBack(true);
+	}
+
+	@Override
+	protected void onStop() {
+		super.onStop();
+
 	}
 
 	@Override
@@ -125,6 +139,7 @@ public class BrowseCardsActivity extends FragmentActivity implements
 	protected void onDestroy() {
 		super.onDestroy();
 		instance = null;
+		Log.d("abcd","onDestroy");
 	}
 	
 	@Override

@@ -97,8 +97,13 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
 	@Override
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
-		ConfigData.IS_USER_DESTROY_BY_BACK_BUTTON = true;
 		super.onBackPressed();
+
+		ConfigData.IS_USER_DESTROY_BY_BACK_BUTTON = true;
+		Intent intentStar = new Intent(this,
+				InformationActivity.class);
+		//intentStar.putExtra("mode_tools", 0);
+		this.startActivity(intentStar);
 	}
 
 	/**
@@ -127,6 +132,7 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
 			}
 			fragmentManager.beginTransaction()
 					.replace(R.id.browse_container, mGroupStarCardFragment)
+					.addToBackStack("mGroupStarCardFragment")
 					.commit();
 			break;
 
@@ -156,8 +162,8 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
 		// TODO Auto-generated method stub
 		if (v.getId() == R.id.btn_home) {
 			this.finish();
-			this.startActivity(new Intent(this.getApplicationContext(),
-					MainActivity.class));
+//			this.startActivity(new Intent(this.getApplicationContext(),
+//					MainActivity.class));
 		}
 	}
 

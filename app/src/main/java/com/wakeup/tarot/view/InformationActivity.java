@@ -10,15 +10,19 @@ import android.widget.RelativeLayout;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.wakeup.tarot.R;
+import com.wakeup.tarot.data.MapData;
 
 public class InformationActivity extends AppCompatActivity {
 
     RelativeLayout rlGioiThieu;
     RelativeLayout rlMean;
+    RelativeLayout cunghoangdao;
+
 
     FrameLayout mainFragment;
     ImageView imgHome;
@@ -52,6 +56,15 @@ public class InformationActivity extends AppCompatActivity {
                 addFragmentMean();
             }
         });
+
+        cunghoangdao = (RelativeLayout) findViewById(R.id.cunghoangdao);
+        cunghoangdao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addFragmentCungHoangDao();
+            }
+        });
+        //selectBrowserMode(mode);
     }
 
     private void addFragmentWithNavigationId(int i, Bundle bundle) {
@@ -73,6 +86,33 @@ public class InformationActivity extends AppCompatActivity {
     public void addFragmentMean() {
         addFragmentWithNavigationId(R.layout.type_card_page_xml, (Bundle) null);
     }
+
+    public void addFragmentCungHoangDao() {
+        addFragmentWithNavigationId(R.layout.cung_hoang_dao, (Bundle) null);
+    }
+
+    public void selectBrowserMode(int mode) {
+
+        switch (mode) {
+            case 0:
+                addFragmentMean();
+                break;
+
+            case 1:
+
+                break;
+
+            case 2:
+
+                break;
+
+            case 3:
+
+                break;
+
+        }
+    }
+
 
     @Override
     public void onBackPressed() {

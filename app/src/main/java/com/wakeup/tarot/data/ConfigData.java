@@ -132,15 +132,17 @@ public class ConfigData {
 
     public static void saveSettingData() {
         // Retrieve an editor to modify the shared preferences.
-        SharedPreferences.Editor editor = preferences.edit();
+        if (preferences != null) {
+            SharedPreferences.Editor editor = preferences.edit();
 
-        editor.putFloat("FONT_SIZE", FONT_SIZE);
-        editor.putBoolean("IS_REVERSE_CARD", IS_REVERSE_CARD);
-        editor.putBoolean("IS_SOUND_ON", IS_SOUND_ON);
-        editor.putInt("ZOOM_LEVEL", ZOOM_LEVEL);
+            editor.putFloat("FONT_SIZE", FONT_SIZE);
+            editor.putBoolean("IS_REVERSE_CARD", IS_REVERSE_CARD);
+            editor.putBoolean("IS_SOUND_ON", IS_SOUND_ON);
+            editor.putInt("ZOOM_LEVEL", ZOOM_LEVEL);
 
-        // Commit changes.
-        editor.commit();
+            // Commit changes.
+            editor.commit();
+        }
     }
 
     public static void playSound(int soundId) {
