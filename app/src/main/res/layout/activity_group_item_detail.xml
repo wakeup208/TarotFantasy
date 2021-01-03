@@ -100,7 +100,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_margin="4dp"
         android:background="@color/color_bar" >
 
         <ImageButton
@@ -118,14 +117,12 @@
             android:id="@+id/tvItemGroupName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:gravity="center"
             android:text="@string/browse_cards"
             android:textColor="#b23ad0"
             android:fontFamily="@font/quicksand"
             android:textSize="@dimen/text_size_title"
-            android:textStyle="bold"
-            android:typeface="serif" />
+            android:textStyle="bold"  />
     </RelativeLayout>
 
 </RelativeLayout>

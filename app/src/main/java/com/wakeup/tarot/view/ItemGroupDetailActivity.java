@@ -59,8 +59,8 @@ public class ItemGroupDetailActivity extends FragmentActivity implements
 		tvGroupName.setTextSize(ConfigData.FONT_SIZE - 2);
 
 		tvItemGroupName = (TextView) findViewById(R.id.tvItemGroupName);
-		tvItemGroupName.setTextSize(ConfigData.FONT_SIZE);
-		tvItemGroupName.setTypeface(ConfigData.UVNCatBien_R);
+		//tvItemGroupName.setTextSize(ConfigData.FONT_SIZE);
+		//tvItemGroupName.setTypeface(ConfigData.UVNCatBien_R);
 
 		ivItemGroupImage = (ImageView) findViewById(R.id.ivItemGroupImage);
 
@@ -114,8 +114,8 @@ public class ItemGroupDetailActivity extends FragmentActivity implements
 		// TODO Auto-generated method stub
 		if (v.getId() == R.id.btn_home) {
 			this.finish();
-			this.startActivity(new Intent(this.getApplicationContext(),
-					MainActivity.class));
+//			this.startActivity(new Intent(this.getApplicationContext(),
+//					MainActivity.class));
 		}
 	}
 	

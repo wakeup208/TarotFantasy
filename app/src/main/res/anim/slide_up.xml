@@ -8,5 +8,16 @@
         android:interpolator="@android:anim/linear_interpolator"
         android:toXScale="1.0"
         android:toYScale="0.0" />
-
 </set>
+
+<!--    <?xml version="1.0" encoding="utf-8"?>-->
+<!--<set xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--android:duration="@integer/activity_transition_time"-->
+<!--    >-->
+<!--<translate-->
+<!--    android:fromYDelta="100%p"-->
+<!--    android:toYDelta="0"/>-->
+<!--<alpha-->
+<!--    android:fromAlpha="0.5"-->
+<!--    android:toAlpha="1"/>-->
+<!--</set>-->

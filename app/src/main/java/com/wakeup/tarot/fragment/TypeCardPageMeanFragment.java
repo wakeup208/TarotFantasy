@@ -47,12 +47,12 @@ public class TypeCardPageMeanFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), BrowseCardsActivity.class);
+                Bundle b = new Bundle();
+                b.putInt("selected", 1);
+                intent.putExtras(b);
+
                 startActivity(intent);
-                getActivity().overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-//                Intent intentStar = new Intent(getActivity(),
-//                        BrowseGroupCardsActivity.class);
-//                intentStar.putExtra("mode", 1);
-//                getActivity().startActivity(intentStar);
+                getActivity().overridePendingTransition(R.anim.slide_up, R.anim.no_animation);
             }
         });
         btnClick.startAnimation(animation);

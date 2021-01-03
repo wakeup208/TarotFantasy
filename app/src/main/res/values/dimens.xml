@@ -58,6 +58,6 @@
     <dimen name="dimen_300dp">300dp</dimen>
     <dimen name="dimen_20dp">20dp</dimen>
     <dimen name="dimen_5dp">5dp</dimen>
-
+    <dimen name="dimen_90dp">90dp</dimen>
 
 </resources>

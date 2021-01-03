@@ -5,7 +5,7 @@
     <corners android:radius="10dp" />
 
     <solid android:color="#1Acccccc"/>
-    <size
+<!--    <size
         android:height="@dimen/card_heigh"
-        android:width="220dp" />
+        android:width="220dp" />-->
 </shape>

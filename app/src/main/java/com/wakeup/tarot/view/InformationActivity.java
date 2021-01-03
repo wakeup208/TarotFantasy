@@ -1,10 +1,15 @@
 package com.wakeup.tarot.view;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.content.pm.ResolveInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import androidx.annotation.Nullable;
@@ -14,15 +19,22 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.wakeup.tarot.BuildConfig;
 import com.wakeup.tarot.R;
 import com.wakeup.tarot.data.MapData;
+
+import java.util.ArrayList;
 
 public class InformationActivity extends AppCompatActivity {
 
     RelativeLayout rlGioiThieu;
     RelativeLayout rlMean;
     RelativeLayout cunghoangdao;
-
+    RelativeLayout rtlRate;
+    RelativeLayout rtlVoc;
+    RelativeLayout rtlShare;
+    LinearLayout lnBrick;
+    LinearLayout lnBaby;
 
     FrameLayout mainFragment;
     ImageView imgHome;
@@ -36,12 +48,14 @@ public class InformationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+                startActivity(new Intent(InformationActivity.this,
+                        MainActivity.class));
             }
         });
 
         mainFragment = (FrameLayout) findViewById(R.id.nav_main_fragment);
 
-        rlGioiThieu =(RelativeLayout) findViewById(R.id.gioithieu);
+        rlGioiThieu = (RelativeLayout) findViewById(R.id.gioithieu);
         rlGioiThieu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,6 +78,45 @@ public class InformationActivity extends AppCompatActivity {
                 addFragmentCungHoangDao();
             }
         });
+
+        rtlRate = (RelativeLayout) findViewById(R.id.rate_app);
+        rtlRate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rate_this_app();
+            }
+        });
+
+        rtlVoc = (RelativeLayout) findViewById(R.id.VOC);
+        rtlVoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                feedback();
+            }
+        });
+
+        rtlShare = (RelativeLayout) findViewById(R.id.share);
+        rtlShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onShareView();
+            }
+        });
+
+        lnBrick = (LinearLayout) findViewById(R.id.btnBrickGame);
+        lnBrick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getBrick();
+            }
+        });
+        lnBaby = (LinearLayout) findViewById(R.id.babySleep);
+        lnBaby.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSleep();
+            }
+        });
         //selectBrowserMode(mode);
     }
 
@@ -72,7 +125,9 @@ public class InformationActivity extends AppCompatActivity {
             NavHostFragment create = NavHostFragment.create(i, bundle);
             if (getSupportFragmentManager() != null) {
                 mainFragment.setVisibility(View.VISIBLE);
-                FragmentTransaction add = getSupportFragmentManager().beginTransaction().add((int) R.id.nav_main_fragment, (Fragment) create);
+                FragmentTransaction add = getSupportFragmentManager().beginTransaction();
+                add.setCustomAnimations(R.anim.slide_down, R.anim.no_animation);
+                add.add((int) R.id.nav_main_fragment, (Fragment) create);
                 add.addToBackStack(create + "").setPrimaryNavigationFragment(create).commit();
             }
         } catch (IllegalStateException unused) {
@@ -89,6 +144,80 @@ public class InformationActivity extends AppCompatActivity {
 
     public void addFragmentCungHoangDao() {
         addFragmentWithNavigationId(R.layout.cung_hoang_dao, (Bundle) null);
+    }
+
+    private void getBrick() {
+        String appName = "com.wakeup.gamexephinh";
+        String theUrl = "market://details?id=" + appName;
+        Intent browse = new Intent(Intent.ACTION_VIEW, Uri.parse(theUrl));
+        startActivity(browse);
+    }
+
+    private void getSleep() {
+        String appName = "com.wakeup.babysleep";
+        String theUrl = "market://details?id=" + appName;
+        Intent browse = new Intent(Intent.ACTION_VIEW, Uri.parse(theUrl));
+        startActivity(browse);
+    }
+
+    private void rate_this_app() {
+        String appName = BuildConfig.APPLICATION_ID;
+        openInPlayStore(appName);
+    }
+
+    private void openInPlayStore(String appName) {
+        String theUrl = "market://details?id=" + appName;
+        Intent browse = new Intent(Intent.ACTION_VIEW, Uri.parse(theUrl));
+        startActivity(browse);
+    }
+
+    private void feedback() {
+//        Intent feedbackEmail = new Intent(Intent.ACTION_SEND);
+//        feedbackEmail.setType("text/email");
+//        feedbackEmail.putExtra(Intent.EXTRA_EMAIL, new String[]{"anhhoang.korean@gmail.com"});
+//        feedbackEmail.putExtra(Intent.EXTRA_SUBJECT, "Feedback");
+//        startActivity(Intent.createChooser(feedbackEmail, "Send Feedback to TAROT VIET:"));
+
+        try {
+            Intent intent = new Intent("android.intent.action.SEND");
+            intent.putExtra("android.intent.extra.EMAIL", new String[]{"anhhoang.korean@gmail.com"});
+            intent.putExtra("android.intent.extra.SUBJECT", "Feedback");
+            intent.putExtra("android.intent.extra.TEXT", "Send Feedback to TAROT VIET:");
+            intent.setType("text/plain");
+            startActivity(Intent.createChooser(intent, "Send Feedback to TAROT VIET:"));
+
+        } catch (Exception e) {
+        }
+    }
+
+    private void openRateApp() {
+        if (getApplicationContext() != null) {
+            String packageName = getPackageName();
+            try {
+                startActivity(new Intent("android.intent.action.VIEW", Uri.parse("market://details?id=" + packageName)));
+            } catch (ActivityNotFoundException unused) {
+                startActivity(new Intent("android.intent.action.VIEW", Uri.parse("http://play.google.com/store/apps/details?id=" + packageName)));
+            }
+        }
+    }
+
+    private void onShareView() {
+        String str = "\n - Android : https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID;
+        if (getApplicationContext() != null) {
+            openShareIntent(BuildConfig.APPLICATION_ID, str);
+        }
+    }
+
+    public void openShareIntent(String str, String str2) {
+        Intent intent = new Intent();
+        intent.setAction("android.intent.action.SEND");
+        intent.putExtra("android.intent.extra.SUBJECT", str);
+        intent.putExtra("android.intent.extra.TEXT", str2);
+        intent.setType("text/plain");
+        for (ResolveInfo resolveInfo : getPackageManager().queryIntentActivities(intent, 0)) {
+            new ArrayList().add(resolveInfo.activityInfo.packageName);
+        }
+        startActivity(Intent.createChooser(intent, "Share with:"));
     }
 
     public void selectBrowserMode(int mode) {
