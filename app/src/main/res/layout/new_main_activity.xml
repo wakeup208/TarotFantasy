@@ -207,7 +207,7 @@
         android:id="@+id/ad_container"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:visibility="visible"
+        android:visibility="gone"
         android:layout_alignParentBottom="true"
         android:background="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -222,10 +222,5 @@
 <!--            android:layout_alignParentLeft="true"-->
 <!--            app:adSize="BANNER"-->
 <!--            app:adUnitId="@string/banner_ad_unit_id" />-->
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Dau Xanh"/>
     </RelativeLayout>
 </RelativeLayout>

@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         setContentView(R.layout.new_main_activity);
         //updateLabel ();
-        //ConfigData.loadSettingData(this);
 
          //Load all setting in background thread when splash show
         ConfigData.loadSettingData(this);

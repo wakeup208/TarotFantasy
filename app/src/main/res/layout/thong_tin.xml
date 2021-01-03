@@ -27,33 +27,29 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginTop="@dimen/img_size"
                 android:layout_marginBottom="@dimen/margin"
-                android:gravity="center_vertical"
-                android:paddingStart="@dimen/commom_padding"
-                android:paddingEnd="@dimen/commom_padding">
+                android:gravity="center_vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_marginStart="@dimen/margin_bottom"
+                    android:layout_marginStart="@dimen/dimen_20dp"
                     android:layout_toEndOf="@+id/img_home"
                     android:background="@drawable/list_background"
                     android:fontFamily="@font/quicksand"
-                    android:layout_centerVertical="true"
-                    android:maxLines="1"
+                    android:layout_centerInParent="true"
                     android:text="@string/str_thong_tin"
                     android:textColor="@color/white"
                     android:textSize="@dimen/app_name_font_size" />
 
                 <ImageView
                     android:id="@+id/img_home"
+                    android:layout_marginStart="@dimen/dimen_20dp"
                     android:layout_width="@dimen/img_size"
                     android:layout_height="@dimen/img_size"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
                     android:checked="true"
-                    android:foregroundGravity="center_vertical"
-                    android:gravity="center_vertical"
+                    android:layout_centerInParent="true"
                     android:src="@drawable/ic_home_48" />
             </RelativeLayout>
 
