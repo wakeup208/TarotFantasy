@@ -13,6 +13,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -37,7 +38,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, View.OnTouchListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener/*, View.OnTouchListener */{
 
     private TextView tvAppName;
     private LinearLayout btn_drawcard;
@@ -57,9 +58,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         setContentView(R.layout.new_main_activity);
-
-        // Load all setting in background thread when splash show
+        //updateLabel ();
         //ConfigData.loadSettingData(this);
+
+         //Load all setting in background thread when splash show
+        ConfigData.loadSettingData(this);
 
         // Load background
 //        ((ImageView) findViewById(R.id.background))
@@ -70,23 +73,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btn_drawcard = (LinearLayout) findViewById(R.id.chonbai);
         btn_drawcard.setOnClickListener(this);
-        btn_drawcard.setOnTouchListener(this);
+        //btn_drawcard.setOnTouchListener(this);
 
         btn_spreadcard = (LinearLayout) findViewById(R.id.trabai);
         btn_spreadcard.setOnClickListener(this);
-        btn_spreadcard.setOnTouchListener(this);
+        //btn_spreadcard.setOnTouchListener(this);
 
         btn_encyclopedia = (LinearLayout) findViewById(R.id.sotay);
         btn_encyclopedia.setOnClickListener(this);
-        btn_encyclopedia.setOnTouchListener(this);
+        //btn_encyclopedia.setOnTouchListener(this);
 
         btn_profile_animation = (LinearLayout) findViewById(R.id.hotro);
         btn_profile_animation.setOnClickListener(this);
-        btn_profile_animation.setOnTouchListener(this);
+        //btn_profile_animation.setOnTouchListener(this);
 
         btn_thongtin = (LinearLayout) findViewById(R.id.thongtin);
         btn_thongtin.setOnClickListener(this);
-        btn_thongtin.setOnTouchListener(this);
+        //btn_thongtin.setOnTouchListener(this);
     }
 
     @Override
@@ -95,6 +98,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        ((ImageView) findViewById(R.id.background))
 //                .setBackground(ConfigData.rbdBackground);
         super.onResume();
+        Log.d("abcd","dau xanh ");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("abcd","onStop");
+
     }
 
     @Override
@@ -104,6 +115,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             ImageCache.deleteDiskCacheDir();
         } catch (Exception e) {
         }
+        Log.d("abcd","onDestroy");
+
         super.onDestroy();
     }
 
@@ -120,7 +133,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //alarmManager.set(AlarmManager. RTC_WAKEUP , timeAtButtonClick + 1000*10, pendingIntent) ;
         //alarmManager.set(AlarmManager. ELAPSED_REALTIME_WAKEUP , (delay - timeAtButtonClick) , pendingIntent) ;
-        alarmManager.setExact(AlarmManager. RTC_WAKEUP , delay, pendingIntent); ;
+        //alarmManager.setExact(AlarmManager. RTC_WAKEUP , delay, pendingIntent);
+
+        long futureInMillis = SystemClock.elapsedRealtime() + delay;
+        alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, futureInMillis, pendingIntent);
 
 
     }
@@ -184,11 +200,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String myFormat = "dd/MM/yy" ; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat , Locale. getDefault ()) ;
         Date date = myCalendar .getTime() ;
-       scheduleNotification(getNotification( "Nguyen Mau Thuc") , date.getTime()) ;
+        Log.d("abcd","time = " + myCalendar.getTimeInMillis());
+        scheduleNotification(getNotification( "Nguyen Mau Thuc") , 5000) ;
     }
 
     private void updateLabel1 () {
-        Log.d("abcd","time = " + myCalendar.getTimeInMillis());
+        Log.d("abcd","time1 = " + myCalendar.getTimeInMillis());
         scheduleNotification(getNotification( "") , myCalendar.getTimeInMillis()) ;
     }
 
@@ -209,7 +226,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onPause() {
         ConfigData.saveSettingData();
+        Log.d("abcd","onPause");
+
         super.onPause();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("abcd","onRestart");
     }
 
     @Override
@@ -247,42 +277,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        switch (v.getId()) {
-            case R.id.chonbai:
-                if (MotionEvent.ACTION_DOWN == event.getAction()) {
-                    btn_drawcard.startAnimation(ConfigData.animation_button_press);
-                }
-                break;
-
-            case R.id.trabai:
-                if (MotionEvent.ACTION_DOWN == event.getAction()) {
-                    btn_spreadcard
-                            .startAnimation(ConfigData.animation_button_press);
-                }
-                break;
-
-            case R.id.sotay:
-                if (MotionEvent.ACTION_DOWN == event.getAction()) {
-                    btn_encyclopedia
-                            .startAnimation(ConfigData.animation_button_press);
-                }
-                break;
-
-            case R.id.hotro:
-                if (MotionEvent.ACTION_DOWN == event.getAction()) {
-                    btn_profile_animation
-                            .startAnimation(ConfigData.animation_button_press);
-                }
-                break;
-
-            case R.id.thongtin:
-                if (MotionEvent.ACTION_DOWN == event.getAction()) {
-                    btn_thongtin
-                            .startAnimation(ConfigData.animation_button_press);
-                }
-                break;
-        }
-        return false;    }
+//    @Override
+//    public boolean onTouch(View v, MotionEvent event) {
+//        switch (v.getId()) {
+//            case R.id.chonbai:
+//                if (MotionEvent.ACTION_DOWN == event.getAction()) {
+//                    btn_drawcard.startAnimation(ConfigData.animation_button_press);
+//                }
+//                break;
+//
+//            case R.id.trabai:
+//                if (MotionEvent.ACTION_DOWN == event.getAction()) {
+//                    btn_spreadcard
+//                            .startAnimation(ConfigData.animation_button_press);
+//                }
+//                break;
+//
+//            case R.id.sotay:
+//                if (MotionEvent.ACTION_DOWN == event.getAction()) {
+//                    btn_encyclopedia
+//                            .startAnimation(ConfigData.animation_button_press);
+//                }
+//                break;
+//
+//            case R.id.hotro:
+//                if (MotionEvent.ACTION_DOWN == event.getAction()) {
+//                    btn_profile_animation
+//                            .startAnimation(ConfigData.animation_button_press);
+//                }
+//                break;
+//
+//            case R.id.thongtin:
+//                if (MotionEvent.ACTION_DOWN == event.getAction()) {
+//                    btn_thongtin
+//                            .startAnimation(ConfigData.animation_button_press);
+//                }
+//                break;
+//        }
+//        return false;    }
 }

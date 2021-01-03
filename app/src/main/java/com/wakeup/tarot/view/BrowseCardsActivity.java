@@ -22,6 +22,8 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
@@ -33,6 +35,8 @@ import com.wakeup.tarot.data.ConfigData;
 import com.wakeup.tarot.util.ImageCache;
 import com.wakeup.tarot.util.ImageLoaderAsynch;
 import com.wakeup.tarot.adapter.CardImageGridViewAdapter;
+
+import org.jetbrains.annotations.NotNull;
 
 
 public class BrowseCardsActivity extends FragmentActivity implements
@@ -396,6 +400,74 @@ public class BrowseCardsActivity extends FragmentActivity implements
                     container, false);
 
             mGridView = (GridView) view.findViewById(R.id.gridview);
+//            mGridView.setAdapter(mCardImageGridViewAdapter);
+//            mGridView.setOnScrollListener(new AbsListView.OnScrollListener() {
+//                @Override
+//                public void onScrollStateChanged(AbsListView absListView,
+//                                                 int scrollState) {
+//                    // Pause fetcher to ensure smoother scrolling when flinging
+//                    // if (scrollState ==
+//                    // AbsListView.OnScrollListener.SCROLL_STATE_FLING) {
+//                    // mImageLoader.setPauseWork(true);
+//                    // } else {
+//                    // mImageLoader.setPauseWork(false);
+//                    // }
+//                }
+//
+//                @Override
+//                public void onScroll(AbsListView absListView,
+//                                     int firstVisibleItem, int visibleItemCount,
+//                                     int totalItemCount) {
+//                }
+//            });
+//
+//            // This listener is used to get the final width of the GridView and
+//            // then calculate the
+//            // number of columns and the width of each column. The width of each
+//            // column is variable
+//            // as the GridView has stretchMode=columnWidth. The column width is
+//            // used to set the height
+//            // of each view so we get nice card.
+//            mGridView.getViewTreeObserver().addOnGlobalLayoutListener(
+//                    new ViewTreeObserver.OnGlobalLayoutListener() {
+//
+//                        @Override
+//                        public void onGlobalLayout() {
+//                            // TODO Auto-generated method stub
+//                            if (mCardImageGridViewAdapter.getNumColumns() == 0) {
+//                                // compute cell_width base on zoom_level
+//                                calculateCellWidth();
+//
+//                                mNumColumns = (int) Math.floor(mGridView
+//                                        .getWidth() / (cell_width + 5));
+//
+//                                if (mNumColumns > 0) {
+//                                    mCardImageGridViewAdapter
+//                                            .setNumColumns(mNumColumns);
+//
+//                                    mCardImageGridViewAdapter
+//                                            .setTopBarHeight(BrowseCardsActivity.instance
+//                                                    .findViewById(R.id.tvTitle)
+//                                                    .getHeight());
+//
+//                                    mCardImageGridViewAdapter
+//                                            .setBottomBarHeight(BrowseCardsActivity.instance
+//                                                    .findViewById(
+//                                                            R.id.bottom_bar)
+//                                                    .getHeight());
+//
+//                                    mGridView.setNumColumns(mNumColumns);
+//                                }
+//                            }
+//                        }
+//                    });
+
+            return view;
+        }
+
+        @Override
+        public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
+            super.onViewCreated(view, savedInstanceState);
             mGridView.setAdapter(mCardImageGridViewAdapter);
             mGridView.setOnScrollListener(new AbsListView.OnScrollListener() {
                 @Override
@@ -434,8 +506,13 @@ public class BrowseCardsActivity extends FragmentActivity implements
                                 // compute cell_width base on zoom_level
                                 calculateCellWidth();
 
-                                mNumColumns = (int) Math.floor(mGridView
-                                        .getWidth() / (cell_width + 5));
+                                if (mGridView
+                                        .getWidth() != 0) {
+
+                                    mNumColumns = (int) Math.floor(mGridView
+                                            .getWidth() / (cell_width + 5));
+                                }
+
 
                                 if (mNumColumns > 0) {
                                     mCardImageGridViewAdapter
@@ -457,8 +534,6 @@ public class BrowseCardsActivity extends FragmentActivity implements
                             }
                         }
                     });
-
-            return view;
         }
 
         /**
@@ -508,6 +583,8 @@ public class BrowseCardsActivity extends FragmentActivity implements
 
             // Calculate and reset Image size
             cell_width = calculateCellWidth();
+            Log.d("abcd", "cell_width ==== " + cell_width);
+
             imageWidth = cell_width - 5;
             imageHeight = imageWidth * 1232 / 710;
 
