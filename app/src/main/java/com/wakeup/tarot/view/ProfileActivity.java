@@ -261,50 +261,95 @@ public class ProfileActivity extends AppCompatActivity implements OnClickListene
 	public void onBackPressed() {
 
 		if (isSettingChange) {
-			(new AlertDialog.Builder(this))
-					.setIcon(R.drawable.icon_question)
-					.setTitle(getResources().getString(R.string.not_save))
-					.setMessage(getResources().getString(R.string.you_mean))
-					.setPositiveButton(android.R.string.yes,
-							new DialogInterface.OnClickListener() {
-								@Override
-								public void onClick(DialogInterface dialog,
-										int which) {
-									ConfigData.FONT_SIZE = Float
-											.parseFloat(tvFontSize.getText()
-													.toString());
-									ConfigData.IS_SOUND_ON = cbSoundOnOff
-											.isChecked();
-									ConfigData.IS_REVERSE_CARD = cbReverseCard
-											.isChecked();
-									ConfigData.saveSettingData();
-									// Update this UI
-									tvFontSize.setText(""
-											+ ConfigData.FONT_SIZE);
-									cbReverseCard
-											.setChecked(ConfigData.IS_REVERSE_CARD);
-									cbSoundOnOff
-											.setChecked(ConfigData.IS_SOUND_ON);
-									ProfileActivity.this.finish();
+//			(new AlertDialog.Builder(this))
+//					.setIcon(R.drawable.icon_question)
+//					.setTitle(getResources().getString(R.string.not_save))
+//					.setMessage(getResources().getString(R.string.you_mean))
+//					.setPositiveButton(android.R.string.yes,
+//							new DialogInterface.OnClickListener() {
+//								@Override
+//								public void onClick(DialogInterface dialog,
+//										int which) {
+//									ConfigData.FONT_SIZE = Float
+//											.parseFloat(tvFontSize.getText()
+//													.toString());
+//									ConfigData.IS_SOUND_ON = cbSoundOnOff
+//											.isChecked();
+//									ConfigData.IS_REVERSE_CARD = cbReverseCard
+//											.isChecked();
+//									ConfigData.saveSettingData();
+//									// Update this UI
+//									tvFontSize.setText(""
+//											+ ConfigData.FONT_SIZE);
+//									cbReverseCard
+//											.setChecked(ConfigData.IS_REVERSE_CARD);
+//									cbSoundOnOff
+//											.setChecked(ConfigData.IS_SOUND_ON);
+//									ProfileActivity.this.finish();
+//
+//								}
+//							})
+//					.setNegativeButton(android.R.string.no,
+//							new DialogInterface.OnClickListener() {
+//								@Override
+//								public void onClick(DialogInterface dialog,
+//										int which) {
+//									// Update this UI
+//									tvFontSize.setText(""
+//											+ ConfigData.FONT_SIZE);
+//									cbReverseCard
+//											.setChecked(ConfigData.IS_REVERSE_CARD);
+//									cbSoundOnOff
+//											.setChecked(ConfigData.IS_SOUND_ON);
+//									ProfileActivity.this.finish();
+//								}
+//							}).create().show();
 
-								}
-							})
-					.setNegativeButton(android.R.string.no,
-							new DialogInterface.OnClickListener() {
-								@Override
-								public void onClick(DialogInterface dialog,
-										int which) {
-									// Update this UI
-									tvFontSize.setText(""
-											+ ConfigData.FONT_SIZE);
-									cbReverseCard
-											.setChecked(ConfigData.IS_REVERSE_CARD);
-									cbSoundOnOff
-											.setChecked(ConfigData.IS_SOUND_ON);
-									ProfileActivity.this.finish();
-								}
-							}).create().show();
+			final AlertDialog backPressDialog = startLevelDialog.create();
+			View view1 = getLayoutInflater().inflate(R.layout.custom_profile_dialog, null);
+			Button btnYes1 = (Button) view1.findViewById(R.id.btnYes);
+			Button btnNo1 = (Button) view1.findViewById(R.id.btnNo);
+			TextView txt = (TextView) view1.findViewById(R.id.txt_title_dialog);
+			txt.setText(R.string.you_mean_1);
 
+			btnYes1.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					ConfigData.FONT_SIZE = Float
+							.parseFloat(tvFontSize.getText()
+									.toString());
+					ConfigData.IS_SOUND_ON = cbSoundOnOff
+							.isChecked();
+					ConfigData.IS_REVERSE_CARD = cbReverseCard
+							.isChecked();
+					ConfigData.saveSettingData();
+					// Update this UI
+					tvFontSize.setText(""
+							+ ConfigData.FONT_SIZE);
+					cbReverseCard
+							.setChecked(ConfigData.IS_REVERSE_CARD);
+					cbSoundOnOff
+							.setChecked(ConfigData.IS_SOUND_ON);
+					ProfileActivity.this.finish();
+				}
+			});
+
+			btnNo1.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					tvFontSize.setText(""
+							+ ConfigData.FONT_SIZE);
+					cbReverseCard
+							.setChecked(ConfigData.IS_REVERSE_CARD);
+					cbSoundOnOff
+							.setChecked(ConfigData.IS_SOUND_ON);
+					ProfileActivity.this.finish();
+				}
+			});
+
+			backPressDialog.setCancelable(false);
+			backPressDialog.setView(view1);
+			backPressDialog.show();
 		} else {
 			this.finish();
 		}

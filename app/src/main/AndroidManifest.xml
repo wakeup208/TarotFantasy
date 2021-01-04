@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.wakeup.tarot">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -24,9 +25,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.MainActivity">
-        </activity>
-
+        <activity android:name=".view.MainActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
         <activity android:name=".view.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,18 +35,42 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.ChooseCardActivity"></activity>
-        <activity android:name=".view.BrowseCardsActivity"></activity>
-        <activity android:name=".view.BrowseGroupCardsActivity"></activity>
-        <activity android:name=".view.ItemGroupDetailActivity"></activity>
-        <activity android:name=".view.ProfileActivity"></activity>
-        <activity android:name=".view.TarotSpreadActivity"></activity>
-        <activity android:name=".view.TarotSpreadGuideActivity"></activity>
-        <activity android:name=".view.SpreadCardsActivity"></activity>
-        <activity android:name=".view.CardDetailViewPagerForBrowserCardActivity"></activity>
-        <activity android:name=".view.CardDetailViewPagerForSpreadCardActivity"></activity>
-        <activity android:name=".view.SingleCardActivity"></activity>
-        <activity android:name=".view.InformationActivity"/>
+        <activity android:name=".view.ChooseCardActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity android:name=".view.BrowseCardsActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity android:name=".view.BrowseGroupCardsActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity android:name=".view.ItemGroupDetailActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity android:name=".view.ProfileActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity android:name=".view.TarotSpreadActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity android:name=".view.TarotSpreadGuideActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity android:name=".view.SpreadCardsActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity android:name=".view.CardDetailViewPagerForBrowserCardActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity android:name=".view.CardDetailViewPagerForSpreadCardActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity android:name=".view.SingleCardActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity android:name=".view.InformationActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
         <receiver android:name=".receiver.MyNotificationPublisher"></receiver>
     </application>
 

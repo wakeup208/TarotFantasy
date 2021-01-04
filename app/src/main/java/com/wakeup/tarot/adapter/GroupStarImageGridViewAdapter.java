@@ -56,7 +56,7 @@ public class GroupStarImageGridViewAdapter extends BaseAdapter implements
 		tvCellGridName.setTypeface(ConfigData.UVNCatBien_R);
 		tvCellGridName.setText(StarJasonHelper.getTitle(position));
 
-		int w = BrowseGroupCardsActivity.GroupStarCardFragment.mImageLoader.getImageWidth();
+		int w = BrowseGroupCardsActivity.GroupStarCardFragment.mImageLoader.getImageWidth() ;
 		int h = BrowseGroupCardsActivity.GroupStarCardFragment.mImageLoader.getImageHeight();
 		ImageView ivCellGridImage = (ImageView) view.findViewById(R.id.ivCellGridImage);
 		ivCellGridImage.setLayoutParams(new LinearLayout.LayoutParams(w, h));

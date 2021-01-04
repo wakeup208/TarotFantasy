@@ -50,6 +50,9 @@
     <string name="not_save">Chưa lưu thay đổi !</string>
     <string name="you_mean">Bạn có muốn lưu lại thay đổi cài đặt không ?</string>
 
+    <string name="you_mean_1">Chưa lưu thay đổi !\nBạn có muốn lưu lại thay đổi cài đặt không ?</string>
+
+
     <string name="OK">OK</string>
 
     <string name="str_gioi_thieu_ve_tarot">Giới thiệu về tarot</string>
