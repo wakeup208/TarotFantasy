@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "227136650257",
+    "project_id": "tarotviet-c678f",
+    "storage_bucket": "tarotviet-c678f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:227136650257:android:c46def0b71126d02b6c5b0",
+        "android_client_info": {
+          "package_name": "com.wakeup.tarot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "227136650257-slb1mlg2ge67enjtu6u2nf819to6eu9c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-owB-GfJ-vRTKAEhdKKMkjGN_QyLF7ks"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "227136650257-slb1mlg2ge67enjtu6u2nf819to6eu9c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

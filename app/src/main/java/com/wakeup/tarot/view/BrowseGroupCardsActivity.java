@@ -110,12 +110,24 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
     public void onBackPressed() {
         // TODO Auto-generated method stub
         super.onBackPressed();
-
+        if (select == 0) {
+            this.finish();
+            startActivity(new Intent(this, MainActivity.class));
+        } else {
+            select = 0;
+            if (mode == 1) {
+                this.finish();
+                startActivity(new Intent(this, InformationActivity.class));
+            } else {
+                this.finish();
+                startActivity(new Intent(this, MainActivity.class));
+            }
+        }
         ConfigData.IS_USER_DESTROY_BY_BACK_BUTTON = true;
-        Intent intentStar = new Intent(this,
-                InformationActivity.class);
-        //intentStar.putExtra("mode_tools", 0);
-        this.startActivity(intentStar);
+//        Intent intentStar = new Intent(this,
+//                InformationActivity.class);
+//        intentStar.putExtra("mode_tools", 0);
+//        this.startActivity(intentStar);
     }
 
     /**

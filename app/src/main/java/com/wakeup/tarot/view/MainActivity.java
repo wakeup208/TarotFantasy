@@ -40,7 +40,7 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener/*, View.OnTouchListener */{
 
-    private TextView tvAppName;
+    //private TextView tvAppName;
     private LinearLayout btn_drawcard;
     private LinearLayout btn_spreadcard;
     private LinearLayout btn_encyclopedia;
@@ -67,8 +67,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        ((ImageView) findViewById(R.id.background))
 //                .setBackground(ConfigData.rbdBackground);
 
-        tvAppName = (TextView) findViewById(R.id.tvAppName);
-        tvAppName.setTypeface(ConfigData.UVNCatBien_Sub);
+        //tvAppName = (TextView) findViewById(R.id.tvAppName);
+        //tvAppName.setTypeface(ConfigData.UVNCatBien_Sub);
 
         btn_drawcard = (LinearLayout) findViewById(R.id.chonbai);
         btn_drawcard.setOnClickListener(this);
@@ -93,18 +93,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onResume() {
-        // Load background
-//        ((ImageView) findViewById(R.id.background))
-//                .setBackground(ConfigData.rbdBackground);
         super.onResume();
-        Log.d("abcd","dau xanh ");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d("abcd","onStop");
-
     }
 
     @Override
@@ -114,99 +108,95 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             ImageCache.deleteDiskCacheDir();
         } catch (Exception e) {
         }
-        Log.d("abcd","onDestroy");
-
         super.onDestroy();
     }
 
-    private void scheduleNotification (Notification notification , long delay) {
-        long timeAtButtonClick = System.currentTimeMillis();
-
-        Intent notificationIntent = new Intent( this, MyNotificationPublisher. class ) ;
-        notificationIntent.putExtra(MyNotificationPublisher. NOTIFICATION_ID , 1 ) ;
-        notificationIntent.putExtra(MyNotificationPublisher. NOTIFICATION , notification) ;
-        PendingIntent pendingIntent = PendingIntent. getBroadcast ( this, 0 , notificationIntent , PendingIntent. FLAG_UPDATE_CURRENT ) ;
-        AlarmManager alarmManager = (AlarmManager) getSystemService(Context. ALARM_SERVICE ) ;
-        assert alarmManager != null;
-
-
-        //alarmManager.set(AlarmManager. RTC_WAKEUP , timeAtButtonClick + 1000*10, pendingIntent) ;
-        //alarmManager.set(AlarmManager. ELAPSED_REALTIME_WAKEUP , (delay - timeAtButtonClick) , pendingIntent) ;
-        //alarmManager.setExact(AlarmManager. RTC_WAKEUP , delay, pendingIntent);
-
-        long futureInMillis = SystemClock.elapsedRealtime() + delay;
-        alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, futureInMillis, pendingIntent);
-
-
-    }
-    private Notification getNotification (String content) {
-        PendingIntent activity = PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), 0);
-        RemoteViews contentView = new RemoteViews(getPackageName(), R.layout.notice_collapse);
-        RemoteViews contentViewExpand = new RemoteViews(getPackageName(), R.layout.notice_expand);
-
-
-        NotificationCompat.Builder builder = new NotificationCompat.Builder( this, default_notification_channel_id ) ;
-        builder.setContentTitle( "Tarot" ).setOngoing(true).setColor(getColor(R.color.white));
-        builder.setSmallIcon(R.drawable. icon_call ) ;
-        builder.setAutoCancel( true ).setPriority(NotificationCompat.PRIORITY_HIGH)
-                .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
-                .setCategory(Notification.CATEGORY_MESSAGE) ;
-        builder.setChannelId( NOTIFICATION_CHANNEL_ID ) ;
-        builder.setStyle(new NotificationCompat.DecoratedCustomViewStyle()).setCustomContentView(contentView).setDefaults(Notification.DEFAULT_ALL);
-        builder.setCustomBigContentView(contentViewExpand);
-        builder.setContentIntent(activity);
-        return builder.build() ;
-    }
-
-    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
-        @Override
-        public void onDateSet (DatePicker view , int year , int monthOfYear , int dayOfMonth) {
-            myCalendar .set(Calendar. YEAR , year) ;
-            myCalendar .set(Calendar. MONTH , monthOfYear) ;
-            myCalendar .set(Calendar. DAY_OF_MONTH , dayOfMonth) ;
-            updateLabel() ;
-        }
-    } ;
-
-    TimePickerDialog.OnTimeSetListener timeSetListener = new TimePickerDialog.OnTimeSetListener() {
-        @Override
-        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-            myCalendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
-            myCalendar.set(Calendar.MINUTE, minute);
-            myCalendar.set(Calendar.SECOND, 0);
-            myCalendar.set(Calendar.MILLISECOND, 0);
-            updateLabel1();
-        }
-    };
-
-    public void setDate (View view) {
-        new DatePickerDialog(
-                MainActivity. this, date ,
-                myCalendar .get(Calendar. YEAR ) ,
-                myCalendar .get(Calendar. MONTH ) ,
-                myCalendar .get(Calendar. DAY_OF_MONTH )
-        ).show() ;
-    }
-
-    public void setTime (View view) {
-        new TimePickerDialog(MainActivity.this, timeSetListener,
-                myCalendar.get(Calendar.HOUR_OF_DAY),
-                myCalendar.get(Calendar.MINUTE),
-                true).show();
-    }
-
-    private void updateLabel () {
-        String myFormat = "dd/MM/yy" ; //In which you need put here
-        SimpleDateFormat sdf = new SimpleDateFormat(myFormat , Locale. getDefault ()) ;
-        Date date = myCalendar .getTime() ;
-        Log.d("abcd","time = " + myCalendar.getTimeInMillis());
-        scheduleNotification(getNotification( "Nguyen Mau Thuc") , 5000) ;
-    }
-
-    private void updateLabel1 () {
-        Log.d("abcd","time1 = " + myCalendar.getTimeInMillis());
-        scheduleNotification(getNotification( "") , myCalendar.getTimeInMillis()) ;
-    }
+//    private void scheduleNotification (Notification notification , long delay) {
+//        long timeAtButtonClick = System.currentTimeMillis();
+//
+//        Intent notificationIntent = new Intent( this, MyNotificationPublisher. class ) ;
+//        notificationIntent.putExtra(MyNotificationPublisher. NOTIFICATION_ID , 1 ) ;
+//        notificationIntent.putExtra(MyNotificationPublisher. NOTIFICATION , notification) ;
+//        PendingIntent pendingIntent = PendingIntent. getBroadcast ( this, 0 , notificationIntent , PendingIntent. FLAG_UPDATE_CURRENT ) ;
+//        AlarmManager alarmManager = (AlarmManager) getSystemService(Context. ALARM_SERVICE ) ;
+//        assert alarmManager != null;
+//
+//
+//        //alarmManager.set(AlarmManager. RTC_WAKEUP , timeAtButtonClick + 1000*10, pendingIntent) ;
+//        //alarmManager.set(AlarmManager. ELAPSED_REALTIME_WAKEUP , (delay - timeAtButtonClick) , pendingIntent) ;
+//        //alarmManager.setExact(AlarmManager. RTC_WAKEUP , delay, pendingIntent);
+//
+//        long futureInMillis = SystemClock.elapsedRealtime() + delay;
+//        alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, futureInMillis, pendingIntent);
+//    }
+//    private Notification getNotification (String content) {
+//        PendingIntent activity = PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), 0);
+//        RemoteViews contentView = new RemoteViews(getPackageName(), R.layout.notice_collapse);
+//        RemoteViews contentViewExpand = new RemoteViews(getPackageName(), R.layout.notice_expand);
+//
+//
+//        NotificationCompat.Builder builder = new NotificationCompat.Builder( this, default_notification_channel_id ) ;
+//        builder.setContentTitle( "Tarot" ).setOngoing(true).setColor(getColor(R.color.white));
+//        builder.setSmallIcon(R.drawable. icon_call ) ;
+//        builder.setAutoCancel( true ).setPriority(NotificationCompat.PRIORITY_HIGH)
+//                .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
+//                .setCategory(Notification.CATEGORY_MESSAGE) ;
+//        builder.setChannelId( NOTIFICATION_CHANNEL_ID ) ;
+//        builder.setStyle(new NotificationCompat.DecoratedCustomViewStyle()).setCustomContentView(contentView).setDefaults(Notification.DEFAULT_ALL);
+//        builder.setCustomBigContentView(contentViewExpand);
+//        builder.setContentIntent(activity);
+//        return builder.build() ;
+//    }
+//
+//    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+//        @Override
+//        public void onDateSet (DatePicker view , int year , int monthOfYear , int dayOfMonth) {
+//            myCalendar .set(Calendar. YEAR , year) ;
+//            myCalendar .set(Calendar. MONTH , monthOfYear) ;
+//            myCalendar .set(Calendar. DAY_OF_MONTH , dayOfMonth) ;
+//            updateLabel() ;
+//        }
+//    } ;
+//
+//    TimePickerDialog.OnTimeSetListener timeSetListener = new TimePickerDialog.OnTimeSetListener() {
+//        @Override
+//        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+//            myCalendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
+//            myCalendar.set(Calendar.MINUTE, minute);
+//            myCalendar.set(Calendar.SECOND, 0);
+//            myCalendar.set(Calendar.MILLISECOND, 0);
+//            updateLabel1();
+//        }
+//    };
+//
+//    public void setDate (View view) {
+//        new DatePickerDialog(
+//                MainActivity. this, date ,
+//                myCalendar .get(Calendar. YEAR ) ,
+//                myCalendar .get(Calendar. MONTH ) ,
+//                myCalendar .get(Calendar. DAY_OF_MONTH )
+//        ).show() ;
+//    }
+//
+//    public void setTime (View view) {
+//        new TimePickerDialog(MainActivity.this, timeSetListener,
+//                myCalendar.get(Calendar.HOUR_OF_DAY),
+//                myCalendar.get(Calendar.MINUTE),
+//                true).show();
+//    }
+//
+//    private void updateLabel () {
+//        String myFormat = "dd/MM/yy" ; //In which you need put here
+//        SimpleDateFormat sdf = new SimpleDateFormat(myFormat , Locale. getDefault ()) ;
+//        Date date = myCalendar .getTime() ;
+//        Log.d("abcd","time = " + myCalendar.getTimeInMillis());
+//        scheduleNotification(getNotification( "Nguyen Mau Thuc") , 5000) ;
+//    }
+//
+//    private void updateLabel1 () {
+//        Log.d("abcd","time1 = " + myCalendar.getTimeInMillis());
+//        scheduleNotification(getNotification( "") , myCalendar.getTimeInMillis()) ;
+//    }
 
     public static void printAvailableMemory() {
         if (BuildConfig.DEBUG) {
@@ -225,7 +215,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onPause() {
         ConfigData.saveSettingData();
-        Log.d("abcd","onPause");
 
         super.onPause();
     }
@@ -233,12 +222,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        finish();
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.d("abcd","onRestart");
     }
 
     @Override

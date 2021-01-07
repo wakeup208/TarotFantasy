@@ -448,7 +448,6 @@ public class SingleCardActivity extends FragmentActivity implements OnClickListe
     @Override
     public void onClick(View v) {
         // TODO Auto-generated method stub
-        Log.d("abcd", "single card activity");
 
         switch (v.getId()) {
 

@@ -19,3 +19,28 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-dontwarn okio.**
+-dontwarn javax.annotation.Nullable
+-dontwarn javax.annotation.ParametersAreNonnullByDefault
+-dontwarn com.squareup.okhttp.**
+-printmapping mapping.txt
+-verbose
+-dontoptimize
+-dontpreverify
+-dontshrink
+-dontskipnonpubliclibraryclassmembers
+-dontusemixedcaseclassnames
+-keepparameternames
+-renamesourcefileattribute SourceFile
+-keepattributes *Annotation*
+-keepattributes Exceptions,InnerClasses,Signature,Deprecated,SourceFile,LineNumberTable,*Annotation*,EnclosingMethod
+-keepattributes Signature
+-assumenosideeffects class android.util.Log {
+    public static *** d(...);
+    public static *** v(...);
+}
+#Keep native
+-keepclasseswithmembernames class * {
+    native <methods>;
+}

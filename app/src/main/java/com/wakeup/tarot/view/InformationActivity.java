@@ -147,15 +147,13 @@ public class InformationActivity extends AppCompatActivity {
     }
 
     private void getBrick() {
-        String appName = "com.wakeup.gamexephinh";
-        String theUrl = "market://details?id=" + appName;
+        String theUrl = "https://play.google.com/store/apps/details?id=com.wakeup.babysleep";
         Intent browse = new Intent(Intent.ACTION_VIEW, Uri.parse(theUrl));
         startActivity(browse);
     }
 
     private void getSleep() {
-        String appName = "com.wakeup.babysleep";
-        String theUrl = "market://details?id=" + appName;
+        String theUrl = "https://play.google.com/store/apps/details?id=com.wakeup.gamexephinh";
         Intent browse = new Intent(Intent.ACTION_VIEW, Uri.parse(theUrl));
         startActivity(browse);
     }

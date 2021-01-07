@@ -132,13 +132,14 @@ public class BrowseCardsActivity extends FragmentActivity implements
         // TODO Auto-generated method stub
         super.onBackPressed();
         ConfigData.IS_USER_DESTROY_BY_BACK_BUTTON = true;
-        //startActivity(new Intent(this, InformationActivity.class));
-
-        Intent intentStar = new Intent(this,
-                InformationActivity.class);
-        //intentStar.putExtra("mode_tools", 0);
-        this.startActivity(intentStar);
-        //moveTaskToBack(true);
+        if (selected == 0) {
+            this.finish();
+            startActivity(new Intent(this, MainActivity.class));
+        } else {
+            selected = 0;
+            this.finish();
+            startActivity(new Intent(this, InformationActivity.class));
+        }
     }
 
     @Override
@@ -157,7 +158,6 @@ public class BrowseCardsActivity extends FragmentActivity implements
     protected void onDestroy() {
         super.onDestroy();
         instance = null;
-        Log.d("abcd", "onDestroy");
     }
 
     @Override
@@ -583,8 +583,6 @@ public class BrowseCardsActivity extends FragmentActivity implements
 
             // Calculate and reset Image size
             cell_width = calculateCellWidth();
-            Log.d("abcd", "cell_width ==== " + cell_width);
-
             imageWidth = cell_width - 5;
             imageHeight = imageWidth * 1232 / 710;
 
