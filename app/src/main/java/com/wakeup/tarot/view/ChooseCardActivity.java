@@ -1,6 +1,13 @@
 package com.wakeup.tarot.view;
 
 import android.annotation.SuppressLint;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Activity;
@@ -78,9 +85,11 @@ public class ChooseCardActivity extends AppCompatActivity implements OnClickList
 		card_width = (ConfigData.SCREEN_WIDTH - padding * 3) / 2;
 		card_height = card_width * 710 / 1232;
 		marginTop = (ConfigData.SCREEN_HEIGHT - padding - card_height) / 40;
+
 		cardBack = Utils.decodeSampledBitmapFromResource(getResources(),
 				R.drawable.card_back1, card_width, card_height, 90);
 
+		cardBack = getRoundedCornerBitmap(cardBack, 50);
 		btnSkip = (Button) findViewById(R.id.btnSkip);
 		btnSkip.setOnClickListener(this);
 		btnSkip.setTypeface(ConfigData.UVNCatBien_R);
@@ -89,6 +98,28 @@ public class ChooseCardActivity extends AppCompatActivity implements OnClickList
 
 		ConfigData.animation_select_card.setAnimationListener(this);
 
+	}
+
+	public static Bitmap getRoundedCornerBitmap(Bitmap bitmap, int pixels) {
+		Bitmap output = Bitmap.createBitmap(bitmap.getWidth(), bitmap
+				.getHeight(), Bitmap.Config.ARGB_8888);
+		Canvas canvas = new Canvas(output);
+
+		final int color = Color.RED;
+		final Paint paint = new Paint();
+		final Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
+		final RectF rectF = new RectF(rect);
+		final float roundPx = pixels;
+
+		paint.setAntiAlias(true);
+		canvas.drawARGB(0, 0, 0, 0);
+		paint.setColor(color);
+		canvas.drawRoundRect(rectF, roundPx, roundPx, paint);
+
+		paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+		canvas.drawBitmap(bitmap, rect, rect, paint);
+
+		return output;
 	}
 
 	@Override

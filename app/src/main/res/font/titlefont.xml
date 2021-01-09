@@ -8,5 +8,5 @@
     <font
         app:fontStyle="normal"
         app:fontWeight="700"
-        app:font="@font/poppins_regular" />
+        app:font="@font/red_m" />
 </font-family>

@@ -146,13 +146,13 @@ public class InformationActivity extends AppCompatActivity {
         addFragmentWithNavigationId(R.layout.cung_hoang_dao, (Bundle) null);
     }
 
-    private void getBrick() {
+    private void getSleep() {
         String theUrl = "https://play.google.com/store/apps/details?id=com.wakeup.babysleep";
         Intent browse = new Intent(Intent.ACTION_VIEW, Uri.parse(theUrl));
         startActivity(browse);
     }
 
-    private void getSleep() {
+    private void getBrick() {
         String theUrl = "https://play.google.com/store/apps/details?id=com.wakeup.gamexephinh";
         Intent browse = new Intent(Intent.ACTION_VIEW, Uri.parse(theUrl));
         startActivity(browse);

@@ -18,14 +18,43 @@
         android:layout_height="match_parent"
         android:layout_margin="@dimen/margin" >
 
-        <ImageView
-            android:id="@+id/ivBackCard"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/parent_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:clickable="true"
-            android:gravity="center"
-            android:src="@drawable/card_back1" />
+            app:cardCornerRadius="20dp">
+
+            <ImageView
+                android:id="@+id/ivBackCard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
+                android:fitsSystemWindows="true"
+                android:src="@drawable/card_back1" />
+
+        </androidx.cardview.widget.CardView>
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/parent_layout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            app:cardCornerRadius="50dp">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/ivBackCard"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:clickable="true"-->
+<!--                android:scaleType="fitXY"-->
+<!--                android:adjustViewBounds="true"-->
+<!--                android:fitsSystemWindows="true"-->
+<!--                android:src="@drawable/card_back4" />-->
+
+<!--        </androidx.cardview.widget.CardView>-->
 
         <ImageView
             android:id="@+id/ivFontCard"
@@ -156,7 +185,7 @@
                 android:layout_marginBottom="@dimen/margin_bottom"
                 android:layout_marginLeft="@dimen/commom_padding"
                 android:layout_marginRight="@dimen/commom_padding"
-                android:background="@drawable/adportrait"
+                android:background="@drawable/card_back1"
                 android:clickable="true"
                 android:onClick="onAdvertisementClick"
                 android:visibility="gone" />
@@ -256,7 +285,7 @@
                 android:layout_marginBottom="@dimen/margin_bottom"
                 android:layout_marginLeft="@dimen/commom_padding"
                 android:layout_marginRight="@dimen/commom_padding"
-                android:background="@drawable/adportrait"
+                android:background="@drawable/card_back1"
                 android:clickable="true"
                 android:onClick="onAdvertisementClick"
                 android:visibility="gone" />
@@ -421,7 +450,7 @@
                 android:layout_marginBottom="@dimen/margin_bottom"
                 android:layout_marginLeft="@dimen/commom_padding"
                 android:layout_marginRight="@dimen/commom_padding"
-                android:background="@drawable/adportrait"
+                android:background="@drawable/card_back1"
                 android:clickable="true"
                 android:onClick="onAdvertisementClick"
                 android:visibility="gone" />

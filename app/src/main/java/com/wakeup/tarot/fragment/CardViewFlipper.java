@@ -13,10 +13,13 @@ import android.widget.ImageView;
 import android.widget.ViewAnimator;
 import android.widget.ViewFlipper;
 
+import androidx.cardview.widget.CardView;
+
 import com.wakeup.tarot.R;
 import com.wakeup.tarot.animation.AnimationFactory;
 import com.wakeup.tarot.data.ConfigData;
 import com.wakeup.tarot.data.MapData;
+import com.wakeup.tarot.util.CustomImageView;
 import com.wakeup.tarot.view.CardDetailViewPagerForSpreadCardActivity;
 import com.wakeup.tarot.view.SpreadCardsActivity;
 
@@ -26,6 +29,10 @@ public class CardViewFlipper extends ViewFlipper implements OnClickListener,
 	private int cardWidth;
 	private int cardHeight;
 	private boolean isCardBack = true;
+	private CardView parent;
+	private CardView parentFont;
+
+
 	private ImageView ivBackCard;
 	private ImageView ivFontCard;
 	private int mCardIndex = 0;
@@ -48,6 +55,9 @@ public class CardViewFlipper extends ViewFlipper implements OnClickListener,
 
 		ivBackCard = (ImageView) findViewById(R.id.ivBackCard);
 		ivBackCard.setOnClickListener(this);
+
+		parent = (CardView) findViewById(R.id.paremtCardView);
+		parentFont = (CardView) findViewById(R.id.paremtFontCardView);
 
 		ivFontCard = (ImageView) findViewById(R.id.ivFontCard);
 		ivFontCard.setTag(this);
@@ -90,7 +100,7 @@ public class CardViewFlipper extends ViewFlipper implements OnClickListener,
 		// Flip back when card is font
 		if (isCardBack == false) {
 			AnimationFactory.flipTransition(
-					(ViewAnimator) ivFontCard.getParent(),
+					(ViewAnimator) parentFont.getParent(),
 					AnimationFactory.FlipDirection.LEFT_RIGHT);
 			isCardBack = true;
 		}
@@ -105,7 +115,7 @@ public class CardViewFlipper extends ViewFlipper implements OnClickListener,
 		// Flip font when card is back
 		if (isCardBack == true) {
 			AnimationFactory.flipTransition(
-					(ViewAnimator) ivBackCard.getParent(),
+					(ViewAnimator) parent.getParent(),
 					AnimationFactory.FlipDirection.LEFT_RIGHT);
 			isCardBack = false;
 		}

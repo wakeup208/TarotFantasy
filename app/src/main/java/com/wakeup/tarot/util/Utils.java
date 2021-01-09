@@ -21,6 +21,8 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Matrix;
 import android.os.Build;
 import android.os.StrictMode;
@@ -163,13 +165,35 @@ public class Utils {
     		Bitmap rotatedBitmap = Bitmap.createBitmap(bitmap, 0, 0,
     				bitmap.getWidth(), bitmap.getHeight(), matrix, true);
 
-    		return rotatedBitmap;
+			return rotatedBitmap;
 
 		}
 
 		return bitmap;
 	}
 
+	public static Bitmap createBoder(Bitmap bmp) {
+//		int width = source.getWidth();
+//		int height = source.getHeight();
+//		Bitmap bitmap = Bitmap.createBitmap(width, height, source.getConfig());
+//		Canvas canvas = new Canvas(bitmap);
+//		Paint paint = new Paint();
+//		paint.setStrokeWidth(50);
+//		paint.setColor(Color.WHITE);
+//
+//		canvas.drawLine(0, 0, width, 0, paint);
+//		canvas.drawLine(width, 0, width, height, paint);
+//		canvas.drawLine(width, height, 0, height, paint);
+//		canvas.drawLine(0, height, 0, 0, paint);
+//		canvas.drawBitmap(source, 0, 0, null);
+//
+//		return bitmap;
+		Bitmap bmpWithBorder = Bitmap.createBitmap(bmp.getWidth() + 10 * 2, bmp.getHeight() + 10 * 2, bmp.getConfig());
+		Canvas canvas = new Canvas(bmpWithBorder);
+		canvas.drawColor(Color.WHITE);
+		canvas.drawBitmap(bmp, 10, 10, null);
+		return bmpWithBorder;
+	}
 
 	public static String ReadFromfile(String fileName, Context context) {
 		String contents = "";

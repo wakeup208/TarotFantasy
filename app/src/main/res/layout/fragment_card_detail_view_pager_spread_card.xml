@@ -133,7 +133,7 @@
                 android:layout_marginLeft="@dimen/commom_padding"
                 android:layout_marginRight="@dimen/commom_padding"
                 android:layout_marginTop="@dimen/margin"
-                android:background="@drawable/adportrait"
+                android:background="@drawable/card_back1"
                 android:clickable="true"
                 android:onClick="onAdvertisementClick"
                 android:visibility="gone" />
@@ -283,7 +283,7 @@
                 android:layout_marginLeft="@dimen/commom_padding"
                 android:layout_marginRight="@dimen/commom_padding"
                 android:layout_marginTop="@dimen/margin"
-                android:background="@drawable/adportrait"
+                android:background="@drawable/card_back1"
                 android:clickable="true"
                 android:onClick="onAdvertisementClick"
                 android:visibility="gone" />
@@ -449,7 +449,7 @@
                 android:layout_marginLeft="@dimen/commom_padding"
                 android:layout_marginRight="@dimen/commom_padding"
                 android:layout_marginTop="@dimen/margin"
-                android:background="@drawable/adportrait"
+                android:background="@drawable/card_back1"
                 android:clickable="true"
                 android:onClick="onAdvertisementClick"
                 android:visibility="gone" />

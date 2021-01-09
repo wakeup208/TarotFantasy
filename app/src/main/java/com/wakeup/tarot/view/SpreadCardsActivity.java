@@ -672,16 +672,16 @@ public class SpreadCardsActivity extends FragmentActivity implements
 			svRules.setVisibility(View.INVISIBLE);
 			break;
 
-		case R.id.btn_rules:
-			spread_selected.setImageResource(R.drawable.ic_grid_selected);
-			card_list.setImageResource(R.drawable.ic_grid_list);
-			btn_rules.setImageResource(R.drawable.rules_selected);
-			// other process below here
-			btn_flip.setVisibility(View.INVISIBLE);
-			tvTitle.setVisibility(View.VISIBLE);
-			svListCards.setVisibility(View.INVISIBLE);
-			svRules.setVisibility(View.VISIBLE);
-			break;
+//		case R.id.btn_rules:
+//			spread_selected.setImageResource(R.drawable.ic_grid_selected);
+//			card_list.setImageResource(R.drawable.ic_grid_list);
+//			btn_rules.setImageResource(R.drawable.rules_selected);
+//			// other process below here
+//			btn_flip.setVisibility(View.INVISIBLE);
+//			tvTitle.setVisibility(View.VISIBLE);
+//			svListCards.setVisibility(View.INVISIBLE);
+//			svRules.setVisibility(View.VISIBLE);
+//			break;
 
 		case R.id.ln_btn_flip: // Flips card
 			CardViewFlipper card;

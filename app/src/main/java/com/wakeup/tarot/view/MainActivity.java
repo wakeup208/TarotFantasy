@@ -222,7 +222,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        finish();
+
+        moveTaskToBack(true);
+//        Intent a = new Intent(Intent.ACTION_MAIN);
+//        a.addCategory(Intent.CATEGORY_HOME);
+//        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//        startActivity(a);
     }
 
     @Override
