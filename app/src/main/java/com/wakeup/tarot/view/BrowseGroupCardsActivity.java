@@ -112,7 +112,6 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
         super.onBackPressed();
         if (select == 0) {
             this.finish();
-            startActivity(new Intent(this, MainActivity.class));
         } else {
             select = 0;
             if (mode == 1) {
@@ -120,7 +119,6 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
                 startActivity(new Intent(this, InformationActivity.class));
             } else {
                 this.finish();
-                startActivity(new Intent(this, MainActivity.class));
             }
         }
         ConfigData.IS_USER_DESTROY_BY_BACK_BUTTON = true;

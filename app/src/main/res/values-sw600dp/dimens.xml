@@ -16,8 +16,8 @@
     <dimen name="intro_font_size">45dp</dimen>
     <dimen name="size_splash">220dp</dimen>
 
-    <dimen name="card_heigh">130dp</dimen>
-    <dimen name="card_with">140dp</dimen>
+    <dimen name="card_heigh">110dp</dimen>
+    <dimen name="card_with">120dp</dimen>
     <dimen name="padding_20dp">40dp</dimen>
     <dimen name="home_size">90dp</dimen>
     <dimen name="padding_15dp">30dp</dimen>
@@ -26,5 +26,5 @@
 
     <dimen name="img_marginTop">90dp</dimen>
     <dimen name="dimen_90dp">180dp</dimen>
-
+    <dimen name="dimen_70dp">140dp</dimen>
 </resources>
