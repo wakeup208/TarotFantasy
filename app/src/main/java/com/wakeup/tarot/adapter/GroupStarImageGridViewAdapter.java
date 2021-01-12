@@ -53,7 +53,7 @@ public class GroupStarImageGridViewAdapter extends BaseAdapter implements
 		}
 		
 		TextView tvCellGridName = (TextView) view.findViewById(R.id.tvCellGridName);
-		tvCellGridName.setTypeface(ConfigData.UVNCatBien_R);
+		//tvCellGridName.setTypeface(ConfigData.UVNCatBien_R);
 		tvCellGridName.setText(StarJasonHelper.getTitle(position));
 
 		int w = BrowseGroupCardsActivity.GroupStarCardFragment.mImageLoader.getImageWidth() ;

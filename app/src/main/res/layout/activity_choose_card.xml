@@ -27,13 +27,11 @@
         android:layout_marginBottom="@dimen/commom_padding"
         android:layout_marginEnd="@dimen/commom_padding"
         android:background="@drawable/btn_press"
-        android:paddingBottom="@dimen/padding_5dp"
-        android:paddingTop="@dimen/padding_5dp"
-        android:paddingEnd="@dimen/padding_15dp"
         android:paddingStart="@dimen/padding_15dp"
-        android:text="Bỏ qua"
+        android:paddingEnd="@dimen/padding_15dp"
+        android:text="@string/bo_qua"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="@dimen/commom_font_size" />
+        android:textSize="@dimen/navigation_text_size" />
 
 </RelativeLayout>

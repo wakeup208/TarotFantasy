@@ -71,4 +71,7 @@
     <string name="str_cung_hoang_dao">Bạn là cung hoàng đạo gì ?
         Hãy cùng nhau tìm hiểu nhé !</string>
     <string name="str_click">Hãy nhấp vào đây !!!</string>
+    <string name="bo_qua">Bỏ qua</string>
+    <string name="home">Home</string>
+
 </resources>

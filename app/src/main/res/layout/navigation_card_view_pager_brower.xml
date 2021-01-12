@@ -95,11 +95,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
-            android:text="Màn hình chính"
+            android:text="@string/home"
             android:fontFamily="@font/quicksand"
             android:textSize="@dimen/navigation_text_size"
             android:textColor="@color/white"
-
             android:layout_marginTop="2dp"
             android:textAlignment="center"
             android:layout_gravity="center" />

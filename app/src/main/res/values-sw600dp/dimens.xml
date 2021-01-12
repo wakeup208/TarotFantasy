@@ -14,9 +14,13 @@
     <dimen name="navigation_text_size">30sp</dimen>
     <dimen name="app_name_font_size">60sp</dimen>
     <dimen name="intro_font_size">45dp</dimen>
-    <dimen name="size_splash">220dp</dimen>
+    <dimen name="size_splash">360dp</dimen>
+    <dimen name="dimen_300dp">600dp</dimen>
+    <dimen name="dimen_7dp">14dp</dimen>
+
 
     <dimen name="card_heigh">110dp</dimen>
+    <dimen name="association_text_height">150dp</dimen>
     <dimen name="card_with">120dp</dimen>
     <dimen name="padding_20dp">40dp</dimen>
     <dimen name="home_size">90dp</dimen>
@@ -26,5 +30,8 @@
 
     <dimen name="img_marginTop">90dp</dimen>
     <dimen name="dimen_90dp">180dp</dimen>
-    <dimen name="dimen_70dp">140dp</dimen>
+    <dimen name="dimen_70dp">110dp</dimen>
+
+    <dimen name="margin_top_thong_tin">20dp</dimen>
+
 </resources>

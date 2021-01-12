@@ -66,7 +66,7 @@
             android:background="@drawable/linear_bg"
             android:orientation="horizontal"
             android:layout_marginLeft="4dp"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="@dimen/margin_top_thong_tin">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
@@ -100,7 +100,7 @@
             android:orientation="horizontal"
             android:layout_marginLeft="4dp"
             android:background="@drawable/linear_bg"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="@dimen/margin_top_thong_tin">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
@@ -134,7 +134,7 @@
             android:layout_marginLeft="4dp"
             android:orientation="horizontal"
             android:background="@drawable/linear_bg"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="@dimen/margin_top_thong_tin">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
@@ -168,7 +168,7 @@
             android:layout_marginLeft="4dp"
             android:orientation="horizontal"
             android:background="@drawable/linear_bg"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="@dimen/margin_top_thong_tin">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
