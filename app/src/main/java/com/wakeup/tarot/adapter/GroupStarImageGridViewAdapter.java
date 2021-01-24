@@ -75,9 +75,9 @@ public class GroupStarImageGridViewAdapter extends BaseAdapter implements
 	@Override
 	public boolean onTouch(View v, MotionEvent event) {
 		// TODO Auto-generated method stub
-		if (event.getAction() == MotionEvent.ACTION_DOWN) {
-			v.startAnimation(ConfigData.animation_button_press);
-		}
+//		if (event.getAction() == MotionEvent.ACTION_DOWN) {
+//			v.startAnimation(ConfigData.animation_button_press);
+//		}
 
 		return false;
 	}
