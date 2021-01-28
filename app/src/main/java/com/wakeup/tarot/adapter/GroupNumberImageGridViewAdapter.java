@@ -20,11 +20,16 @@ import com.wakeup.tarot.data.NumberJasonHelper;
 import com.wakeup.tarot.view.BrowseGroupCardsActivity;
 import com.wakeup.tarot.view.ItemGroupDetailActivity;
 
+import static com.wakeup.tarot.view.BrowseGroupCardsActivity.GroupNumberCardFragment.interstitialAdGroupNumberCardFragment;
+
+
 public class GroupNumberImageGridViewAdapter extends BaseAdapter implements
 		OnTouchListener, OnClickListener {
 
 	private Context mContext;
 	public static int cell_width;
+	public static int realPositionGroupNumber = 0;
+
 
 	public GroupNumberImageGridViewAdapter(Context c) {
 		mContext = c;
@@ -86,13 +91,20 @@ public class GroupNumberImageGridViewAdapter extends BaseAdapter implements
 
 	@Override
 	public void onClick(View v) {
-		// Reclaim memory and cancel all background task
+		realPositionGroupNumber = Integer.parseInt(v.getTag().toString());
+		if(interstitialAdGroupNumberCardFragment.isLoaded()) {
+			interstitialAdGroupNumberCardFragment.show();
+		}
+		else {
+			startGroupNumber(realPositionGroupNumber);
+		}
+	}
+
+	public void startGroupNumber(int pos) {
 		BrowseGroupCardsActivity.GroupNumberCardFragment.mInstance.restartCacheToClaimMemory();
-		
 		// TODO Auto-generated method stub
-		int position = Integer.parseInt(v.getTag().toString());
 		Intent intent = new Intent(mContext, ItemGroupDetailActivity.class);
-		intent.putExtra("position", position);
+		intent.putExtra("position", pos);
 		intent.putExtra("group_name", "Number");
 		mContext.startActivity(intent);
 	}

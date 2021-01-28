@@ -19,7 +19,7 @@ import com.wakeup.tarot.data.ConfigData;
 import com.wakeup.tarot.data.MapData;
 import com.wakeup.tarot.data.SpreadCardJasonHelper;
 
-public class TarotSpreadGuideActivity extends AppCompatActivity implements
+public class TarotSpreadGuideActivity extends BaseActivity implements
 		OnClickListener {
 
 	private int spreadId;

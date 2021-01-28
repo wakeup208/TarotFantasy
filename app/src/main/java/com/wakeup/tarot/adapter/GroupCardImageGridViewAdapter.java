@@ -24,6 +24,8 @@ import com.wakeup.tarot.data.MapData;
 import com.wakeup.tarot.view.BrowseCardsActivity;
 import com.wakeup.tarot.view.BrowseGroupCardsActivity;
 
+import static com.wakeup.tarot.view.BrowseCardsActivity.GoupCardFragment.interstitialAdGoupCardFragment;
+
 public class GroupCardImageGridViewAdapter extends BaseAdapter implements
 		OnTouchListener, OnClickListener {
 
@@ -32,6 +34,7 @@ public class GroupCardImageGridViewAdapter extends BaseAdapter implements
 	private int mNumColumns = 0;
 	private int mTopBarHeight = 0;
 	private int mBottomBarHeight = 0;
+	public static int posGroupCardImageGridView = 0;
 
 	public void setNumColumns(int numColumns) {
 		// TODO Auto-generated method stub
@@ -223,15 +226,22 @@ public class GroupCardImageGridViewAdapter extends BaseAdapter implements
 
 	@Override
 	public void onClick(View v) {
-		// Reclaim memory and cancel all background task
+		posGroupCardImageGridView = Integer.parseInt(v.getTag().toString());
+		if(interstitialAdGoupCardFragment.isLoaded()) {
+			interstitialAdGoupCardFragment.show();
+		}
+		else {
+			startGroupCardImage(posGroupCardImageGridView);
+		}
+	}
+
+	public void startGroupCardImage(int pos) {
 		BrowseCardsActivity.GoupCardFragment.mInstance.restartCacheToClaimMemory();
-		
+
 		// TODO Auto-generated method stub
-		int position = Integer.parseInt(v.getTag().toString());
 		Intent intent = new Intent(mContext, BrowseGroupCardsActivity.class);
-		intent.putExtra("mode", position);
+		intent.putExtra("mode", pos);
 
 		mContext.startActivity(intent);
 	}
-
 }

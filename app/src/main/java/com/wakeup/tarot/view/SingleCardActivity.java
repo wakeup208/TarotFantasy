@@ -31,7 +31,7 @@ import com.wakeup.tarot.data.MapData;
 import com.wakeup.tarot.util.ImageCache;
 import com.wakeup.tarot.util.ImageLoaderAsynch;
 
-public class SingleCardActivity extends FragmentActivity implements OnClickListener {
+public class SingleCardActivity extends BaseActivity implements OnClickListener {
 
     private ViewFlipper vfCardImage;
     private ImageView ivFontCard;

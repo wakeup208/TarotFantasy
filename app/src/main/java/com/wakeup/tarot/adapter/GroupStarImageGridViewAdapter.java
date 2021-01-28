@@ -20,11 +20,16 @@ import com.wakeup.tarot.data.StarJasonHelper;
 import com.wakeup.tarot.view.BrowseGroupCardsActivity;
 import com.wakeup.tarot.view.ItemGroupDetailActivity;
 
+import static com.wakeup.tarot.view.BrowseGroupCardsActivity.GroupStarCardFragment.interstitialAdGroupStarCardFragment;
+
+
 public class GroupStarImageGridViewAdapter extends BaseAdapter implements
 		OnTouchListener, OnClickListener {
 	
 	private Context mContext;
 	public static int cell_width;
+	public static int realPositionGroupStar = 0;
+
 
 	public GroupStarImageGridViewAdapter(Context c) {
 		mContext = c;
@@ -84,13 +89,21 @@ public class GroupStarImageGridViewAdapter extends BaseAdapter implements
 
 	@Override
 	public void onClick(View v) {
-		// Reclaim memory and cancel all background task
+		realPositionGroupStar = Integer.parseInt(v.getTag().toString());
+		if(interstitialAdGroupStarCardFragment.isLoaded()) {
+			interstitialAdGroupStarCardFragment.show();
+		}
+		else {
+			startGroupStar(realPositionGroupStar);
+		}
+
+	}
+
+	public void startGroupStar(int pos) {
 		BrowseGroupCardsActivity.GroupStarCardFragment.mInstance.restartCacheToClaimMemory();
-		
 		// TODO Auto-generated method stub
-		int position = Integer.parseInt(v.getTag().toString());
 		Intent intent = new Intent(mContext, ItemGroupDetailActivity.class);
-		intent.putExtra("position", position);
+		intent.putExtra("position", pos);
 		intent.putExtra("group_name", "Star");
 		mContext.startActivity(intent);
 	}

@@ -2,6 +2,7 @@ package com.wakeup.tarot.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,6 +19,8 @@ import com.wakeup.tarot.fragment.RecyclingImageView;
 import com.wakeup.tarot.view.BrowseCardsActivity;
 import com.wakeup.tarot.view.CardDetailViewPagerForBrowserCardActivity;
 
+import static com.wakeup.tarot.view.BrowseCardsActivity.GirdCardFragment.interstitialAdGirdCardFragment;
+
 public class CardImageGridViewAdapter extends BaseAdapter implements
         OnTouchListener, OnClickListener {
 
@@ -27,6 +30,7 @@ public class CardImageGridViewAdapter extends BaseAdapter implements
     private int mTopBarHeight = 0;
     private int mBottomBarHeight = 0;
 
+    public static int realPosition = 0;
     public int getNumColumns() {
         return mNumColumns;
     }
@@ -195,16 +199,28 @@ public class CardImageGridViewAdapter extends BaseAdapter implements
 
     @Override
     public void onClick(View v) {
-
         // Reclaim memory and cancel all background task
+        realPosition = Integer.parseInt(v.getTag().toString());
+        //startGridViewItemsClick(realPosition);
+
+
+        if(interstitialAdGirdCardFragment.isLoaded()) {
+            interstitialAdGirdCardFragment.show();
+        }
+        else {
+            startGridViewItemsClick(realPosition);
+        }
+    }
+
+    public void startGridViewItemsClick(int pos) {
         BrowseCardsActivity.GirdCardFragment.mInstance.restartCacheToClaimMemory();
 
-        int realPosition = Integer.parseInt(v.getTag().toString());
+        //int realPosition = Integer.parseInt(v.getTag().toString());
 
         // Show card view pager
         Intent intentCardViewPager = new Intent(mContext,
                 CardDetailViewPagerForBrowserCardActivity.class);
-        intentCardViewPager.putExtra("position", realPosition);
+        intentCardViewPager.putExtra("position", pos);
         mContext.startActivity(intentCardViewPager);
     }
 }

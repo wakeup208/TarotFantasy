@@ -32,7 +32,7 @@ import com.wakeup.tarot.data.ConfigData;
 import com.wakeup.tarot.data.SpreadCardJasonHelper;
 import com.wakeup.tarot.util.Utils;
 
-public class ChooseCardActivity extends AppCompatActivity implements OnClickListener,
+public class ChooseCardActivity extends BaseActivity implements OnClickListener,
 		AnimationListener {
 
 	private int padding;

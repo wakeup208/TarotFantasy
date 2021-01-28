@@ -20,11 +20,16 @@ import com.wakeup.tarot.data.SuitJasonHelper;
 import com.wakeup.tarot.view.BrowseGroupCardsActivity;
 import com.wakeup.tarot.view.ItemGroupDetailActivity;
 
+import static com.wakeup.tarot.view.BrowseGroupCardsActivity.GroupSuitCardFragment.interstitialAdGroupSuitCardFragment;
+
+
 public class GroupSuitImageGridViewAdapter extends BaseAdapter implements
 		OnTouchListener, OnClickListener {
 
 	private Context mContext;
 	public static int cell_width;
+	public static int realPositionGroupSuitI = 0;
+
 
 	public GroupSuitImageGridViewAdapter(Context c) {
 		mContext = c;
@@ -86,13 +91,20 @@ public class GroupSuitImageGridViewAdapter extends BaseAdapter implements
 
 	@Override
 	public void onClick(View v) {
-		// Reclaim memory and cancel all background task
+		realPositionGroupSuitI = Integer.parseInt(v.getTag().toString());
+		if(interstitialAdGroupSuitCardFragment.isLoaded()) {
+			interstitialAdGroupSuitCardFragment.show();
+		}
+		else {
+			startGroupSuit(realPositionGroupSuitI);
+		}
+	}
+
+	public void startGroupSuit(int pos) {
 		BrowseGroupCardsActivity.GroupSuitCardFragment.mInstance.restartCacheToClaimMemory();
-		
 		// TODO Auto-generated method stub
-		int position = Integer.parseInt(v.getTag().toString());
 		Intent intent = new Intent(mContext, ItemGroupDetailActivity.class);
-		intent.putExtra("position", position);
+		intent.putExtra("position", pos);
 		intent.putExtra("group_name", "Suit");
 		mContext.startActivity(intent);
 	}

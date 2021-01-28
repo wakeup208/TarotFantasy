@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -16,11 +17,12 @@ import android.widget.AdapterView.OnItemClickListener;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.ads.AdListener;
 import com.wakeup.tarot.R;
 import com.wakeup.tarot.adapter.SpreadCardNameListViewAdapter;
 import com.wakeup.tarot.data.ConfigData;
 
-public class TarotSpreadActivity extends AppCompatActivity implements
+public class TarotSpreadActivity extends BaseActivity implements
 		OnItemClickListener {
 
 	private TextView tvTarotSpreadTitle;
@@ -48,16 +50,36 @@ public class TarotSpreadActivity extends AppCompatActivity implements
 		lvTarotSpread.setAdapter(adapter);
 		lvTarotSpread.setOnItemClickListener(this);
 
+		interstitialAd.setAdListener(new AdListener() {
+			// Listen for when user closes ad
+
+			@Override
+			public void onAdClosed() {
+				super.onAdClosed();
+				Log.d("abcd","3333");
+			}
+		});
+
 	}
 
 	@Override
 	public void onItemClick(AdapterView<?> listAdapter, View arg1,
 			int position, long arg3) {
+		if(interstitialAd.isLoaded()) {
+			Log.d("abcd","1111");
+			interstitialAd.show();
+		}
+		else {
+			Log.d("abcd","2222");
+			itemClickCardList(position);
+		}
+	}
+
+	private void itemClickCardList(int position) {
 		Intent intent = new Intent(TarotSpreadActivity.this,
 				TarotSpreadGuideActivity.class);
 		intent.putExtra("spreadId", position);
 		this.startActivity(intent);
-
 	}
 	
 	@Override

@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.PersistableBundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -19,13 +21,17 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.wakeup.tarot.BuildConfig;
 import com.wakeup.tarot.R;
 import com.wakeup.tarot.data.MapData;
 
 import java.util.ArrayList;
 
-public class InformationActivity extends AppCompatActivity {
+public class InformationActivity extends BaseActivity {
 
     RelativeLayout rlGioiThieu;
     RelativeLayout rlMean;
@@ -43,6 +49,30 @@ public class InformationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.thong_tin);
+
+        mAdView = (AdView) findViewById(R.id.adView);
+        getInstance.loadAd(mAdView);
+
+        // Create and set AdListener for interstitial
+        interstitialAd.setAdListener(new AdListener() {
+            // Listen for when user closes ad
+            @Override
+            public void onAdClosed() {
+                super.onAdClosed();
+                addFragmentCungHoangDao();
+            }
+        });
+
+        interstitialAd1.setAdListener(new AdListener() {
+            // Listen for when user closes ad
+
+            @Override
+            public void onAdClosed() {
+                super.onAdClosed();
+                addFragmentMean();
+            }
+        });
+
         imgHome = (ImageView) findViewById(R.id.img_home);
         imgHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +97,12 @@ public class InformationActivity extends AppCompatActivity {
         rlMean.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addFragmentMean();
+                if(interstitialAd1.isLoaded()) {
+                    interstitialAd1.show();
+                }
+                else {
+                    addFragmentMean();
+                }
             }
         });
 
@@ -75,7 +110,12 @@ public class InformationActivity extends AppCompatActivity {
         cunghoangdao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addFragmentCungHoangDao();
+                if(interstitialAd.isLoaded()) {
+                    interstitialAd.show();
+                }
+                else {
+                    addFragmentCungHoangDao();
+                }
             }
         });
 

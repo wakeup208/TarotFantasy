@@ -30,6 +30,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.wakeup.tarot.R;
 import com.wakeup.tarot.adapter.GroupNumberImageGridViewAdapter;
 import com.wakeup.tarot.adapter.GroupStarImageGridViewAdapter;
@@ -40,6 +43,10 @@ import com.wakeup.tarot.data.MapData;
 import com.wakeup.tarot.util.ImageCache;
 import com.wakeup.tarot.util.ImageCache.ImageCacheParams;
 import com.wakeup.tarot.util.ImageLoaderAsynch;
+
+import static com.wakeup.tarot.adapter.GroupNumberImageGridViewAdapter.realPositionGroupNumber;
+import static com.wakeup.tarot.adapter.GroupSuitImageGridViewAdapter.realPositionGroupSuitI;
+import static com.wakeup.tarot.adapter.GroupSymbolImageGridViewAdapter.realPositionGroupSymbol;
 
 public class BrowseGroupCardsActivity extends FragmentActivity implements
         OnClickListener {
@@ -70,13 +77,8 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
         // Reload screen size and background
         //ConfigData.reloadScreen(this);
 
-        // Load background
-//		((ImageView) findViewById(R.id.background))
-//				.setBackgroundDrawable(ConfigData.rbdBackground);
-
         mContext = this.getApplicationContext();
 
-        //int mode = this.getIntent().getExtras().getInt("mode");
         try{
             Bundle b = getIntent().getExtras();
             select = b.getInt("select");
@@ -85,7 +87,6 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
             select = 0;
             mode = 0;
         }
-        //select = this.getIntent().getExtras().getInt("select", 0);
 
         tvTitle = (TextView) findViewById(R.id.tvTitle);
         tvTitle.setTypeface(ConfigData.UVNCatBien_R);
@@ -122,10 +123,6 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
             }
         }
         ConfigData.IS_USER_DESTROY_BY_BACK_BUTTON = true;
-//        Intent intentStar = new Intent(this,
-//                InformationActivity.class);
-//        intentStar.putExtra("mode_tools", 0);
-//        this.startActivity(intentStar);
     }
 
     /**
@@ -203,14 +200,14 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
         return true;
     }
 
-    public static class GroupSuitCardFragment extends
-            Fragment {
+    public static class GroupSuitCardFragment extends Fragment {
 
         public static int cell_width = 0;
         private GridView gridview;
         private GroupSuitImageGridViewAdapter mGroupSuitImageGridViewAdapter;
         public static ImageLoaderAsynch mImageLoader;
         public static GroupSuitCardFragment mInstance;
+        public static InterstitialAd interstitialAdGroupSuitCardFragment;
 
         public GroupSuitCardFragment() {
             mInstance = this;
@@ -252,15 +249,26 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
                                  Bundle savedInstanceState) {
 
             createImageLoader();
-
             View view = inflater.inflate(R.layout.fragment_gridcard, container, false);
-
             mGroupSuitImageGridViewAdapter = new GroupSuitImageGridViewAdapter(view.getContext());
 
             gridview = (GridView) view.findViewById(R.id.gridview);
             gridview.setAdapter(mGroupSuitImageGridViewAdapter);
             cell_width = (ConfigData.SCREEN_WIDTH - 40) / 2;
             gridview.setColumnWidth(cell_width);
+
+            interstitialAdGroupSuitCardFragment = new InterstitialAd(getContext());
+            interstitialAdGroupSuitCardFragment.setAdUnitId(getString(R.string.interstitial_ad_unit_test));
+            AdRequest adInterstitial = new AdRequest.Builder().build();
+            interstitialAdGroupSuitCardFragment.loadAd(adInterstitial);
+
+            interstitialAdGroupSuitCardFragment.setAdListener(new AdListener() {
+                @Override
+                public void onAdClosed() {
+                    super.onAdClosed();
+                    mGroupSuitImageGridViewAdapter.startGroupSuit(realPositionGroupSuitI);
+                }
+            });
             return view;
         }
 
@@ -293,14 +301,15 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
 
     }
 
-    public static class GroupNumberCardFragment extends
-            Fragment {
+    public static class GroupNumberCardFragment extends Fragment {
 
         public static int cell_width = 0;
         private GridView gridview;
         private GroupNumberImageGridViewAdapter mGroupNumberImageGridViewAdapter;
         public static ImageLoaderAsynch mImageLoader;
         public static GroupNumberCardFragment mInstance;
+        public static InterstitialAd interstitialAdGroupNumberCardFragment;
+
 
         public GroupNumberCardFragment() {
             mInstance = this;
@@ -354,6 +363,19 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
 
             gridview.setColumnWidth(cell_width);
 
+
+            interstitialAdGroupNumberCardFragment = new InterstitialAd(getContext());
+            interstitialAdGroupNumberCardFragment.setAdUnitId(getString(R.string.interstitial_ad_unit_test));
+            AdRequest adInterstitial = new AdRequest.Builder().build();
+            interstitialAdGroupNumberCardFragment.loadAd(adInterstitial);
+
+            interstitialAdGroupNumberCardFragment.setAdListener(new AdListener() {
+                @Override
+                public void onAdClosed() {
+                    super.onAdClosed();
+                    mGroupNumberImageGridViewAdapter.startGroupNumber(realPositionGroupNumber);
+                }
+            });
             return view;
         }
 
@@ -394,6 +416,8 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
         private GroupSymbolImageGridViewAdapter mGroupSymbolImageGridViewAdapter;
         public static ImageLoaderAsynch mImageLoader;
         public static GroupSymbolCardFragment mInstance;
+        public static InterstitialAd interstitialAdGroupSymbolCardFragment;
+
 
         public GroupSymbolCardFragment() {
             mInstance = this;
@@ -447,6 +471,18 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
             cell_width = (ConfigData.SCREEN_WIDTH - 40) / 3;
             gridview.setColumnWidth(cell_width);
 
+            interstitialAdGroupSymbolCardFragment = new InterstitialAd(getContext());
+            interstitialAdGroupSymbolCardFragment.setAdUnitId(getString(R.string.interstitial_ad_unit_test));
+            AdRequest adInterstitial = new AdRequest.Builder().build();
+            interstitialAdGroupSymbolCardFragment.loadAd(adInterstitial);
+
+            interstitialAdGroupSymbolCardFragment.setAdListener(new AdListener() {
+                @Override
+                public void onAdClosed() {
+                    super.onAdClosed();
+                    mGroupSymbolImageGridViewAdapter.startGroupSymbol(realPositionGroupSymbol);
+                }
+            });
             return view;
         }
 
@@ -487,6 +523,9 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
         private GroupStarImageGridViewAdapter mGroupStarImageGridViewAdapter;
         public static ImageLoaderAsynch mImageLoader;
         public static GroupStarCardFragment mInstance;
+        public static InterstitialAd interstitialAdGroupStarCardFragment;
+
+
 
         public GroupStarCardFragment() {
             mInstance = this;
@@ -538,6 +577,20 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
             gridview.setAdapter(mGroupStarImageGridViewAdapter);
             cell_width = (ConfigData.SCREEN_WIDTH - 40) / 3;
             gridview.setColumnWidth(cell_width);
+
+
+            interstitialAdGroupStarCardFragment = new InterstitialAd(getContext());
+            interstitialAdGroupStarCardFragment.setAdUnitId(getString(R.string.interstitial_ad_unit_test));
+            AdRequest adInterstitial = new AdRequest.Builder().build();
+            interstitialAdGroupStarCardFragment.loadAd(adInterstitial);
+
+            interstitialAdGroupStarCardFragment.setAdListener(new AdListener() {
+                @Override
+                public void onAdClosed() {
+                    super.onAdClosed();
+                    mGroupStarImageGridViewAdapter.startGroupStar(realPositionGroupSymbol);
+                }
+            });
 
             return view;
         }

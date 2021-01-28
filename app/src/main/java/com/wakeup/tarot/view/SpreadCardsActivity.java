@@ -22,6 +22,7 @@ import android.view.animation.LayoutAnimationController;
 
 import androidx.fragment.app.FragmentActivity;
 
+import com.google.android.gms.ads.AdListener;
 import com.wakeup.tarot.R;
 import com.wakeup.tarot.data.CardsDetailJasonHelper;
 import com.wakeup.tarot.data.ConfigData;
@@ -31,7 +32,7 @@ import com.wakeup.tarot.fragment.CardViewFlipper;
 import com.wakeup.tarot.util.ImageCache;
 import com.wakeup.tarot.util.ImageLoaderAsynch;
 
-public class SpreadCardsActivity extends FragmentActivity implements
+public class SpreadCardsActivity extends BaseActivity implements
 		OnTouchListener, OnClickListener {
 	
 	private static final String SPREAD_IMAGE_CACHE_DIR = "spread_image_cache";
@@ -52,6 +53,8 @@ public class SpreadCardsActivity extends FragmentActivity implements
 
 	private int theNummberOfCard;
 	public static int spreadId; // current spread id show
+	public static int id_Card; // current spread id show
+
 
 	// Main content
 	private AbsoluteLayout spread_cards_container;
@@ -141,6 +144,7 @@ public class SpreadCardsActivity extends FragmentActivity implements
 			
 			ivCardIcon.setOnTouchListener(this);
 			ivCardIcon.setId(i);
+			id_Card = i;
 			ivCardIcon.setOnClickListener(this);
 
 			tvCardName = (TextView) v.findViewById(R.id.tvCardName);
@@ -181,6 +185,15 @@ public class SpreadCardsActivity extends FragmentActivity implements
 		//OnClickListener(this);
 
 		instance = this;
+
+		interstitialAd.setAdListener(new AdListener() {
+			// Listen for when user closes ad
+			@Override
+			public void onAdClosed() {
+				super.onAdClosed();
+				showGuideCard(id_Card);
+			}
+		});
 	}
 
 
@@ -633,17 +646,26 @@ public class SpreadCardsActivity extends FragmentActivity implements
 		
 	}
 
+	private void showGuideCard(int id) {
+		Intent intentCardViewPager_SpreadCardActivity = new Intent(this,
+				CardDetailViewPagerForSpreadCardActivity.class);
+		intentCardViewPager_SpreadCardActivity.putExtra("cardClickedIndex",
+				id);
+		startActivity(intentCardViewPager_SpreadCardActivity);
+	}
+
 	@SuppressLint("ResourceType")
 	@Override
 	public void onClick(View v) {
 
 		if (v.getId() < theNummberOfCard) {
 			// Show Activity guide of card
-			Intent intentCardViewPager_SpreadCardActivity = new Intent(this,
-					CardDetailViewPagerForSpreadCardActivity.class);
-			intentCardViewPager_SpreadCardActivity.putExtra("cardClickedIndex",
-					v.getId());
-			startActivity(intentCardViewPager_SpreadCardActivity);
+			if(interstitialAd1.isLoaded()) {
+				interstitialAd1.show();
+			}
+			else {
+				showGuideCard(v.getId());
+			}
 			return;
 		}
 
@@ -671,17 +693,6 @@ public class SpreadCardsActivity extends FragmentActivity implements
 			svListCards.setVisibility(View.VISIBLE);
 			svRules.setVisibility(View.INVISIBLE);
 			break;
-
-//		case R.id.btn_rules:
-//			spread_selected.setImageResource(R.drawable.ic_grid_selected);
-//			card_list.setImageResource(R.drawable.ic_grid_list);
-//			btn_rules.setImageResource(R.drawable.rules_selected);
-//			// other process below here
-//			btn_flip.setVisibility(View.INVISIBLE);
-//			tvTitle.setVisibility(View.VISIBLE);
-//			svListCards.setVisibility(View.INVISIBLE);
-//			svRules.setVisibility(View.VISIBLE);
-//			break;
 
 		case R.id.ln_btn_flip: // Flips card
 			CardViewFlipper card;

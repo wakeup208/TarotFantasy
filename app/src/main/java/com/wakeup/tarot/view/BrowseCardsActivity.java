@@ -28,6 +28,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.wakeup.tarot.R;
 import com.wakeup.tarot.adapter.CardImageSectionListViewAdapter;
 import com.wakeup.tarot.adapter.GroupCardImageGridViewAdapter;
@@ -38,12 +41,16 @@ import com.wakeup.tarot.adapter.CardImageGridViewAdapter;
 
 import org.jetbrains.annotations.NotNull;
 
+import static com.wakeup.tarot.adapter.CardImageGridViewAdapter.realPosition;
+import static com.wakeup.tarot.adapter.GroupCardImageGridViewAdapter.posGroupCardImageGridView;
+
 
 public class BrowseCardsActivity extends FragmentActivity implements
         OnClickListener {
 
     public Context mContext;
     private static final String BROWSE_CARD_IMAGE_CACHE_DIR = "browse_card_image_cache";
+
 
     public static BrowseCardsActivity instance;
     private TextView tvTitle;
@@ -335,6 +342,8 @@ public class BrowseCardsActivity extends FragmentActivity implements
         public static int imageWidth;
         public static int imageHeight;
 
+        public static InterstitialAd interstitialAdGirdCardFragment;
+
 
         /**
          * Empty constructor as per the Fragment documentation
@@ -349,6 +358,21 @@ public class BrowseCardsActivity extends FragmentActivity implements
 
             mCardImageGridViewAdapter = new CardImageGridViewAdapter(
                     getActivity());
+
+            interstitialAdGirdCardFragment = new InterstitialAd(getContext());
+            interstitialAdGirdCardFragment.setAdUnitId(getString(R.string.interstitial_ad_unit_test));
+            AdRequest adInterstitial = new AdRequest.Builder().build();
+            interstitialAdGirdCardFragment.loadAd(adInterstitial);
+
+            interstitialAdGirdCardFragment.setAdListener(new AdListener() {
+                // Listen for when user closes ad
+
+                @Override
+                public void onAdClosed() {
+                    super.onAdClosed();
+                    mCardImageGridViewAdapter.startGridViewItemsClick(realPosition);
+                }
+            });
 
             super.onCreate(savedInstanceState);
         }
@@ -473,13 +497,6 @@ public class BrowseCardsActivity extends FragmentActivity implements
                 @Override
                 public void onScrollStateChanged(AbsListView absListView,
                                                  int scrollState) {
-                    // Pause fetcher to ensure smoother scrolling when flinging
-                    // if (scrollState ==
-                    // AbsListView.OnScrollListener.SCROLL_STATE_FLING) {
-                    // mImageLoader.setPauseWork(true);
-                    // } else {
-                    // mImageLoader.setPauseWork(false);
-                    // }
                 }
 
                 @Override
@@ -646,6 +663,8 @@ public class BrowseCardsActivity extends FragmentActivity implements
         private CardImageSectionListViewAdapter mCardImageSectionListViewAdapter;
         public static ImageLoaderAsynch mImageLoader;
         public static ListViewCardFragment mInstance;
+        public static InterstitialAd interstitialAdBrowCardActivity;
+        private int pos;
 
         /**
          * Empty constructor as per the Fragment documentation
@@ -701,6 +720,21 @@ public class BrowseCardsActivity extends FragmentActivity implements
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
+
+            interstitialAdBrowCardActivity = new InterstitialAd(getContext());
+            interstitialAdBrowCardActivity.setAdUnitId(getString(R.string.interstitial_ad_unit_test));
+            AdRequest adInterstitial = new AdRequest.Builder().build();
+            interstitialAdBrowCardActivity.loadAd(adInterstitial);
+
+            interstitialAdBrowCardActivity.setAdListener(new AdListener() {
+                // Listen for when user closes ad
+
+                @Override
+                public void onAdClosed() {
+                    super.onAdClosed();
+                    mCardImageSectionListViewAdapter.showDetailViewPager(pos);
+                }
+            });
 
             View view = inflater.inflate(R.layout.fragment_listcard, container,
                     false);
@@ -761,7 +795,14 @@ public class BrowseCardsActivity extends FragmentActivity implements
         @Override
         public void onItemClick(AdapterView<?> arg0, View v, int position,
                                 long arg3) {
-            mCardImageSectionListViewAdapter.showDetailViewPager(position);
+            Log.d("abcd","44444");
+            pos = position;
+            if(interstitialAdBrowCardActivity.isLoaded()) {
+                interstitialAdBrowCardActivity.show();
+            }
+            else {
+                mCardImageSectionListViewAdapter.showDetailViewPager(position);
+            }
         }
 
         @Override
@@ -799,6 +840,7 @@ public class BrowseCardsActivity extends FragmentActivity implements
         private GroupCardImageGridViewAdapter mGroupCardImageGridViewAdapter;
         public static ImageLoaderAsynch mImageLoader;
         public static GoupCardFragment mInstance;
+        public static InterstitialAd interstitialAdGoupCardFragment;
 
         /**
          * Empty constructor as per the Fragment documentation
@@ -912,6 +954,19 @@ public class BrowseCardsActivity extends FragmentActivity implements
                         }
                     });
 
+            interstitialAdGoupCardFragment = new InterstitialAd(getContext());
+            interstitialAdGoupCardFragment.setAdUnitId(getString(R.string.interstitial_ad_unit_test));
+            AdRequest adInterstitial = new AdRequest.Builder().build();
+            interstitialAdGoupCardFragment.loadAd(adInterstitial);
+
+            interstitialAdGoupCardFragment.setAdListener(new AdListener() {
+                // Listen for when user closes ad
+                @Override
+                public void onAdClosed() {
+                    super.onAdClosed();
+                    mGroupCardImageGridViewAdapter.startGroupCardImage(posGroupCardImageGridView);
+                }
+            });
             return view;
         }
 

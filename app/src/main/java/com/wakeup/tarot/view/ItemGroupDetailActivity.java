@@ -39,10 +39,8 @@ public class ItemGroupDetailActivity extends FragmentActivity implements
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_group_item_detail);
 		mContext = this.getApplicationContext();
-
 		// Reload screen size and background
 		//ConfigData.reloadScreen(this);
-				
 		
 		// Load background
 		//((ImageView) findViewById(R.id.background)).setBackgroundDrawable(ConfigData.rbdBackground);

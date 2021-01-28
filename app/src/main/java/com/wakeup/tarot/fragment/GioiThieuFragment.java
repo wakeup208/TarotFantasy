@@ -54,6 +54,7 @@ public class GioiThieuFragment extends Fragment {
 
     public View onCreateView(@NonNull @NotNull LayoutInflater inflater, @Nullable @org.jetbrains.annotations.Nullable ViewGroup container, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         //return super.onCreateView(inflater, container, savedInstanceState);
+
         View view = inflater.inflate(R.layout.fragment_gioi_thieu, container, false);
         clContent = (ConstraintLayout) view.findViewById(R.id.clContent);
         nvDetail = (NestedScrollView) view.findViewById(R.id.nvDetail);

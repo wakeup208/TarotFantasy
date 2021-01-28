@@ -23,7 +23,7 @@ import com.wakeup.tarot.R;
 import com.wakeup.tarot.data.ConfigData;
 import com.wakeup.tarot.fragment.ChangeFontSizeCustomDialog;
 
-public class ProfileActivity extends AppCompatActivity implements OnClickListener,
+public class ProfileActivity extends BaseActivity implements OnClickListener,
 		OnCheckedChangeListener {
 
 	private TextView btnReverseCard;

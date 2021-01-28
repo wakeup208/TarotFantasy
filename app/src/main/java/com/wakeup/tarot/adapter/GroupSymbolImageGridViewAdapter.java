@@ -20,11 +20,15 @@ import com.wakeup.tarot.data.SymbolJasonHelper;
 import com.wakeup.tarot.view.BrowseGroupCardsActivity;
 import com.wakeup.tarot.view.ItemGroupDetailActivity;
 
+import static com.wakeup.tarot.view.BrowseGroupCardsActivity.GroupSymbolCardFragment.interstitialAdGroupSymbolCardFragment;
+
 public class GroupSymbolImageGridViewAdapter extends BaseAdapter implements
 		OnTouchListener, OnClickListener {
 	
 	private Context mContext;
 	public static int cell_width;
+	public static int realPositionGroupSymbol = 0;
+
 
 	public GroupSymbolImageGridViewAdapter(Context c) {
 		mContext = c;
@@ -84,13 +88,21 @@ public class GroupSymbolImageGridViewAdapter extends BaseAdapter implements
 
 	@Override
 	public void onClick(View v) {
-		// Reclaim memory and cancel all background task
+		realPositionGroupSymbol = Integer.parseInt(v.getTag().toString());
+		if(interstitialAdGroupSymbolCardFragment.isLoaded()) {
+			interstitialAdGroupSymbolCardFragment.show();
+		}
+		else {
+			startGroupSymbol(realPositionGroupSymbol);
+		}
+	}
+
+	public void startGroupSymbol(int pos) {
 		BrowseGroupCardsActivity.GroupSymbolCardFragment.mInstance.restartCacheToClaimMemory();
-		
+
 		// TODO Auto-generated method stub
-		int position = Integer.parseInt(v.getTag().toString());
 		Intent intent = new Intent(mContext, ItemGroupDetailActivity.class);
-		intent.putExtra("position", position);
+		intent.putExtra("position", pos);
 		intent.putExtra("group_name", "Symbol");
 		mContext.startActivity(intent);
 	}

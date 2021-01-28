@@ -18,6 +18,7 @@ import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -27,6 +28,8 @@ import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.wakeup.tarot.BuildConfig;
 import com.wakeup.tarot.R;
 import com.wakeup.tarot.data.ConfigData;
@@ -38,7 +41,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener/*, View.OnTouchListener */{
+public class MainActivity extends BaseActivity implements View.OnClickListener/*, View.OnTouchListener */{
 
     //private TextView tvAppName;
     private LinearLayout btn_drawcard;
@@ -50,17 +53,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public static final String NOTIFICATION_CHANNEL_ID = "10001" ;
     private final static String default_notification_channel_id = "default" ;
-    final Calendar myCalendar = Calendar. getInstance () ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         setContentView(R.layout.new_main_activity);
-        //updateLabel ();
 
-         //Load all setting in background thread when splash show
+        mAdView = (AdView) findViewById(R.id.adView);
+        getInstance.loadAd(mAdView);
+
+        //Load all setting in background thread when splash show
         ConfigData.loadSettingData(this);
 
         // Load background
