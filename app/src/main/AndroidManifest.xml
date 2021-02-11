@@ -71,6 +71,7 @@
         <activity android:name=".view.InformationActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity"/>
+        <activity android:name=".view.DaThanhTayInfor"/>
         <receiver android:name=".receiver.MyNotificationPublisher"></receiver>
 
         <meta-data
