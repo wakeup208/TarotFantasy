@@ -56,16 +56,23 @@ public class SliderAdapter extends
     @Override
     public void onBindViewHolder(SliderAdapterVH viewHolder, final int position) {
 
-        Log.d("abcd","pos = " + position);
         SliderItem sliderItem = mSliderItems.get(position);
-        mainActivity.addItems.setText(Config.des[position]);
-        //viewHolder.textViewDescription.setText(sliderItem.getDescription());
-        viewHolder.textViewDescription.setText(Config.des[position]);
+        viewHolder.textViewDescription.setText(Config.cunghoangdao[position]);
+        viewHolder.textViewDetails.setText(Config.CunghoangdaoAndDathanhtay.get(position));
+        
+        viewHolder.textViewDetails.setTextSize(16);
+        viewHolder.textViewDetails.setTextColor(Color.WHITE);
         viewHolder.textViewDescription.setTextSize(16);
         viewHolder.textViewDescription.setTextColor(Color.WHITE);
+//        Glide.with(viewHolder.itemView)
+//                .load(sliderItem.getImageUrl())
+//                .load(Integer.valueOf(sliderItem.getInteger()))
+//                .fitCenter()
+//                .into(viewHolder.imageViewBackground);
+
         Glide.with(viewHolder.itemView)
 //                .load(sliderItem.getImageUrl())
-                .load(Integer.valueOf(sliderItem.getInteger()))
+                .load(Integer.valueOf(Config.img_cung_hoang_dao[position]))
                 .fitCenter()
                 .into(viewHolder.imageViewBackground);
 
@@ -89,12 +96,15 @@ public class SliderAdapter extends
         ImageView imageViewBackground;
         ImageView imageGifContainer;
         TextView textViewDescription;
+        TextView textViewDetails;
 
         public SliderAdapterVH(View itemView) {
             super(itemView);
             imageViewBackground = itemView.findViewById(R.id.iv_auto_image_slider);
             imageGifContainer = itemView.findViewById(R.id.iv_gif_container);
             textViewDescription = itemView.findViewById(R.id.tv_auto_image_slider);
+            textViewDetails = itemView.findViewById(R.id.txtDes);
+
             this.itemView = itemView;
         }
     }

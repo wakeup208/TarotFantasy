@@ -8,12 +8,12 @@
     <dimen name="title_font_size">30sp</dimen>
     <dimen name="commom_font_size">20sp</dimen>
     <dimen name="commom_font_size_small">19sp</dimen>
+    <dimen name="thanhtay_font_size_small">17sp</dimen>
+
     <dimen name="commom_font_size_big">25sp</dimen>
 
     <dimen name="card_details_img_with">70dp</dimen>
     <dimen name="card_details_img_high">120dp</dimen>
-
-
 
     <dimen name="commom_padding">20dp</dimen>
     <dimen name="small_padding">5dp</dimen>

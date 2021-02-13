@@ -216,16 +216,19 @@ public class InformationActivity extends BaseActivity {
 //        feedbackEmail.putExtra(Intent.EXTRA_SUBJECT, "Feedback");
 //        startActivity(Intent.createChooser(feedbackEmail, "Send Feedback to TAROT VIET:"));
 
-        try {
-            Intent intent = new Intent("android.intent.action.SEND");
-            intent.putExtra("android.intent.extra.EMAIL", new String[]{"anhhoang.korean@gmail.com"});
-            intent.putExtra("android.intent.extra.SUBJECT", "Feedback");
-            intent.putExtra("android.intent.extra.TEXT", "Send Feedback to TAROT VIET:");
-            intent.setType("text/plain");
-            startActivity(Intent.createChooser(intent, "Send Feedback to TAROT VIET:"));
+//        try {
+//            Intent intent = new Intent("android.intent.action.SEND");
+//            intent.putExtra("android.intent.extra.EMAIL", new String[]{"anhhoang.korean@gmail.com"});
+//            intent.putExtra("android.intent.extra.SUBJECT", "Feedback");
+//            intent.putExtra("android.intent.extra.TEXT", "Send Feedback to TAROT VIET:");
+//            intent.setType("text/plain");
+//            startActivity(Intent.createChooser(intent, "Send Feedback to TAROT VIET:"));
+//
+//        } catch (Exception e) {
+//        }
 
-        } catch (Exception e) {
-        }
+        Intent intent = new Intent(InformationActivity.this, DaThanhTayInfor.class);
+        startActivity(intent);
     }
 
     private void openRateApp() {

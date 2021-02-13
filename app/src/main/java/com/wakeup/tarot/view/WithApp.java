@@ -13,6 +13,11 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.wakeup.tarot.R;
+import com.wakeup.tarot.util.Config;
+import com.wakeup.tarot.util.Constant;
+import com.wakeup.tarot.util.Utils;
+
+import java.util.ArrayList;
 
 public class WithApp extends Application {
     private AdView adView;
@@ -40,6 +45,31 @@ public class WithApp extends Application {
 
         // Load ads into Banner Ads
         adView.loadAd(adRequest);
+
+        String bachduong = Utils.ReadFromfile(Constant.PATH_BACHDUONG, this);
+        String baobinh = Utils.ReadFromfile(Constant.PATH_BAOBINH, this);
+        String bocap = Utils.ReadFromfile(Constant.PATH_BOCAP, this);
+        String cugiai = Utils.ReadFromfile(Constant.PATH_CUGIAI, this);
+        String kimnguu = Utils.ReadFromfile(Constant.PATH_KIMNGUU, this);
+        String maket = Utils.ReadFromfile(Constant.PATH_MAKET, this);
+        String nhanma = Utils.ReadFromfile(Constant.PATH_NHANMA, this);
+        String songngu = Utils.ReadFromfile(Constant.PATH_SONGNGU, this);
+        String songtu = Utils.ReadFromfile(Constant.PATH_SONGTU, this);
+        String sutu = Utils.ReadFromfile(Constant.PATH_SUTU, this);
+        String thienbinh = Utils.ReadFromfile(Constant.PATH_THIENBINH, this);
+        String xunu = Utils.ReadFromfile(Constant.PATH_XUNU, this);
+        Config.CunghoangdaoAndDathanhtay.add(bachduong);
+        Config.CunghoangdaoAndDathanhtay.add(baobinh);
+        Config.CunghoangdaoAndDathanhtay.add(bocap);
+        Config.CunghoangdaoAndDathanhtay.add(cugiai);
+        Config.CunghoangdaoAndDathanhtay.add(kimnguu);
+        Config.CunghoangdaoAndDathanhtay.add(maket);
+        Config.CunghoangdaoAndDathanhtay.add(nhanma);
+        Config.CunghoangdaoAndDathanhtay.add(songngu);
+        Config.CunghoangdaoAndDathanhtay.add(songtu);
+        Config.CunghoangdaoAndDathanhtay.add(sutu);
+        Config.CunghoangdaoAndDathanhtay.add(thienbinh);
+        Config.CunghoangdaoAndDathanhtay.add(xunu);
     }
 
     public void loadMidAd() {

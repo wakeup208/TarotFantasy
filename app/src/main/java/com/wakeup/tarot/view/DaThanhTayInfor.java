@@ -48,13 +48,13 @@ public class DaThanhTayInfor extends AppCompatActivity {
         adapter = new SliderAdapter(this, this);
         sliderView.setSliderAdapter(adapter);
         sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM); //set indicator animation by using SliderLayout.IndicatorAnimations. :WORM or THIN_WORM or COLOR or DROP or FILL or NONE or SCALE or SCALE_DOWN or SLIDE and SWAP!!
-        sliderView.setSliderTransformAnimation(SliderAnimations.TOSSTRANSFORMATION);
+        sliderView.setSliderTransformAnimation(SliderAnimations.CUBEINDEPTHTRANSFORMATION);
         sliderView.setAutoCycleDirection(SliderView.AUTO_CYCLE_DIRECTION_BACK_AND_FORTH);
         sliderView.setIndicatorSelectedColor(Color.WHITE);
         sliderView.setIndicatorUnselectedColor(Color.GRAY);
         sliderView.setScrollTimeInSec(3);
         sliderView.setAutoCycle(false);
-        sliderView.startAutoCycle();
+//        sliderView.startAutoCycle();
 
         sliderView.setOnIndicatorClickListener(new DrawController.ClickListener() {
             @Override
@@ -66,10 +66,10 @@ public class DaThanhTayInfor extends AppCompatActivity {
         addItems = (Button) findViewById(R.id.addItems);
 
         List<SliderItem> sliderItemList = new ArrayList<>();
-        for (int i = 0; i < Config.imageId_blur.length; i++) {
+        for (int i = 0; i < Config.img_cung_hoang_dao.length; i++) {
             SliderItem sliderItem = new SliderItem();
             sliderItem.setDescription("Slider Item " + i);
-            sliderItem.setInteger(Integer.valueOf(Config.imageId_blur[i]));
+            sliderItem.setInteger(Integer.valueOf(Config.img_cung_hoang_dao[i]));
             sliderItemList.add(sliderItem);
         }
         adapter.renewItems(sliderItemList);
