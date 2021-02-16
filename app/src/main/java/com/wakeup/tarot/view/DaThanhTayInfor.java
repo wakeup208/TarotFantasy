@@ -25,7 +25,6 @@ import java.util.List;
 public class DaThanhTayInfor extends AppCompatActivity {
     SliderView sliderView;
     private SliderAdapter adapter;
-    public Button addItems;
     private String des;
 
     public String getDes() {
@@ -62,8 +61,6 @@ public class DaThanhTayInfor extends AppCompatActivity {
                 Log.d("abcd", "onIndicatorClicked: " + sliderView.getCurrentPagePosition());
             }
         });
-
-        addItems = (Button) findViewById(R.id.addItems);
 
         List<SliderItem> sliderItemList = new ArrayList<>();
         for (int i = 0; i < Config.img_cung_hoang_dao.length; i++) {

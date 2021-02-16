@@ -8,35 +8,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@null"
-            android:fontFamily="@font/quicksand"
-            android:drawableLeft="@drawable/icon_active"
-            android:drawablePadding="10dp"
-            android:drawableStart="@drawable/icon_active"
-            android:text="Cộng hòa xã hội chủ nghĩa Việt Nam"
-            android:textAllCaps="false"
-            android:textSize="24dp" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:background="@null"-->
+<!--            android:fontFamily="@font/quicksand"-->
+<!--            android:drawableLeft="@drawable/icon_active"-->
+<!--            android:drawablePadding="10dp"-->
+<!--            android:drawableStart="@drawable/icon_active"-->
+<!--            android:text="Cộng hòa xã hội chủ nghĩa Việt Nam"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textSize="24dp" />-->
     </FrameLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@null"
-            android:fontFamily="@font/quicksand"
-            android:drawableLeft="@drawable/icon_question"
-            android:drawablePadding="10dp"
-            android:drawableStart="@drawable/icon_question"
-            android:text="Độc lập - Tự Do - Hạnh Phúc"
-            android:textAllCaps="false"
-            android:textSize="24dp" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:background="@null"-->
+<!--            android:fontFamily="@font/quicksand"-->
+<!--            android:drawableLeft="@drawable/icon_question"-->
+<!--            android:drawablePadding="10dp"-->
+<!--            android:drawableStart="@drawable/icon_question"-->
+<!--            android:text="Độc lập - Tự Do - Hạnh Phúc"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textSize="24dp" />-->
     </FrameLayout>
 </LinearLayout>
