@@ -144,7 +144,7 @@ public class SpreadCardsActivity extends BaseActivity implements
 			
 			ivCardIcon.setOnTouchListener(this);
 			ivCardIcon.setId(i);
-			id_Card = i;
+			//id_Card = i;
 			ivCardIcon.setOnClickListener(this);
 
 			tvCardName = (TextView) v.findViewById(R.id.tvCardName);
@@ -185,8 +185,8 @@ public class SpreadCardsActivity extends BaseActivity implements
 		//OnClickListener(this);
 
 		instance = this;
-
-		interstitialAd.setAdListener(new AdListener() {
+		//interstitialAd.loadAd(adRequestBuilder1.build());
+		interstitialAd1.setAdListener(new AdListener() {
 			// Listen for when user closes ad
 			@Override
 			public void onAdClosed() {
@@ -660,6 +660,8 @@ public class SpreadCardsActivity extends BaseActivity implements
 
 		if (v.getId() < theNummberOfCard) {
 			// Show Activity guide of card
+			Log.d("abcd" , "11112222");
+			id_Card = v.getId();
 			if(interstitialAd1.isLoaded()) {
 				interstitialAd1.show();
 			}

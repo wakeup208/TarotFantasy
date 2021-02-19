@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -29,8 +30,6 @@
                 android:id="@+id/tv_auto_image_slider"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="25dp"
                 android:padding="6dp"
                 android:textColor="@color/white"
                 android:fontFamily="@font/quicksand"
@@ -41,7 +40,8 @@
     </FrameLayout>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="300dp">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_50dp">
         <TextView
             android:id="@+id/txtDes"
             android:layout_width="match_parent"
@@ -52,7 +52,9 @@
             android:textColor="@color/white"
             android:fontFamily="@font/quicksand"
             android:textSize="@dimen/navigation_text_size"
-            android:textStyle="bold"/>
+            android:justificationMode="inter_word"
+            android:textStyle="bold"
+            tools:ignore="RtlCompat" />
     </ScrollView>
 
 </LinearLayout>

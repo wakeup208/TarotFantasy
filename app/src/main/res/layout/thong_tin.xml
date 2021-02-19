@@ -70,41 +70,6 @@
                     android:src="@drawable/ic_home_48" />
             </RelativeLayout>
 
-
-            <RelativeLayout
-                android:id="@+id/gioithieu"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:gravity="center_vertical"
-                android:paddingStart="@dimen/commom_padding"
-                android:paddingEnd="@dimen/commom_padding">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_marginStart="@dimen/dimen_20dp"
-                    android:layout_toEndOf="@+id/img1"
-                    android:fontFamily="@font/quicksand"
-                    android:gravity="left|center_vertical|center_horizontal|center|start"
-                    android:maxLines="1"
-                    android:text="@string/str_gioi_thieu_ve_tarot"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/commom_font_size_big" />
-
-                <ImageView
-                    android:id="@+id/img1"
-                    android:layout_width="@dimen/img_size"
-                    android:layout_height="@dimen/img_size"
-                    android:padding="12dp"
-                    android:layout_alignParentStart="true"
-                    android:checked="true"
-                    android:foregroundGravity="center_vertical"
-                    android:gravity="fill_vertical"
-                    android:src="@drawable/ic_menu_intro" />
-            </RelativeLayout>
-
             <RelativeLayout
                 android:id="@+id/rtl_mean"
                 android:layout_width="match_parent"
@@ -123,7 +88,6 @@
                     android:layout_toEndOf="@+id/img2"
                     android:fontFamily="@font/quicksand"
                     android:gravity="center_vertical"
-                    android:maxLines="1"
                     android:text="@string/str_y_nghia_nhung_la_bai"
                     android:textColor="@color/white"
                     android:textSize="@dimen/commom_font_size_big" />
@@ -151,6 +115,7 @@
                 android:paddingEnd="@dimen/commom_padding">
 
                 <TextView
+                    android:id="@+id/txtCungHoangDao"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
@@ -158,9 +123,11 @@
                     android:layout_toEndOf="@+id/img3"
                     android:fontFamily="@font/quicksand"
                     android:gravity="center_vertical"
-                    android:maxLines="1"
                     android:text="@string/str_tarot_va_cung_hoang_dao"
                     android:textColor="@color/white"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
                     android:textSize="@dimen/commom_font_size_big" />
 
                 <ImageView
@@ -176,11 +143,10 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/rate_app"
+                android:id="@+id/gioithieu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginTop="10dp"
                 android:gravity="center_vertical"
                 android:paddingStart="@dimen/commom_padding"
                 android:paddingEnd="@dimen/commom_padding">
@@ -190,16 +156,15 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:layout_marginStart="@dimen/dimen_20dp"
-                    android:layout_toEndOf="@+id/img4"
+                    android:layout_toEndOf="@+id/img1"
                     android:fontFamily="@font/quicksand"
-                    android:gravity="center_vertical"
-                    android:maxLines="1"
-                    android:text="@string/str_danh_gia"
+                    android:gravity="left|center_vertical|center_horizontal|center|start"
+                    android:text="@string/str_gioi_thieu_ve_tarot"
                     android:textColor="@color/white"
                     android:textSize="@dimen/commom_font_size_big" />
 
                 <ImageView
-                    android:id="@+id/img4"
+                    android:id="@+id/img1"
                     android:layout_width="@dimen/img_size"
                     android:layout_height="@dimen/img_size"
                     android:padding="12dp"
@@ -207,7 +172,7 @@
                     android:checked="true"
                     android:foregroundGravity="center_vertical"
                     android:gravity="fill_vertical"
-                    android:src="@drawable/ic_menu_danh_gia" />
+                    android:src="@drawable/ic_menu_intro" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -221,14 +186,18 @@
                 android:paddingEnd="@dimen/commom_padding">
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:id="@+id/txtVOC"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:layout_marginStart="@dimen/dimen_20dp"
                     android:layout_toEndOf="@+id/img5"
                     android:fontFamily="@font/quicksand"
                     android:gravity="center_vertical"
-                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
                     android:text="@string/str_gop_y"
                     android:textColor="@color/white"
                     android:textSize="@dimen/commom_font_size_big" />
@@ -263,7 +232,6 @@
                     android:layout_toEndOf="@+id/img6"
                     android:fontFamily="@font/quicksand"
                     android:gravity="center_vertical"
-                    android:maxLines="1"
                     android:text="@string/str_chia_se"
                     android:textColor="@color/white"
                     android:textSize="@dimen/commom_font_size_big" />
@@ -278,6 +246,40 @@
                     android:foregroundGravity="center_vertical"
                     android:gravity="fill_vertical"
                     android:src="@drawable/ic_share_new_1" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rate_app"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/commom_padding"
+                android:paddingEnd="@dimen/commom_padding">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/dimen_20dp"
+                    android:layout_toEndOf="@+id/img4"
+                    android:fontFamily="@font/quicksand"
+                    android:gravity="center_vertical"
+                    android:text="@string/str_danh_gia"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size_big" />
+
+                <ImageView
+                    android:id="@+id/img4"
+                    android:layout_width="@dimen/img_size"
+                    android:layout_height="@dimen/img_size"
+                    android:padding="12dp"
+                    android:layout_alignParentStart="true"
+                    android:checked="true"
+                    android:foregroundGravity="center_vertical"
+                    android:gravity="fill_vertical"
+                    android:src="@drawable/ic_menu_danh_gia" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -297,7 +299,6 @@
                     android:layout_toEndOf="@+id/img7"
                     android:fontFamily="@font/quicksand"
                     android:gravity="center_vertical"
-                    android:maxLines="1"
                     android:text="@string/str_ung_dung_khac"
                     android:textColor="@color/white"
                     android:textSize="@dimen/commom_font_size_big" />

@@ -37,6 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin"
+                android:justificationMode="inter_word"
                 android:textColor="@android:color/black"
                 android:fontFamily="@font/quicksand"
                 android:textSize="@dimen/commom_font_size"

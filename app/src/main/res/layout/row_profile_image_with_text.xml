@@ -24,6 +24,7 @@
             android:layout_marginLeft="@dimen/commom_padding"
             android:gravity="center_vertical"
             android:fontFamily="@font/quicksand"
+            android:justificationMode="inter_word"
             android:textColor="@color/white"
             android:textSize="@dimen/commom_font_size"
             android:textStyle="normal" />

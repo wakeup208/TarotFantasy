@@ -17,45 +17,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="@dimen/margin" >
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/parent_layout"
+        <ImageView
+            android:id="@+id/ivBackCard"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:cardCornerRadius="20dp">
-
-            <ImageView
-                android:id="@+id/ivBackCard"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:clickable="true"
-                android:scaleType="fitXY"
-                android:adjustViewBounds="true"
-                android:fitsSystemWindows="true"
-                android:src="@drawable/card_back1" />
-
-        </androidx.cardview.widget.CardView>
-
-<!--        <androidx.cardview.widget.CardView-->
-<!--            android:id="@+id/parent_layout"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            app:cardCornerRadius="50dp">-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/ivBackCard"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:clickable="true"-->
-<!--                android:scaleType="fitXY"-->
-<!--                android:adjustViewBounds="true"-->
-<!--                android:fitsSystemWindows="true"-->
-<!--                android:src="@drawable/card_back4" />-->
-
-<!--        </androidx.cardview.widget.CardView>-->
-
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:gravity="center"
+            android:src="@drawable/card_back1" />
         <ImageView
             android:id="@+id/ivFontCard"
             android:layout_width="match_parent"
@@ -103,6 +72,7 @@
                 android:id="@+id/tvKeyWords"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:justificationMode="inter_word"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center_horizontal"
                 android:fontFamily="@font/quicksand"
@@ -118,6 +88,7 @@
                 android:layout_gravity="center_horizontal"
                 android:gravity="center_horizontal"
                 android:padding="5dip"
+                android:justificationMode="inter_word"
                 android:fontFamily="@font/quicksand"
                 android:text="Nội dung keywords"
                 android:textColor="#f9e34c"
@@ -224,6 +195,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/quicksand"
+                android:justificationMode="inter_word"
                 android:padding="@dimen/commom_padding"
                 android:text="Nội dung Interpretation"
                 android:textColor="@color/white"
@@ -256,6 +228,7 @@
                 android:layout_height="wrap_content"
                 android:padding="@dimen/commom_padding"
                 android:fontFamily="@font/quicksand"
+                android:justificationMode="inter_word"
                 android:text="Nội dung Reverse Interpretation"
                 android:textColor="@color/white"
                 android:textSize="@dimen/commom_font_size"

@@ -101,6 +101,7 @@
                 android:layout_marginEnd="@dimen/dimen_20dp"
                 android:gravity="left|center_vertical|center_horizontal|center|start"
                 android:text="@string/str_cung_hoang_dao"
+                android:justificationMode="inter_word"
                 android:textColor="@color/white"
                 android:textSize="@dimen/commom_font_size_big"
                 app:fontFamily="@font/quicksand"

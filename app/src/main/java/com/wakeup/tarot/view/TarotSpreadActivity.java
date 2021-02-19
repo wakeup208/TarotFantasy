@@ -27,6 +27,7 @@ public class TarotSpreadActivity extends BaseActivity implements
 
 	private TextView tvTarotSpreadTitle;
 	private ListView lvTarotSpread;
+	private int pos;
 
 	@SuppressWarnings("deprecation")
 	@Override
@@ -50,27 +51,24 @@ public class TarotSpreadActivity extends BaseActivity implements
 		lvTarotSpread.setAdapter(adapter);
 		lvTarotSpread.setOnItemClickListener(this);
 
+		//interstitialAd.loadAd(adRequestBuilder1.build());
 		interstitialAd.setAdListener(new AdListener() {
-			// Listen for when user closes ad
-
 			@Override
 			public void onAdClosed() {
 				super.onAdClosed();
-				Log.d("abcd","3333");
+				itemClickCardList(pos);
 			}
 		});
-
 	}
 
 	@Override
 	public void onItemClick(AdapterView<?> listAdapter, View arg1,
 			int position, long arg3) {
+		pos = position;
 		if(interstitialAd.isLoaded()) {
-			Log.d("abcd","1111");
 			interstitialAd.show();
 		}
 		else {
-			Log.d("abcd","2222");
 			itemClickCardList(position);
 		}
 	}

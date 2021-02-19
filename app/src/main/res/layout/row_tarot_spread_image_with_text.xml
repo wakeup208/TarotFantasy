@@ -23,6 +23,7 @@
             android:layout_marginLeft="@dimen/small_padding"
             android:gravity="center"
             android:fontFamily="@font/quicksand"
+            android:justificationMode="inter_word"
             android:text="@string/browse_cards"
             android:textColor="@color/white"
             android:textSize="@dimen/commom_font_size"

@@ -39,7 +39,7 @@ public class GioiThieuFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         if (tvDescription != null) {
-            tvDescription.setText(Utils.ReadFromfile(Constant.PATH_FULL_GIOI_THIEU_VN_ASSETS, getContext()));
+            tvDescription.setText(Utils.ReadFromfile(Constant.PATH_FULL_DA_THANH_TAY, getContext()));
         }
 
         if (ivBackTb != null) {

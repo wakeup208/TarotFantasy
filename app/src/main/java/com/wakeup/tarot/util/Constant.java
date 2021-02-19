@@ -24,4 +24,23 @@ public class Constant {
     public static final String PATH_THIENBINH = "data/thienbinh.txt";
     public static final String PATH_XUNU = "data/xunu.txt";
 
+    public static final String PATH_AMETHYST = "data/t_Amethyst.txt";
+    public static final String PATH_AVENTU = "data/t_Aventurine.txt";
+    public static final String PATH_CLEARQ = "data/t_ClearQuatz.txt";
+    public static final String PATH_HENMATITE = "data/t_Hematite.txt";
+    public static final String PATH_LABRADO = "data/t_Labradorite.txt";
+    public static final String PATH_MOON = "data/t_moonstone.txt";
+    public static final String PATH_MOSS = "data/t_MossAgate.txt";
+    public static final String PATH_TIGER = "data/t_Tiger.txt";
+    public static final String PATH_BLACK = "data/tt_BlackOnyx.txt";
+    public static final String PATH_CARNELIAN = "data/tt_Carnelian.txt";
+    public static final String PATH_CITRINE = "data/tt_Citrine.txt";
+    public static final String PATH_GARNET = "data/tt_Garnet.txt";
+    public static final String PATH_LAPIS = "data/tt_Lapis.txt";
+    public static final String PATH_RED = "data/tt_redJasper.txt";
+    public static final String PATH_ROSE = "data/tt_RoseQuartz.txt";
+    public static final String PATH_SMOKER = "data/tt_SmokyQuartz.txt";
+    public static final String PATH_SOLADO = "data/tt_Sodalite.txt";
+    public static final String PATH_HOWLITE = "data/tt_WhiteHowlite.txt";
+
 }

@@ -97,6 +97,7 @@
                 android:layout_marginTop="@dimen/dimen_20dp"
                 android:layout_marginStart="@dimen/dimen_20dp"
                 android:layout_marginEnd="@dimen/dimen_20dp"
+                android:justificationMode="inter_word"
                 android:gravity="left|center_vertical|center_horizontal|center|start"
                 android:text="@string/str_mean"
                 android:textColor="@color/white"

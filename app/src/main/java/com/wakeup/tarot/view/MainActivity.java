@@ -41,7 +41,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class MainActivity extends BaseActivity implements View.OnClickListener/*, View.OnTouchListener */{
+public class MainActivity extends BaseActivity implements View.OnClickListener, View.OnTouchListener {
 
     //private TextView tvAppName;
     private LinearLayout btn_drawcard;
@@ -51,8 +51,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener/*
     private LinearLayout btn_thongtin;
 
 
-    public static final String NOTIFICATION_CHANNEL_ID = "10001" ;
-    private final static String default_notification_channel_id = "default" ;
+    public static final String NOTIFICATION_CHANNEL_ID = "10001";
+    private final static String default_notification_channel_id = "default";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,23 +75,23 @@ public class MainActivity extends BaseActivity implements View.OnClickListener/*
 
         btn_drawcard = (LinearLayout) findViewById(R.id.chonbai);
         btn_drawcard.setOnClickListener(this);
-        //btn_drawcard.setOnTouchListener(this);
+        btn_drawcard.setOnTouchListener(this);
 
         btn_spreadcard = (LinearLayout) findViewById(R.id.trabai);
         btn_spreadcard.setOnClickListener(this);
-        //btn_spreadcard.setOnTouchListener(this);
+        btn_spreadcard.setOnTouchListener(this);
 
         btn_encyclopedia = (LinearLayout) findViewById(R.id.sotay);
         btn_encyclopedia.setOnClickListener(this);
-        //btn_encyclopedia.setOnTouchListener(this);
+        btn_encyclopedia.setOnTouchListener(this);
 
         btn_profile_animation = (LinearLayout) findViewById(R.id.hotro);
         btn_profile_animation.setOnClickListener(this);
-        //btn_profile_animation.setOnTouchListener(this);
+        btn_profile_animation.setOnTouchListener(this);
 
         btn_thongtin = (LinearLayout) findViewById(R.id.thongtin);
         btn_thongtin.setOnClickListener(this);
-        //btn_thongtin.setOnTouchListener(this);
+        btn_thongtin.setOnTouchListener(this);
     }
 
     @Override
@@ -273,42 +273,53 @@ public class MainActivity extends BaseActivity implements View.OnClickListener/*
         }
     }
 
-//    @Override
-//    public boolean onTouch(View v, MotionEvent event) {
-//        switch (v.getId()) {
-//            case R.id.chonbai:
-//                if (MotionEvent.ACTION_DOWN == event.getAction()) {
-//                    btn_drawcard.startAnimation(ConfigData.animation_button_press);
-//                }
-//                break;
-//
-//            case R.id.trabai:
-//                if (MotionEvent.ACTION_DOWN == event.getAction()) {
-//                    btn_spreadcard
-//                            .startAnimation(ConfigData.animation_button_press);
-//                }
-//                break;
-//
-//            case R.id.sotay:
-//                if (MotionEvent.ACTION_DOWN == event.getAction()) {
-//                    btn_encyclopedia
-//                            .startAnimation(ConfigData.animation_button_press);
-//                }
-//                break;
-//
-//            case R.id.hotro:
-//                if (MotionEvent.ACTION_DOWN == event.getAction()) {
-//                    btn_profile_animation
-//                            .startAnimation(ConfigData.animation_button_press);
-//                }
-//                break;
-//
-//            case R.id.thongtin:
-//                if (MotionEvent.ACTION_DOWN == event.getAction()) {
-//                    btn_thongtin
-//                            .startAnimation(ConfigData.animation_button_press);
-//                }
-//                break;
-//        }
-//        return false;    }
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        switch (v.getId()) {
+            case R.id.chonbai:
+                if (MotionEvent.ACTION_DOWN == event.getAction()) {
+                    btn_drawcard.startAnimation(ConfigData.animation_zoom_in);
+                    break;
+                } else if (MotionEvent.ACTION_UP == event.getAction()) {
+                    btn_drawcard.clearAnimation();
+                    break;
+                }
+            case R.id.trabai:
+                if (MotionEvent.ACTION_DOWN == event.getAction()) {
+                    btn_spreadcard.startAnimation(ConfigData.animation_zoom_in);
+                    break;
+                } else if (MotionEvent.ACTION_UP == event.getAction()) {
+                    btn_spreadcard.clearAnimation();
+                    break;
+                }
+
+            case R.id.sotay:
+                if (MotionEvent.ACTION_DOWN == event.getAction()) {
+                    btn_encyclopedia.startAnimation(ConfigData.animation_zoom_in);
+                    break;
+                } else if (MotionEvent.ACTION_UP == event.getAction()) {
+                    btn_encyclopedia.clearAnimation();
+                    break;
+                }
+
+            case R.id.hotro:
+                if (MotionEvent.ACTION_DOWN == event.getAction()) {
+                    btn_profile_animation.startAnimation(ConfigData.animation_zoom_in);
+                    break;
+                } else if (MotionEvent.ACTION_UP == event.getAction()) {
+                    btn_profile_animation.clearAnimation();
+                    break;
+                }
+
+            case R.id.thongtin:
+                if (MotionEvent.ACTION_DOWN == event.getAction()) {
+                    btn_thongtin.startAnimation(ConfigData.animation_zoom_in);
+                    break;
+                } else if (MotionEvent.ACTION_UP == event.getAction()) {
+                    btn_thongtin.clearAnimation();
+                    break;
+                }
+        }
+        return false;
+    }
 }

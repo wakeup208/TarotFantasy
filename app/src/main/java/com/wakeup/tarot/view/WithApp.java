@@ -58,38 +58,39 @@ public class WithApp extends Application {
         String sutu = Utils.ReadFromfile(Constant.PATH_SUTU, this);
         String thienbinh = Utils.ReadFromfile(Constant.PATH_THIENBINH, this);
         String xunu = Utils.ReadFromfile(Constant.PATH_XUNU, this);
-        Config.CunghoangdaoAndDathanhtay.add(bachduong);
-        Config.CunghoangdaoAndDathanhtay.add(baobinh);
-        Config.CunghoangdaoAndDathanhtay.add(bocap);
-        Config.CunghoangdaoAndDathanhtay.add(cugiai);
-        Config.CunghoangdaoAndDathanhtay.add(kimnguu);
-        Config.CunghoangdaoAndDathanhtay.add(maket);
-        Config.CunghoangdaoAndDathanhtay.add(nhanma);
-        Config.CunghoangdaoAndDathanhtay.add(songngu);
-        Config.CunghoangdaoAndDathanhtay.add(songtu);
-        Config.CunghoangdaoAndDathanhtay.add(sutu);
-        Config.CunghoangdaoAndDathanhtay.add(thienbinh);
-        Config.CunghoangdaoAndDathanhtay.add(xunu);
+
+        Config.CunghoangdaoAndDathanhtay.add(bachduong);Config.CunghoangdaoAndDathanhtay.add(baobinh);Config.CunghoangdaoAndDathanhtay.add(bocap);
+        Config.CunghoangdaoAndDathanhtay.add(cugiai);Config.CunghoangdaoAndDathanhtay.add(kimnguu);Config.CunghoangdaoAndDathanhtay.add(maket);
+        Config.CunghoangdaoAndDathanhtay.add(nhanma);Config.CunghoangdaoAndDathanhtay.add(songngu);Config.CunghoangdaoAndDathanhtay.add(songtu);
+        Config.CunghoangdaoAndDathanhtay.add(sutu);Config.CunghoangdaoAndDathanhtay.add(thienbinh);Config.CunghoangdaoAndDathanhtay.add(xunu);
+
+        String a1 = Utils.ReadFromfile(Constant.PATH_AMETHYST, this);
+        String a2 = Utils.ReadFromfile(Constant.PATH_AVENTU, this);
+        String a3 = Utils.ReadFromfile(Constant.PATH_CLEARQ, this);
+        String a4 = Utils.ReadFromfile(Constant.PATH_HENMATITE, this);
+        String a5 = Utils.ReadFromfile(Constant.PATH_LABRADO, this);
+        String a6 = Utils.ReadFromfile(Constant.PATH_MOON, this);
+        String a7 = Utils.ReadFromfile(Constant.PATH_MOSS, this);
+        String a8 = Utils.ReadFromfile(Constant.PATH_TIGER, this);
+        String a9 = Utils.ReadFromfile(Constant.PATH_BLACK, this);
+        String a10 = Utils.ReadFromfile(Constant.PATH_CARNELIAN, this);
+        String a11 = Utils.ReadFromfile(Constant.PATH_CITRINE, this);
+        String a12 = Utils.ReadFromfile(Constant.PATH_GARNET, this);
+        String a13 = Utils.ReadFromfile(Constant.PATH_LAPIS, this);
+        String a14 = Utils.ReadFromfile(Constant.PATH_RED, this);
+        String a15 = Utils.ReadFromfile(Constant.PATH_ROSE, this);
+        String a16 = Utils.ReadFromfile(Constant.PATH_SMOKER, this);
+        String a17 = Utils.ReadFromfile(Constant.PATH_SOLADO, this);
+        String a18 = Utils.ReadFromfile(Constant.PATH_HOWLITE, this);
+
+        Config.StoneDes.add(a1);Config.StoneDes.add(a2);Config.StoneDes.add(a3);
+        Config.StoneDes.add(a4);Config.StoneDes.add(a5);Config.StoneDes.add(a6);
+        Config.StoneDes.add(a7);Config.StoneDes.add(a8);Config.StoneDes.add(a9);
+        Config.StoneDes.add(a10);Config.StoneDes.add(a11);Config.StoneDes.add(a12);
+        Config.StoneDes.add(a13);Config.StoneDes.add(a14);Config.StoneDes.add(a15);
+        Config.StoneDes.add(a16);Config.StoneDes.add(a17);Config.StoneDes.add(a18);
     }
 
-    public void loadMidAd() {
-        AdRequest adInterstitial = new AdRequest.Builder().build();
-        interstitialAd.loadAd(adInterstitial);
-        interstitialAd.setAdListener(new AdListener() {
-            @Override
-            public void onAdLoaded() {
-                super.onAdLoaded();
-                if (interstitialAd.isLoaded()) {
-                    interstitialAd.show();
-                }
-            }
-
-            @Override
-            public void onAdClosed() {
-                super.onAdClosed();
-            }
-        });
-    }
 
     public void loadAd(AdView mAdView) {
 

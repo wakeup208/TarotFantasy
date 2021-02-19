@@ -22,7 +22,7 @@ import com.wakeup.tarot.util.Config;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DaThanhTayInfor extends AppCompatActivity {
+public class DaThanhTayInfor extends BaseActivity {
     SliderView sliderView;
     private SliderAdapter adapter;
     private String des;
@@ -70,35 +70,5 @@ public class DaThanhTayInfor extends AppCompatActivity {
             sliderItemList.add(sliderItem);
         }
         adapter.renewItems(sliderItemList);
-    }
-
-    public void renewItems(View view) {
-        List<SliderItem> sliderItemList = new ArrayList<>();
-        //dummy data
-        for (int i = 0; i < Config.imageId_blur.length; i++) {
-            Log.d("abcd","length = " + Config.imageId_blur.length);
-            SliderItem sliderItem = new SliderItem();
-            sliderItem.setDescription("Slider Item " + i);
-//            if (i % 2 == 0) {
-//                sliderItem.setImageUrl("https://images.pexels.com/photos/929778/pexels-photo-929778.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-//            } else {
-//                sliderItem.setImageUrl("https://images.pexels.com/photos/747964/pexels-photo-747964.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
-//            }
-            sliderItem.setInteger(Integer.valueOf(Config.imageId_blur[i]));
-            sliderItemList.add(sliderItem);
-        }
-        adapter.renewItems(sliderItemList);
-    }
-
-    public void removeLastItem(View view) {
-        if (adapter.getCount() - 1 >= 0)
-            adapter.deleteItem(adapter.getCount() - 1);
-    }
-
-    public void addNewItem(View view) {
-        SliderItem sliderItem = new SliderItem();
-        sliderItem.setDescription("Slider Item Added Manually");
-        sliderItem.setImageUrl("https://images.pexels.com/photos/929778/pexels-photo-929778.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-        adapter.addItem(sliderItem);
     }
 }

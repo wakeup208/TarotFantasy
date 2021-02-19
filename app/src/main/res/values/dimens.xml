@@ -3,6 +3,7 @@
     <dimen name="app_name_font_size">42sp</dimen>
     <dimen name="intro_font_size">35dp</dimen>
     <dimen name="navigation_text_size">15sp</dimen>
+    <dimen name="thanhtay_text_size">22dp</dimen>
 
 
     <dimen name="title_font_size">30sp</dimen>

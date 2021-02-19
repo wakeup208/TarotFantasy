@@ -32,7 +32,6 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:layout_marginStart="@dimen/margin_bottom"
-                    android:background="@drawable/list_background"
                     android:fontFamily="@font/quicksand"
                     android:textAlignment="center"
                     android:layout_centerVertical="true"
@@ -62,7 +61,6 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:background="@drawable/list_background"
                     android:fontFamily="@font/quicksand"
                     android:gravity="left"
                     android:text="@string/dao_nguoc_bai"
@@ -91,7 +89,6 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:background="@drawable/list_background"
                     android:fontFamily="@font/quicksand"
                     android:gravity="left"
                     android:text="@string/am_thanh"
@@ -119,7 +116,6 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:background="@drawable/list_background"
                     android:fontFamily="@font/quicksand"
                     android:gravity="center_vertical"
                     android:text="@string/font_size"
@@ -139,6 +135,58 @@
             </RelativeLayout>
         </LinearLayout>
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:contentDescription="TODO"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:src="@drawable/black_white_gradient" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:paddingStart="@dimen/commom_padding"
+            android:paddingEnd="@dimen/commom_padding"
+            android:fontFamily="@font/quicksand"
+            android:gravity="center_vertical"
+            android:text="@string/card_back"
+            android:textColor="@color/white"
+            android:textSize="@dimen/commom_font_size"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:paddingStart="@dimen/commom_padding"
+            android:paddingEnd="@dimen/commom_padding"
+            android:orientation="horizontal"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:contentDescription="TODO"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:src="@drawable/black_white_gradient" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:paddingStart="@dimen/commom_padding"
+            android:paddingEnd="@dimen/commom_padding"
+            android:fontFamily="@font/quicksand"
+            android:gravity="center_vertical"
+            android:text="@string/back_ground"
+            android:textColor="@color/white"
+            android:textSize="@dimen/commom_font_size"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:paddingStart="@dimen/commom_padding"
+            android:paddingEnd="@dimen/commom_padding"
+            android:orientation="horizontal"/>
     </LinearLayout>
 
     <LinearLayout

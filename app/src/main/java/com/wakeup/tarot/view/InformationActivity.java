@@ -9,10 +9,13 @@ import android.os.Handler;
 import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,6 +42,7 @@ public class InformationActivity extends BaseActivity {
     RelativeLayout rtlRate;
     RelativeLayout rtlVoc;
     RelativeLayout rtlShare;
+    TextView txtVoc, txtCungHoangDao;
     LinearLayout lnBrick;
     LinearLayout lnBaby;
 
@@ -53,9 +57,7 @@ public class InformationActivity extends BaseActivity {
         mAdView = (AdView) findViewById(R.id.adView);
         getInstance.loadAd(mAdView);
 
-        // Create and set AdListener for interstitial
         interstitialAd.setAdListener(new AdListener() {
-            // Listen for when user closes ad
             @Override
             public void onAdClosed() {
                 super.onAdClosed();
@@ -72,6 +74,7 @@ public class InformationActivity extends BaseActivity {
                 addFragmentMean();
             }
         });
+
 
         imgHome = (ImageView) findViewById(R.id.img_home);
         imgHome.setOnClickListener(new View.OnClickListener() {
@@ -134,6 +137,25 @@ public class InformationActivity extends BaseActivity {
                 feedback();
             }
         });
+
+        txtVoc = (TextView) findViewById(R.id.txtVOC);
+        txtVoc.setSelected(true);
+
+        txtCungHoangDao = (TextView) findViewById(R.id.txtCungHoangDao);
+        txtCungHoangDao.setSelected(true);
+
+//        TranslateAnimation animation = new TranslateAnimation(0.0f, 0.0f, 0.0f, 1500.0f); // new TranslateAnimation (float fromXDelta,float toXDelta, float fromYDelta, float toYDelta)
+//        animation.setDuration(1500); // animation duration
+//        animation.setRepeatCount(4); // animation repeat count
+//        animation.setRepeatMode(2); // repeat animation (left to right, right to left)
+//
+//        animation.setFillAfter(true);
+
+//        Animation animationToLeft = new TranslateAnimation(400, -400, 0, 0);
+//        animationToLeft.setDuration(12000);
+//        animationToLeft.setRepeatMode(Animation.RESTART);
+//        animationToLeft.setRepeatCount(Animation.INFINITE);
+//        txtVoc .startAnimation(animationToLeft);//your_view for mine is imageView
 
         rtlShare = (RelativeLayout) findViewById(R.id.share);
         rtlShare.setOnClickListener(new View.OnClickListener() {
@@ -227,7 +249,7 @@ public class InformationActivity extends BaseActivity {
 //        } catch (Exception e) {
 //        }
 
-        Intent intent = new Intent(InformationActivity.this, DaThanhTayInfor.class);
+        Intent intent = new Intent(InformationActivity.this, AllStoneInfo.class);
         startActivity(intent);
     }
 

@@ -55,6 +55,7 @@ public class SliderAdapter extends
 
     @Override
     public void onBindViewHolder(SliderAdapterVH viewHolder, final int position) {
+        Log.d("abcd","2222");
 
         SliderItem sliderItem = mSliderItems.get(position);
         viewHolder.textViewDescription.setText(Config.cunghoangdao[position]);

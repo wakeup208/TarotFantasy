@@ -33,6 +33,7 @@ public class ConfigData {
     public static Animation animation_button_press;
     public static Animation animation_select_card;
     public static Animation animation_zoom_in;
+    public static Animation animation_zoom_out;
     public static Animation animation_rotate_zoom_in;
 
     // Save data
@@ -85,6 +86,8 @@ public class ConfigData {
                 R.anim.select_card);
         animation_zoom_in = AnimationUtils.loadAnimation(appContext,
                 R.anim.zoom_in);
+        animation_zoom_out = AnimationUtils.loadAnimation(appContext,
+                R.anim.zoom_out);
         animation_rotate_zoom_in = AnimationUtils.loadAnimation(appContext,
                 R.anim.rotate_zoom_in);
 

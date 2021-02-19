@@ -1,6 +1,8 @@
 package com.wakeup.tarot.view;
 
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
 import android.view.Window;
 
 import com.google.android.gms.ads.AdRequest;
@@ -14,11 +16,11 @@ import com.wakeup.tarot.R;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity {
     public InterstitialAd interstitialAd, interstitialAd1;
     public WithApp getInstance;
     public AdView mAdView;
-
+    AdRequest.Builder adRequestBuilder1, adRequestBuilder2;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,11 +31,13 @@ public class BaseActivity extends AppCompatActivity {
         interstitialAd = new InterstitialAd(this);
         interstitialAd.setAdUnitId(getString(R.string.interstitial_ad_unit_test));
         AdRequest adInterstitial = new AdRequest.Builder().build();
+        //adRequestBuilder1 = new AdRequest.Builder();
         interstitialAd.loadAd(adInterstitial);
 
         interstitialAd1 = new InterstitialAd(this);
         interstitialAd1.setAdUnitId(getString(R.string.interstitial_ad_unit_test));
         AdRequest adInterstitial1 = new AdRequest.Builder().build();
+        //adRequestBuilder2 = new AdRequest.Builder();
         interstitialAd1.loadAd(adInterstitial1);
     }
 }
