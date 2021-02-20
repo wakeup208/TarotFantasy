@@ -3,9 +3,9 @@
     xmlns:aapt="http://schemas.android.com/aapt"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:max="http://schemas.applovin.com/android/1.0"
-    app:startDestination="@+id/CungHoangDaoFragment">
+    app:startDestination="@+id/FragmentChakra">
     <fragment
-        android:id="@+id/CungHoangDaoFragment"
-        android:name="com.wakeup.tarot.fragment.CungHoangDaoFragment"
-        android:label="GioiThieuFragment" />
+        android:id="@+id/FragmentChakra"
+        android:name="com.wakeup.tarot.fragment.FragmentChakra"
+        android:label="FragmentChakra" />
 </navigation>

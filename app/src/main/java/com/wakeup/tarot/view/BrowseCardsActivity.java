@@ -145,7 +145,7 @@ public class BrowseCardsActivity extends FragmentActivity implements
         } else {
             selected = 0;
             this.finish();
-            startActivity(new Intent(this, InformationActivity.class));
+            startActivity(new Intent(this, KienThuc.class));
         }
     }
 
@@ -279,7 +279,7 @@ public class BrowseCardsActivity extends FragmentActivity implements
                 } else {
                     selected = 0;
                     this.finish();
-                    startActivity(new Intent(this, InformationActivity.class));
+                    startActivity(new Intent(this, KienThuc.class));
                 }
 
                 break;
@@ -526,10 +526,13 @@ public class BrowseCardsActivity extends FragmentActivity implements
                                 if (mGridView
                                         .getWidth() != 0) {
 
-                                    mNumColumns = (int) Math.floor(mGridView
-                                            .getWidth() / (cell_width + 5));
+                                    if ((cell_width + 5) == 0) {
+                                        mNumColumns = 0;
+                                    } else {
+                                        mNumColumns = (int) Math.floor(mGridView
+                                                .getWidth() / (cell_width + 5));
+                                    }
                                 }
-
 
                                 if (mNumColumns > 0) {
                                     mCardImageGridViewAdapter

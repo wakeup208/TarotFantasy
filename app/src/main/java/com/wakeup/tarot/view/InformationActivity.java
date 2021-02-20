@@ -37,12 +37,11 @@ import java.util.ArrayList;
 public class InformationActivity extends BaseActivity {
 
     RelativeLayout rlGioiThieu;
-    RelativeLayout rlMean;
-    RelativeLayout cunghoangdao;
+    RelativeLayout rlThanhTay;
+
     RelativeLayout rtlRate;
     RelativeLayout rtlVoc;
     RelativeLayout rtlShare;
-    TextView txtVoc, txtCungHoangDao;
     LinearLayout lnBrick;
     LinearLayout lnBaby;
 
@@ -56,25 +55,6 @@ public class InformationActivity extends BaseActivity {
 
         mAdView = (AdView) findViewById(R.id.adView);
         getInstance.loadAd(mAdView);
-
-        interstitialAd.setAdListener(new AdListener() {
-            @Override
-            public void onAdClosed() {
-                super.onAdClosed();
-                addFragmentCungHoangDao();
-            }
-        });
-
-        interstitialAd1.setAdListener(new AdListener() {
-            // Listen for when user closes ad
-
-            @Override
-            public void onAdClosed() {
-                super.onAdClosed();
-                addFragmentMean();
-            }
-        });
-
 
         imgHome = (ImageView) findViewById(R.id.img_home);
         imgHome.setOnClickListener(new View.OnClickListener() {
@@ -96,31 +76,14 @@ public class InformationActivity extends BaseActivity {
             }
         });
 
-        rlMean = (RelativeLayout) findViewById(R.id.rtl_mean);
-        rlMean.setOnClickListener(new View.OnClickListener() {
+        rlThanhTay = (RelativeLayout) findViewById(R.id.thanhtaybaiRl);
+        rlThanhTay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(interstitialAd1.isLoaded()) {
-                    interstitialAd1.show();
-                }
-                else {
-                    addFragmentMean();
-                }
+                addFragmentThanhTay();
             }
         });
 
-        cunghoangdao = (RelativeLayout) findViewById(R.id.cunghoangdao);
-        cunghoangdao.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(interstitialAd.isLoaded()) {
-                    interstitialAd.show();
-                }
-                else {
-                    addFragmentCungHoangDao();
-                }
-            }
-        });
 
         rtlRate = (RelativeLayout) findViewById(R.id.rate_app);
         rtlRate.setOnClickListener(new View.OnClickListener() {
@@ -137,25 +100,6 @@ public class InformationActivity extends BaseActivity {
                 feedback();
             }
         });
-
-        txtVoc = (TextView) findViewById(R.id.txtVOC);
-        txtVoc.setSelected(true);
-
-        txtCungHoangDao = (TextView) findViewById(R.id.txtCungHoangDao);
-        txtCungHoangDao.setSelected(true);
-
-//        TranslateAnimation animation = new TranslateAnimation(0.0f, 0.0f, 0.0f, 1500.0f); // new TranslateAnimation (float fromXDelta,float toXDelta, float fromYDelta, float toYDelta)
-//        animation.setDuration(1500); // animation duration
-//        animation.setRepeatCount(4); // animation repeat count
-//        animation.setRepeatMode(2); // repeat animation (left to right, right to left)
-//
-//        animation.setFillAfter(true);
-
-//        Animation animationToLeft = new TranslateAnimation(400, -400, 0, 0);
-//        animationToLeft.setDuration(12000);
-//        animationToLeft.setRepeatMode(Animation.RESTART);
-//        animationToLeft.setRepeatCount(Animation.INFINITE);
-//        txtVoc .startAnimation(animationToLeft);//your_view for mine is imageView
 
         rtlShare = (RelativeLayout) findViewById(R.id.share);
         rtlShare.setOnClickListener(new View.OnClickListener() {
@@ -200,6 +144,10 @@ public class InformationActivity extends BaseActivity {
         addFragmentWithNavigationId(R.layout.gioi_thieu_xml, (Bundle) null);
     }
 
+    public void addFragmentThanhTay() {
+        addFragmentWithNavigationId(R.layout.thanh_tay_xml, (Bundle) null);
+    }
+
     public void addFragmentMean() {
         addFragmentWithNavigationId(R.layout.type_card_page_xml, (Bundle) null);
     }
@@ -232,25 +180,22 @@ public class InformationActivity extends BaseActivity {
     }
 
     private void feedback() {
-//        Intent feedbackEmail = new Intent(Intent.ACTION_SEND);
-//        feedbackEmail.setType("text/email");
-//        feedbackEmail.putExtra(Intent.EXTRA_EMAIL, new String[]{"anhhoang.korean@gmail.com"});
-//        feedbackEmail.putExtra(Intent.EXTRA_SUBJECT, "Feedback");
-//        startActivity(Intent.createChooser(feedbackEmail, "Send Feedback to TAROT VIET:"));
+        Intent feedbackEmail = new Intent(Intent.ACTION_SEND);
+        feedbackEmail.setType("text/email");
+        feedbackEmail.putExtra(Intent.EXTRA_EMAIL, new String[]{"anhhoang.korean@gmail.com"});
+        feedbackEmail.putExtra(Intent.EXTRA_SUBJECT, "Feedback");
+        startActivity(Intent.createChooser(feedbackEmail, "Send Feedback to TAROT VIET:"));
 
-//        try {
-//            Intent intent = new Intent("android.intent.action.SEND");
-//            intent.putExtra("android.intent.extra.EMAIL", new String[]{"anhhoang.korean@gmail.com"});
-//            intent.putExtra("android.intent.extra.SUBJECT", "Feedback");
-//            intent.putExtra("android.intent.extra.TEXT", "Send Feedback to TAROT VIET:");
-//            intent.setType("text/plain");
-//            startActivity(Intent.createChooser(intent, "Send Feedback to TAROT VIET:"));
-//
-//        } catch (Exception e) {
-//        }
+        try {
+            Intent intent = new Intent("android.intent.action.SEND");
+            intent.putExtra("android.intent.extra.EMAIL", new String[]{"anhhoang.korean@gmail.com"});
+            intent.putExtra("android.intent.extra.SUBJECT", "Feedback");
+            intent.putExtra("android.intent.extra.TEXT", "Send Feedback to TAROT VIET:");
+            intent.setType("text/plain");
+            startActivity(Intent.createChooser(intent, "Send Feedback to TAROT VIET:"));
 
-        Intent intent = new Intent(InformationActivity.this, AllStoneInfo.class);
-        startActivity(intent);
+        } catch (Exception e) {
+        }
     }
 
     private void openRateApp() {

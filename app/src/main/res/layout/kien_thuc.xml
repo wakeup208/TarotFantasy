@@ -8,7 +8,7 @@
 
     <FrameLayout
         android:visibility="gone"
-        android:id="@+id/nav_main_fragment"
+        android:id="@+id/nav_main_fragment_kienthuc"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -53,7 +53,7 @@
                     android:background="@drawable/list_background"
                     android:fontFamily="@font/quicksand"
                     android:layout_centerInParent="true"
-                    android:text="@string/str_thong_tin"
+                    android:text="@string/str_kien_thuc"
                     android:textColor="@color/white"
                     android:textSize="@dimen/app_name_font_size" />
 
@@ -69,43 +69,8 @@
                     android:src="@drawable/ic_home_48" />
             </RelativeLayout>
 
-
             <RelativeLayout
-                android:id="@+id/gioithieu"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:gravity="center_vertical"
-                android:paddingStart="@dimen/commom_padding"
-                android:paddingEnd="@dimen/commom_padding">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_marginStart="@dimen/dimen_20dp"
-                    android:layout_toEndOf="@+id/img1"
-                    android:fontFamily="@font/quicksand"
-                    android:gravity="left|center_vertical|center_horizontal|center|start"
-                    android:maxLines="1"
-                    android:text="@string/str_gioi_thieu_ve_tarot"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/commom_font_size_big" />
-
-                <ImageView
-                    android:id="@+id/img1"
-                    android:layout_width="@dimen/img_size"
-                    android:layout_height="@dimen/img_size"
-                    android:padding="12dp"
-                    android:layout_alignParentStart="true"
-                    android:checked="true"
-                    android:foregroundGravity="center_vertical"
-                    android:gravity="fill_vertical"
-                    android:src="@drawable/ic_menu_intro" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/thanhtaybaiRl"
+                android:id="@+id/rtl_mean"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -115,53 +80,23 @@
                 android:paddingEnd="@dimen/commom_padding">
 
                 <TextView
+                    android:id="@+id/txtMean"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:layout_marginStart="@dimen/dimen_20dp"
-                    android:layout_toEndOf="@+id/img0"
-                    android:fontFamily="@font/quicksand"
-                    android:gravity="left|center_vertical|center_horizontal|center|start"
-                    android:text="@string/str_thanh_tay"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/commom_font_size_big" />
-
-                <ImageView
-                    android:id="@+id/img0"
-                    android:layout_width="@dimen/img_size"
-                    android:layout_height="@dimen/img_size"
-                    android:padding="12dp"
-                    android:layout_alignParentStart="true"
-                    android:checked="true"
-                    android:foregroundGravity="center_vertical"
-                    android:gravity="fill_vertical"
-                    android:src="@drawable/ic_menu_mean" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/share"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginTop="10dp"
-                android:gravity="center_vertical"
-                android:paddingStart="@dimen/commom_padding"
-                android:paddingEnd="@dimen/commom_padding">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_marginStart="@dimen/dimen_20dp"
-                    android:layout_toEndOf="@+id/img6"
+                    android:layout_toEndOf="@+id/img2"
                     android:fontFamily="@font/quicksand"
                     android:gravity="center_vertical"
-                    android:text="@string/str_chia_se"
+                    android:text="@string/str_y_nghia_nhung_la_bai"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
                     android:textColor="@color/white"
                     android:textSize="@dimen/commom_font_size_big" />
 
                 <ImageView
-                    android:id="@+id/img6"
+                    android:id="@+id/img2"
                     android:layout_width="@dimen/img_size"
                     android:layout_height="@dimen/img_size"
                     android:padding="12dp"
@@ -169,11 +104,11 @@
                     android:checked="true"
                     android:foregroundGravity="center_vertical"
                     android:gravity="fill_vertical"
-                    android:src="@drawable/ic_share_new_1" />
+                    android:src="@drawable/card" />
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/rate_app"
+                android:id="@+id/cunghoangdao"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -183,19 +118,23 @@
                 android:paddingEnd="@dimen/commom_padding">
 
                 <TextView
+                    android:id="@+id/txtCungHoangDao"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:layout_marginStart="@dimen/dimen_20dp"
-                    android:layout_toEndOf="@+id/img4"
+                    android:layout_toEndOf="@+id/img3"
                     android:fontFamily="@font/quicksand"
                     android:gravity="center_vertical"
-                    android:text="@string/str_danh_gia"
+                    android:text="@string/str_tarot_va_cung_hoang_dao"
                     android:textColor="@color/white"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
                     android:textSize="@dimen/commom_font_size_big" />
 
                 <ImageView
-                    android:id="@+id/img4"
+                    android:id="@+id/img3"
                     android:layout_width="@dimen/img_size"
                     android:layout_height="@dimen/img_size"
                     android:padding="12dp"
@@ -203,11 +142,11 @@
                     android:checked="true"
                     android:foregroundGravity="center_vertical"
                     android:gravity="fill_vertical"
-                    android:src="@drawable/ic_menu_danh_gia" />
+                    android:src="@drawable/cung" />
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/VOC"
+                android:id="@+id/dathanhtayandcunghoangdao"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -217,7 +156,7 @@
                 android:paddingEnd="@dimen/commom_padding">
 
                 <TextView
-                    android:id="@+id/txtVOC"
+                    android:id="@+id/dathanhtay"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
@@ -229,7 +168,7 @@
                     android:ellipsize="marquee"
                     android:marqueeRepeatLimit="marquee_forever"
                     android:scrollHorizontally="true"
-                    android:text="@string/str_gop_y"
+                    android:text="@string/str_cung_hoang_dao_va_da_thanh_tay"
                     android:textColor="@color/white"
                     android:textSize="@dimen/commom_font_size_big" />
 
@@ -242,11 +181,11 @@
                     android:checked="true"
                     android:foregroundGravity="center_vertical"
                     android:gravity="fill_vertical"
-                    android:src="@drawable/ic_menu_gop_y" />
+                    android:src="@drawable/stone" />
             </RelativeLayout>
 
-
             <RelativeLayout
+                android:id="@+id/allStone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -256,19 +195,24 @@
                 android:paddingEnd="@dimen/commom_padding">
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:id="@+id/txtallStone"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:layout_marginStart="@dimen/dimen_20dp"
-                    android:layout_toEndOf="@+id/img7"
+                    android:layout_toEndOf="@+id/img56"
                     android:fontFamily="@font/quicksand"
                     android:gravity="center_vertical"
-                    android:text="@string/str_ung_dung_khac"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:text="@string/str_all_atonne"
                     android:textColor="@color/white"
                     android:textSize="@dimen/commom_font_size_big" />
 
                 <ImageView
-                    android:id="@+id/img7"
+                    android:id="@+id/img56"
                     android:layout_width="@dimen/img_size"
                     android:layout_height="@dimen/img_size"
                     android:padding="12dp"
@@ -276,73 +220,48 @@
                     android:checked="true"
                     android:foregroundGravity="center_vertical"
                     android:gravity="fill_vertical"
-                    android:src="@drawable/ic_menu_ung_dung_khac" />
+                    android:src="@drawable/dathanhtay" />
             </RelativeLayout>
 
-            <LinearLayout
+
+            <RelativeLayout
+                android:id="@+id/rlCharka"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/linear_bg"
-                android:paddingTop="@dimen/dimen_10dp"
-                android:orientation="horizontal"
-                android:layout_marginLeft="@dimen/commom_padding"
-                android:layout_marginRight="@dimen/commom_padding"
-                android:weightSum="2">
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/commom_padding"
+                android:paddingEnd="@dimen/commom_padding">
 
-                <LinearLayout
-                    android:id="@+id/btnBrickGame"
+                <TextView
+                    android:id="@+id/txtChakar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center"
-                    android:clickable="true"
-                    android:gravity="center"
-                    android:orientation="vertical">
-                    <Button
-                        android:id="@+id/btnXepHinh"
-                        android:clickable="false"
-                        android:layout_width="@dimen/dimen_70dp"
-                        android:layout_height="@dimen/dimen_70dp"
-                        android:background="@drawable/icon_brick_foreground" />
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/dimen_20dp"
+                    android:layout_toEndOf="@+id/img6"
+                    android:fontFamily="@font/quicksand"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:text="@string/str_itachi"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size_big" />
 
-                    <TextView
-                        android:text="Brick Game"
-                        android:clickable="false"
-                        android:layout_marginTop="@dimen/dimen_5dp"
-                        android:fontFamily="@font/quicksand"
-                        android:textSize="@dimen/navigation_text_size"
-                        android:textColor="@color/white"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/babySleep"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:clickable="true"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-                    <Button
-                        android:id="@+id/btnSleep"
-                        android:clickable="false"
-                        android:layout_width="@dimen/dimen_70dp"
-                        android:layout_height="@dimen/dimen_70dp"
-                        android:background="@drawable/ic_launcher"/>
-
-                    <TextView
-                        android:text="Sleep Sound"
-                        android:clickable="false"
-                        android:textAlignment="center"
-                        android:layout_marginTop="@dimen/dimen_5dp"
-                        android:fontFamily="@font/quicksand"
-                        android:textSize="@dimen/navigation_text_size"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
-            </LinearLayout>
+                <ImageView
+                    android:id="@+id/img6"
+                    android:layout_width="@dimen/img_size"
+                    android:layout_height="@dimen/img_size"
+                    android:padding="12dp"
+                    android:layout_alignParentStart="true"
+                    android:checked="true"
+                    android:foregroundGravity="center_vertical"
+                    android:gravity="fill_vertical"
+                    android:src="@drawable/itachi" />
+            </RelativeLayout>
 
 
         </LinearLayout>

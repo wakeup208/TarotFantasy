@@ -49,6 +49,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     private LinearLayout btn_encyclopedia;
     private LinearLayout btn_profile_animation;
     private LinearLayout btn_thongtin;
+    private LinearLayout btn_kienthuc;
 
 
     public static final String NOTIFICATION_CHANNEL_ID = "10001";
@@ -92,6 +93,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         btn_thongtin = (LinearLayout) findViewById(R.id.thongtin);
         btn_thongtin.setOnClickListener(this);
         btn_thongtin.setOnTouchListener(this);
+
+        btn_kienthuc = (LinearLayout) findViewById(R.id.kienthuc);
+        btn_kienthuc.setOnClickListener(this);
+        btn_kienthuc.setOnTouchListener(this);
     }
 
     @Override
@@ -270,6 +275,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                         InformationActivity.class);
                 this.startActivity(intentThongTinActivity);
                 break;
+
+            case R.id.kienthuc:
+                Intent intentKienThuc = new Intent(this,
+                        KienThuc.class);
+                this.startActivity(intentKienThuc);
+                break;
         }
     }
 
@@ -317,6 +328,15 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                     break;
                 } else if (MotionEvent.ACTION_UP == event.getAction()) {
                     btn_thongtin.clearAnimation();
+                    break;
+                }
+
+            case R.id.kienthuc:
+                if (MotionEvent.ACTION_DOWN == event.getAction()) {
+                    btn_kienthuc.startAnimation(ConfigData.animation_zoom_in);
+                    break;
+                } else if (MotionEvent.ACTION_UP == event.getAction()) {
+                    btn_kienthuc.clearAnimation();
                     break;
                 }
         }

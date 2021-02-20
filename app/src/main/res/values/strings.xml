@@ -58,14 +58,22 @@
 
     <string name="OK">OK</string>
 
-    <string name="str_gioi_thieu_ve_tarot">Thanh tẩy bài</string>
+    <string name="str_gioi_thieu_ve_tarot">Giới thiệu về Tarot</string>
+    <string name="str_thanh_tay">Thanh tẩy bài</string>
+
     <string name="str_danh_gia">Đánh giá</string>
     <string name="str_chia_se">Chia sẻ</string>
     <string name="str_ung_dung_khac">Ứng dụng khác:</string>
     <string name="str_tarot_va_cung_hoang_dao">Tarot và Cung hoàng đạo</string>
     <string name="str_y_nghia_nhung_la_bai">Ý nghĩa những lá bài</string>
-    <string name="str_gop_y">Cung hoàng đạo và đá thanh tẩy</string>
+    <string name="str_gop_y">Góp ý</string>
     <string name="str_thong_tin">Thông tin</string>
+    <string name="str_kien_thuc">Kiến thức</string>
+    <string name="str_cung_hoang_dao_va_da_thanh_tay">Cung hoàng đạo và đá thanh tẩy</string>
+    <string name="str_itachi">Luân xa (Chakar)</string>
+    <string name="str_all_atonne">Các loại đá thanh tẩy</string>
+
+
     <string name="str_cai_dat">Cài đặt</string>
 
     <string name="str_trang_chu">Trang chủ</string>
@@ -75,6 +83,12 @@
         Hãy cùng nhau tìm hiểu nhé !</string>
     <string name="str_click">Hãy nhấp vào đây !!!</string>
     <string name="da_thanh_tay">Các loại đá thanh tẩy</string>
+    <string name="best">Love you so much !!!</string>
+    <string name="cute">You are so cute !!!</string>
+    <string name="proud">Proud of you !!!</string>
+
+
+
 
     <string name="bo_qua">Bỏ qua</string>
     <string name="home">Home</string>

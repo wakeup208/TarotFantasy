@@ -117,7 +117,7 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
             select = 0;
             if (mode == 1) {
                 this.finish();
-                startActivity(new Intent(this, InformationActivity.class));
+                startActivity(new Intent(this, KienThuc.class));
             } else {
                 this.finish();
             }
@@ -188,7 +188,7 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
                 select = 0;
                 this.finish();
                 this.startActivity(new Intent(this.getApplicationContext(),
-                        InformationActivity.class));
+                        KienThuc.class));
             }
         }
     }

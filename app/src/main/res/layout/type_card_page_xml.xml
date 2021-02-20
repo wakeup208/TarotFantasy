@@ -3,9 +3,9 @@
     xmlns:aapt="http://schemas.android.com/aapt"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:max="http://schemas.applovin.com/android/1.0"
-    app:startDestination="@+id/gioithieuFragment">
+    app:startDestination="@+id/TypeCardPageMeanFragment">
     <fragment
-        android:id="@+id/gioithieuFragment"
+        android:id="@+id/TypeCardPageMeanFragment"
         android:name="com.wakeup.tarot.fragment.TypeCardPageMeanFragment"
         android:label="TypeCardPageMeanFragment" />
 </navigation>

@@ -20,11 +20,10 @@ import com.wakeup.tarot.R;
 import com.wakeup.tarot.util.Constant;
 import com.wakeup.tarot.util.Utils;
 import com.wakeup.tarot.view.InformationActivity;
-import com.wakeup.tarot.view.MainActivity;
 
 import org.jetbrains.annotations.NotNull;
 
-public class GioiThieuFragment extends Fragment {
+public class ThanhTayFragment extends Fragment {
 
     ConstraintLayout clContent;
     ConstraintLayout clParent;
@@ -41,7 +40,7 @@ public class GioiThieuFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         if (tvDescription != null) {
-            tvDescription.setText(Utils.ReadFromfile(Constant.PATH_FULL_GIOI_THIEU_VN_ASSETS, getContext()));
+            tvDescription.setText(Utils.ReadFromfile(Constant.PATH_FULL_DA_THANH_TAY, getContext()));
         }
 
         if (ivBackTb != null) {
@@ -64,12 +63,12 @@ public class GioiThieuFragment extends Fragment {
         clParent = (ConstraintLayout) view.findViewById(R.id.clParent);
         tvDescription = (TextView) view.findViewById(R.id.tvDescription);
         ivThumb = (ImageView) view.findViewById(R.id.ivThumb);
-        ivThumb.setBackground(getActivity().getResources().getDrawable(R.drawable.ic_thumb_about));
+        ivThumb.setBackground(getActivity().getResources().getDrawable(R.drawable.thanh_tay_bg));
         tvTitleTb = (TextView) view.findViewById(R.id.tvTitleTb);
-        tvTitleTb.setText(R.string.str_gioi_thieu_ve_tarot);
+        tvTitleTb.setText(R.string.str_thanh_tay);
         ivBackTb = (ImageView) view.findViewById(R.id.ivBackTb);
         btnAbout = (Button) view.findViewById(R.id.btnAbout);
-        btnAbout.setText(getText(R.string.cute));
+        btnAbout.setText(getText(R.string.best));
         return view;
     }
 

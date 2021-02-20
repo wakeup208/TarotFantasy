@@ -43,4 +43,6 @@ public class Constant {
     public static final String PATH_SOLADO = "data/tt_Sodalite.txt";
     public static final String PATH_HOWLITE = "data/tt_WhiteHowlite.txt";
 
+    public static final String PATH_FULL_ITACHI = "data/chakar.txt";
+
 }

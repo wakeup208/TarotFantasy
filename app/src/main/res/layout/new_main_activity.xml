@@ -12,199 +12,235 @@
         android:background="@drawable/mainback"
         android:scaleType="fitCenter" />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
+        android:layout_marginTop="@dimen/dimen_50dp"
         android:gravity="center_vertical"
-        android:orientation="vertical">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="@dimen/padding_20dp"
-            android:src="@drawable/tarot_1_70"/>
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
 
         <LinearLayout
-            android:id="@+id/chonbai"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/card_heigh"
-            android:background="@drawable/linear_bg"
-            android:layout_marginLeft="4dp"
-            android:orientation="horizontal">
-            <androidx.cardview.widget.CardView
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp">
-
-                <ImageView
-                    android:layout_width="@dimen/card_with"
-                    android:layout_height="wrap_content"
-                    android:scaleType="centerCrop"
-                    android:background="@drawable/splast1"/>
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:fontFamily="@font/quicksand"
-                android:textAlignment="center"
-                android:text="@string/draw_a_card"
-                android:textColor="@color/white"
-                android:textSize="@dimen/commom_font_size"
-                android:textStyle="normal"
-                android:typeface="serif" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/trabai"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/card_heigh"
-            android:background="@drawable/linear_bg"
-            android:orientation="horizontal"
-            android:layout_marginLeft="4dp"
-            android:layout_marginTop="@dimen/margin_top_thong_tin">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp">
-
-                <ImageView
-                    android:layout_width="@dimen/card_with"
-                    android:layout_height="wrap_content"
-                    android:scaleType="centerCrop"
-                    android:background="@drawable/tra_bai"/>
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:gravity="center"
-                android:text="@string/cardspread"
-                android:textColor="@color/white"
-                android:textSize="@dimen/commom_font_size"
-                android:fontFamily="@font/quicksand"
-                android:textStyle="normal"
-                android:typeface="serif" />
-        </LinearLayout>
+                android:layout_marginBottom="@dimen/padding_20dp"
+                android:src="@drawable/tarot_1_70" />
 
-        <LinearLayout
-            android:id="@+id/sotay"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/card_heigh"
-            android:orientation="horizontal"
-            android:layout_marginLeft="4dp"
-            android:background="@drawable/linear_bg"
-            android:layout_marginTop="@dimen/margin_top_thong_tin">
+            <LinearLayout
+                android:id="@+id/chonbai"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/card_heigh"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/linear_bg"
+                android:orientation="horizontal">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:layout_width="@dimen/card_with"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/splast1"
+                        android:scaleType="centerCrop" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/quicksand"
+                    android:gravity="center"
+                    android:text="@string/draw_a_card"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size"
+                    android:textStyle="normal"
+                    android:typeface="serif" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/trabai"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/card_heigh"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="@dimen/margin_top_thong_tin"
+                android:background="@drawable/linear_bg"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:layout_width="@dimen/card_with"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/tra_bai"
+                        android:scaleType="centerCrop" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/quicksand"
+                    android:gravity="center"
+                    android:text="@string/cardspread"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size"
+                    android:textStyle="normal"
+                    android:typeface="serif" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/sotay"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/card_heigh"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="@dimen/margin_top_thong_tin"
+                android:background="@drawable/linear_bg"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:layout_width="@dimen/card_with"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/so_tay"
+                        android:scaleType="centerCrop" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/quicksand"
+                    android:gravity="center"
+                    android:text="@string/encyclopedia"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size"
+                    android:textStyle="normal"
+                    android:typeface="serif" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/kienthuc"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/card_heigh"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="@dimen/margin_top_thong_tin"
+                android:background="@drawable/linear_bg"
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="@dimen/card_with"
                     android:layout_height="wrap_content"
-                    android:scaleType="centerCrop"
-                    android:background="@drawable/so_tay"/>
-            </androidx.cardview.widget.CardView>
+                    android:background="@drawable/kien_thuc"
+                    android:scaleType="centerCrop" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:fontFamily="@font/quicksand"
-                android:text="@string/encyclopedia"
-                android:textColor="@color/white"
-                android:textSize="@dimen/commom_font_size"
-                android:textStyle="normal"
-                android:typeface="serif" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/thongtin"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/card_heigh"
-            android:layout_marginLeft="4dp"
-            android:orientation="horizontal"
-            android:background="@drawable/linear_bg"
-            android:layout_marginTop="@dimen/margin_top_thong_tin">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp">
-
-                <ImageView
-                    android:layout_width="@dimen/card_with"
+                <TextView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:scaleType="centerCrop"
-                    android:background="@drawable/setting_thongtin"/>
-            </androidx.cardview.widget.CardView>
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/quicksand"
+                    android:gravity="center"
+                    android:text="@string/str_kien_thuc"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size"
+                    android:textStyle="normal"
+                    android:typeface="serif" />
+            </LinearLayout>
 
-            <TextView
+
+            <LinearLayout
+                android:id="@+id/thongtin"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="@string/str_thong_tin"
-                android:fontFamily="@font/quicksand"
-                android:textColor="@color/white"
-                android:textSize="@dimen/commom_font_size"
-                android:textStyle="normal"
-                android:typeface="serif" />
-        </LinearLayout>
+                android:layout_height="@dimen/card_heigh"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="@dimen/margin_top_thong_tin"
+                android:background="@drawable/linear_bg"
+                android:orientation="horizontal">
 
-        <LinearLayout
-            android:id="@+id/hotro"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/card_heigh"
-            android:layout_marginLeft="4dp"
-            android:orientation="horizontal"
-            android:background="@drawable/linear_bg"
-            android:layout_marginTop="@dimen/margin_top_thong_tin">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp">
-
-                <ImageView
-                    android:layout_width="@dimen/card_with"
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:scaleType="centerCrop"
-                    android:background="@drawable/setting_1"/>
-            </androidx.cardview.widget.CardView>
+                    app:cardCornerRadius="10dp">
 
-            <TextView
+                    <ImageView
+                        android:layout_width="@dimen/card_with"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/setting_thongtin"
+                        android:scaleType="centerCrop" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/quicksand"
+                    android:gravity="center"
+                    android:text="@string/str_thong_tin"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size"
+                    android:textStyle="normal"
+                    android:typeface="serif" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/hotro"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="@string/galaxy_profile"
-                android:fontFamily="@font/quicksand"
-                android:textColor="@color/white"
-                android:textSize="@dimen/commom_font_size"
-                android:textStyle="normal"
-                android:typeface="serif" />
+                android:layout_height="@dimen/card_heigh"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="@dimen/margin_top_thong_tin"
+                android:background="@drawable/linear_bg"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:layout_width="@dimen/card_with"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/setting_1"
+                        android:scaleType="centerCrop" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/quicksand"
+                    android:gravity="center"
+                    android:text="@string/galaxy_profile"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size"
+                    android:textStyle="normal"
+                    android:typeface="serif" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 
     <RelativeLayout
         android:id="@+id/ad_container"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_alignParentTop="true"
         android:visibility="visible"
-        android:layout_alignParentBottom="true"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="3dp"
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.gms.ads.AdView

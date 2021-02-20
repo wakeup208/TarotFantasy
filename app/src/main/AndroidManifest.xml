@@ -15,18 +15,20 @@
         android:xlargeScreens="true" />
 
     <application
+        android:name=".view.WithApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_app_icon"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:name=".view.WithApp"
         android:roundIcon="@mipmap/ic_app_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.MainActivity"
+        <activity
+            android:name=".view.MainActivity"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
-        <activity android:name=".view.SplashScreen"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".view.SplashScreen"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>
@@ -35,49 +37,69 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.ChooseCardActivity"
+        <activity
+            android:name=".view.ChooseCardActivity"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
-        <activity android:name=".view.BrowseCardsActivity"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".view.BrowseCardsActivity"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
-        <activity android:name=".view.BrowseGroupCardsActivity"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".view.BrowseGroupCardsActivity"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
-        <activity android:name=".view.ItemGroupDetailActivity"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".view.ItemGroupDetailActivity"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
-        <activity android:name=".view.ProfileActivity"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".view.ProfileActivity"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
-        <activity android:name=".view.TarotSpreadActivity"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".view.TarotSpreadActivity"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
-        <activity android:name=".view.TarotSpreadGuideActivity"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".view.TarotSpreadGuideActivity"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
-        <activity android:name=".view.SpreadCardsActivity"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".view.SpreadCardsActivity"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
-        <activity android:name=".view.CardDetailViewPagerForBrowserCardActivity"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".view.CardDetailViewPagerForBrowserCardActivity"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
-        <activity android:name=".view.CardDetailViewPagerForSpreadCardActivity"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".view.CardDetailViewPagerForSpreadCardActivity"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
-        <activity android:name=".view.SingleCardActivity"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".view.SingleCardActivity"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
-        <activity android:name=".view.InformationActivity"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".view.InformationActivity"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
-        <activity android:name=".view.DaThanhTayInfor"/>
-        <activity android:name=".view.AllStoneInfo"/>
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".view.DaThanhTayInfor"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.AllStoneInfo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.KienThuc"
+            android:screenOrientation="portrait" />
+
         <receiver android:name=".receiver.MyNotificationPublisher"></receiver>
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-7102019467698325~3887501862"/>
+            android:value="ca-app-pub-7102019467698325~3887501862" />
     </application>
 
 </manifest>

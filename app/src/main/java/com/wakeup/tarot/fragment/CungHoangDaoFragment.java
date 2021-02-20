@@ -18,6 +18,7 @@ import com.wakeup.tarot.R;
 import com.wakeup.tarot.view.BrowseCardsActivity;
 import com.wakeup.tarot.view.BrowseGroupCardsActivity;
 import com.wakeup.tarot.view.InformationActivity;
+import com.wakeup.tarot.view.KienThuc;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -77,7 +78,7 @@ public class CungHoangDaoFragment extends Fragment {
     }
 
     public void onBackClicked() {
-        if (getActivity() instanceof InformationActivity) {
+        if (getActivity() instanceof KienThuc) {
             getActivity().onBackPressed();
         }
     }
