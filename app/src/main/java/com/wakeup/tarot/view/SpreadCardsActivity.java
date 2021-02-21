@@ -73,7 +73,7 @@ public class SpreadCardsActivity extends BaseActivity implements
 
 		// Reload screen size and background
 		//ConfigData.reloadScreen(this);
-
+		ConfigData.loadSettingData(this);
 		// Look up the AdView as a resource and load a request.
 		
 		/**
@@ -196,16 +196,19 @@ public class SpreadCardsActivity extends BaseActivity implements
 		});
 	}
 
-
 	@Override
 	protected void onStart() {
 		super.onStart();
 		controller = new LayoutAnimationController(ConfigData.animation_spread_card);
 		spread_cards_container.setLayoutAnimation(controller);
-		
 	}
-	
-	
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		ConfigData.saveSettingData();
+	}
+
 	// Spread Card via spreadId & random array of card
 	private void spreadCard() {
 		int w = 0;

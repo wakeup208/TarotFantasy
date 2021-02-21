@@ -66,6 +66,7 @@ public class CardDetailViewPagerForSpreadCardActivity extends FragmentActivity
 
         // Reload screen size and background
         //ConfigData.reloadScreen(this);
+        ConfigData.loadSettingData(this);
         ImageCache.ImageCacheParams cacheParams = new ImageCache.ImageCacheParams(this,
                 VIEW_PAGER_IMAGE_CACHE_DIR);
         cacheParams.setMemCacheSizePercent(0.25f); // Set memory cache to
@@ -150,6 +151,7 @@ public class CardDetailViewPagerForSpreadCardActivity extends FragmentActivity
     @Override
     protected void onPause() {
         super.onPause();
+        ConfigData.saveSettingData();
         mImageLoader.setExitTasksEarly(true);
         mImageLoader.flushCache();
     }
