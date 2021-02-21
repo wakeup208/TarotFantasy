@@ -55,8 +55,6 @@ public class SliderAdapter extends
 
     @Override
     public void onBindViewHolder(SliderAdapterVH viewHolder, final int position) {
-        Log.d("abcd","2222");
-
         SliderItem sliderItem = mSliderItems.get(position);
         viewHolder.textViewDescription.setText(Config.cunghoangdao[position]);
         viewHolder.textViewDetails.setText(Config.CunghoangdaoAndDathanhtay.get(position));
@@ -80,7 +78,7 @@ public class SliderAdapter extends
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "This is item in position " + position, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, "This is item in position " + position, Toast.LENGTH_SHORT).show();
             }
         });
     }

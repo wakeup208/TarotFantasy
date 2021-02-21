@@ -139,6 +139,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:contentDescription="TODO"
+            android:visibility="gone"
             android:layout_marginTop="@dimen/dimen_10dp"
             android:src="@drawable/black_white_gradient" />
 
@@ -151,6 +152,7 @@
             android:fontFamily="@font/quicksand"
             android:gravity="center_vertical"
             android:text="@string/card_back"
+            android:visibility="gone"
             android:textColor="@color/white"
             android:textSize="@dimen/commom_font_size"/>
 
@@ -159,11 +161,13 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:paddingStart="@dimen/commom_padding"
+            android:visibility="gone"
             android:paddingEnd="@dimen/commom_padding"
             android:orientation="horizontal"/>
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="1dp"
+            android:visibility="gone"
             android:contentDescription="TODO"
             android:layout_marginTop="@dimen/dimen_10dp"
             android:src="@drawable/black_white_gradient" />
@@ -174,6 +178,7 @@
             android:layout_marginTop="@dimen/dimen_10dp"
             android:paddingStart="@dimen/commom_padding"
             android:paddingEnd="@dimen/commom_padding"
+            android:visibility="gone"
             android:fontFamily="@font/quicksand"
             android:gravity="center_vertical"
             android:text="@string/back_ground"
@@ -184,6 +189,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginTop="@dimen/dimen_5dp"
+            android:visibility="gone"
             android:paddingStart="@dimen/commom_padding"
             android:paddingEnd="@dimen/commom_padding"
             android:orientation="horizontal"/>

@@ -660,7 +660,6 @@ public class SpreadCardsActivity extends BaseActivity implements
 
 		if (v.getId() < theNummberOfCard) {
 			// Show Activity guide of card
-			Log.d("abcd" , "11112222");
 			id_Card = v.getId();
 			if(interstitialAd1.isLoaded()) {
 				interstitialAd1.show();

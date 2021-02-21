@@ -22,34 +22,43 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <Button
+        <com.manojbhadane.QButton
             android:id="@+id/btn_shuffle_cards"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/btn_press"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:layout_width="@dimen/dimen_300dp"
+            android:layout_height="@dimen/dimen_50dp"
+            android:layout_marginBottom="@dimen/dimen_10dp"
+            android:textSize="@dimen/thanhtay_text_size"
             android:text="@string/btn_shuffle_cards"
-            android:textColor="@color/white"
-            android:fontFamily="@font/quicksand"
-            android:textSize="@dimen/title_font_size"
-            android:textStyle="normal"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center"
+            android:textAlignment="center"
             android:textAllCaps="false"
-            android:typeface="serif" />
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/quicksand"
+            app:qb_backgroundColor="@color/navigation_color"
+            app:qb_radius="100"
+            app:qb_strokeColor="@color/white"
+            app:qb_strokeWidth="5" />
 
-        <Button
+        <com.manojbhadane.QButton
             android:id="@+id/btn_go_directly_to_spread"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/btn_press"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/quicksand"
-            android:text="@string/btn_go_directly_to_spread"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:layout_width="@dimen/dimen_300dp"
+            android:layout_height="@dimen/dimen_50dp"
+            android:layout_marginBottom="@dimen/dimen_10dp"
+            android:textSize="@dimen/thanhtay_text_size"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center"
+            android:textAlignment="center"
             android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="@dimen/title_font_size"
-            android:textStyle="normal"
-            android:typeface="serif" />
-
+            android:text="@string/btn_go_directly_to_spread"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/quicksand"
+            app:qb_backgroundColor="@color/navigation_color"
+            app:qb_radius="100"
+            app:qb_strokeColor="@color/white"
+            app:qb_strokeWidth="5" />
     </LinearLayout>
 
     <ScrollView

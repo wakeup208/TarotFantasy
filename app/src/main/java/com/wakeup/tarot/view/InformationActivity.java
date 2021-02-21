@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.PersistableBundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
@@ -30,11 +31,12 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.wakeup.tarot.BuildConfig;
 import com.wakeup.tarot.R;
+import com.wakeup.tarot.data.ConfigData;
 import com.wakeup.tarot.data.MapData;
 
 import java.util.ArrayList;
 
-public class InformationActivity extends BaseActivity {
+public class InformationActivity extends BaseActivity implements View.OnTouchListener {
 
     RelativeLayout rlGioiThieu;
     RelativeLayout rlThanhTay;
@@ -53,6 +55,7 @@ public class InformationActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.thong_tin);
 
+        ConfigData.loadSettingData(this);
         mAdView = (AdView) findViewById(R.id.adView);
         getInstance.loadAd(mAdView);
 
@@ -75,6 +78,7 @@ public class InformationActivity extends BaseActivity {
                 addFragmentGioiThieu();
             }
         });
+        rlGioiThieu.setOnTouchListener(this);
 
         rlThanhTay = (RelativeLayout) findViewById(R.id.thanhtaybaiRl);
         rlThanhTay.setOnClickListener(new View.OnClickListener() {
@@ -83,6 +87,7 @@ public class InformationActivity extends BaseActivity {
                 addFragmentThanhTay();
             }
         });
+        rlThanhTay.setOnTouchListener(this);
 
 
         rtlRate = (RelativeLayout) findViewById(R.id.rate_app);
@@ -92,6 +97,7 @@ public class InformationActivity extends BaseActivity {
                 rate_this_app();
             }
         });
+        rtlRate.setOnTouchListener(this);
 
         rtlVoc = (RelativeLayout) findViewById(R.id.VOC);
         rtlVoc.setOnClickListener(new View.OnClickListener() {
@@ -100,6 +106,8 @@ public class InformationActivity extends BaseActivity {
                 feedback();
             }
         });
+        rtlVoc.setOnTouchListener(this);
+
 
         rtlShare = (RelativeLayout) findViewById(R.id.share);
         rtlShare.setOnClickListener(new View.OnClickListener() {
@@ -108,6 +116,8 @@ public class InformationActivity extends BaseActivity {
                 onShareView();
             }
         });
+        rtlShare.setOnTouchListener(this);
+
 
         lnBrick = (LinearLayout) findViewById(R.id.btnBrickGame);
         lnBrick.setOnClickListener(new View.OnClickListener() {
@@ -116,6 +126,8 @@ public class InformationActivity extends BaseActivity {
                 getBrick();
             }
         });
+        lnBrick.setOnTouchListener(this);
+
         lnBaby = (LinearLayout) findViewById(R.id.babySleep);
         lnBaby.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,7 +135,14 @@ public class InformationActivity extends BaseActivity {
                 getSleep();
             }
         });
+        lnBaby.setOnTouchListener(this);
         //selectBrowserMode(mode);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        ConfigData.saveSettingData();
     }
 
     private void addFragmentWithNavigationId(int i, Bundle bundle) {
@@ -228,32 +247,79 @@ public class InformationActivity extends BaseActivity {
         startActivity(Intent.createChooser(intent, "Share with:"));
     }
 
-    public void selectBrowserMode(int mode) {
-
-        switch (mode) {
-            case 0:
-                addFragmentMean();
-                break;
-
-            case 1:
-
-                break;
-
-            case 2:
-
-                break;
-
-            case 3:
-
-                break;
-
-        }
-    }
-
-
     @Override
     public void onBackPressed() {
         super.onBackPressed();
         mainFragment.setVisibility(View.GONE);
+    }
+
+    @Override
+    public boolean onTouch(View view, MotionEvent event) {
+        switch (view.getId()) {
+            case R.id.gioithieu:
+                if (MotionEvent.ACTION_DOWN == event.getAction()) {
+                    rlGioiThieu.startAnimation(ConfigData.animation_zoom_in);
+                    break;
+                } else if (MotionEvent.ACTION_UP == event.getAction()) {
+                    rlGioiThieu.clearAnimation();
+                    break;
+                }
+            case R.id.thanhtaybaiRl:
+                if (MotionEvent.ACTION_DOWN == event.getAction()) {
+                    rlThanhTay.startAnimation(ConfigData.animation_zoom_in);
+                    break;
+                } else if (MotionEvent.ACTION_UP == event.getAction()) {
+                    rlThanhTay.clearAnimation();
+                    break;
+                }
+            case R.id.rate_app:
+
+                if (MotionEvent.ACTION_DOWN == event.getAction()) {
+                    rtlRate.startAnimation(ConfigData.animation_zoom_in);
+                    break;
+                } else if (MotionEvent.ACTION_UP == event.getAction()) {
+                    rtlRate.clearAnimation();
+                    break;
+                }
+
+            case R.id.VOC:
+
+                if (MotionEvent.ACTION_DOWN == event.getAction()) {
+                    rtlVoc.startAnimation(ConfigData.animation_zoom_in);
+                    break;
+                } else if (MotionEvent.ACTION_UP == event.getAction()) {
+                    rtlVoc.clearAnimation();
+                    break;
+                }
+
+            case R.id.share:
+
+                if (MotionEvent.ACTION_DOWN == event.getAction()) {
+                    rtlShare.startAnimation(ConfigData.animation_zoom_in);
+                    break;
+                } else if (MotionEvent.ACTION_UP == event.getAction()) {
+                    rtlShare.clearAnimation();
+                    break;
+                }
+
+            case R.id.btnBrickGame:
+                if (MotionEvent.ACTION_DOWN == event.getAction()) {
+                    lnBrick.startAnimation(ConfigData.animation_zoom_in);
+                    break;
+                } else if (MotionEvent.ACTION_UP == event.getAction()) {
+                    lnBrick.clearAnimation();
+                    break;
+                }
+            case R.id.babySleep:
+                if (MotionEvent.ACTION_DOWN == event.getAction()) {
+                    lnBaby.startAnimation(ConfigData.animation_zoom_in);
+                    break;
+                } else if (MotionEvent.ACTION_UP == event.getAction()) {
+                    lnBaby.clearAnimation();
+                    break;
+                }
+
+        }
+        return false;
     }
 }

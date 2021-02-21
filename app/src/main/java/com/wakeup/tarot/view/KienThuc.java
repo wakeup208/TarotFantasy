@@ -6,6 +6,7 @@ import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -23,10 +24,12 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.wakeup.tarot.BuildConfig;
 import com.wakeup.tarot.R;
+import com.wakeup.tarot.data.ConfigData;
+import com.wakeup.tarot.util.Config;
 
 import java.util.ArrayList;
 
-public class KienThuc extends BaseActivity{
+public class KienThuc extends BaseActivity implements View.OnTouchListener {
 
     private RelativeLayout rlMean;
     private RelativeLayout cunghoangdao;
@@ -45,6 +48,8 @@ public class KienThuc extends BaseActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.kien_thuc);
 
+        ConfigData.loadSettingData(this);
+
         mAdView = (AdView) findViewById(R.id.adView);
         getInstance.loadAd(mAdView);
 
@@ -52,7 +57,6 @@ public class KienThuc extends BaseActivity{
             @Override
             public void onAdClosed() {
                 super.onAdClosed();
-                Log.d("abcd", "mode = " + mode);
                 switch (mode) {
                     case 1:
                         addFragmentMean();
@@ -100,6 +104,7 @@ public class KienThuc extends BaseActivity{
                 }
             }
         });
+        rlMean.setOnTouchListener(this);
 
         cunghoangdao = (RelativeLayout) findViewById(R.id.cunghoangdao);
         cunghoangdao.setOnClickListener(new View.OnClickListener() {
@@ -114,6 +119,7 @@ public class KienThuc extends BaseActivity{
                 }
             }
         });
+        cunghoangdao.setOnTouchListener(this);
 
         rlThanhTay = (RelativeLayout) findViewById(R.id.dathanhtayandcunghoangdao);
         rlThanhTay.setOnClickListener(new View.OnClickListener() {
@@ -128,6 +134,7 @@ public class KienThuc extends BaseActivity{
                 }
             }
         });
+        rlThanhTay.setOnTouchListener(this);
 
         rlStone = (RelativeLayout) findViewById(R.id.allStone);
         rlStone.setOnClickListener(new View.OnClickListener() {
@@ -142,6 +149,7 @@ public class KienThuc extends BaseActivity{
                 }
             }
         });
+        rlStone.setOnTouchListener(this);
 
         rlChakra = (RelativeLayout) findViewById(R.id.rlCharka);
         rlChakra.setOnClickListener(new View.OnClickListener() {
@@ -156,6 +164,7 @@ public class KienThuc extends BaseActivity{
                 }
             }
         });
+        rlChakra.setOnTouchListener(this);
 
         dathanhtay1 = (TextView) findViewById(R.id.dathanhtay);
         dathanhtay1.setSelected(true);
@@ -178,6 +187,13 @@ public class KienThuc extends BaseActivity{
 //        AdRequest adInterstitial = new AdRequest.Builder().build();
 //        //adRequestBuilder1 = new AdRequest.Builder();
 //        interstitialAd.loadAd(adInterstitial);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        ConfigData.saveSettingData();
+
     }
 
     private void addFragmentWithNavigationId(int i, Bundle bundle) {
@@ -220,5 +236,60 @@ public class KienThuc extends BaseActivity{
     public void onBackPressed() {
         super.onBackPressed();
         mainFragment.setVisibility(View.GONE);
+    }
+
+    @Override
+    public boolean onTouch(View view, MotionEvent event) {
+        switch (view.getId()) {
+            case R.id.rtl_mean:
+
+                if (MotionEvent.ACTION_DOWN == event.getAction()) {
+                    rlMean.startAnimation(ConfigData.animation_zoom_in);
+                    break;
+                } else if (MotionEvent.ACTION_UP == event.getAction()) {
+                    rlMean.clearAnimation();
+                    break;
+                }
+            case R.id.cunghoangdao:
+
+                if (MotionEvent.ACTION_DOWN == event.getAction()) {
+                    cunghoangdao.startAnimation(ConfigData.animation_zoom_in);
+                    break;
+                } else if (MotionEvent.ACTION_UP == event.getAction()) {
+                    cunghoangdao.clearAnimation();
+                    break;
+                }
+
+            case R.id.dathanhtayandcunghoangdao:
+
+                if (MotionEvent.ACTION_DOWN == event.getAction()) {
+                    rlThanhTay.startAnimation(ConfigData.animation_zoom_in);
+                    break;
+                } else if (MotionEvent.ACTION_UP == event.getAction()) {
+                    rlThanhTay.clearAnimation();
+                    break;
+                }
+
+            case R.id.allStone:
+
+                if (MotionEvent.ACTION_DOWN == event.getAction()) {
+                    rlStone.startAnimation(ConfigData.animation_zoom_in);
+                    break;
+                } else if (MotionEvent.ACTION_UP == event.getAction()) {
+                    rlStone.clearAnimation();
+                    break;
+                }
+
+            case R.id.rlCharka:
+
+                if (MotionEvent.ACTION_DOWN == event.getAction()) {
+                    rlChakra.startAnimation(ConfigData.animation_zoom_in);
+                    break;
+                } else if (MotionEvent.ACTION_UP == event.getAction()) {
+                    rlChakra.clearAnimation();
+                    break;
+                }
+        }
+        return false;
     }
 }
