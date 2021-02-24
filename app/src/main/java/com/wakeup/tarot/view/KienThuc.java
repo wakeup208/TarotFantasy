@@ -43,6 +43,17 @@ public class KienThuc extends BaseActivity implements View.OnTouchListener {
     private FrameLayout mainFragment;
     private ImageView imgHome;
     private int mode = 0;
+
+    @Override
+    public void refreshCardBack() {
+
+    }
+
+    @Override
+    public void refreshAppBg() {
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -33,7 +33,10 @@ import com.google.android.gms.ads.InterstitialAd;
 import com.wakeup.tarot.BuildConfig;
 import com.wakeup.tarot.R;
 import com.wakeup.tarot.data.ConfigData;
+import com.wakeup.tarot.model.CustomModelClass;
+import com.wakeup.tarot.preferences.Prefs;
 import com.wakeup.tarot.receiver.MyNotificationPublisher;
+import com.wakeup.tarot.util.Config;
 import com.wakeup.tarot.util.ImageCache;
 
 import java.text.SimpleDateFormat;
@@ -50,10 +53,20 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     private LinearLayout btn_profile_animation;
     private LinearLayout btn_thongtin;
     private LinearLayout btn_kienthuc;
-
+    private ImageView background;
 
     public static final String NOTIFICATION_CHANNEL_ID = "10001";
     private final static String default_notification_channel_id = "default";
+
+    @Override
+    public void refreshCardBack() {
+
+    }
+
+    @Override
+    public void refreshAppBg() {
+        background.setBackground(getDrawable(Config.img_stone[Prefs.getCardBackground(this)]));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,9 +81,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         ConfigData.loadSettingData(this);
 
         // Load background
-//        ((ImageView) findViewById(R.id.background))
-//                .setBackground(ConfigData.rbdBackground);
-
+        background = ((ImageView) findViewById(R.id.background));
         //tvAppName = (TextView) findViewById(R.id.tvAppName);
         //tvAppName.setTypeface(ConfigData.UVNCatBien_Sub);
 
@@ -102,6 +113,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     @Override
     protected void onResume() {
         super.onResume();
+        //refreshAppBg();
+        CustomModelClass.getInstance().changeState();
     }
 
     @Override

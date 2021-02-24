@@ -1,13 +1,17 @@
 package com.wakeup.tarot.view;
 
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -18,10 +22,22 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
+import com.smarteist.autoimageslider.IndicatorView.draw.controller.DrawController;
+import com.smarteist.autoimageslider.SliderAnimations;
+import com.smarteist.autoimageslider.SliderView;
 import com.wakeup.tarot.R;
+import com.wakeup.tarot.adapter.CardBackAdapter;
 import com.wakeup.tarot.data.ConfigData;
 import com.wakeup.tarot.fragment.ChangeFontSizeCustomDialog;
+import com.wakeup.tarot.model.SliderItem;
+import com.wakeup.tarot.util.Config;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProfileActivity extends BaseActivity implements OnClickListener,
 		OnCheckedChangeListener {
@@ -42,7 +58,19 @@ public class ProfileActivity extends BaseActivity implements OnClickListener,
 	private AlertDialog.Builder startLevelDialog;
 
 	private boolean isSettingChange;
+	private RecyclerView cardSlider;
+	private RecyclerView backgroundSlider;
+	private CardBackAdapter cardBackAdapter;
 
+	@Override
+	public void refreshCardBack() {
+
+	}
+
+	@Override
+	public void refreshAppBg() {
+
+	}
 
 	@SuppressWarnings("deprecation")
 	@Override
@@ -50,6 +78,7 @@ public class ProfileActivity extends BaseActivity implements OnClickListener,
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_profile);
 
+		cardBackAdapter = new CardBackAdapter(this);
 		btnReverseCard = (TextView) findViewById(R.id.btnReverseCard);
 		btnReverseCard.setOnClickListener(this);
 
@@ -84,6 +113,30 @@ public class ProfileActivity extends BaseActivity implements OnClickListener,
 
 		isSettingChange = false;
 		startLevelDialog = new AlertDialog.Builder(this, R.style.DialogStyle);
+
+		cardSlider = (RecyclerView) findViewById(R.id.sliderCardBack);
+		backgroundSlider = (RecyclerView) findViewById(R.id.sliderBackground);
+
+		List<SliderItem> sliderItemList = new ArrayList<>();
+		for (int i = 0; i < Config.ing_back_card.length; i++) {
+			SliderItem sliderItem = new SliderItem();
+			sliderItem.setDescription("Slider Item " + i);
+			sliderItem.setInteger(Integer.valueOf(Config.img_stone[i]));
+			sliderItemList.add(sliderItem);
+		}
+
+		cardBackAdapter.renewItems(sliderItemList);
+		cardSlider.setAdapter(cardBackAdapter);
+		LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+		linearLayoutManager.scrollToPosition(cardBackAdapter.getItemCount() % cardBackAdapter.getSize());
+		cardSlider.setLayoutManager(linearLayoutManager);
+
+		int resId = R.anim.layout_animation;
+		LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(this, resId);
+		cardSlider.setLayoutAnimation(animation);
+
+//		cardSlider.getAdapter().notifyDataSetChanged();
+//		cardSlider.scheduleLayoutAnimation();
 	}
 
 	@Override
@@ -102,20 +155,6 @@ public class ProfileActivity extends BaseActivity implements OnClickListener,
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-//		case R.id.btnBuyTarotCards:
-//			(new BuyTarotCustomDialog(this)).showDialog();
-//			break;
-//
-//		case R.id.btnFeedbackAndDiscuss:
-//			Uri uriUrl = Uri.parse(ConfigData.FEED_BACK_LINK);
-//			Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
-//			startActivity(launchBrowser);
-//			break;
-//
-//		case R.id.btnAuthor:
-//			(new AboutCustomDialog(this)).showDialog();
-//			break;
-
 		case R.id.btnReverseCard:
 			cbReverseCard.setChecked(!cbReverseCard.isChecked());
 			isSettingChange = true;
@@ -216,37 +255,6 @@ public class ProfileActivity extends BaseActivity implements OnClickListener,
 
 		case R.id.btnCancel:
 			// Update this UI
-//			tvFontSize.setText("" + ConfigData.FONT_SIZE);
-//			cbReverseCard.setChecked(ConfigData.IS_REVERSE_CARD);
-//			cbSoundOnOff.setChecked(ConfigData.IS_SOUND_ON);
-//
-//			final AlertDialog alertDialog2 = startLevelDialog.create();
-//			View view2 = getLayoutInflater().inflate(R.layout.custom_profile_dialog, null);
-//			LinearLayout linearLayout = (LinearLayout) view2.findViewById(R.id.ln_yes_no);
-//			RelativeLayout relativeLayout = (RelativeLayout) view2.findViewById(R.id.rela_ok);
-//
-//			TextView txt1 = (TextView) view2.findViewById(R.id.txt_title_dialog);
-//			txt1.setText(R.string.xac_nhan_thay_doi);
-//			ImageView img = (ImageView)view2.findViewById(R.id.icon_dialog);
-//			img.setImageResource(R.drawable.ic_warning);
-//
-//			linearLayout.setVisibility(View.GONE);
-//			relativeLayout.setVisibility(View.VISIBLE);
-//
-//			Button btnOk = (Button) view2.findViewById(R.id.btnOK);
-//			btnOk.setOnClickListener(new OnClickListener() {
-//				@Override
-//				public void onClick(View v) {
-//					alertDialog2.dismiss();
-//				}
-//			});
-//
-//
-//			alertDialog2.setCancelable(false);
-//			alertDialog2.setView(view2);
-//			alertDialog2.show();
-//
-//			isSettingChange = false;
 			finish();
 			break;
 		}
@@ -261,50 +269,6 @@ public class ProfileActivity extends BaseActivity implements OnClickListener,
 	public void onBackPressed() {
 
 		if (isSettingChange) {
-//			(new AlertDialog.Builder(this))
-//					.setIcon(R.drawable.icon_question)
-//					.setTitle(getResources().getString(R.string.not_save))
-//					.setMessage(getResources().getString(R.string.you_mean))
-//					.setPositiveButton(android.R.string.yes,
-//							new DialogInterface.OnClickListener() {
-//								@Override
-//								public void onClick(DialogInterface dialog,
-//										int which) {
-//									ConfigData.FONT_SIZE = Float
-//											.parseFloat(tvFontSize.getText()
-//													.toString());
-//									ConfigData.IS_SOUND_ON = cbSoundOnOff
-//											.isChecked();
-//									ConfigData.IS_REVERSE_CARD = cbReverseCard
-//											.isChecked();
-//									ConfigData.saveSettingData();
-//									// Update this UI
-//									tvFontSize.setText(""
-//											+ ConfigData.FONT_SIZE);
-//									cbReverseCard
-//											.setChecked(ConfigData.IS_REVERSE_CARD);
-//									cbSoundOnOff
-//											.setChecked(ConfigData.IS_SOUND_ON);
-//									ProfileActivity.this.finish();
-//
-//								}
-//							})
-//					.setNegativeButton(android.R.string.no,
-//							new DialogInterface.OnClickListener() {
-//								@Override
-//								public void onClick(DialogInterface dialog,
-//										int which) {
-//									// Update this UI
-//									tvFontSize.setText(""
-//											+ ConfigData.FONT_SIZE);
-//									cbReverseCard
-//											.setChecked(ConfigData.IS_REVERSE_CARD);
-//									cbSoundOnOff
-//											.setChecked(ConfigData.IS_SOUND_ON);
-//									ProfileActivity.this.finish();
-//								}
-//							}).create().show();
-
 			final AlertDialog backPressDialog = startLevelDialog.create();
 			View view1 = getLayoutInflater().inflate(R.layout.custom_profile_dialog, null);
 			Button btnYes1 = (Button) view1.findViewById(R.id.btnYes);

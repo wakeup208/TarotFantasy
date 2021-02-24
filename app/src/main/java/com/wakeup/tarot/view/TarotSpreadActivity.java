@@ -29,6 +29,16 @@ public class TarotSpreadActivity extends BaseActivity implements
 	private ListView lvTarotSpread;
 	private int pos;
 
+	@Override
+	public void refreshCardBack() {
+
+	}
+
+	@Override
+	public void refreshAppBg() {
+
+	}
+
 	@SuppressWarnings("deprecation")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

@@ -51,6 +51,16 @@ public class InformationActivity extends BaseActivity implements View.OnTouchLis
     ImageView imgHome;
 
     @Override
+    public void refreshCardBack() {
+
+    }
+
+    @Override
+    public void refreshAppBg() {
+
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.thong_tin);

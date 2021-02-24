@@ -12,15 +12,20 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.wakeup.tarot.R;
+import com.wakeup.tarot.listener.OnChangeBackground;
+import com.wakeup.tarot.model.CustomModelClass;
+import com.wakeup.tarot.preferences.Prefs;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity implements OnChangeBackground {
     public InterstitialAd interstitialAd, interstitialAd1;
     public WithApp getInstance;
     public AdView mAdView;
-    AdRequest.Builder adRequestBuilder1, adRequestBuilder2;
+
+    public abstract void refreshAppBg();
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,5 +44,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         AdRequest adInterstitial1 = new AdRequest.Builder().build();
         //adRequestBuilder2 = new AdRequest.Builder();
         interstitialAd1.loadAd(adInterstitial1);
+
+        Prefs.init(this);
+        CustomModelClass.getInstance().setListener(this);
+
     }
 }

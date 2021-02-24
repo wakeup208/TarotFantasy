@@ -19,7 +19,10 @@ import com.wakeup.tarot.R;
 import com.wakeup.tarot.animation.AnimationFactory;
 import com.wakeup.tarot.data.ConfigData;
 import com.wakeup.tarot.data.MapData;
+import com.wakeup.tarot.preferences.Prefs;
+import com.wakeup.tarot.util.Config;
 import com.wakeup.tarot.util.CustomImageView;
+import com.wakeup.tarot.util.Utils;
 import com.wakeup.tarot.view.CardDetailViewPagerForSpreadCardActivity;
 import com.wakeup.tarot.view.SpreadCardsActivity;
 
@@ -37,6 +40,8 @@ public class CardViewFlipper extends ViewFlipper implements OnClickListener,
 	private ImageView ivFontCard;
 	private int mCardIndex = 0;
 	private SpreadCardsActivity mSpreadCardsActivity;
+	private Bitmap cardBack;
+
 
 	public CardViewFlipper(SpreadCardsActivity spreadCardsActivity,
 			int cardIndex, int width, int height, boolean isLandscape) {
@@ -56,8 +61,8 @@ public class CardViewFlipper extends ViewFlipper implements OnClickListener,
 		ivBackCard = (ImageView) findViewById(R.id.ivBackCard);
 		ivBackCard.setOnClickListener(this);
 
-		parent = (CardView) findViewById(R.id.paremtCardView);
-		parentFont = (CardView) findViewById(R.id.paremtFontCardView);
+//		parent = (CardView) findViewById(R.id.paremtCardView);
+//		parentFont = (CardView) findViewById(R.id.paremtFontCardView);
 
 		ivFontCard = (ImageView) findViewById(R.id.ivFontCard);
 		ivFontCard.setTag(this);
@@ -70,8 +75,13 @@ public class CardViewFlipper extends ViewFlipper implements OnClickListener,
 		} else if (ConfigData.randomCardDimensionsArray[mCardIndex] == 1) {
 			rotateDegree = 180;
 		}
-		
-		mSpreadCardsActivity.getImageLoader().loadImage(R.drawable.card_back1 + "_" + cardWidth + "_" + cardHeight + "_" + rotateDegree, ivBackCard);
+
+		cardBack = Utils.decodeSampledBitmapFromResource(getResources(),
+				(Config.ing_back_card[Prefs.getCardBackground(mSpreadCardsActivity)]), cardWidth, cardHeight, rotateDegree);
+		//R.drawable.card_back1
+		//mSpreadCardsActivity.getImageLoader().loadImage(R.drawable.card_back1 + "_" + cardWidth + "_" + cardHeight + "_" + rotateDegree, ivBackCard);
+		//ivBackCard.setBackground(getContext().getDrawable(Config.ing_back_card[Prefs.getCardBackground(getContext())]));
+		ivBackCard.setImageBitmap(cardBack);
 		mSpreadCardsActivity.getImageLoader().loadImage(getCardId() + "_" + cardWidth + "_" + cardHeight + "_" + rotateDegree, ivFontCard);
 	}
 
@@ -100,7 +110,7 @@ public class CardViewFlipper extends ViewFlipper implements OnClickListener,
 		// Flip back when card is font
 		if (isCardBack == false) {
 			AnimationFactory.flipTransition(
-					(ViewAnimator) parentFont.getParent(),
+					(ViewAnimator) ivFontCard.getParent(),
 					AnimationFactory.FlipDirection.LEFT_RIGHT);
 			isCardBack = true;
 		}
@@ -115,7 +125,7 @@ public class CardViewFlipper extends ViewFlipper implements OnClickListener,
 		// Flip font when card is back
 		if (isCardBack == true) {
 			AnimationFactory.flipTransition(
-					(ViewAnimator) parent.getParent(),
+					(ViewAnimator) ivBackCard.getParent(),
 					AnimationFactory.FlipDirection.LEFT_RIGHT);
 			isCardBack = false;
 		}

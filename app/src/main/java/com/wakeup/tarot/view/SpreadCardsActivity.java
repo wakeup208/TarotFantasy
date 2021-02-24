@@ -29,6 +29,8 @@ import com.wakeup.tarot.data.ConfigData;
 import com.wakeup.tarot.data.MapData;
 import com.wakeup.tarot.data.SpreadCardJasonHelper;
 import com.wakeup.tarot.fragment.CardViewFlipper;
+import com.wakeup.tarot.preferences.Prefs;
+import com.wakeup.tarot.util.Config;
 import com.wakeup.tarot.util.ImageCache;
 import com.wakeup.tarot.util.ImageLoaderAsynch;
 
@@ -64,6 +66,15 @@ public class SpreadCardsActivity extends BaseActivity implements
 
 	// Startup animation manager 
 	private LayoutAnimationController controller;
+
+	@Override
+	public void refreshCardBack() {
+
+	}
+
+	@Override
+	public void refreshAppBg() {
+	}
 
 	@SuppressWarnings("deprecation")
 	@Override

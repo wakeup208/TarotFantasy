@@ -28,6 +28,8 @@ import com.wakeup.tarot.animation.AnimationFactory;
 import com.wakeup.tarot.data.CardsDetailJasonHelper;
 import com.wakeup.tarot.data.ConfigData;
 import com.wakeup.tarot.data.MapData;
+import com.wakeup.tarot.preferences.Prefs;
+import com.wakeup.tarot.util.Config;
 import com.wakeup.tarot.util.ImageCache;
 import com.wakeup.tarot.util.ImageLoaderAsynch;
 
@@ -59,7 +61,7 @@ public class SingleCardActivity extends BaseActivity implements OnClickListener 
     private LinearLayout btn_card_interpretation;
     private LinearLayout btn_associations;
 
-    private ImageView card_spread;
+    private ImageView card_spread, ivBackCard;
     private ImageView card_interpretation;
     private ImageView associations;
 
@@ -71,6 +73,16 @@ public class SingleCardActivity extends BaseActivity implements OnClickListener 
     // 2 for card interpretation
     // 3 for card association
     private int visibleMode = 1;
+
+    @Override
+    public void refreshCardBack() {
+
+    }
+
+    @Override
+    public void refreshAppBg() {
+        ivBackCard.setBackground(getDrawable(Config.ing_back_card[Prefs.getCardBackground(this)]));
+    }
 
     @SuppressWarnings("deprecation")
     @Override
@@ -105,22 +117,20 @@ public class SingleCardActivity extends BaseActivity implements OnClickListener 
          */
 
         // Flip card when user Click at back card
-        this.findViewById(R.id.ivBackCard).setOnClickListener(
-                new OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        // This is all you need to do to 3D flip
-                        AnimationFactory.flipTransition(vfCardImage,
-                                AnimationFactory.FlipDirection.RIGHT_LEFT);
+        ivBackCard = (ImageView) findViewById(R.id.ivBackCard);
+        ivBackCard.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AnimationFactory.flipTransition(vfCardImage,
+                        AnimationFactory.FlipDirection.RIGHT_LEFT);
 
-                        if (ConfigData.IS_SOUND_ON) {
-                            MediaPlayer mPlayer = MediaPlayer.create(
-                                    SingleCardActivity.this, R.raw.card_deal);
-                            mPlayer.start();
-                        }
-                    }
-
-                });
+                if (ConfigData.IS_SOUND_ON) {
+                    MediaPlayer mPlayer = MediaPlayer.create(
+                            SingleCardActivity.this, R.raw.card_deal);
+                    mPlayer.start();
+                }
+            }
+        });
 
         // Initial for all component otherwise
         ivFontCard = (ImageView) findViewById(R.id.ivFontCard);
@@ -578,6 +588,7 @@ public class SingleCardActivity extends BaseActivity implements OnClickListener 
     public void onResume() {
         super.onResume();
         mImageLoader.setExitTasksEarly(false);
+        refreshAppBg();
         // Load background
 //        ((ImageView) findViewById(R.id.background))
 //                .setBackground(ConfigData.rbdBackground);

@@ -24,6 +24,16 @@ public class AllStoneInfo extends BaseActivity{
     SliderView sliderView;
     private StoneAdapter adapter;
 
+    @Override
+    public void refreshCardBack() {
+
+    }
+
+    @Override
+    public void refreshAppBg() {
+
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {

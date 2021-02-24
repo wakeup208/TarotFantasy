@@ -5,40 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/paremtCardView"
+    <ImageView
+        android:id="@+id/ivBackCard"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:cardCornerRadius="20dp">
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:gravity="center" />
 
-        <ImageView
-            android:id="@+id/ivBackCard"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:clickable="true"
-            android:scaleType="fitXY"
-            android:adjustViewBounds="true"
-            android:fitsSystemWindows="true" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/paremtFontCardView"
+    <ImageView
+        android:id="@+id/ivFontCard"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:cardCornerRadius="30dp">
-
-        <ImageView
-            android:id="@+id/ivFontCard"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:clickable="true"
-            android:scaleType="fitXY"
-            android:adjustViewBounds="true"
-            android:fitsSystemWindows="true" />
-
-    </androidx.cardview.widget.CardView>
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:gravity="center" />
 
 </ViewFlipper>

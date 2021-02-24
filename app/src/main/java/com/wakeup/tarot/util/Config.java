@@ -27,4 +27,5 @@ public class Config {
             R.drawable.tt_lapis, R.drawable.tt_redjapes, R.drawable.tt_rose,
             R.drawable.tt_smoke, R.drawable.tt_sodalite, R.drawable.tt_howlite};
 
+    public static int[] ing_back_card = {R.drawable.backcard6, R.drawable.backcard6a, R.drawable.card_back1};
 }

@@ -7,7 +7,7 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp">
+        android:layout_height="@dimen/dimen_250dp">
         <ImageView
             android:id="@+id/iv_auto_image_slider"
             android:layout_width="match_parent"

@@ -30,6 +30,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.wakeup.tarot.R;
 import com.wakeup.tarot.data.ConfigData;
 import com.wakeup.tarot.data.SpreadCardJasonHelper;
+import com.wakeup.tarot.model.CustomModelClass;
+import com.wakeup.tarot.preferences.Prefs;
+import com.wakeup.tarot.util.Config;
 import com.wakeup.tarot.util.Utils;
 
 public class ChooseCardActivity extends BaseActivity implements OnClickListener,
@@ -48,6 +51,16 @@ public class ChooseCardActivity extends BaseActivity implements OnClickListener,
 	private Context mContext;
 	private LayoutAnimationController controller;
 	private Bitmap cardBack;
+
+	@Override
+	public void refreshCardBack() {
+
+	}
+
+	@Override
+	public void refreshAppBg() {
+
+	}
 
 	@SuppressWarnings("deprecation")
 	@Override
@@ -85,9 +98,9 @@ public class ChooseCardActivity extends BaseActivity implements OnClickListener,
 		card_width = (ConfigData.SCREEN_WIDTH - padding * 3) / 2;
 		card_height = card_width * 710 / 1232;
 		marginTop = (ConfigData.SCREEN_HEIGHT - padding - card_height) / 40;
-
+		//R.drawable.card_back1
 		cardBack = Utils.decodeSampledBitmapFromResource(getResources(),
-				R.drawable.card_back1, card_width, card_height, 90);
+				(Config.ing_back_card[Prefs.getCardBackground(this)]), card_width, card_height, 90);
 
 		cardBack = getRoundedCornerBitmap(cardBack, 50);
 		btnSkip = (Button) findViewById(R.id.btnSkip);

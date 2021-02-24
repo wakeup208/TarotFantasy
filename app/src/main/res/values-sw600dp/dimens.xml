@@ -33,5 +33,10 @@
     <dimen name="dimen_70dp">110dp</dimen>
 
     <dimen name="margin_top_thong_tin">20dp</dimen>
+    <dimen name="dimen_250dp">500dp</dimen>
+    <dimen name="thanhtay_font_size_small">34sp</dimen>
+
+    <dimen name="dimen_100dp">200dp</dimen>
+    <dimen name="dimen_60dp">120dp</dimen>
 
 </resources>

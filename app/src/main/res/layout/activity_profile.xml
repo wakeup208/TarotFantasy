@@ -6,9 +6,9 @@
     android:background="@drawable/mainback">
 
     <LinearLayout
+        android:id="@+id/ft"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="70dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -133,76 +133,87 @@
                     android:textColor="@color/white"
                     android:textSize="@dimen/commom_font_size" />
             </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:contentDescription="TODO"
+                android:visibility="visible"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:src="@drawable/black_white_gradient" />
         </LinearLayout>
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:contentDescription="TODO"
-            android:visibility="gone"
-            android:layout_marginTop="@dimen/dimen_10dp"
-            android:src="@drawable/black_white_gradient" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_10dp"
-            android:paddingStart="@dimen/commom_padding"
-            android:paddingEnd="@dimen/commom_padding"
-            android:fontFamily="@font/quicksand"
-            android:gravity="center_vertical"
-            android:text="@string/card_back"
-            android:visibility="gone"
-            android:textColor="@color/white"
-            android:textSize="@dimen/commom_font_size"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_marginTop="@dimen/dimen_5dp"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:paddingStart="@dimen/commom_padding"
-            android:visibility="gone"
-            android:paddingEnd="@dimen/commom_padding"
-            android:orientation="horizontal"/>
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:visibility="gone"
-            android:contentDescription="TODO"
-            android:layout_marginTop="@dimen/dimen_10dp"
-            android:src="@drawable/black_white_gradient" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dimen_10dp"
-            android:paddingStart="@dimen/commom_padding"
-            android:paddingEnd="@dimen/commom_padding"
-            android:visibility="gone"
-            android:fontFamily="@font/quicksand"
-            android:gravity="center_vertical"
-            android:text="@string/back_ground"
-            android:textColor="@color/white"
-            android:textSize="@dimen/commom_font_size"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginTop="@dimen/dimen_5dp"
-            android:visibility="gone"
-            android:paddingStart="@dimen/commom_padding"
-            android:paddingEnd="@dimen/commom_padding"
-            android:orientation="horizontal"/>
     </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_60dp"
+        android:layout_below="@+id/ft">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:paddingStart="@dimen/commom_padding"
+                android:paddingEnd="@dimen/commom_padding"
+                android:fontFamily="@font/quicksand"
+                android:gravity="center_vertical"
+                android:text="@string/card_back"
+                android:textColor="@color/white"
+                android:textSize="@dimen/commom_font_size"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/sliderCardBack"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_100dp"
+                android:paddingStart="@dimen/commom_padding"
+                android:paddingEnd="@dimen/commom_padding"
+                android:orientation="horizontal"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:contentDescription="TODO"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:src="@drawable/black_white_gradient" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:paddingStart="@dimen/commom_padding"
+                android:paddingEnd="@dimen/commom_padding"
+                android:fontFamily="@font/quicksand"
+                android:gravity="center_vertical"
+                android:text="@string/back_ground"
+                android:textColor="@color/white"
+                android:textSize="@dimen/commom_font_size"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/sliderBackground"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_100dp"
+                android:paddingStart="@dimen/commom_padding"
+                android:paddingEnd="@dimen/commom_padding"
+                android:layoutAnimation="@anim/layout_animation"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:orientation="horizontal"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
 
     <LinearLayout
         android:id="@+id/bottom_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dimen_50dp"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="2dp"
         android:layout_marginEnd="2dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="@dimen/dimen_5dp"
         android:orientation="horizontal">
 
         <Button
