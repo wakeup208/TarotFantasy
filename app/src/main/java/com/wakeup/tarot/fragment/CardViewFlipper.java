@@ -76,12 +76,14 @@ public class CardViewFlipper extends ViewFlipper implements OnClickListener,
 			rotateDegree = 180;
 		}
 
-		cardBack = Utils.decodeSampledBitmapFromResource(getResources(),
-				(Config.ing_back_card[Prefs.getCardBackground(mSpreadCardsActivity)]), cardWidth, cardHeight, rotateDegree);
+//		cardBack = Utils.decodeSampledBitmapFromResource(getResources(),
+//				(Config.ing_back_card[Prefs.getCardBackground(mSpreadCardsActivity)]), cardWidth, cardHeight, rotateDegree);
 		//R.drawable.card_back1
 		//mSpreadCardsActivity.getImageLoader().loadImage(R.drawable.card_back1 + "_" + cardWidth + "_" + cardHeight + "_" + rotateDegree, ivBackCard);
-		//ivBackCard.setBackground(getContext().getDrawable(Config.ing_back_card[Prefs.getCardBackground(getContext())]));
-		ivBackCard.setImageBitmap(cardBack);
+		ivBackCard.setBackground(getContext().getDrawable(Config.ing_back_card[Prefs.getCardBackground(getContext())]));
+		ivBackCard.setMaxWidth(cardWidth);
+		ivBackCard.setMaxHeight(cardHeight);
+//		ivBackCard.setImageBitmap(cardBack);
 		mSpreadCardsActivity.getImageLoader().loadImage(getCardId() + "_" + cardWidth + "_" + cardHeight + "_" + rotateDegree, ivFontCard);
 	}
 

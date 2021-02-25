@@ -25,6 +25,7 @@ import com.google.android.gms.ads.InterstitialAd;
 import com.wakeup.tarot.BuildConfig;
 import com.wakeup.tarot.R;
 import com.wakeup.tarot.data.ConfigData;
+import com.wakeup.tarot.preferences.Prefs;
 import com.wakeup.tarot.util.Config;
 
 import java.util.ArrayList;
@@ -39,6 +40,7 @@ public class KienThuc extends BaseActivity implements View.OnTouchListener {
 
 
     private TextView dathanhtay1, txtCungHoangDao, txtMean1, txtStone;
+    private LinearLayout background;
 
     private FrameLayout mainFragment;
     private ImageView imgHome;
@@ -51,7 +53,7 @@ public class KienThuc extends BaseActivity implements View.OnTouchListener {
 
     @Override
     public void refreshAppBg() {
-
+        background.setBackground(getDrawable(Config.ing_app_bg[Prefs.getAppBackground(this)]));
     }
 
     @Override
@@ -63,6 +65,7 @@ public class KienThuc extends BaseActivity implements View.OnTouchListener {
 
         mAdView = (AdView) findViewById(R.id.adView);
         getInstance.loadAd(mAdView);
+        background = (LinearLayout) findViewById(R.id.ln_kienthuc);
 
         interstitialAd.setAdListener(new AdListener() {
             @Override
@@ -198,6 +201,7 @@ public class KienThuc extends BaseActivity implements View.OnTouchListener {
 //        AdRequest adInterstitial = new AdRequest.Builder().build();
 //        //adRequestBuilder1 = new AdRequest.Builder();
 //        interstitialAd.loadAd(adInterstitial);
+        refreshAppBg();
     }
 
     @Override

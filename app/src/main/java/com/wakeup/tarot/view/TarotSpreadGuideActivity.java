@@ -18,6 +18,8 @@ import com.wakeup.tarot.R;
 import com.wakeup.tarot.data.ConfigData;
 import com.wakeup.tarot.data.MapData;
 import com.wakeup.tarot.data.SpreadCardJasonHelper;
+import com.wakeup.tarot.preferences.Prefs;
+import com.wakeup.tarot.util.Config;
 
 public class TarotSpreadGuideActivity extends BaseActivity implements
 		OnClickListener {
@@ -28,6 +30,7 @@ public class TarotSpreadGuideActivity extends BaseActivity implements
 	private TextView tvTarotSpreadName;
 	private ImageView ivTarotSpread;
 	private TextView tvTarotSpreadGuide;
+	private ImageView background;
 
 	@Override
 	public void refreshCardBack() {
@@ -36,7 +39,7 @@ public class TarotSpreadGuideActivity extends BaseActivity implements
 
 	@Override
 	public void refreshAppBg() {
-
+		background.setBackground(getDrawable(Config.ing_app_bg[Prefs.getAppBackground(this)]));
 	}
 
 	@SuppressWarnings("deprecation")
@@ -50,8 +53,8 @@ public class TarotSpreadGuideActivity extends BaseActivity implements
 				
 		
 		// Load background
-		//((ImageView) findViewById(R.id.background)).setBackground(ConfigData.rbdBackground);
-		
+		background = (ImageView) findViewById(R.id.background);
+
 		btn_shuffle_cards = (Button) findViewById(R.id.btn_shuffle_cards);
 		btn_shuffle_cards.setTypeface(ConfigData.UVNCatBien_R);
 		btn_shuffle_cards.setOnClickListener(this);
@@ -107,9 +110,7 @@ public class TarotSpreadGuideActivity extends BaseActivity implements
 
 	@Override
 	protected void onResume() {
-		// Load background
-//		((ImageView) findViewById(R.id.background))
-//				.setBackground(ConfigData.rbdBackground);
 		super.onResume();
+		refreshAppBg();
 	}
 }

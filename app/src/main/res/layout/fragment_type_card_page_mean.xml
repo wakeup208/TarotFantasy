@@ -11,7 +11,7 @@
         android:id="@+id/ivBgFragment"
         android:layout_width="@dimen/dimen_0dp"
         android:layout_height="@dimen/dimen_0dp"
-        android:background="@drawable/mainback"
+        android:background="@drawable/background_mainback"
         android:contentDescription="@null"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"

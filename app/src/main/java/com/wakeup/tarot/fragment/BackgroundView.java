@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.widget.ImageView;
 
 import androidx.appcompat.widget.AppCompatImageView;
 
@@ -21,7 +19,7 @@ public class BackgroundView extends AppCompatImageView {
 	@Override
 	protected void onAttachedToWindow() {
 		this.setImageBitmap(decodeSampledBitmapFromResource(getResources(),
-				R.drawable.mainback, ConfigData.SCREEN_WIDTH,
+				R.drawable.background_mainback, ConfigData.SCREEN_WIDTH,
 				ConfigData.SCREEN_HEIGHT));
 		super.onAttachedToWindow();
 	}

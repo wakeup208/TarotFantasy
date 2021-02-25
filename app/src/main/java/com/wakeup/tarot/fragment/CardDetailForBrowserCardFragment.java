@@ -416,27 +416,6 @@ public class CardDetailForBrowserCardFragment extends Fragment implements
 		} else {
 			layoutSymbol.setVisibility(View.GONE);
 		}
-		
-		// Click at Ad1
-		((ImageView)view.findViewById(R.id.ivAd1)).setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Uri uriUrl = Uri.parse(ConfigData.FEED_BACK_LINK);
-				Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
-				startActivity(launchBrowser);
-			}
-		});
-		
-		// Click at Ad2
-		((ImageView)view.findViewById(R.id.ivAd2)).setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Uri uriUrl = Uri.parse(ConfigData.FEED_BACK_LINK);
-				Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
-				startActivity(launchBrowser);
-			}
-		});
-		
 
 		return view;
 	}

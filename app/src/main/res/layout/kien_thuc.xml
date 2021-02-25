@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/mainback"
+    android:id="@+id/ln_kienthuc"
     android:orientation="vertical">
 
     <FrameLayout
@@ -64,9 +64,10 @@
                     android:layout_height="@dimen/img_size"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/dimen_5dp"
                     android:checked="true"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/ic_home_48" />
+                    android:background="@drawable/ic_share" />
             </RelativeLayout>
 
             <RelativeLayout

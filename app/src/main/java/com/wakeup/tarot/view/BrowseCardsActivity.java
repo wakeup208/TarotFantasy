@@ -35,6 +35,9 @@ import com.wakeup.tarot.R;
 import com.wakeup.tarot.adapter.CardImageSectionListViewAdapter;
 import com.wakeup.tarot.adapter.GroupCardImageGridViewAdapter;
 import com.wakeup.tarot.data.ConfigData;
+import com.wakeup.tarot.listener.OnChangeBackground;
+import com.wakeup.tarot.preferences.Prefs;
+import com.wakeup.tarot.util.Config;
 import com.wakeup.tarot.util.ImageCache;
 import com.wakeup.tarot.util.ImageLoaderAsynch;
 import com.wakeup.tarot.adapter.CardImageGridViewAdapter;
@@ -46,7 +49,7 @@ import static com.wakeup.tarot.adapter.GroupCardImageGridViewAdapter.posGroupCar
 
 
 public class BrowseCardsActivity extends FragmentActivity implements
-        OnClickListener {
+        OnClickListener, OnChangeBackground {
 
     public Context mContext;
     private static final String BROWSE_CARD_IMAGE_CACHE_DIR = "browse_card_image_cache";
@@ -60,6 +63,7 @@ public class BrowseCardsActivity extends FragmentActivity implements
     private ImageView btn_minus;
     private ImageView btn_plus;
     private ImageButton btnHome;
+    private ImageView background;
 
 
     private LinearLayout ln_btn_grid;
@@ -85,15 +89,14 @@ public class BrowseCardsActivity extends FragmentActivity implements
         //ConfigData.reloadScreen(this);
 
         // Load background
-//		((ImageView) findViewById(R.id.background))
-//				.setBackgroundDrawable(ConfigData.rbdBackground);
+        background = ((ImageView) findViewById(R.id.background));
 
         mContext = this.getApplicationContext();
 
-        try{
+        try {
             Bundle b = getIntent().getExtras();
             selected = b.getInt("selected");
-        } catch(Exception ex){
+        } catch (Exception ex) {
             selected = 0;
         }
 
@@ -170,8 +173,7 @@ public class BrowseCardsActivity extends FragmentActivity implements
     @Override
     protected void onResume() {
         // Load background
-//		((ImageView) findViewById(R.id.background))
-//				.setBackground(ConfigData.rbdBackground);
+        refreshAppBg();
         super.onResume();
     }
 
@@ -328,6 +330,16 @@ public class BrowseCardsActivity extends FragmentActivity implements
                 }
                 break;
         }
+    }
+
+    @Override
+    public void refreshCardBack() {
+
+    }
+
+    @Override
+    public void refreshAppBg() {
+        background.setBackground(getDrawable(Config.ing_app_bg[Prefs.getAppBackground(this)]));
     }
 
     public static class GirdCardFragment extends
@@ -798,12 +810,10 @@ public class BrowseCardsActivity extends FragmentActivity implements
         @Override
         public void onItemClick(AdapterView<?> arg0, View v, int position,
                                 long arg3) {
-            Log.d("abcd","44444");
             pos = position;
-            if(interstitialAdBrowCardActivity.isLoaded()) {
+            if (interstitialAdBrowCardActivity.isLoaded()) {
                 interstitialAdBrowCardActivity.show();
-            }
-            else {
+            } else {
                 mCardImageSectionListViewAdapter.showDetailViewPager(position);
             }
         }

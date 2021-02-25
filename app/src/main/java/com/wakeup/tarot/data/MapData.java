@@ -90,7 +90,7 @@ public class MapData {
 	// Map Group card --> R.id of image in drawable folder
 	public static int[] arrGroupCardImage_R_Id = {
 		R.drawable.suit_png,
-		R.drawable.p_luna,
+		R.drawable.p_sun,
 		R.drawable.nn_3,
 		R.drawable.symbol_png,
 	};
@@ -114,15 +114,15 @@ public class MapData {
 	// Map Group card --> R.id of image in drawable folder
 	public static int[] arrGroupStarCardImage_R_Id = {
 		R.drawable.p_uranus,
-		R.drawable.p_mercurius,
-		R.drawable.p_luna,
-		R.drawable.p_venu,
+		R.drawable.p_mercury,
+		R.drawable.p_moon,
+		R.drawable.p_venus,
 		R.drawable.p_jupiter,
-		R.drawable.p_neptunus,
+		R.drawable.p_neptune,
 		R.drawable.p_mars,
-		R.drawable.p_sol,
+		R.drawable.p_sun,
 		R.drawable.p_pluto,
-		R.drawable.p_saturnus,
+		R.drawable.p_saturn,
 		R.drawable.hoangdao_bachduong,
 		R.drawable.hoangdao_kimnguu,
 		R.drawable.hoangdao_songsinh,

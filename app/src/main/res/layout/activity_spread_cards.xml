@@ -3,7 +3,6 @@
     xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/mainback"
     android:layout_height="match_parent">
 
     <ImageView

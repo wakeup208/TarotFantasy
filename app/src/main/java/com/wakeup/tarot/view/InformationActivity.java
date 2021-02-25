@@ -33,6 +33,9 @@ import com.wakeup.tarot.BuildConfig;
 import com.wakeup.tarot.R;
 import com.wakeup.tarot.data.ConfigData;
 import com.wakeup.tarot.data.MapData;
+import com.wakeup.tarot.listener.OnChangeBackground;
+import com.wakeup.tarot.preferences.Prefs;
+import com.wakeup.tarot.util.Config;
 
 import java.util.ArrayList;
 
@@ -49,6 +52,7 @@ public class InformationActivity extends BaseActivity implements View.OnTouchLis
 
     FrameLayout mainFragment;
     ImageView imgHome;
+    LinearLayout background;
 
     @Override
     public void refreshCardBack() {
@@ -57,7 +61,7 @@ public class InformationActivity extends BaseActivity implements View.OnTouchLis
 
     @Override
     public void refreshAppBg() {
-
+        background.setBackground(getDrawable(Config.ing_app_bg[Prefs.getAppBackground(this)]));
     }
 
     @Override
@@ -68,6 +72,7 @@ public class InformationActivity extends BaseActivity implements View.OnTouchLis
         ConfigData.loadSettingData(this);
         mAdView = (AdView) findViewById(R.id.adView);
         getInstance.loadAd(mAdView);
+        background = (LinearLayout) findViewById(R.id.ln_thongtin);
 
         imgHome = (ImageView) findViewById(R.id.img_home);
         imgHome.setOnClickListener(new View.OnClickListener() {
@@ -153,6 +158,12 @@ public class InformationActivity extends BaseActivity implements View.OnTouchLis
     protected void onPause() {
         super.onPause();
         ConfigData.saveSettingData();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        refreshAppBg();
     }
 
     private void addFragmentWithNavigationId(int i, Bundle bundle) {

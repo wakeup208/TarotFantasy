@@ -51,6 +51,7 @@ public class ChooseCardActivity extends BaseActivity implements OnClickListener,
 	private Context mContext;
 	private LayoutAnimationController controller;
 	private Bitmap cardBack;
+	private ImageView background;
 
 	@Override
 	public void refreshCardBack() {
@@ -59,7 +60,7 @@ public class ChooseCardActivity extends BaseActivity implements OnClickListener,
 
 	@Override
 	public void refreshAppBg() {
-
+		background.setBackground(getDrawable(Config.ing_app_bg[Prefs.getAppBackground(this)]));
 	}
 
 	@SuppressWarnings("deprecation")
@@ -67,14 +68,6 @@ public class ChooseCardActivity extends BaseActivity implements OnClickListener,
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_choose_card);
-
-		// Reload screen size and background
-		//ConfigData.reloadScreen(this);
-
-
-		// Load background
-//		((ImageView) findViewById(R.id.background))
-//				.setBackgroundDrawable(ConfigData.rbdBackground);
 
 		mContext = this.getApplicationContext();
 
@@ -84,7 +77,6 @@ public class ChooseCardActivity extends BaseActivity implements OnClickListener,
 			mPlayer.start();
 		}
 
-		// get card need to select
 		theNumberCardNeedToSelect = this.getIntent().getExtras()
 				.getInt("cardSelectInNeed");
 
@@ -102,12 +94,14 @@ public class ChooseCardActivity extends BaseActivity implements OnClickListener,
 		cardBack = Utils.decodeSampledBitmapFromResource(getResources(),
 				(Config.ing_back_card[Prefs.getCardBackground(this)]), card_width, card_height, 90);
 
-		cardBack = getRoundedCornerBitmap(cardBack, 50);
+		cardBack = getRoundedCornerBitmap(cardBack, 15);
 		btnSkip = (Button) findViewById(R.id.btnSkip);
 		btnSkip.setOnClickListener(this);
 		btnSkip.setTypeface(ConfigData.UVNCatBien_R);
 
 		create78Card();
+		background = (ImageView) findViewById(R.id.background);
+
 
 		ConfigData.animation_select_card.setAnimationListener(this);
 
@@ -137,10 +131,8 @@ public class ChooseCardActivity extends BaseActivity implements OnClickListener,
 
 	@Override
 	protected void onResume() {
-		// Load background
-//		((ImageView) findViewById(R.id.background))
-//				.setBackground(ConfigData.rbdBackground);
 		super.onResume();
+		refreshAppBg();
 	}
 
 	private void create78Card() {

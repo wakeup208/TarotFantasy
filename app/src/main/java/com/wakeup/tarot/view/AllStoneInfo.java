@@ -56,7 +56,6 @@ public class AllStoneInfo extends BaseActivity{
         sliderView.setOnIndicatorClickListener(new DrawController.ClickListener() {
             @Override
             public void onIndicatorClicked(int position) {
-                Log.d("abcd", "onIndicatorClicked: " + sliderView.getCurrentPagePosition());
             }
         });
 

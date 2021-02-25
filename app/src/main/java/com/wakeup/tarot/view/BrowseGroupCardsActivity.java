@@ -40,6 +40,9 @@ import com.wakeup.tarot.adapter.GroupSuitImageGridViewAdapter;
 import com.wakeup.tarot.adapter.GroupSymbolImageGridViewAdapter;
 import com.wakeup.tarot.data.ConfigData;
 import com.wakeup.tarot.data.MapData;
+import com.wakeup.tarot.listener.OnChangeBackground;
+import com.wakeup.tarot.preferences.Prefs;
+import com.wakeup.tarot.util.Config;
 import com.wakeup.tarot.util.ImageCache;
 import com.wakeup.tarot.util.ImageCache.ImageCacheParams;
 import com.wakeup.tarot.util.ImageLoaderAsynch;
@@ -49,7 +52,7 @@ import static com.wakeup.tarot.adapter.GroupSuitImageGridViewAdapter.realPositio
 import static com.wakeup.tarot.adapter.GroupSymbolImageGridViewAdapter.realPositionGroupSymbol;
 
 public class BrowseGroupCardsActivity extends FragmentActivity implements
-        OnClickListener {
+        OnClickListener , OnChangeBackground {
 
     public static Context mContext;
     public static final String BROWSE_GROUP_IMAGE_CACHE_DIR = "browse_group_image_cache";
@@ -58,6 +61,7 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
     public static int zoom_level = 0;
     private TextView tvTitle;
     private ImageButton btn_home;
+    private ImageView background;
 
     // Fragment to show Browse mode
     GroupSuitCardFragment mGroupSuitCardFragment;
@@ -96,15 +100,14 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
 
         // Replace container by mGridCardFragment
         selectBrowserMode(mode);
-
+        background = (ImageView) findViewById(R.id.background);
     }
 
     @Override
     protected void onResume() {
         // Load background
-//		((ImageView) findViewById(R.id.background))
-//				.setBackground(ConfigData.rbdBackground);
         super.onResume();
+        refreshAppBg();
     }
 
     @Override
@@ -198,6 +201,16 @@ public class BrowseGroupCardsActivity extends FragmentActivity implements
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.encyclopedia_menu, menu);
         return true;
+    }
+
+    @Override
+    public void refreshCardBack() {
+
+    }
+
+    @Override
+    public void refreshAppBg() {
+        background.setBackground(getDrawable(Config.ing_app_bg[Prefs.getAppBackground(this)]));
     }
 
     public static class GroupSuitCardFragment extends Fragment {

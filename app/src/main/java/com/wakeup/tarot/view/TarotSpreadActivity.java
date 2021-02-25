@@ -21,12 +21,15 @@ import com.google.android.gms.ads.AdListener;
 import com.wakeup.tarot.R;
 import com.wakeup.tarot.adapter.SpreadCardNameListViewAdapter;
 import com.wakeup.tarot.data.ConfigData;
+import com.wakeup.tarot.preferences.Prefs;
+import com.wakeup.tarot.util.Config;
 
 public class TarotSpreadActivity extends BaseActivity implements
 		OnItemClickListener {
 
 	private TextView tvTarotSpreadTitle;
 	private ListView lvTarotSpread;
+	private ImageView background;
 	private int pos;
 
 	@Override
@@ -36,7 +39,7 @@ public class TarotSpreadActivity extends BaseActivity implements
 
 	@Override
 	public void refreshAppBg() {
-
+		background.setBackground(getDrawable(Config.ing_app_bg[Prefs.getAppBackground(this)]));
 	}
 
 	@SuppressWarnings("deprecation")
@@ -50,7 +53,7 @@ public class TarotSpreadActivity extends BaseActivity implements
 				
 		
 		// Load background
-		//((ImageView) findViewById(R.id.background)).setBackgroundDrawable(ConfigData.rbdBackground);
+		background = (ImageView) findViewById(R.id.background);
 
 		tvTarotSpreadTitle = (TextView) findViewById(R.id.tvTarotSpreadTitle);
 		tvTarotSpreadTitle.setTypeface(ConfigData.UVNCatBien_R);
@@ -92,10 +95,8 @@ public class TarotSpreadActivity extends BaseActivity implements
 	
 	@Override
 	protected void onResume() {
-		// Load background
-//		((ImageView) findViewById(R.id.background))
-//				.setBackground(ConfigData.rbdBackground);
 		super.onResume();
+		refreshAppBg();
 	}
 
 }

@@ -20,8 +20,6 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class ConfigData {
-    public static final String FEED_BACK_LINK = "https://www.facebook.com/greendream.ait.vn";
-
     // Media player to control and represent sound effect in app
     public static MediaPlayer mp;
     private static Context appContext;
@@ -121,7 +119,7 @@ public class ConfigData {
 
         // Load Background
         if (rbdBackground == null) {
-            rbdBackground = new RecyclingBitmapDrawable(appContext.getResources(), R.drawable.mainback, ConfigData.SCREEN_WIDTH, ConfigData.SCREEN_HEIGHT);
+            rbdBackground = new RecyclingBitmapDrawable(appContext.getResources(), R.drawable.background_mainback, ConfigData.SCREEN_WIDTH, ConfigData.SCREEN_HEIGHT);
         }
 
         // Load JSON
@@ -136,6 +134,7 @@ public class ConfigData {
     public static void saveSettingData() {
         // Retrieve an editor to modify the shared preferences.
         if (preferences != null) {
+
             SharedPreferences.Editor editor = preferences.edit();
 
             editor.putFloat("FONT_SIZE", FONT_SIZE);
@@ -265,7 +264,7 @@ public class ConfigData {
 
         // Load Background
         rbdBackground = new RecyclingBitmapDrawable(appContext.getResources(),
-                R.drawable.mainback, ConfigData.SCREEN_WIDTH,
+                R.drawable.background_mainback, ConfigData.SCREEN_WIDTH,
                 ConfigData.SCREEN_HEIGHT);
     }
 }

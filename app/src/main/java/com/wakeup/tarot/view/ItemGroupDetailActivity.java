@@ -18,9 +18,12 @@ import com.wakeup.tarot.data.NumberJasonHelper;
 import com.wakeup.tarot.data.StarJasonHelper;
 import com.wakeup.tarot.data.SuitJasonHelper;
 import com.wakeup.tarot.data.SymbolJasonHelper;
+import com.wakeup.tarot.listener.OnChangeBackground;
+import com.wakeup.tarot.preferences.Prefs;
+import com.wakeup.tarot.util.Config;
 
 public class ItemGroupDetailActivity extends FragmentActivity implements
-		OnClickListener {
+		OnClickListener, OnChangeBackground {
 
 	public  Context mContext;
 	private ImageButton btn_home;
@@ -29,6 +32,7 @@ public class ItemGroupDetailActivity extends FragmentActivity implements
 	private TextView tvGroupName;
 	private TextView tvItemGroupDetail;
 	private ImageView ivItemGroupImage;
+	private ImageView background;
 	
 	private String group_name;
 	private int position;
@@ -43,7 +47,7 @@ public class ItemGroupDetailActivity extends FragmentActivity implements
 		//ConfigData.reloadScreen(this);
 		
 		// Load background
-		//((ImageView) findViewById(R.id.background)).setBackgroundDrawable(ConfigData.rbdBackground);
+		background = (ImageView) findViewById(R.id.background);
 
 		position = this.getIntent().getExtras().getInt("position");
 		group_name = this.getIntent().getExtras().getString("group_name");
@@ -120,9 +124,17 @@ public class ItemGroupDetailActivity extends FragmentActivity implements
 	@Override
 	protected void onResume() {
 		// Load background
-//		((ImageView) findViewById(R.id.background))
-//				.setBackground(ConfigData.rbdBackground);
 		super.onResume();
+		refreshAppBg();
 	}
 
+	@Override
+	public void refreshCardBack() {
+
+	}
+
+	@Override
+	public void refreshAppBg() {
+		background.setBackground(getDrawable(Config.ing_app_bg[Prefs.getAppBackground(this)]));
+	}
 }

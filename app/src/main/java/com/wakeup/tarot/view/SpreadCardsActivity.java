@@ -52,6 +52,7 @@ public class SpreadCardsActivity extends BaseActivity implements
 
 	private ImageView spread_selected;
 	private ImageView card_list;
+	private ImageView background;
 
 	private int theNummberOfCard;
 	public static int spreadId; // current spread id show
@@ -74,6 +75,7 @@ public class SpreadCardsActivity extends BaseActivity implements
 
 	@Override
 	public void refreshAppBg() {
+		background.setBackground(getDrawable(Config.ing_app_bg[Prefs.getAppBackground(this)]));
 	}
 
 	@SuppressWarnings("deprecation")
@@ -104,7 +106,7 @@ public class SpreadCardsActivity extends BaseActivity implements
 		mImageLoader.setImageFadeIn(false);
 		
 		// Load background
-		//((ImageView) findViewById(R.id.background)).setBackgroundDrawable(ConfigData.rbdBackground);
+		background = (ImageView) findViewById(R.id.background);
 
 		mContext = this.getApplicationContext();
 
@@ -793,9 +795,7 @@ public class SpreadCardsActivity extends BaseActivity implements
 	
 	@Override
 	protected void onResume() {
-		// Load background
-//		((ImageView) findViewById(R.id.background))
-//				.setBackground(ConfigData.rbdBackground);
 		super.onResume();
+		refreshAppBg();
 	}
 }

@@ -6,7 +6,6 @@
     <ImageView
         android:id="@+id/background"
         android:scaleType="fitCenter"
-        android:background="@drawable/mainback"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:contentDescription="TODO" />
@@ -20,7 +19,7 @@
         android:background="@color/color_bar"
         android:gravity="center"
         android:text="@string/tarot_spread"
-        android:textColor="#b23ad0"
+        android:textColor="@color/white"
         android:fontFamily="@font/quicksand"
         android:textSize="@dimen/title_font_size"
         android:textStyle="bold"

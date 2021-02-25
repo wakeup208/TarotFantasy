@@ -24,11 +24,14 @@ import com.wakeup.tarot.R;
 import com.wakeup.tarot.data.CardsDetailJasonHelper;
 import com.wakeup.tarot.data.ConfigData;
 import com.wakeup.tarot.fragment.CardDetailForSpreadCardFragment;
+import com.wakeup.tarot.listener.OnChangeBackground;
+import com.wakeup.tarot.preferences.Prefs;
+import com.wakeup.tarot.util.Config;
 import com.wakeup.tarot.util.ImageCache;
 import com.wakeup.tarot.util.ImageLoaderAsynch;
 
 public class CardDetailViewPagerForSpreadCardActivity extends FragmentActivity
-        implements OnClickListener, ViewPager.OnPageChangeListener {
+        implements OnClickListener, ViewPager.OnPageChangeListener, OnChangeBackground {
 
     private static final String VIEW_PAGER_IMAGE_CACHE_DIR = "extra_image_cache";
 
@@ -50,6 +53,9 @@ public class CardDetailViewPagerForSpreadCardActivity extends FragmentActivity
     private ImageView card_spread;
     private ImageView card_interpretation;
     private ImageView associations;
+
+    private ImageView background;
+
     //private ImageView btn_shop;
     private int cardClickedIndex;
 
@@ -79,10 +85,6 @@ public class CardDetailViewPagerForSpreadCardActivity extends FragmentActivity
         mImageLoader.setLoadingImage(null);
         mImageLoader.addImageCache(getSupportFragmentManager(), cacheParams);
         mImageLoader.setImageFadeIn(false);
-
-        // Load background
-//        ((ImageView) findViewById(R.id.background))
-//                .setBackground(ConfigData.rbdBackground);
 
         // get card show now in ViewPager
         cardClickedIndex = getIntent().getIntExtra("cardClickedIndex", 0);
@@ -140,12 +142,14 @@ public class CardDetailViewPagerForSpreadCardActivity extends FragmentActivity
         isShowDetail = false; // don't show detail
         visibleMode = 1; // show card spread info first
 
+        background = (ImageView) findViewById(R.id.background);
     }
 
     @Override
     public void onResume() {
         super.onResume();
         mImageLoader.setExitTasksEarly(false);
+        refreshAppBg();
     }
 
     @Override
@@ -168,6 +172,16 @@ public class CardDetailViewPagerForSpreadCardActivity extends FragmentActivity
      */
     public ImageLoaderAsynch getImageLoader() {
         return mImageLoader;
+    }
+
+    @Override
+    public void refreshCardBack() {
+
+    }
+
+    @Override
+    public void refreshAppBg() {
+        background.setBackground(getDrawable(Config.ing_app_bg[Prefs.getAppBackground(this)]));
     }
 
     /**

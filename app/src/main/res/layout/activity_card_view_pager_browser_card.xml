@@ -8,7 +8,7 @@
         android:id="@+id/background"
         android:scaleType="fitCenter"
         android:layout_width="match_parent"
-        android:background="@drawable/mainback"
+        android:background="@drawable/background_mainback"
         android:layout_height="match_parent" />
 
     <androidx.viewpager.widget.ViewPager
@@ -34,7 +34,7 @@
             android:gravity="center_vertical|center_horizontal"
             android:shadowRadius="2"
             android:text="@string/browse_cards"
-            android:textColor="#b23ad0"
+            android:textColor="@color/white"
             android:textSize="@dimen/text_size_title"
             android:fontFamily="@font/quicksand"
             android:textStyle="bold" />

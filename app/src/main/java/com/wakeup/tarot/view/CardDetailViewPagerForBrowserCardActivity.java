@@ -26,11 +26,14 @@ import com.wakeup.tarot.data.ConfigData;
 import com.wakeup.tarot.data.MapData;
 //import com.wakeup.tarot.fragment.BuyTarotCustomDialog;
 import com.wakeup.tarot.fragment.CardDetailForBrowserCardFragment;
+import com.wakeup.tarot.listener.OnChangeBackground;
+import com.wakeup.tarot.preferences.Prefs;
+import com.wakeup.tarot.util.Config;
 import com.wakeup.tarot.util.ImageCache;
 import com.wakeup.tarot.util.ImageLoaderAsynch;
 
 public class CardDetailViewPagerForBrowserCardActivity extends
-		FragmentActivity implements OnClickListener, ViewPager.OnPageChangeListener {
+		FragmentActivity implements OnClickListener, ViewPager.OnPageChangeListener , OnChangeBackground {
 	
 	private static final String VIEW_PAGER_IMAGE_CACHE_DIR = "extra_image_cache";
 	private ImageLoaderAsynch mImageLoader;
@@ -50,6 +53,7 @@ public class CardDetailViewPagerForBrowserCardActivity extends
 	private ImageView btn_associations;
 	private Button btn_shop;
 	private int position;
+	private ImageView background;
 
 	private LinearLayout ln_card_detail, ln_associations, ln_home_navigate;
 
@@ -80,8 +84,7 @@ public class CardDetailViewPagerForBrowserCardActivity extends
 		mImageLoader.setImageFadeIn(false);
 
 		// Load background
-//		((ImageView) findViewById(R.id.background))
-//				.setBackground(ConfigData.rbdBackground);
+		background = (ImageView) findViewById(R.id.background);
 
 		/**
 		 *  Get component for control
@@ -141,9 +144,7 @@ public class CardDetailViewPagerForBrowserCardActivity extends
 	public void onResume() {
 		super.onResume();
 		mImageLoader.setExitTasksEarly(false);
-		// Load background
-//		((ImageView) findViewById(R.id.background))
-//		.setBackground(ConfigData.rbdBackground);
+		refreshAppBg();
 	}
 
 	@Override
@@ -165,6 +166,15 @@ public class CardDetailViewPagerForBrowserCardActivity extends
 	 */
 	public ImageLoaderAsynch getImageLoader() {
 		return mImageLoader;
+	}
+
+	@Override
+	public void refreshCardBack() {
+	}
+
+	@Override
+	public void refreshAppBg() {
+		background.setBackground(getDrawable(Config.ing_app_bg[Prefs.getAppBackground(this)]));
 	}
 
 	/**

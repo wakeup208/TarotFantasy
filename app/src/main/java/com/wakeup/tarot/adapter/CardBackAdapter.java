@@ -8,12 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.smarteist.autoimageslider.SliderViewAdapter;
 import com.wakeup.tarot.R;
 import com.wakeup.tarot.data.ConfigData;
 import com.wakeup.tarot.model.SliderItem;
@@ -28,7 +28,7 @@ import java.util.List;
 public class CardBackAdapter extends RecyclerView.Adapter<CardBackAdapter.CardBackVH> {
 
     private Context mContext;
-    private List<SliderItem> mSliderItems = new ArrayList<>();
+    private List<SliderItem> mCardBackItems = new ArrayList<>();
     private final static int FADE_DURATION = 1000; //FADE_DURATION in milliseconds
 
     public CardBackAdapter(Context context) {
@@ -37,7 +37,7 @@ public class CardBackAdapter extends RecyclerView.Adapter<CardBackAdapter.CardBa
 
 
     public void renewItems(List<SliderItem> sliderItems) {
-        this.mSliderItems = sliderItems;
+        this.mCardBackItems = sliderItems;
         notifyDataSetChanged();
     }
 
@@ -52,12 +52,12 @@ public class CardBackAdapter extends RecyclerView.Adapter<CardBackAdapter.CardBa
     @Override
     public void onBindViewHolder(CardBackVH viewHolder, int position) {
 
-        int pos = position % this.mSliderItems.size();;
+        int pos = position % this.mCardBackItems.size();;
 
         Glide.with(viewHolder.itemView)
                 .load(Integer.valueOf(Config.ing_back_card[pos]))
                 .fitCenter()
-                .into(viewHolder.imageGifContainer);
+                .into(viewHolder.imgCardBack);
 
         setFadeAnimation(viewHolder.itemView);
     }
@@ -68,31 +68,31 @@ public class CardBackAdapter extends RecyclerView.Adapter<CardBackAdapter.CardBa
     }
 
     public int getSize() {
-        return this.mSliderItems.size();
+        return this.mCardBackItems.size();
     }
 
     public class CardBackVH extends RecyclerView.ViewHolder {
 
-        ImageView imageGifContainer;
+        ImageView imgCardBack;
 
         public CardBackVH(View itemView) {
             super(itemView);
-            imageGifContainer = itemView.findViewById(R.id.iv_setting_bg);
-            imageGifContainer.setOnClickListener(new View.OnClickListener() {
+            imgCardBack = itemView.findViewById(R.id.iv_setting_bg);
+            imgCardBack.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Log.d("abcd", "getAdapterPosition == " + getAdapterPosition() % getSize());
                     Prefs.setCardBackground(getAdapterPosition() % getSize());
+                    Toast.makeText(view.getContext(), R.string.str_cardback, Toast.LENGTH_SHORT).show();
                 }
             });
 
-            imageGifContainer.setOnTouchListener(new View.OnTouchListener() {
+            imgCardBack.setOnTouchListener(new View.OnTouchListener() {
                 @Override
                 public boolean onTouch(View view, MotionEvent motionEvent) {
                     if (MotionEvent.ACTION_DOWN == motionEvent.getAction()) {
-                        imageGifContainer.startAnimation(ConfigData.animation_zoom_in);
+                        imgCardBack.startAnimation(ConfigData.animation_zoom_in);
                     } else if (MotionEvent.ACTION_UP == motionEvent.getAction()) {
-                        imageGifContainer.clearAnimation();
+                        imgCardBack.clearAnimation();
                     }
                     return false;
                 }

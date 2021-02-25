@@ -7,7 +7,6 @@
      <ImageView
         android:id="@+id/background"
         android:scaleType="fitCenter"
-         android:background="@drawable/mainback"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
      
@@ -21,7 +20,7 @@
     <RelativeLayout
         android:id="@+id/top_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/home_size"
         android:layout_alignParentTop="true"
         android:background="@color/color_bar"
         android:visibility="visible" >
@@ -30,7 +29,8 @@
             android:id="@+id/btn_home_spread"
             android:layout_width="@dimen/home_size"
             android:layout_height="@dimen/home_size"
-            android:background="@drawable/ic_home_48"
+            android:layout_margin="@dimen/dimen_5dp"
+            android:background="@drawable/ic_share"
             android:gravity="center_vertical"
             android:padding="@dimen/commom_padding" />
 
@@ -42,7 +42,7 @@
             android:gravity="center_horizontal"
             android:text="@string/browse_cards"
             android:fontFamily="@font/quicksand"
-            android:textColor="#b23ad0"
+            android:textColor="@color/white"
             android:textSize="@dimen/text_size_title"
             android:textStyle="bold" />
     </RelativeLayout>

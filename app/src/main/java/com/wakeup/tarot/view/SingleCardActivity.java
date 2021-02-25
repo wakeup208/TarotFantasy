@@ -46,6 +46,7 @@ public class SingleCardActivity extends BaseActivity implements OnClickListener 
     private Button btn_expand_reverse_keywords;
     private TextView tvReverseKeyWordsDetail;
     private Button btn_view_card_interpretation;
+    private ImageView background;
 
     private ScrollView svCardInterpretation;
     private TextView tvInterpretation;
@@ -67,7 +68,8 @@ public class SingleCardActivity extends BaseActivity implements OnClickListener 
 
     private ImageLoaderAsynch mImageLoader;
     private static String EXTRA_IMAGE_CACHE_DIR = "extra_image_cache";
-
+    private int w;
+    private int h;
     // Visible mode
     // 1 for CardDetail
     // 2 for card interpretation
@@ -81,7 +83,8 @@ public class SingleCardActivity extends BaseActivity implements OnClickListener 
 
     @Override
     public void refreshAppBg() {
-        ivBackCard.setBackground(getDrawable(Config.ing_back_card[Prefs.getCardBackground(this)]));
+        mImageLoader.loadImage(Config.ing_back_card[Prefs.getCardBackground(this)] + "_" + w + "_" + h + "_" + 180, ivBackCard);
+        background.setBackground(getDrawable(Config.ing_app_bg[Prefs.getAppBackground(this)]));
     }
 
     @SuppressWarnings("deprecation")
@@ -107,7 +110,7 @@ public class SingleCardActivity extends BaseActivity implements OnClickListener 
         mImageLoader.setImageFadeIn(false);
 
         // Load background
-        //((ImageView) findViewById(R.id.background)).setBackgroundDrawable(ConfigData.rbdBackground);
+        background = ((ImageView) findViewById(R.id.background));
 
         // Init for View Fliper card component
         vfCardImage = (ViewFlipper) findViewById(R.id.vfCardImage);
@@ -115,9 +118,13 @@ public class SingleCardActivity extends BaseActivity implements OnClickListener 
         /**
          * Bind a click listener to initiate the flip transitions
          */
-
+        w = ConfigData.SCREEN_WIDTH / 9 * 8;
+        h = w * 1232 / 710;
         // Flip card when user Click at back card
         ivBackCard = (ImageView) findViewById(R.id.ivBackCard);
+        mImageLoader.loadImage(Config.ing_back_card[Prefs.getCardBackground(this)] + "_" + w + "_" + h + "_" + 180, ivBackCard);
+
+
         ivBackCard.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -134,8 +141,7 @@ public class SingleCardActivity extends BaseActivity implements OnClickListener 
 
         // Initial for all component otherwise
         ivFontCard = (ImageView) findViewById(R.id.ivFontCard);
-        int w = ConfigData.SCREEN_WIDTH / 9 * 8;
-        int h = w * 1232 / 710;
+
         if (ConfigData.randOneCardDimension == 1) {
             mImageLoader.loadImage(MapData.arrCardImage_R_Id[ConfigData.randOneCardId] + "_" + w + "_" + h + "_" + 180, ivFontCard);
         } else {
@@ -589,9 +595,6 @@ public class SingleCardActivity extends BaseActivity implements OnClickListener 
         super.onResume();
         mImageLoader.setExitTasksEarly(false);
         refreshAppBg();
-        // Load background
-//        ((ImageView) findViewById(R.id.background))
-//                .setBackground(ConfigData.rbdBackground);
     }
 
     @Override
@@ -614,8 +617,5 @@ public class SingleCardActivity extends BaseActivity implements OnClickListener 
     }
 
     public void onAdvertisementClick(View v) {
-        Uri uriUrl = Uri.parse(ConfigData.FEED_BACK_LINK);
-        Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
-        startActivity(launchBrowser);
     }
 }

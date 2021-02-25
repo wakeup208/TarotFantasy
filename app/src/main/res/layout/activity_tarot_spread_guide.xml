@@ -8,7 +8,6 @@
         android:id="@+id/background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/mainback"
         android:scaleType="fitCenter" />
 
     <LinearLayout
@@ -26,7 +25,7 @@
             android:id="@+id/btn_shuffle_cards"
             android:layout_marginTop="@dimen/dimen_10dp"
             android:layout_width="@dimen/dimen_300dp"
-            android:layout_height="@dimen/dimen_50dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/dimen_10dp"
             android:textSize="@dimen/thanhtay_text_size"
             android:text="@string/btn_shuffle_cards"
@@ -36,7 +35,7 @@
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:fontFamily="@font/quicksand"
-            app:qb_backgroundColor="@color/navigation_color"
+            app:qb_backgroundColor="@color/white_trans"
             app:qb_radius="100"
             app:qb_strokeColor="@color/white"
             app:qb_strokeWidth="5" />
@@ -45,7 +44,7 @@
             android:id="@+id/btn_go_directly_to_spread"
             android:layout_marginTop="@dimen/dimen_10dp"
             android:layout_width="@dimen/dimen_300dp"
-            android:layout_height="@dimen/dimen_50dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/dimen_10dp"
             android:textSize="@dimen/thanhtay_text_size"
             android:gravity="center_horizontal"
@@ -55,7 +54,7 @@
             android:text="@string/btn_go_directly_to_spread"
             android:textColor="@android:color/white"
             android:fontFamily="@font/quicksand"
-            app:qb_backgroundColor="@color/navigation_color"
+            app:qb_backgroundColor="@color/white_trans"
             app:qb_radius="100"
             app:qb_strokeColor="@color/white"
             app:qb_strokeWidth="5" />
@@ -82,7 +81,7 @@
                 android:paddingBottom="@dimen/small_padding"
                 android:text="Spread guide"
                 android:fontFamily="@font/quicksand"
-                android:textColor="#b23ad0"
+                android:textColor="@color/white"
                 android:textSize="@dimen/title_font_size"
                 android:textStyle="bold"
                 android:typeface="serif" />

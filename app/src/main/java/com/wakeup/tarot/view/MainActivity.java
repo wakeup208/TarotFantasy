@@ -65,7 +65,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
     @Override
     public void refreshAppBg() {
-        background.setBackground(getDrawable(Config.img_stone[Prefs.getCardBackground(this)]));
+        background.setBackground(getDrawable(Config.ing_app_bg[Prefs.getAppBackground(this)]));
     }
 
     @Override

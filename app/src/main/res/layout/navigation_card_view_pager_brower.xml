@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_alignParentBottom="true"
-    android:background="#b23ad0"
+    android:background="@drawable/navigation_bg"
     android:gravity="center_horizontal"
     android:orientation="horizontal"
     android:weightSum="3"
@@ -88,8 +88,9 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_centerInParent="true"
+            android:layout_margin="@dimen/dimen_5dp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_home" />
+            android:background="@drawable/ic_share" />
 
         <TextView
             android:layout_width="match_parent"

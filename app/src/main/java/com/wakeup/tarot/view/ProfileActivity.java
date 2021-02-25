@@ -1,12 +1,7 @@
 package com.wakeup.tarot.view;
 
-import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
-import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -15,25 +10,21 @@ import android.view.animation.LayoutAnimationController;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.ImageView;
 import android.widget.CompoundButton.OnCheckedChangeListener;
-import android.widget.LinearLayout;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
-import com.smarteist.autoimageslider.IndicatorView.draw.controller.DrawController;
-import com.smarteist.autoimageslider.SliderAnimations;
-import com.smarteist.autoimageslider.SliderView;
 import com.wakeup.tarot.R;
+import com.wakeup.tarot.adapter.AppBackgroundAdater;
 import com.wakeup.tarot.adapter.CardBackAdapter;
 import com.wakeup.tarot.data.ConfigData;
 import com.wakeup.tarot.fragment.ChangeFontSizeCustomDialog;
 import com.wakeup.tarot.model.SliderItem;
+import com.wakeup.tarot.preferences.Prefs;
 import com.wakeup.tarot.util.Config;
 
 import java.util.ArrayList;
@@ -41,26 +32,18 @@ import java.util.List;
 
 public class ProfileActivity extends BaseActivity implements OnClickListener,
 		OnCheckedChangeListener {
-
-	private TextView btnReverseCard;
 	private CheckBox cbReverseCard;
-
-	private TextView btnSoundOnOff;
 	private CheckBox cbSoundOnOff;
-
-	private TextView btnFontSize;
+	private RelativeLayout btnFontSize;
 	private TextView tvFontSize;
-
-	private Button btnDefault;
-	private Button btnSave;
-	private Button btnCancel;
-
-	private AlertDialog.Builder startLevelDialog;
-
 	private boolean isSettingChange;
 	private RecyclerView cardSlider;
 	private RecyclerView backgroundSlider;
 	private CardBackAdapter cardBackAdapter;
+	private AppBackgroundAdater appBackgroundAdater;
+	private ImageView background;
+	private Button btnHome;
+	private RelativeLayout rtlReserve, rtlSoundOff;
 
 	@Override
 	public void refreshCardBack() {
@@ -69,7 +52,7 @@ public class ProfileActivity extends BaseActivity implements OnClickListener,
 
 	@Override
 	public void refreshAppBg() {
-
+		background.setBackground(getDrawable(Config.ing_app_bg[Prefs.getAppBackground(this)]));
 	}
 
 	@SuppressWarnings("deprecation")
@@ -78,33 +61,35 @@ public class ProfileActivity extends BaseActivity implements OnClickListener,
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_profile);
 
+		background = (ImageView) findViewById(R.id.background);
+
 		cardBackAdapter = new CardBackAdapter(this);
-		btnReverseCard = (TextView) findViewById(R.id.btnReverseCard);
-		btnReverseCard.setOnClickListener(this);
+		appBackgroundAdater = new AppBackgroundAdater(ProfileActivity.this);
 
-		btnSoundOnOff = (TextView) findViewById(R.id.btnSoundOnOff);
-		btnSoundOnOff.setOnClickListener(this);
-
-		btnFontSize = (TextView) findViewById(R.id.btnFontSize);
+		btnFontSize = (RelativeLayout) findViewById(R.id.btnFontSize);
 		btnFontSize.setOnClickListener(this);
 
 		cbReverseCard = (CheckBox) findViewById(R.id.cbReverseCard);
-		cbReverseCard.setOnCheckedChangeListener(this);
+		//cbReverseCard.setOnCheckedChangeListener(this);
 
 		cbSoundOnOff = (CheckBox) findViewById(R.id.cbSoundOnOff);
-		cbSoundOnOff.setOnCheckedChangeListener(this);
+		//cbSoundOnOff.setOnCheckedChangeListener(this);
+
+		rtlReserve = (RelativeLayout) findViewById(R.id.rtlReverse);
+		rtlReserve.setOnClickListener(this);
+		rtlSoundOff = (RelativeLayout) findViewById(R.id.rtlSoundoff);
+		rtlSoundOff.setOnClickListener(this);
 
 		tvFontSize = (TextView) findViewById(R.id.tvFontSize);
 		tvFontSize.setText(ConfigData.FONT_SIZE + "");
 
-		btnDefault = (Button) findViewById(R.id.btnDefault);
-		btnDefault.setOnClickListener(this);
-
-		btnSave = (Button) findViewById(R.id.btnSave);
-		btnSave.setOnClickListener(this);
-
-		btnCancel = (Button) findViewById(R.id.btnCancel);
-		btnCancel.setOnClickListener(this);
+		btnHome = (Button) findViewById(R.id.btn_home);
+		btnHome.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				finish();
+			}
+		});
 
 		// Update this UI
 		tvFontSize.setText("" + ConfigData.FONT_SIZE);
@@ -112,31 +97,41 @@ public class ProfileActivity extends BaseActivity implements OnClickListener,
 		cbSoundOnOff.setChecked(ConfigData.IS_SOUND_ON);
 
 		isSettingChange = false;
-		startLevelDialog = new AlertDialog.Builder(this, R.style.DialogStyle);
+		//startLevelDialog = new AlertDialog.Builder(this, R.style.DialogStyle);
+
+		int resId = R.anim.layout_animation;
+		LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(this, resId);
 
 		cardSlider = (RecyclerView) findViewById(R.id.sliderCardBack);
 		backgroundSlider = (RecyclerView) findViewById(R.id.sliderBackground);
 
-		List<SliderItem> sliderItemList = new ArrayList<>();
+		List<SliderItem> backcardItems = new ArrayList<>();
 		for (int i = 0; i < Config.ing_back_card.length; i++) {
 			SliderItem sliderItem = new SliderItem();
 			sliderItem.setDescription("Slider Item " + i);
-			sliderItem.setInteger(Integer.valueOf(Config.img_stone[i]));
-			sliderItemList.add(sliderItem);
+			sliderItem.setInteger(Integer.valueOf(Config.ing_back_card[i]));
+			backcardItems.add(sliderItem);
 		}
-
-		cardBackAdapter.renewItems(sliderItemList);
+		cardBackAdapter.renewItems(backcardItems);
 		cardSlider.setAdapter(cardBackAdapter);
 		LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
 		linearLayoutManager.scrollToPosition(cardBackAdapter.getItemCount() % cardBackAdapter.getSize());
 		cardSlider.setLayoutManager(linearLayoutManager);
-
-		int resId = R.anim.layout_animation;
-		LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(this, resId);
 		cardSlider.setLayoutAnimation(animation);
 
-//		cardSlider.getAdapter().notifyDataSetChanged();
-//		cardSlider.scheduleLayoutAnimation();
+		List<SliderItem> appBackItems = new ArrayList<>();
+		for (int i = 0; i < Config.ing_app_bg.length; i++) {
+			SliderItem sliderItem = new SliderItem();
+			sliderItem.setDescription("Slider Item " + i);
+			sliderItem.setInteger(Integer.valueOf(Config.ing_app_bg[i]));
+			appBackItems.add(sliderItem);
+		}
+		appBackgroundAdater.renewItems(appBackItems);
+		backgroundSlider.setAdapter(appBackgroundAdater);
+		LinearLayoutManager linearLayoutManagerApp = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+		linearLayoutManager.scrollToPosition(appBackgroundAdater.getItemCount() % appBackgroundAdater.getSize());
+		backgroundSlider.setLayoutManager(linearLayoutManagerApp);
+		backgroundSlider.setLayoutAnimation(animation);
 	}
 
 	@Override
@@ -155,183 +150,153 @@ public class ProfileActivity extends BaseActivity implements OnClickListener,
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.btnReverseCard:
+			case R.id.rtlReverse:
 			cbReverseCard.setChecked(!cbReverseCard.isChecked());
+			ConfigData.IS_REVERSE_CARD = cbReverseCard
+					.isChecked();
+			ConfigData.saveSettingData();
+			// Update this UI
+			cbReverseCard
+					.setChecked(ConfigData.IS_REVERSE_CARD);
+
 			isSettingChange = true;
 			break;
 
-		case R.id.btnSoundOnOff:
+			case R.id.rtlSoundoff:
 			cbSoundOnOff.setChecked(!cbSoundOnOff.isChecked());
+			ConfigData.IS_SOUND_ON = cbSoundOnOff
+					.isChecked();
+			ConfigData.saveSettingData();
+			// Update this UI
+			cbSoundOnOff
+					.setChecked(ConfigData.IS_SOUND_ON);
 			isSettingChange = true;
 			break;
 
-		case R.id.btnFontSize: // Show dialog change font size
+		case R.id.btnFontSize:
 			(new ChangeFontSizeCustomDialog(this, Float.parseFloat(tvFontSize
 					.getText().toString()))).showDialog();
-			break;
 
-		case R.id.btnDefault:
-
-			final AlertDialog alertDialog = startLevelDialog.create();
-			View view = getLayoutInflater().inflate(R.layout.custom_profile_dialog, null);
-			Button btnYes = (Button) view.findViewById(R.id.btnYes);
-			Button btnNo = (Button) view.findViewById(R.id.btnNo);
-
-			btnYes.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					ConfigData.resetDefault();
-					ConfigData.saveSettingData();
-					// Update this UI
-					tvFontSize.setText(""
-							+ ConfigData.FONT_SIZE);
-					cbReverseCard
-							.setChecked(ConfigData.IS_REVERSE_CARD);
-					cbSoundOnOff
-							.setChecked(ConfigData.IS_SOUND_ON);
-
-					isSettingChange = false;
-					alertDialog.dismiss();
-				}
-			});
-
-			btnNo.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					alertDialog.dismiss();
-				}
-			});
-
-			alertDialog.setCancelable(false);
-			alertDialog.setView(view);
-			alertDialog.show();
-			break;
-		case R.id.btnSave:
-
-			final AlertDialog alertDialog1 = startLevelDialog.create();
-			View view1 = getLayoutInflater().inflate(R.layout.custom_profile_dialog, null);
-			Button btnYes1 = (Button) view1.findViewById(R.id.btnYes);
-			Button btnNo1 = (Button) view1.findViewById(R.id.btnNo);
-			TextView txt = (TextView) view1.findViewById(R.id.txt_title_dialog);
-			txt.setText(R.string.huy_thay_doi);
-
-			btnYes1.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					ConfigData.FONT_SIZE = Float
-							.parseFloat(tvFontSize.getText()
-									.toString());
-					ConfigData.IS_SOUND_ON = cbSoundOnOff
-							.isChecked();
-					ConfigData.IS_REVERSE_CARD = cbReverseCard
-							.isChecked();
-					ConfigData.saveSettingData();
-					// Update this UI
-					tvFontSize.setText(""
-							+ ConfigData.FONT_SIZE);
-					cbReverseCard
-							.setChecked(ConfigData.IS_REVERSE_CARD);
-					cbSoundOnOff
-							.setChecked(ConfigData.IS_SOUND_ON);
-
-					isSettingChange = false;
-					alertDialog1.dismiss();
-				}
-			});
-
-			btnNo1.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					alertDialog1.dismiss();
-				}
-			});
-
-
-			alertDialog1.setCancelable(false);
-			alertDialog1.setView(view1);
-			alertDialog1.show();
-
-			break;
-
-		case R.id.btnCancel:
+			ConfigData.FONT_SIZE = Float
+					.parseFloat(tvFontSize.getText()
+							.toString());
+			ConfigData.saveSettingData();
 			// Update this UI
-			finish();
+			tvFontSize.setText(""
+					+ ConfigData.FONT_SIZE);
 			break;
+
+//		case R.id.btnDefault:
+//
+//			final AlertDialog alertDialog = startLevelDialog.create();
+//			View view = getLayoutInflater().inflate(R.layout.custom_profile_dialog, null);
+//			Button btnYes = (Button) view.findViewById(R.id.btnYes);
+//			Button btnNo = (Button) view.findViewById(R.id.btnNo);
+//
+//			btnYes.setOnClickListener(new OnClickListener() {
+//				@Override
+//				public void onClick(View v) {
+//					ConfigData.resetDefault();
+//					ConfigData.saveSettingData();
+//					// Update this UI
+//					tvFontSize.setText(""
+//							+ ConfigData.FONT_SIZE);
+//					cbReverseCard
+//							.setChecked(ConfigData.IS_REVERSE_CARD);
+//					cbSoundOnOff
+//							.setChecked(ConfigData.IS_SOUND_ON);
+//
+//					isSettingChange = false;
+//					alertDialog.dismiss();
+//				}
+//			});
+//
+//			btnNo.setOnClickListener(new OnClickListener() {
+//				@Override
+//				public void onClick(View v) {
+//					alertDialog.dismiss();
+//				}
+//			});
+//
+//			alertDialog.setCancelable(false);
+//			alertDialog.setView(view);
+//			alertDialog.show();
+//			break;
+//		case R.id.btnSave:
+//
+//			final AlertDialog alertDialog1 = startLevelDialog.create();
+//			View view1 = getLayoutInflater().inflate(R.layout.custom_profile_dialog, null);
+//			Button btnYes1 = (Button) view1.findViewById(R.id.btnYes);
+//			Button btnNo1 = (Button) view1.findViewById(R.id.btnNo);
+//			TextView txt = (TextView) view1.findViewById(R.id.txt_title_dialog);
+//			txt.setText(R.string.huy_thay_doi);
+//
+//			btnYes1.setOnClickListener(new OnClickListener() {
+//				@Override
+//				public void onClick(View v) {
+//					ConfigData.FONT_SIZE = Float
+//							.parseFloat(tvFontSize.getText()
+//									.toString());
+//					ConfigData.IS_SOUND_ON = cbSoundOnOff
+//							.isChecked();
+//					ConfigData.IS_REVERSE_CARD = cbReverseCard
+//							.isChecked();
+//					ConfigData.saveSettingData();
+//					// Update this UI
+//					tvFontSize.setText(""
+//							+ ConfigData.FONT_SIZE);
+//					cbReverseCard
+//							.setChecked(ConfigData.IS_REVERSE_CARD);
+//					cbSoundOnOff
+//							.setChecked(ConfigData.IS_SOUND_ON);
+//
+//					isSettingChange = false;
+//					alertDialog1.dismiss();
+//				}
+//			});
+//
+//			btnNo1.setOnClickListener(new OnClickListener() {
+//				@Override
+//				public void onClick(View v) {
+//					alertDialog1.dismiss();
+//				}
+//			});
+//
+//
+//			alertDialog1.setCancelable(false);
+//			alertDialog1.setView(view1);
+//			alertDialog1.show();
+//
+//			break;
+//
+//		case R.id.btnCancel:
+//			// Update this UI
+//			finish();
+//			break;
 		}
 	}
 
 	public void setFontSizeFromDialog(float size) {
 		tvFontSize.setText("" + size);
-		isSettingChange = true;
+		ConfigData.FONT_SIZE = Float
+				.parseFloat(tvFontSize.getText()
+						.toString());
+		ConfigData.saveSettingData();
 	}
 
 	@Override
 	public void onBackPressed() {
-
-		if (isSettingChange) {
-			final AlertDialog backPressDialog = startLevelDialog.create();
-			View view1 = getLayoutInflater().inflate(R.layout.custom_profile_dialog, null);
-			Button btnYes1 = (Button) view1.findViewById(R.id.btnYes);
-			Button btnNo1 = (Button) view1.findViewById(R.id.btnNo);
-			TextView txt = (TextView) view1.findViewById(R.id.txt_title_dialog);
-			txt.setText(R.string.you_mean_1);
-
-			btnYes1.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					ConfigData.FONT_SIZE = Float
-							.parseFloat(tvFontSize.getText()
-									.toString());
-					ConfigData.IS_SOUND_ON = cbSoundOnOff
-							.isChecked();
-					ConfigData.IS_REVERSE_CARD = cbReverseCard
-							.isChecked();
-					ConfigData.saveSettingData();
-					// Update this UI
-					tvFontSize.setText(""
-							+ ConfigData.FONT_SIZE);
-					cbReverseCard
-							.setChecked(ConfigData.IS_REVERSE_CARD);
-					cbSoundOnOff
-							.setChecked(ConfigData.IS_SOUND_ON);
-					ProfileActivity.this.finish();
-				}
-			});
-
-			btnNo1.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					tvFontSize.setText(""
-							+ ConfigData.FONT_SIZE);
-					cbReverseCard
-							.setChecked(ConfigData.IS_REVERSE_CARD);
-					cbSoundOnOff
-							.setChecked(ConfigData.IS_SOUND_ON);
-					ProfileActivity.this.finish();
-				}
-			});
-
-			backPressDialog.setCancelable(false);
-			backPressDialog.setView(view1);
-			backPressDialog.show();
-		} else {
-			this.finish();
-		}
-
+		finish();
 	}
 
 	@Override
 	public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 		// TODO Auto-generated method stub
-		isSettingChange = true;
 	}
 
 	@Override
 	protected void onResume() {
-		// Load background
-//		((ImageView) findViewById(R.id.background))
-//				.setBackground(ConfigData.rbdBackground);
-
 		super.onResume();
+		refreshAppBg();
 	}
 }

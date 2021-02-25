@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -47,6 +48,5 @@ public abstract class BaseActivity extends AppCompatActivity implements OnChange
 
         Prefs.init(this);
         CustomModelClass.getInstance().setListener(this);
-
     }
 }
