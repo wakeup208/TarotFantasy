@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background_mainback">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/ivCardImage"
@@ -111,13 +110,13 @@
 
             <Button
                 android:id="@+id/btn_view_card_interpretation"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="@dimen/dimen_175dp"
+                android:layout_height="@dimen/dimen_90dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dip"
-                android:background="@drawable/btn_press"
-                android:padding="@dimen/small_padding"
+                android:background="@drawable/btn_press_art"
                 android:fontFamily="@font/quicksand"
+                android:padding="@dimen/dimen_10dp"
                 android:textAllCaps="false"
                 android:text="@string/btn_view_card_interpretation"
                 android:textColor="@color/white"
@@ -261,14 +260,12 @@
 
             <Button
                 android:id="@+id/btn_view_card_association"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/dimen_175dp"
+                android:layout_height="@dimen/dimen_70dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/text_size_title"
                 android:layout_marginBottom="@dimen/commom_font_size"
-                android:background="@drawable/btn_press"
-                android:paddingStart="@dimen/padding_15dp"
-                android:paddingEnd="@dimen/padding_15dp"
+                android:background="@drawable/btn_press_art"
                 android:text="@string/btn_view_card_associations"
                 android:fontFamily="@font/quicksand"
                 android:textColor="@color/white"
@@ -304,7 +301,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/background_mainback"
             android:paddingBottom="@dimen/margin_bottom"
             android:paddingLeft="@dimen/thin_padding"
             android:paddingRight="@dimen/thin_padding"
@@ -323,7 +319,7 @@
                     android:id="@+id/btnSuit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/btn_press"
+                    android:background="@drawable/navigation_bg"
                     android:padding="@dimen/small_padding"
                     android:text="Suit"
                     android:layout_marginBottom="10dp"
@@ -354,11 +350,11 @@
 
                 <Button
                     android:id="@+id/btnStar"
+                    android:text="Star"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/btn_press"
+                    android:background="@drawable/navigation_bg"
                     android:padding="@dimen/small_padding"
-                    android:text="Star"
                     android:layout_marginBottom="10dp"
                     android:gravity="center"
                     android:fontFamily="@font/quicksand"
@@ -388,14 +384,15 @@
 
                 <Button
                     android:id="@+id/btnNumber"
+                    android:text="Number"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/btn_press"
+                    android:background="@drawable/navigation_bg"
                     android:padding="@dimen/small_padding"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
                     android:fontFamily="@font/quicksand"
                     android:textAllCaps="false"
-                    android:layout_marginBottom="@dimen/padding_15dp"
-                    android:text="Number"
                     android:textColor="@color/white"
                     android:textSize="@dimen/commom_font_size" />
 
@@ -421,26 +418,26 @@
 
                 <Button
                     android:id="@+id/btnSymbol"
+                    android:text="Symbol"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/btn_press"
+                    android:background="@drawable/navigation_bg"
+                    android:padding="@dimen/small_padding"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
                     android:fontFamily="@font/quicksand"
                     android:textAllCaps="false"
-                    android:layout_marginBottom="10dp"
-                    android:padding="@dimen/small_padding"
-                    android:text="Symbol"
                     android:textColor="@color/white"
                     android:textSize="@dimen/commom_font_size" />
 
                 <TableLayout
                     android:id="@+id/symbolTable"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="10dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
                     android:background="@drawable/linear_bg"
-                    android:orientation="vertical" >
-                </TableLayout>
+                    android:orientation="vertical"></TableLayout>
             </LinearLayout>
 
             <ImageView

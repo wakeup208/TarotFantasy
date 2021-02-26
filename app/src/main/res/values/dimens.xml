@@ -62,6 +62,9 @@
     <dimen name="dimen_90dp">90dp</dimen>
     <dimen name="dimen_70dp">70dp</dimen>
 
+    <dimen name="dimen_175dp">210dp</dimen>
+
+
     <dimen name="margin_top_thong_tin">10dp</dimen>
     <dimen name="dimen_250dp">250dp</dimen>
 

@@ -1,6 +1,7 @@
 package com.wakeup.tarot.fragment;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.wakeup.tarot.R;
+import com.wakeup.tarot.preferences.Prefs;
+import com.wakeup.tarot.util.Config;
 import com.wakeup.tarot.view.BrowseCardsActivity;
 import com.wakeup.tarot.view.BrowseGroupCardsActivity;
 import com.wakeup.tarot.view.InformationActivity;
@@ -26,6 +29,7 @@ public class CungHoangDaoFragment extends Fragment {
 
     Button btnClick;
     ImageView ivBackTb;
+    ImageView background;
 
     @Nullable
     @org.jetbrains.annotations.Nullable
@@ -34,7 +38,7 @@ public class CungHoangDaoFragment extends Fragment {
         View view = inflater.inflate(R.layout.frag_cung_hoang_dao, container, false);
         btnClick = (Button) view.findViewById(R.id.click_button);
         ivBackTb = (ImageView) view.findViewById(R.id.ivBackTb);
-
+        background = (ImageView) view.findViewById(R.id.background);
         return view;
     }
 
@@ -75,6 +79,8 @@ public class CungHoangDaoFragment extends Fragment {
                 }
             });
         }
+
+        background.setBackground(getContext().getDrawable(Config.ing_app_bg[Prefs.getAppBackground(getContext())]));
     }
 
     public void onBackClicked() {

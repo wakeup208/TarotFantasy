@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,15 +18,17 @@ import com.smarteist.autoimageslider.SliderView;
 import com.wakeup.tarot.R;
 import com.wakeup.tarot.adapter.SliderAdapter;
 import com.wakeup.tarot.model.SliderItem;
+import com.wakeup.tarot.preferences.Prefs;
 import com.wakeup.tarot.util.Config;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class DaThanhTayInfor extends BaseActivity {
-    SliderView sliderView;
+    private SliderView sliderView;
     private SliderAdapter adapter;
     private String des;
+    private RelativeLayout background;
 
     public String getDes() {
         return des;
@@ -42,7 +45,13 @@ public class DaThanhTayInfor extends BaseActivity {
 
     @Override
     public void refreshAppBg() {
+        background.setBackground(getDrawable(Config.ing_app_bg[Prefs.getAppBackground(this)]));
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //refreshAppBg();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -52,7 +61,7 @@ public class DaThanhTayInfor extends BaseActivity {
         setContentView(R.layout.da_thanh_tay);
 
         sliderView = findViewById(R.id.imageSlider);
-
+        background = (RelativeLayout) findViewById(R.id.rlDaThanhTay);
 
         adapter = new SliderAdapter(this, this);
         sliderView.setSliderAdapter(adapter);

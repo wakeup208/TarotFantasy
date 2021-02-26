@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_mainback">
+    android:background="@drawable/linear_bg"
+    android:id="@+id/rlDaThanhTay">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_slider_mainActivity"
@@ -18,7 +19,7 @@
             android:id="@+id/imageSlider"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/background_mainback"
+            android:background="@drawable/background_teak"
             app:sliderAnimationDuration="600"
             app:sliderAutoCycleDirection="back_and_forth"
             app:sliderIndicatorAnimationDuration="600"

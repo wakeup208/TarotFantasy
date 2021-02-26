@@ -17,6 +17,8 @@ import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 
 import com.wakeup.tarot.R;
+import com.wakeup.tarot.preferences.Prefs;
+import com.wakeup.tarot.util.Config;
 import com.wakeup.tarot.util.Constant;
 import com.wakeup.tarot.util.Utils;
 import com.wakeup.tarot.view.InformationActivity;
@@ -35,6 +37,7 @@ public class GioiThieuFragment extends Fragment {
     TextView tvDescription;
     TextView tvTitleTb;
     Button btnAbout;
+    ImageView background;
 
     @Override
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
@@ -52,6 +55,8 @@ public class GioiThieuFragment extends Fragment {
                 }
             });
         }
+        background.setBackground(getContext().getDrawable(Config.ing_app_bg[Prefs.getAppBackground(getContext())]));
+
     }
 
     public View onCreateView(@NonNull @NotNull LayoutInflater inflater, @Nullable @org.jetbrains.annotations.Nullable ViewGroup container, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
@@ -70,6 +75,8 @@ public class GioiThieuFragment extends Fragment {
         ivBackTb = (ImageView) view.findViewById(R.id.ivBackTb);
         btnAbout = (Button) view.findViewById(R.id.btnAbout);
         btnAbout.setText(getText(R.string.cute));
+        background = (ImageView) view.findViewById(R.id.background);
+
         return view;
     }
 

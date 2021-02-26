@@ -9,13 +9,13 @@
         android:id="@+id/background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background_mainback"
         android:scaleType="fitCenter" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/dimen_50dp"
+        android:layout_marginTop="@dimen/dimen_60dp"
+        android:layout_marginBottom="@dimen/dimen_10dp"
         android:gravity="center_vertical"
         android:paddingLeft="16dp"
         android:paddingRight="16dp">

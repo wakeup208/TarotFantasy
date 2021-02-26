@@ -34,6 +34,7 @@
     <dimen name="img_marginTop">90dp</dimen>
     <dimen name="dimen_90dp">180dp</dimen>
     <dimen name="dimen_70dp">110dp</dimen>
+    <dimen name="dimen_175dp">420dp</dimen>
 
     <dimen name="margin_top_thong_tin">20dp</dimen>
     <dimen name="dimen_250dp">500dp</dimen>

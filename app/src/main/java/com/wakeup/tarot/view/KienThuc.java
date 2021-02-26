@@ -38,7 +38,6 @@ public class KienThuc extends BaseActivity implements View.OnTouchListener {
     private RelativeLayout rlChakra;
     private RelativeLayout rlStone;
 
-
     private TextView dathanhtay1, txtCungHoangDao, txtMean1, txtStone;
     private LinearLayout background;
 

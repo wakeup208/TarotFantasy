@@ -43,6 +43,8 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginTop="@dimen/img_size"
                 android:layout_marginBottom="@dimen/margin"
+                android:paddingStart="@dimen/commom_padding"
+                android:paddingEnd="@dimen/commom_padding"
                 android:gravity="center_vertical">
 
                 <TextView

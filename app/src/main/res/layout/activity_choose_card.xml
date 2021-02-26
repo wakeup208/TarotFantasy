@@ -19,13 +19,13 @@
 
     <Button
         android:id="@+id/btnSkip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/dimen_100dp"
+        android:layout_height="@dimen/dimen_50dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="@dimen/commom_padding"
         android:layout_marginEnd="@dimen/commom_padding"
-        android:background="@drawable/btn_press"
+        android:background="@drawable/btn_press_art"
         android:paddingStart="@dimen/padding_15dp"
         android:paddingEnd="@dimen/padding_15dp"
         android:text="@string/bo_qua"

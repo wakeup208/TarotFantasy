@@ -64,7 +64,7 @@ public class BrowseCardsActivity extends FragmentActivity implements
     private ImageView btn_plus;
     private ImageButton btnHome;
     private ImageView background;
-
+    private TextView txtBieuTuong;
 
     private LinearLayout ln_btn_grid;
     private LinearLayout ln_btn_list;
@@ -114,6 +114,8 @@ public class BrowseCardsActivity extends FragmentActivity implements
         ln_btn_list.setOnClickListener(this);
         btn_list = (ImageView) findViewById(R.id.btn_list);
         //btn_list.setOnClickListener(this);
+        txtBieuTuong = (TextView) findViewById(R.id.bieutuong);
+        txtBieuTuong.setSelected(true);
 
         ln_btn_associations = (LinearLayout) findViewById(R.id.ln_btn_associations);
         ln_btn_associations.setOnClickListener(this);

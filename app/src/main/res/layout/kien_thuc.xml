@@ -43,6 +43,8 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginTop="@dimen/img_size"
                 android:layout_marginBottom="@dimen/margin"
+                android:paddingStart="@dimen/commom_padding"
+                android:paddingEnd="@dimen/commom_padding"
                 android:gravity="center_vertical">
 
                 <TextView
@@ -105,7 +107,7 @@
                     android:checked="true"
                     android:foregroundGravity="center_vertical"
                     android:gravity="fill_vertical"
-                    android:src="@drawable/card" />
+                    android:src="@drawable/looks_one" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -143,7 +145,7 @@
                     android:checked="true"
                     android:foregroundGravity="center_vertical"
                     android:gravity="fill_vertical"
-                    android:src="@drawable/cung" />
+                    android:src="@drawable/looks_two" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -182,7 +184,7 @@
                     android:checked="true"
                     android:foregroundGravity="center_vertical"
                     android:gravity="fill_vertical"
-                    android:src="@drawable/stone" />
+                    android:src="@drawable/ic_outline_looks_3_24" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -221,7 +223,7 @@
                     android:checked="true"
                     android:foregroundGravity="center_vertical"
                     android:gravity="fill_vertical"
-                    android:src="@drawable/dathanhtay" />
+                    android:src="@drawable/looks_4" />
             </RelativeLayout>
 
 
@@ -261,7 +263,7 @@
                     android:checked="true"
                     android:foregroundGravity="center_vertical"
                     android:gravity="fill_vertical"
-                    android:src="@drawable/itachi" />
+                    android:src="@drawable/looks_5" />
             </RelativeLayout>
 
 

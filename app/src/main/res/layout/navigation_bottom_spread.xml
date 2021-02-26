@@ -16,8 +16,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:paddingBottom="4dp"
-        android:paddingTop="4dp"
+        android:paddingBottom="2dp"
+        android:paddingTop="2dp"
         android:orientation="vertical">
 
         <ImageView
@@ -33,8 +33,7 @@
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
             android:text="Tổng thể"
-            android:textColor="@color/white"
-
+            android:textColor="#d1a554"
             android:fontFamily="@font/quicksand"
             android:textSize="@dimen/navigation_text_size"
             android:layout_marginTop="2dp"
@@ -47,8 +46,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:paddingBottom="4dp"
-        android:paddingTop="4dp"
+        android:paddingBottom="2dp"
+        android:paddingTop="2dp"
         android:orientation="vertical">
 
         <ImageView
@@ -65,8 +64,7 @@
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
             android:text="Chi tiết"
-            android:textColor="@color/white"
-
+            android:textColor="#d1a554"
             android:fontFamily="@font/quicksand"
             android:textSize="@dimen/navigation_text_size"
             android:layout_marginTop="2dp"
@@ -80,8 +78,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:paddingBottom="4dp"
-        android:paddingTop="4dp"
+        android:paddingBottom="2dp"
+        android:paddingTop="2dp"
         android:orientation="vertical">
 
         <ImageView
@@ -101,7 +99,7 @@
             android:fontFamily="@font/quicksand"
             android:textSize="@dimen/navigation_text_size"
             android:layout_marginTop="2dp"
-            android:textColor="@color/white"
+            android:textColor="#d1a554"
             android:textAlignment="center"
             android:layout_gravity="center" />
 

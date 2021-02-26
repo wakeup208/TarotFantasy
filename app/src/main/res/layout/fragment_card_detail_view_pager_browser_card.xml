@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background_mainback">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/ivCardImage"
@@ -118,14 +117,12 @@
 
             <Button
                 android:id="@+id/btn_view_card_association"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="@dimen/dimen_175dp"
+                android:layout_height="@dimen/dimen_70dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/padding_20dp"
                 android:layout_marginBottom="@dimen/padding_20dp"
-                android:background="@drawable/btn_press"
-                android:paddingStart="@dimen/padding_15dp"
-                android:paddingEnd="@dimen/padding_15dp"
+                android:background="@drawable/btn_press_art"
                 android:text="@string/btn_view_card_associations"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
@@ -161,7 +158,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/background_mainback"
             android:paddingBottom="@dimen/margin_bottom"
             android:paddingLeft="@dimen/thin_padding"
             android:paddingRight="@dimen/thin_padding"
@@ -180,7 +176,7 @@
                     android:id="@+id/btnSuit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/btn_press"
+                    android:background="@drawable/navigation_bg"
                     android:padding="@dimen/small_padding"
                     android:text="Suit"
                     android:layout_marginBottom="10dp"
@@ -213,7 +209,7 @@
                     android:id="@+id/btnStar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/btn_press"
+                    android:background="@drawable/navigation_bg"
                     android:padding="@dimen/small_padding"
                     android:text="Star"
                     android:layout_marginBottom="10dp"
@@ -247,7 +243,7 @@
                     android:id="@+id/btnNumber"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/btn_press"
+                    android:background="@drawable/navigation_bg"
                     android:padding="@dimen/small_padding"
                     android:fontFamily="@font/quicksand"
                     android:textAllCaps="false"
@@ -280,7 +276,7 @@
                     android:id="@+id/btnSymbol"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/btn_press"
+                    android:background="@drawable/navigation_bg"
                     android:fontFamily="@font/quicksand"
                     android:textAllCaps="false"
                     android:layout_marginBottom="10dp"

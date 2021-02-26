@@ -224,7 +224,7 @@ public class SingleCardActivity extends BaseActivity implements OnClickListener 
         layoutSuit.setOnClickListener(this);
         Button btnSuit = (Button) findViewById(R.id.btnSuit);
         btnSuit.setOnClickListener(this);
-        btnSuit.setTypeface(ConfigData.UVNCatBien_R);
+        //btnSuit.setTypeface(ConfigData.UVNCatBien_R);
         TableLayout suitTable = (TableLayout) findViewById(R.id.suitTable);
         suitTable.setOnClickListener(this);
         String[] arrSuitId = CardsDetailJasonHelper.getSuitIds(ConfigData.randOneCardId);
@@ -263,7 +263,7 @@ public class SingleCardActivity extends BaseActivity implements OnClickListener 
         layoutStar.setOnClickListener(this);
         Button btnStar = (Button) findViewById(R.id.btnStar);
         btnStar.setOnClickListener(this);
-        btnStar.setTypeface(ConfigData.UVNCatBien_R);
+        //btnStar.setTypeface(ConfigData.UVNCatBien_R);
         TableLayout starTable = (TableLayout) findViewById(R.id.starTable);
         starTable.setOnClickListener(this);
         String[] arrStarId = CardsDetailJasonHelper.getStarIds(ConfigData.randOneCardId);
@@ -301,7 +301,7 @@ public class SingleCardActivity extends BaseActivity implements OnClickListener 
         layoutNumber.setOnClickListener(this);
         Button btnNumber = (Button) findViewById(R.id.btnNumber);
         btnNumber.setOnClickListener(this);
-        btnNumber.setTypeface(ConfigData.UVNCatBien_R);
+        //btnNumber.setTypeface(ConfigData.UVNCatBien_R);
         TableLayout numberTable = (TableLayout) findViewById(R.id.numberTable);
         numberTable.setOnClickListener(this);
         String[] arrNumberId = CardsDetailJasonHelper.getNumberIds(ConfigData.randOneCardId);
@@ -339,7 +339,7 @@ public class SingleCardActivity extends BaseActivity implements OnClickListener 
         layoutSymbol.setOnClickListener(this);
         Button btnSymbol = (Button) findViewById(R.id.btnSymbol);
         btnSymbol.setOnClickListener(this);
-        btnSymbol.setTypeface(ConfigData.UVNCatBien_R);
+        //btnSymbol.setTypeface(ConfigData.UVNCatBien_R);
         TableLayout symbolTable = (TableLayout) findViewById(R.id.symbolTable);
         symbolTable.setOnClickListener(this);
         String[] arrSymbolId = CardsDetailJasonHelper.getSymbolIds(ConfigData.randOneCardId);

@@ -26,12 +26,12 @@ public class SplashScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.splash_screen);
+        setContentView(R.layout.splash_xml);
 
-        Window window = getWindow();
-        window.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        window.addFlags(Integer.MIN_VALUE);
-        window.setStatusBarColor(ContextCompat.getColor(this, R.color.status_bar));
+//        Window window = getWindow();
+//        window.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+//        window.addFlags(Integer.MIN_VALUE);
+//        window.setStatusBarColor(ContextCompat.getColor(this, R.color.status_bar));
         Animation aniRotate = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate);
         aniRotate.setRepeatCount(2);
         ((ImageView) findViewById(R.id.img)).startAnimation(aniRotate);

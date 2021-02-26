@@ -15,6 +15,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.wakeup.tarot.R;
+import com.wakeup.tarot.preferences.Prefs;
+import com.wakeup.tarot.util.Config;
 import com.wakeup.tarot.view.BrowseCardsActivity;
 import com.wakeup.tarot.view.BrowseGroupCardsActivity;
 import com.wakeup.tarot.view.InformationActivity;
@@ -24,6 +26,7 @@ public class TypeCardPageMeanFragment extends Fragment {
 
     Button btnClick;
     ImageView ivBackTb;
+    ImageView background;
     BrowseGroupCardsActivity.GroupStarCardFragment mGroupStarCardFragment;
 
     @Nullable
@@ -32,7 +35,7 @@ public class TypeCardPageMeanFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_type_card_page_mean, container, false);
         btnClick = (Button) view.findViewById(R.id.click_button);
         ivBackTb = (ImageView) view.findViewById(R.id.ivBackTb);
-
+        background = (ImageView) view.findViewById(R.id.background);
         return view;
     }
 
@@ -67,6 +70,8 @@ public class TypeCardPageMeanFragment extends Fragment {
                 }
             });
         }
+
+        background.setBackground(getContext().getDrawable(Config.ing_app_bg[Prefs.getAppBackground(getContext())]));
     }
 
     public void onBackClicked() {

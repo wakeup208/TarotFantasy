@@ -46,6 +46,8 @@ public class SpreadCardsActivity extends BaseActivity implements
 	private LinearLayout btn_card_spread;
 	private LinearLayout btn_card_list;
 	private LinearLayout ln_btn_flip;
+	private TextView closeOpen;
+
 
 	private ImageView btn_rules;
 	private ImageView btn_flip;
@@ -104,7 +106,8 @@ public class SpreadCardsActivity extends BaseActivity implements
 		mImageLoader.setLoadingImage(null);
 		mImageLoader.addImageCache(getSupportFragmentManager(), cacheParams);
 		mImageLoader.setImageFadeIn(false);
-		
+		closeOpen = (TextView) findViewById(R.id.closeOpen);
+		closeOpen.setSelected(true);
 		// Load background
 		background = (ImageView) findViewById(R.id.background);
 

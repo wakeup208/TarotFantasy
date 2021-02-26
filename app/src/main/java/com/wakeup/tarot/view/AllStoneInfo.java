@@ -5,6 +5,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.RelativeLayout;
 
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.IndicatorView.draw.controller.DrawController;
@@ -13,6 +14,7 @@ import com.smarteist.autoimageslider.SliderView;
 import com.wakeup.tarot.R;
 import com.wakeup.tarot.adapter.StoneAdapter;
 import com.wakeup.tarot.model.SliderItem;
+import com.wakeup.tarot.preferences.Prefs;
 import com.wakeup.tarot.util.Config;
 
 import java.util.ArrayList;
@@ -23,6 +25,7 @@ import androidx.annotation.RequiresApi;
 public class AllStoneInfo extends BaseActivity{
     SliderView sliderView;
     private StoneAdapter adapter;
+    private RelativeLayout background;
 
     @Override
     public void refreshCardBack() {
@@ -31,7 +34,13 @@ public class AllStoneInfo extends BaseActivity{
 
     @Override
     public void refreshAppBg() {
+        background.setBackground(getDrawable(Config.ing_app_bg[Prefs.getAppBackground(this)]));
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //refreshAppBg();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -39,6 +48,8 @@ public class AllStoneInfo extends BaseActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.da_thanh_tay);
+
+        background = (RelativeLayout) findViewById(R.id.rlDaThanhTay);
 
         sliderView = findViewById(R.id.imageSlider);
 
