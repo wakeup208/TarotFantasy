@@ -18,6 +18,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.ads.AdView;
 import com.wakeup.tarot.R;
 import com.wakeup.tarot.adapter.AppBackgroundAdater;
 import com.wakeup.tarot.adapter.CardBackAdapter;
@@ -60,6 +61,9 @@ public class ProfileActivity extends BaseActivity implements OnClickListener,
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_profile);
+
+		mAdView = (AdView) findViewById(R.id.adView);
+		getInstance.loadAd(mAdView);
 
 		background = (ImageView) findViewById(R.id.background);
 
