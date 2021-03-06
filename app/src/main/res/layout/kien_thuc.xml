@@ -22,7 +22,7 @@
             android:id="@+id/adView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:adSize="SMART_BANNER"
+            app:adSize="BANNER"
             android:layout_centerHorizontal="true"
             android:layout_alignParentEnd="true"
             app:adUnitId="@string/banner_ad_unit_id_test" />

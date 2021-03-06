@@ -330,7 +330,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            app:adSize="SMART_BANNER"
+            app:adSize="BANNER"
             android:layout_centerHorizontal="true"
             app:adUnitId="@string/banner_ad_unit_id_test"
             android:layout_alignParentStart="true" />
