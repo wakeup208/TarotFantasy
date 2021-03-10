@@ -238,8 +238,8 @@
         android:id="@+id/ad_container"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_50dp"
+        android:layout_marginTop="@dimen/dimen_5dp"
         android:layout_alignParentTop="true"
-        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -248,8 +248,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:adSize="BANNER"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentEnd="true"
             app:adUnitId="@string/banner_ad_unit_id_test" />
     </RelativeLayout>
 

@@ -16,16 +16,14 @@
     <RelativeLayout
         android:id="@+id/ad_container"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_50dp"
-        android:visibility="visible">
+        android:layout_marginTop="@dimen/dimen_5dp"
+        android:layout_height="@dimen/dimen_50dp">
 
         <com.google.android.gms.ads.AdView
             android:id="@+id/adView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            ads:adSize="SMART_BANNER"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentEnd="true"
+            app:adSize="BANNER"
             app:adUnitId="@string/banner_ad_unit_id_test" />
     </RelativeLayout>
 

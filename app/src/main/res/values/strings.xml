@@ -80,10 +80,11 @@
     <string name="proud">Proud of you !!!</string>
     <string name="bo_qua">Bỏ qua</string>
     <string name="home">Home</string>
+    <string name="str_cardback">Bạn đã chọn ảnh này làm ảnh nền cho CardBack !</string>
+
     <string name="google_app_id_ad_test">ca-app-pub-3940256099942544~3347511713</string>
     <string name="banner_ad_unit_id_test">ca-app-pub-7102019467698325/9878195142</string>
     <string name="interstitial_ad_unit_test">ca-app-pub-7102019467698325/9293895308</string>
-    <string name="str_cardback">Bạn đã chọn ảnh này làm ảnh nền cho CardBack !</string>
 
 <!--    <string name="google_app_id_ad_test">ca-app-pub-3940256099942544~3347511713</string>-->
 <!--    <string name="banner_ad_unit_id_test">ca-app-pub-3940256099942544/6300978111</string>-->

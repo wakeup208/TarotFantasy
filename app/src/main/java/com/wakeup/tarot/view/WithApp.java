@@ -38,7 +38,7 @@ public class WithApp extends Application {
         //loadMidAd();
 
         adView = new AdView(this);
-        adView.setAdSize(AdSize.SMART_BANNER);
+        adView.setAdSize(AdSize.BANNER);
         adView.setAdUnitId(getResources().getString(R.string.banner_ad_unit_id_test));
 
         AdRequest adRequest = new AdRequest.Builder().build();
