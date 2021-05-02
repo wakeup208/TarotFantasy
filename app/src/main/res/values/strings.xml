@@ -82,9 +82,9 @@
     <string name="home">Home</string>
     <string name="str_cardback">Bạn đã chọn ảnh này làm ảnh nền cho CardBack !</string>
 
-    <string name="google_app_id_ad_test">ca-app-pub-3940256099942544~3347511713</string>
-    <string name="banner_ad_unit_id_test">ca-app-pub-7102019467698325/9878195142</string>
-    <string name="interstitial_ad_unit_test">ca-app-pub-7102019467698325/9293895308</string>
+    <string name="google_app_id_ad_test">ca-app-pub-8778169562156997~2786289091</string>
+    <string name="banner_ad_unit_id_test">ca-app-pub-8778169562156997/3600677313</string>
+    <string name="interstitial_ad_unit_test">ca-app-pub-8778169562156997/9974513979</string>
 
 <!--    <string name="google_app_id_ad_test">ca-app-pub-3940256099942544~3347511713</string>-->
 <!--    <string name="banner_ad_unit_id_test">ca-app-pub-3940256099942544/6300978111</string>-->

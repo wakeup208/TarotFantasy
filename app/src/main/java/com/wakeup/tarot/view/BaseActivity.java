@@ -1,6 +1,7 @@
 package com.wakeup.tarot.view;
 
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -26,7 +27,7 @@ public abstract class BaseActivity extends AppCompatActivity implements OnChange
     public AdView mAdView;
 
     public abstract void refreshAppBg();
-
+    
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
