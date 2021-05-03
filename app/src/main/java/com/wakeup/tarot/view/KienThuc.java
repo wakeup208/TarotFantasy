@@ -22,10 +22,10 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
-import com.wakeup.tarot.BuildConfig;
 import com.wakeup.tarot.R;
 import com.wakeup.tarot.data.ConfigData;
 import com.wakeup.tarot.preferences.Prefs;
+import com.wakeup.tarot.quiz.MainActivityQuiz;
 import com.wakeup.tarot.util.Config;
 
 import java.util.ArrayList;
@@ -37,6 +37,8 @@ public class KienThuc extends BaseActivity implements View.OnTouchListener {
     private RelativeLayout rlThanhTay;
     private RelativeLayout rlChakra;
     private RelativeLayout rlStone;
+    private RelativeLayout rlQuiz;
+
 
     private TextView dathanhtay1, txtCungHoangDao, txtMean1, txtStone;
     private LinearLayout background;
@@ -85,6 +87,9 @@ public class KienThuc extends BaseActivity implements View.OnTouchListener {
                         break;
                     case 5:
                         startThanhTayAndCung();
+                        break;
+                    case 6:
+                        startQuiz();
                         break;
                     case 0:
                         break;
@@ -162,6 +167,21 @@ public class KienThuc extends BaseActivity implements View.OnTouchListener {
                 }
             }
         });
+
+        rlQuiz = (RelativeLayout) findViewById(R.id.rlQuiz);
+        rlQuiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mode = 6;
+                if(interstitialAd.isLoaded()) {
+                    interstitialAd.show();
+                }
+                else {
+                    startQuiz();
+                }
+            }
+        });
+
         rlStone.setOnTouchListener(this);
 
         rlChakra = (RelativeLayout) findViewById(R.id.rlCharka);
@@ -195,11 +215,6 @@ public class KienThuc extends BaseActivity implements View.OnTouchListener {
     @Override
     protected void onResume() {
         super.onResume();
-//        interstitialAd = new InterstitialAd(this);
-//        interstitialAd.setAdUnitId(getString(R.string.interstitial_ad_unit_test));
-//        AdRequest adInterstitial = new AdRequest.Builder().build();
-//        //adRequestBuilder1 = new AdRequest.Builder();
-//        interstitialAd.loadAd(adInterstitial);
         refreshAppBg();
     }
 
@@ -234,6 +249,11 @@ public class KienThuc extends BaseActivity implements View.OnTouchListener {
         startActivity(intent);
     }
 
+    public void startQuiz() {
+        Intent intent = new Intent(KienThuc.this, MainActivityQuiz.class);
+        startActivity(intent);
+    }
+
     public void addFragmentMean() {
         addFragmentWithNavigationId(R.layout.type_card_page_xml, (Bundle) null);
     }
@@ -256,7 +276,6 @@ public class KienThuc extends BaseActivity implements View.OnTouchListener {
     public boolean onTouch(View view, MotionEvent event) {
         switch (view.getId()) {
             case R.id.rtl_mean:
-
                 if (MotionEvent.ACTION_DOWN == event.getAction()) {
                     rlMean.startAnimation(ConfigData.animation_zoom_in);
                     break;

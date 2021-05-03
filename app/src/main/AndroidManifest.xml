@@ -46,6 +46,14 @@
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
+            android:name=".quiz.MainActivityQuiz"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".quiz.QuizActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
             android:name=".view.BrowseGroupCardsActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />

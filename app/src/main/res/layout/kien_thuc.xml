@@ -225,8 +225,6 @@
                     android:gravity="fill_vertical"
                     android:src="@drawable/looks_4" />
             </RelativeLayout>
-
-
             <RelativeLayout
                 android:id="@+id/rlCharka"
                 android:layout_width="match_parent"
@@ -265,8 +263,43 @@
                     android:gravity="fill_vertical"
                     android:src="@drawable/looks_5" />
             </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rlQuiz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/commom_padding"
+                android:paddingEnd="@dimen/commom_padding">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/dimen_20dp"
+                    android:layout_toEndOf="@+id/img7"
+                    android:fontFamily="@font/quicksand"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:text="@string/str_quiz"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/commom_font_size_big" />
 
+                <ImageView
+                    android:id="@+id/img7"
+                    android:layout_width="@dimen/img_size"
+                    android:layout_height="@dimen/img_size"
+                    android:padding="12dp"
+                    android:layout_alignParentStart="true"
+                    android:checked="true"
+                    android:foregroundGravity="center_vertical"
+                    android:gravity="fill_vertical"
+                    android:src="@drawable/looks_5" />
+            </RelativeLayout>
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

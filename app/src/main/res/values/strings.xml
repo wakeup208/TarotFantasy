@@ -66,6 +66,8 @@
     <string name="str_kien_thuc">Kiến thức</string>
     <string name="str_cung_hoang_dao_va_da_thanh_tay">Cung hoàng đạo và đá thanh tẩy</string>
     <string name="str_itachi">Luân xa (Chakar)</string>
+    <string name="str_quiz">Trắc nghiệm vui</string>
+
     <string name="str_all_atonne">Các loại đá thanh tẩy</string>
     <string name="str_cai_dat">Cài đặt</string>
     <string name="str_trang_chu">Trang chủ</string>
@@ -85,6 +87,15 @@
     <string name="google_app_id_ad_test">ca-app-pub-8778169562156997~2786289091</string>
     <string name="banner_ad_unit_id_test">ca-app-pub-8778169562156997/3600677313</string>
     <string name="interstitial_ad_unit_test">ca-app-pub-8778169562156997/9974513979</string>
+
+    <string name="btn_start_quiz">Start Quiz</string>
+    <string name="tv_hight_score">High Score: 0</string>
+    <string name="tv_score_text">Score: 0</string>
+    <string name="tv_question_text">Question: 1/x</string>
+    <string name="btn_confirm_text">Confirm</string>
+    <string name="difficulty_hard">Difficulty : Hard</string>
+    <string name="select_difficulty">Select Difficulty</string>
+    <string name="select_category">Select Category</string>
 
 <!--    <string name="google_app_id_ad_test">ca-app-pub-3940256099942544~3347511713</string>-->
 <!--    <string name="banner_ad_unit_id_test">ca-app-pub-3940256099942544/6300978111</string>-->

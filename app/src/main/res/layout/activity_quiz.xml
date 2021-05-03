@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_mainback"
+    android:padding="16dp"
+    tools:context=".quiz.QuizActivity">
+
+    <TextView
+        android:id="@+id/tvScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:freezesText="true"
+        android:text="@string/tv_score_text"
+        android:textColor="@color/white"
+        android:fontFamily="@font/quicksand"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvQuestionCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:freezesText="true"
+        android:fontFamily="@font/quicksand"
+        android:textSize="14sp"
+        android:text="@string/tv_question_text"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvScore" />
+
+    <TextView
+        android:id="@+id/tvCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:freezesText="true"
+        android:text="Category: Math"
+        android:textColor="@color/white"
+        android:fontFamily="@font/quicksand"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvQuestionCount"/>
+
+    <TextView
+        android:id="@+id/tvCountDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/quicksand"
+        android:freezesText="true"
+        android:text="00:20"
+        android:textColor="@color/red"
+        android:textSize="25sp"
+        app:layout_constraintStart_toEndOf="@+id/tvScore"
+        android:layout_marginStart="100dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgThum"
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:src="@drawable/death"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/linear_bg"
+        android:layout_marginBottom="@dimen/padding_15dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnConfirm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvQuestion">
+
+        <RadioButton
+            android:id="@+id/radio_button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:freezesText="true"
+            android:padding="10dp"
+            android:text="Option 1"
+            android:fontFamily="@font/quicksand"
+            android:textSize="14sp" />
+        <RadioButton
+            android:id="@+id/radio_button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:freezesText="true"
+            android:padding="10dp"
+            android:text="Option 2"
+            android:fontFamily="@font/quicksand"
+            android:textSize="14sp" />
+        <RadioButton
+            android:id="@+id/radio_button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:freezesText="true"
+            android:padding="10dp"
+            android:text="Option 3"
+            android:fontFamily="@font/quicksand"
+            android:textSize="14sp" />
+        <RadioButton
+            android:id="@+id/radio_button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:freezesText="true"
+            android:padding="10dp"
+            android:text="Option 4"
+            android:fontFamily="@font/quicksand"
+            android:textSize="14sp" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/linear_bg"
+        android:freezesText="true"
+        android:padding="5dp"
+        android:textAlignment="center"
+        android:text="Here will be thQuestion texte Question text"
+        android:textColor="@color/white"
+        android:fontFamily="@font/quicksand"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/radio_group"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCategory" />
+
+    <com.manojbhadane.QButton
+        android:id="@+id/btnConfirm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:freezesText="true"
+        android:fontFamily="@font/quicksand"
+        android:textSize="14sp"
+        android:text="@string/btn_confirm_text"
+        app:qb_backgroundColor="@color/white_trans"
+        app:qb_radius="100"
+        app:qb_strokeColor="@color/white"
+        app:qb_strokeWidth="5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
