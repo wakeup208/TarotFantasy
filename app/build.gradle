@@ -7,7 +7,7 @@ android {
         applicationId "com.wakeup.tarot"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 15
+        versionCode 17
         versionName "2.2.8"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

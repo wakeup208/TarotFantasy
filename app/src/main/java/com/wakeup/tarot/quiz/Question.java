@@ -64,6 +64,7 @@ public class Question implements Parcelable {
         option2 = in.readString();
         option3 = in.readString();
         answerNr = in.readInt();
+        uri = in.readInt();
         difficulty = in.readString();
         categoryID = in.readInt();
     }
@@ -174,6 +175,6 @@ public class Question implements Parcelable {
         dest.writeString(option3);
         dest.writeInt(answerNr);
         dest.writeString(difficulty);
-        dest.writeInt(categoryID);
+        dest.writeInt(uri);
     }
 }

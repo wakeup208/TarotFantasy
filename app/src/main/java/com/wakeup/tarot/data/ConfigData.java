@@ -161,6 +161,22 @@ public class ConfigData {
         }
     }
 
+    public static void playSound() {
+        if (IS_SOUND_ON) {
+            stopPlaying();
+            mp = MediaPlayer.create(appContext, R.raw.count_down);
+            mp.start();
+        }
+    }
+
+    public static void stopPlaying() {
+        if (mp != null) {
+            mp.stop();
+            mp.release();
+            mp = null;
+        }
+    }
+
     public static void stopSound() {
         try {
             if (mp != null) {

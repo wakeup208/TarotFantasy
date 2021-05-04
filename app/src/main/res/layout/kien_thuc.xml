@@ -102,11 +102,11 @@
                     android:id="@+id/img2"
                     android:layout_width="@dimen/img_size"
                     android:layout_height="@dimen/img_size"
-                    android:padding="12dp"
                     android:layout_alignParentStart="true"
                     android:checked="true"
                     android:foregroundGravity="center_vertical"
                     android:gravity="fill_vertical"
+                    android:padding="12dp"
                     android:src="@drawable/looks_one" />
             </RelativeLayout>
 
@@ -298,7 +298,7 @@
                     android:checked="true"
                     android:foregroundGravity="center_vertical"
                     android:gravity="fill_vertical"
-                    android:src="@drawable/looks_5" />
+                    android:src="@drawable/looks_6" />
             </RelativeLayout>
         </LinearLayout>
 

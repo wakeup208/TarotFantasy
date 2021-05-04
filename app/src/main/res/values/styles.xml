@@ -32,6 +32,11 @@
     <color name="red">#FBF9F9</color>
     <color name="green">#00FF00</color>
 
+    <style name="SpinnerTheme">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/quicksand</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
     <style name="CodeFont" parent="@android:style/TextAppearance.Medium">
         <item name="android:layout_width">match_parent</item>

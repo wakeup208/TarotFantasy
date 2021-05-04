@@ -49,6 +49,7 @@ public class InformationActivity extends BaseActivity implements View.OnTouchLis
     RelativeLayout rtlShare;
     LinearLayout lnBrick;
     LinearLayout lnBaby;
+    LinearLayout lnApplock;
 
     FrameLayout mainFragment;
     ImageView imgHome;
@@ -151,6 +152,15 @@ public class InformationActivity extends BaseActivity implements View.OnTouchLis
             }
         });
         lnBaby.setOnTouchListener(this);
+
+        lnApplock = (LinearLayout) findViewById(R.id.LockApp);
+        lnApplock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getAppLock();
+            }
+        });
+        lnApplock.setOnTouchListener(this);
         //selectBrowserMode(mode);
     }
 
@@ -198,6 +208,12 @@ public class InformationActivity extends BaseActivity implements View.OnTouchLis
 
     private void getSleep() {
         String theUrl = "https://play.google.com/store/apps/details?id=com.wakeup.babysleep";
+        Intent browse = new Intent(Intent.ACTION_VIEW, Uri.parse(theUrl));
+        startActivity(browse);
+    }
+
+    private void getAppLock() {
+        String theUrl = "https://play.google.com/store/apps/details?id=com.wakeup.lockapp";
         Intent browse = new Intent(Intent.ACTION_VIEW, Uri.parse(theUrl));
         startActivity(browse);
     }
@@ -337,6 +353,15 @@ public class InformationActivity extends BaseActivity implements View.OnTouchLis
                     break;
                 } else if (MotionEvent.ACTION_UP == event.getAction()) {
                     lnBaby.clearAnimation();
+                    break;
+                }
+
+            case R.id.LockApp:
+                if (MotionEvent.ACTION_DOWN == event.getAction()) {
+                    lnApplock.startAnimation(ConfigData.animation_zoom_in);
+                    break;
+                } else if (MotionEvent.ACTION_UP == event.getAction()) {
+                    lnApplock.clearAnimation();
                     break;
                 }
 

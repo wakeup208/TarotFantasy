@@ -118,6 +118,7 @@ public class CardViewFlipper extends ViewFlipper implements OnClickListener,
 		}
 
 		if (needPlaySound) {
+			ConfigData.stopPlaying();
 			ConfigData.playSound(R.raw.card_deal);
 		}
 
@@ -133,6 +134,7 @@ public class CardViewFlipper extends ViewFlipper implements OnClickListener,
 		}
 
 		if (needPlaySound) {
+			ConfigData.stopPlaying();
 			ConfigData.playSound(R.raw.card_deal);
 		}
 

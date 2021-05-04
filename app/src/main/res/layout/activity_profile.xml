@@ -118,6 +118,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:checked="true"
+                    android:clickable="false"
                     android:gravity="center_vertical" />
             </RelativeLayout>
 
@@ -146,7 +147,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:checked="true" />
+                    android:checked="true"
+                    android:clickable="false" />
             </RelativeLayout>
 
             <RelativeLayout

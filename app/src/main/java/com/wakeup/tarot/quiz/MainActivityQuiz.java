@@ -83,7 +83,7 @@ public class MainActivityQuiz extends AppCompatActivity {
     private void loadHighScore() {
         SharedPreferences prefs = getSharedPreferences(SHARED_PREF, MODE_PRIVATE);
         highScore = prefs.getInt(KEY_HIGH_SCORE, 0);
-        textViewHighScore.setText("HighScore: " + highScore);
+        textViewHighScore.setText("Điểm cao : " + highScore);
     }
 
     private void loadCategories() {

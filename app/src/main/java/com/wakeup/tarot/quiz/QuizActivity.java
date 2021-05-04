@@ -3,9 +3,11 @@ package com.wakeup.tarot.quiz;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -17,10 +19,15 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.wakeup.tarot.R;
+import com.wakeup.tarot.data.ConfigData;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Locale;
+
+import static com.wakeup.tarot.data.ConfigData.playSound;
+import static com.wakeup.tarot.data.ConfigData.stopPlaying;
 
 
 public class QuizActivity extends AppCompatActivity {
@@ -94,7 +101,7 @@ public class QuizActivity extends AppCompatActivity {
         String categoryName = intent.getStringExtra(MainActivityQuiz.EXTRA_CATEGORY_NAME);
         //String difficulty = intent.getStringExtra(MainActivity.EXTRA_DIFFICULTY);
 
-        textViewCategory.setText("Category: " + categoryName);
+        textViewCategory.setText("Thể loại: " + categoryName);
         //textViewDifficulty.setText("Difficulty: " + difficulty);
 
         if (savedInstanceState == null) {
@@ -129,12 +136,14 @@ public class QuizActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (!answered) {
                     if (rb1.isChecked() || rb2.isChecked() || rb3.isChecked() || rb4.isChecked()) {
+                        stopPlaying();
                         checkAnswer();
                     } else {
-                        Toast.makeText(QuizActivity.this, "Please select an answer", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(QuizActivity.this, "Hãy chọn câu trả lời !", Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     showNextQuestion();
+                    stopPlaying();
                 }
             }
         });
@@ -159,9 +168,9 @@ public class QuizActivity extends AppCompatActivity {
             imgThumb.setImageResource(currentQuestion.getUri());
 
             questionCounter++;
-            textViewQuestionCount.setText("Question: " + questionCounter + " / " + questionCounterTotal);
+            textViewQuestionCount.setText("Câu hỏi: " + questionCounter + " / " + questionCounterTotal);
             answered = false;
-            buttonConfirmNext.setText("Confirm");
+            buttonConfirmNext.setText("Xác nhận");
 
             timeLeftInMillis = COUNTDOWN_IN_MILLIS;
             startCountDown();
@@ -176,6 +185,7 @@ public class QuizActivity extends AppCompatActivity {
             public void onTick(long millisUntilFinished) {
                 timeLeftInMillis = millisUntilFinished;
                 updateCountDownText();
+                playSound();
             }
 
             @Override
@@ -183,6 +193,7 @@ public class QuizActivity extends AppCompatActivity {
                 timeLeftInMillis = 0;
                 updateCountDownText();
                 checkAnswer();
+                stopPlaying();
             }
         }.start();
     }
@@ -207,7 +218,7 @@ public class QuizActivity extends AppCompatActivity {
         int answerNr = rbGroup.indexOfChild(rbSelected) + 1;
         if (answerNr == currentQuestion.getAnswerNr()) {
             score++;
-            textViewScore.setText("Score: " + score);
+            textViewScore.setText("Điểm: " + score);
         }
         showSolution();
     }
@@ -221,27 +232,27 @@ public class QuizActivity extends AppCompatActivity {
         switch (currentQuestion.getAnswerNr()) {
             case 1:
                 rb1.setTextColor(getResources().getColor(R.color.colorTrueAnswer));
-                textViewQuestion.setText("Answer 1 is correct");
+                textViewQuestion.setText("Phương án 1 là đáp án đúng");
                 break;
 
             case 2:
                 rb2.setTextColor(getResources().getColor(R.color.colorTrueAnswer));
-                textViewQuestion.setText("Answer 2 is correct");
+                textViewQuestion.setText("Phương án 2 là đáp án đúng");
                 break;
 
             case 3:
                 rb3.setTextColor(getResources().getColor(R.color.colorTrueAnswer));
-                textViewQuestion.setText("Answer 3 is correct");
+                textViewQuestion.setText("Phương án 3 là đáp án đúng");
                 break;
             case 4:
                 rb4.setTextColor(getResources().getColor(R.color.colorTrueAnswer));
-                textViewQuestion.setText("Answer 4 is correct");
+                textViewQuestion.setText("Phương án 4 là đáp án đúng");
                 break;
         }
         if (questionCounter < questionCounterTotal) {
-            buttonConfirmNext.setText("Next");
+            buttonConfirmNext.setText("Câu tiếp");
         } else {
-            buttonConfirmNext.setText("Finish");
+            buttonConfirmNext.setText("Kết thúc");
         }
     }
 
@@ -257,7 +268,7 @@ public class QuizActivity extends AppCompatActivity {
         if (backPressedTime + 2000 > System.currentTimeMillis()) {
             finishQuiz();
         } else {
-            Toast.makeText(this, "Press back again to finish", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Nhấn lần nữa để kết thúc", Toast.LENGTH_SHORT).show();
         }
         backPressedTime = System.currentTimeMillis();
     }
@@ -268,6 +279,13 @@ public class QuizActivity extends AppCompatActivity {
         if (countDownTimer != null) {
             countDownTimer.cancel();
         }
+        stopPlaying();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        stopPlaying();
     }
 
     @Override

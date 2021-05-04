@@ -2,6 +2,8 @@
     <string name="app_name">Love Tarot</string>
 
     <string name="intro">Hãy thư giãn và rút lá bài</string>
+    <string name="hihi">Cố gắng đạt điểm cao nhé !</string>
+
 
     <string name="action_settings">Cài đặt</string>
     <string name="hello_world">Hello world!</string>
@@ -88,14 +90,14 @@
     <string name="banner_ad_unit_id_test">ca-app-pub-8778169562156997/3600677313</string>
     <string name="interstitial_ad_unit_test">ca-app-pub-8778169562156997/9974513979</string>
 
-    <string name="btn_start_quiz">Start Quiz</string>
-    <string name="tv_hight_score">High Score: 0</string>
-    <string name="tv_score_text">Score: 0</string>
-    <string name="tv_question_text">Question: 1/x</string>
-    <string name="btn_confirm_text">Confirm</string>
+    <string name="btn_start_quiz">Bắt đầu</string>
+    <string name="tv_hight_score">Điểm cao: 0</string>
+    <string name="tv_score_text">Điểm: 0</string>
+    <string name="tv_question_text">Câu hỏi: 1/x</string>
+    <string name="btn_confirm_text">Xác nhận</string>
     <string name="difficulty_hard">Difficulty : Hard</string>
     <string name="select_difficulty">Select Difficulty</string>
-    <string name="select_category">Select Category</string>
+    <string name="select_category">Chọn thể loại</string>
 
 <!--    <string name="google_app_id_ad_test">ca-app-pub-3940256099942544~3347511713</string>-->
 <!--    <string name="banner_ad_unit_id_test">ca-app-pub-3940256099942544/6300978111</string>-->
