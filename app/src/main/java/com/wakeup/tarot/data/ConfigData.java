@@ -170,10 +170,13 @@ public class ConfigData {
     }
 
     public static void stopPlaying() {
-        if (mp != null) {
-            mp.stop();
-            mp.release();
-            mp = null;
+        try {
+            if (mp != null) {
+                mp.stop();
+                mp.release();
+                mp = null;
+            }
+        } catch (Exception e) {
         }
     }
 
@@ -186,35 +189,6 @@ public class ConfigData {
             }
         } catch (Exception e) {
         }
-    }
-
-    // Check Inbox to search active message from author.
-    public static boolean checkIsActivated(Activity a) {
-        Uri uri = Uri.parse("content://sms/inbox");
-        Cursor c = a.getContentResolver().query(uri, null, null, null, null);
-        a.startManagingCursor(c);
-
-        // Read the sms data and store it in the list
-        if (c.moveToFirst()) {
-            for (int i = 0; i < c.getCount(); i++) {
-                String Body = c.getString(c.getColumnIndexOrThrow("body"))
-                        .toString();
-                String Number = c.getString(c.getColumnIndexOrThrow("address"))
-                        .toString();
-
-                if ("WELCOME TO TAROT VIET".equals(Body)
-                        && "01696016830".equals(Number)) {
-                    c.close();
-                    return true;
-                }
-
-                c.moveToNext();
-            }
-        }
-
-        c.close();
-
-        return false;
     }
 
     public static void resetDefault() {

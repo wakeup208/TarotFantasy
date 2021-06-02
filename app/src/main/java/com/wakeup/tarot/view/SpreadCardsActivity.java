@@ -727,7 +727,7 @@ public class SpreadCardsActivity extends BaseActivity implements
 			}
 
 			// Flip card
-			ConfigData.stopPlaying();
+			ConfigData.stopSound();
 			ConfigData.playSound(R.raw.card_deal);
 			for (int i = 0; i < ConfigData.randomCardIdArray.length; i++) {
 				card = (CardViewFlipper) spread_cards_container.getChildAt(i);

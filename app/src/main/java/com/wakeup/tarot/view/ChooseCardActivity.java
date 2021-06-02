@@ -175,7 +175,7 @@ public class ChooseCardActivity extends BaseActivity implements OnClickListener,
 		super.onStart();
 
 		if (ConfigData.IS_SOUND_ON) {
-			ConfigData.stopPlaying();
+			ConfigData.stopSound();
 			ConfigData.playSound(R.raw.cards_layout);
 		}
 
@@ -222,7 +222,7 @@ public class ChooseCardActivity extends BaseActivity implements OnClickListener,
 			cardSelectedCount++;
 			cardNeedRemove = (ImageView) v;
 			cardNeedRemove.startAnimation(ConfigData.animation_select_card);
-			ConfigData.stopPlaying();
+			ConfigData.stopSound();
 			ConfigData.playSound(R.raw.single_card);
 
 			return;
